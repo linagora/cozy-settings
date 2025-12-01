@@ -19,7 +19,9 @@ import {
   findNextcloudAccounts,
   deleteNextcloudAccount
 } from './Providers/nextcloud/accountService'
-import { nextcloudProvider } from './Providers/nextcloud/provider'
+import { ensureImportsDestination } from './Providers/nextcloud/destinationService'
+import { importPathRecursive } from './Providers/nextcloud/importService'
+import { probePath } from './Providers/nextcloud/remoteService'
 import RemotePreview from './RemotePreview'
 
 import { useImports } from '@/components/Imports/ImportsContext'
@@ -131,7 +133,7 @@ const Run = () => {
     ;(async () => {
       setCheckingAccount(true)
       try {
-        const docs = await nextcloudProvider.listAccounts(client)
+        const docs = await findNextcloudAccounts(client)
         if (aborted) return
         setAccounts(docs)
         if (docs.length) setSelectedAccountId(docs[0]._id)
@@ -183,7 +185,7 @@ const Run = () => {
 
   const pickAccountId = async () => {
     if (selectedAccountId) return selectedAccountId
-    const all = await nextcloudProvider.listAccounts(client)
+    const all = await findNextcloudAccounts(client)
     return all?.[0]?._id
   }
 
@@ -194,7 +196,7 @@ const Run = () => {
     try {
       const accId = await pickAccountId()
       if (!accId) throw new Error('No Nextcloud account configured')
-      const { kind, items, name } = await nextcloudProvider.probePath(
+      const { kind, items, name } = await probePath(
         client,
         accId,
         remotePath || '/'
@@ -236,20 +238,16 @@ const Run = () => {
 
       let accDoc = accounts.find(a => a._id === accId)
       if (!accDoc) {
-        const all = await nextcloudProvider.listAccounts(client)
+        const all = await findNextcloudAccounts(client)
         accDoc = all.find(a => a._id === accId)
       }
       const login = accDoc?.auth?.login || accDoc?.label || accId
 
-      const destId = await nextcloudProvider.ensureImportsDestination(
-        client,
-        'Nextcloud',
-        login
-      )
+      const destId = await ensureImportsDestination(client, 'Nextcloud', login)
 
       setStatus('Analyzing path…')
 
-      const summary = await nextcloudProvider.importPathRecursive(
+      const summary = await importPathRecursive(
         client,
         accId,
         remotePath || '/',
