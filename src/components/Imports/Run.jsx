@@ -16,7 +16,7 @@ import NextcloudAccountSection from './NextcloudAccountSection'
 import NextcloudPathSection from './NextcloudPathSection'
 import {
   createNextcloudAccount,
-  listNextcloudAccounts,
+  findNextcloudAccounts,
   deleteNextcloudAccount
 } from './Providers/nextcloud/accountService'
 import { nextcloudProvider } from './Providers/nextcloud/provider'
@@ -313,7 +313,7 @@ const Run = () => {
         password: ncPassword,
         url: ncUrl
       })
-      const docs = await listNextcloudAccounts(client)
+      const docs = await findNextcloudAccounts(client)
       setAccounts(docs)
       const newId =
         account?._id || (docs && docs.length ? docs[0]._id : '') || ''

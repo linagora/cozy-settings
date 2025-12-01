@@ -22,7 +22,7 @@ export async function createNextcloudAccount(client, { login, password, url }) {
   return data
 }
 
-export async function listNextcloudAccounts(client) {
+export async function findNextcloudAccounts(client) {
   const { data } = await client.query(
     Q('io.cozy.accounts').where({
       account_type: 'nextcloud'
