@@ -365,7 +365,8 @@
     "docs": "Documentation",
     "load_error": "An error occurred while loading your import settings, please try again later.",
     "action_run": "Start an import",
-    "action_history": "History"
+    "action_history": "History",
+    "cta": "Start an import"
   },
   "ImportsRun": {
     "title": "Start an import",
@@ -384,6 +385,51 @@
       "error": {
         "no_id": "Account created but no ID returned.",
         "create_failed": "Failed to create account."
+      }
+    },
+    "errors": {
+      "unknown_path": "Unknown path",
+      "status_na": "n/a"
+    },
+    "providers": {
+      "nextcloud": "Nextcloud",
+      "googledrive": "Google Drive",
+      "dropbox": "Dropbox"
+    },
+    "sections": {
+      "preview": {
+        "title": "Preview (first 10)"
+      },
+      "progress": {
+        "title": "Progress",
+        "processed": "Processed: %{count}",
+        "total": "Total: %{count}",
+        "processing": "Processing: %{name}"
+      },
+      "account": {
+        "title": "Nextcloud account",
+        "helper": "Select or create a Nextcloud account to start an import.",
+        "hint_select_provider": "Select Nextcloud to check connection.",
+        "checking": "Checking account…",
+        "add": "Add account",
+        "delete_selected": "Delete selected account",
+        "none_configured": "No Nextcloud account configured.",
+        "create": "Create Nextcloud account"
+      },
+      "path": {
+        "title": "Path to import",
+        "helper": "Content will be copied into Imports/Nextcloud/<login> in Twake Drive.",
+        "label": "Remote path (Nextcloud)",
+        "placeholder": "/ or /Documents or /file.pdf",
+        "import": "Import",
+        "importing": "Importing…",
+        "list": "List remote",
+        "working": "Working…",
+        "stop": "Stop import"
+      },
+      "provider": {
+        "title": "Service",
+        "helper": "Pick a service to import your data from."
       }
     }
   },

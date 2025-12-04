@@ -4,6 +4,7 @@ import Button from 'cozy-ui/transpiled/react/Button'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
+import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import styles from './imports.styl'
 
@@ -18,6 +19,8 @@ const NextcloudAccountSection = ({
   onAddAccount,
   onDeleteAccount
 }) => {
+  const { t } = useI18n()
+
   const accountOptions = accounts.map(acc => {
     const label = acc?.auth?.login || acc?.label || acc?._id
     return { value: acc._id, label }
@@ -31,13 +34,15 @@ const NextcloudAccountSection = ({
     return (
       <Stack spacing="m">
         <Stack spacing="xs">
-          <Typography variant="h5">Compte Nextcloud</Typography>
+          <Typography variant="h5">
+            {t('ImportsRun.sections.account.title')}
+          </Typography>
           <Typography variant="body1">
-            Sélectionnez ou créez un compte Nextcloud pour lancer un import.
+            {t('ImportsRun.sections.account.helper')}
           </Typography>
         </Stack>
         <Typography variant="caption" color="textSecondary">
-          Select Nextcloud to check connection.
+          {t('ImportsRun.sections.account.hint_select_provider')}
         </Typography>
       </Stack>
     )
@@ -46,9 +51,11 @@ const NextcloudAccountSection = ({
   return (
     <Stack spacing="m">
       <Stack spacing="xs">
-        <Typography variant="h5">Compte Nextcloud</Typography>
+        <Typography variant="h5">
+          {t('ImportsRun.sections.account.title')}
+        </Typography>
         <Typography variant="body1">
-          Sélectionnez ou créez un compte Nextcloud pour lancer un import.
+          {t('ImportsRun.sections.account.helper')}
         </Typography>
       </Stack>
 
@@ -56,7 +63,9 @@ const NextcloudAccountSection = ({
         {checkingAccount ? (
           <div className={styles['ImportsNextcloudSection-row']}>
             <Spinner size="small" />
-            <Typography variant="caption">Checking account…</Typography>
+            <Typography variant="caption">
+              {t('ImportsRun.sections.account.checking')}
+            </Typography>
           </div>
         ) : accounts.length ? (
           <>
@@ -75,7 +84,7 @@ const NextcloudAccountSection = ({
             />
             <div className={styles['ImportsNextcloudSection-rowWrap']}>
               <Button size="small" variant="secondary" onClick={onAddAccount}>
-                Add account
+                {t('ImportsRun.sections.account.add')}
               </Button>
               <Button
                 size="small"
@@ -83,17 +92,17 @@ const NextcloudAccountSection = ({
                 disabled={!selectedAccountId}
                 onClick={onDeleteAccount}
               >
-                Delete selected account
+                {t('ImportsRun.sections.account.delete_selected')}
               </Button>
             </div>
           </>
         ) : (
           <div className={styles['ImportsNextcloudSection-rowWrap']}>
             <Typography variant="caption" color="textSecondary">
-              No Nextcloud account configured.
+              {t('ImportsRun.sections.account.none_configured')}
             </Typography>
             <Button size="small" variant="secondary" onClick={onAddAccount}>
-              Create Nextcloud account
+              {t('ImportsRun.sections.account.create')}
             </Button>
           </div>
         )}

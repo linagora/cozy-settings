@@ -363,7 +363,8 @@
     "docs": "Documentation",
     "load_error": "Une erreur s’est produite lors du chargement des paramètres d’import, merci de réessayer plus tard.",
     "action_run": "Lancer un import",
-    "action_history": "Historique"
+    "action_history": "Historique",
+    "cta": "Lancer un import"
   },
   "ImportsRun": {
     "title": "Lancer un import",
@@ -382,6 +383,51 @@
       "error": {
         "no_id": "Compte créé mais aucun identifiant n’a été retourné.",
         "create_failed": "La création du compte a échoué."
+      }
+    },
+    "errors": {
+      "unknown_path": "Chemin inconnu",
+      "status_na": "n/a"
+    },
+    "providers": {
+      "nextcloud": "Nextcloud",
+      "googledrive": "Google Drive",
+      "dropbox": "Dropbox"
+    },
+    "sections": {
+      "preview": {
+        "title": "Aperçu (10 premiers)"
+      },
+      "progress": {
+        "title": "Progression",
+        "processed": "Traités : %{count}",
+        "total": "Total : %{count}",
+        "processing": "Traitement : %{name}"
+      },
+      "account": {
+        "title": "Compte Nextcloud",
+        "helper": "Sélectionnez ou créez un compte Nextcloud pour lancer un import.",
+        "hint_select_provider": "Sélectionnez Nextcloud pour vérifier la connexion.",
+        "checking": "Vérification du compte…",
+        "add": "Ajouter un compte",
+        "delete_selected": "Supprimer le compte sélectionné",
+        "none_configured": "Aucun compte Nextcloud configuré.",
+        "create": "Créer un compte Nextcloud"
+      },
+      "path": {
+        "title": "Chemin à importer",
+        "helper": "Le contenu sera copié dans Imports/Nextcloud/<login> dans Twake Drive.",
+        "label": "Chemin distant (Nextcloud)",
+        "placeholder": "/ ou /Documents ou /file.pdf",
+        "import": "Importer",
+        "importing": "Import en cours…",
+        "list": "Lister le contenu distant",
+        "working": "Traitement en cours…",
+        "stop": "Arrêter l’import"
+      },
+      "provider": {
+        "title": "Service",
+        "helper": "Choisissez un service à partir duquel importer vos données."
       }
     }
   },

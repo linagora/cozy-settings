@@ -7,28 +7,23 @@ import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
-import ImportsRunHeader from './ImportsRunHeader'
-import ImportsProviderSelect from './ImportsProviderSelect'
-import NextcloudAccountSection from './NextcloudAccountSection'
-import NextcloudAccountDialog from './NextcloudAccountDialog'
-import NextcloudPathSection from './NextcloudPathSection'
-import ImportsProgress from './ImportsProgress'
 import ImportErrors from './ImportErrors'
-import RemotePreview from './RemotePreview'
-
+import ImportsProgress from './ImportsProgress'
+import ImportsProviderSelect from './ImportsProviderSelect'
+import ImportsRunHeader from './ImportsRunHeader'
+import NextcloudAccountDialog from './NextcloudAccountDialog'
+import NextcloudAccountSection from './NextcloudAccountSection'
+import NextcloudPathSection from './NextcloudPathSection'
 import { useNextcloudAccounts } from './Providers/nextcloud/useNextcloudAccounts'
 import { useNextcloudImport } from './Providers/nextcloud/useNextcloudImport'
+import RemotePreview from './RemotePreview'
 
 import { useImports } from '@/components/Imports/ImportsContext'
 import Page from '@/components/Page'
 import { PageHeader } from '@/components/PageHeader'
 import { routes } from '@/constants/routes'
 
-const SERVICES = [
-  { label: 'Nextcloud', slug: 'nextcloud' },
-  { label: 'GoogleDrive', slug: 'googledrive' },
-  { label: 'Dropbox', slug: 'dropbox' }
-]
+const SERVICES = ['nextcloud', 'googledrive', 'dropbox']
 
 const Run = () => {
   const { t } = useI18n()
@@ -53,9 +48,9 @@ const Run = () => {
 
   const [showNcForm, setShowNcForm] = useState(false)
 
-  const providerOptions = SERVICES.map(s => ({
-    value: s.slug,
-    label: s.label
+  const providerOptions = SERVICES.map(slug => ({
+    value: slug,
+    label: t(`ImportsRun.providers.${slug}`)
   }))
 
   const providerValue = serviceSlug
@@ -63,10 +58,8 @@ const Run = () => {
     : null
 
   const providerFieldProps = {
-    title: t('ImportsRun.sections.provider.title', { _: 'Service' }),
-    label: t('ImportsRun.sections.provider.helper', {
-      _: 'Choisissez un service à partir duquel importer vos données.'
-    })
+    title: t('ImportsRun.sections.provider.title'),
+    label: t('ImportsRun.sections.provider.helper')
   }
 
   if (!enabled) {
@@ -121,12 +114,8 @@ const Run = () => {
 
         {isNextcloud && accounts.length > 0 && (
           <NextcloudPathSection
-            title={t('ImportsRun.sections.path.title', {
-              _: 'Chemin à importer'
-            })}
-            helper={t('ImportsRun.sections.path.helper', {
-              _: 'Le contenu sera copié dans Imports/Nextcloud/<login> dans Twake Drive.'
-            })}
+            title={t('ImportsRun.sections.path.title')}
+            helper={t('ImportsRun.sections.path.helper')}
             remotePath={ncImport.remotePath}
             busy={ncImport.busy}
             onChangeRemotePath={ncImport.setRemotePath}
@@ -153,9 +142,7 @@ const Run = () => {
               ncImport.status ||
               ncImport.importSummary) && (
               <ImportsProgress
-                title={t('ImportsRun.sections.progress.title', {
-                  _: 'Progression'
-                })}
+                title={t('ImportsRun.sections.progress.title')}
                 progress={ncImport.progress}
                 busy={ncImport.busy}
                 status={ncImport.status}
