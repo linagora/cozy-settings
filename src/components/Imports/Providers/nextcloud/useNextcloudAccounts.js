@@ -1,10 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 
-import {
-  findNextcloudAccounts,
-  createNextcloudAccount,
-  deleteNextcloudAccount
-} from './accountService'
+import { findNextcloudAccounts, deleteNextcloudAccount } from './accountService'
 
 export const useNextcloudAccounts = (client, enabled, isNextcloud) => {
   const [checking, setChecking] = useState(false)
@@ -41,25 +37,6 @@ export const useNextcloudAccounts = (client, enabled, isNextcloud) => {
     loadAccounts()
   }, [loadAccounts])
 
-  const createAccount = async ({ login, password, url }) => {
-    setError(null)
-
-    const acc = await createNextcloudAccount(client, {
-      login,
-      password,
-      url
-    })
-
-    if (acc?.error || acc?.errors) {
-      throw new Error(
-        acc?.error || acc?.errors?.[0]?.detail || 'Account creation failed'
-      )
-    }
-
-    await loadAccounts()
-    return acc?._id
-  }
-
   const removeAccount = async id => {
     setError(null)
     const acc = accounts.find(a => a._id === id)
@@ -79,7 +56,6 @@ export const useNextcloudAccounts = (client, enabled, isNextcloud) => {
     selectedId,
     setSelectedId,
     error,
-    createAccount,
     removeAccount,
     reload: loadAccounts
   }
