@@ -46,7 +46,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
 
       const newId = acc?._id
       if (!newId) {
-        throw new Error('Account created but no ID returned.')
+        throw new Error(t('ImportsRun.nc_dialog.error.no_id'))
       }
 
       onCreated(newId)
@@ -55,7 +55,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
       onClose()
     } catch (e) {
       setLoading(false)
-      setError(e?.message || 'Failed to create account.')
+      setError(e?.message || t('ImportsRun.nc_dialog.error.create_failed'))
     }
   }
 
@@ -63,11 +63,13 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
     <ConfirmDialog
       open={open}
       onClose={handleCancel}
-      title={t('ImportsRun.nc_dialog.title', { _: 'Nextcloud account' })}
+      title={t('ImportsRun.nc_dialog.title')}
       content={
         <>
           <label style={{ display: 'grid', gap: 4 }}>
-            <Typography variant="caption">Identifiant</Typography>
+            <Typography variant="caption">
+              {t('ImportsRun.nc_dialog.login_label')}
+            </Typography>
             <input
               type="text"
               value={login}
@@ -78,7 +80,9 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
           </label>
 
           <label style={{ display: 'grid', gap: 4, marginTop: 8 }}>
-            <Typography variant="caption">Mot de passe</Typography>
+            <Typography variant="caption">
+              {t('ImportsRun.nc_dialog.password_label')}
+            </Typography>
             <input
               type="password"
               value={password}
@@ -90,7 +94,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
 
           <label style={{ display: 'grid', gap: 4, marginTop: 8 }}>
             <Typography variant="caption">
-              Url de l&apos;instance Nextcloud
+              {t('ImportsRun.nc_dialog.url_label')}
             </Typography>
             <input
               type="text"
@@ -122,7 +126,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
             disabled={loading}
             onClick={handleCancel}
           >
-            Cancel
+            {t('ImportsRun.nc_dialog.cancel')}
           </Button>
 
           <Button
@@ -133,7 +137,9 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
             busy={loading}
             onClick={handleSubmit}
           >
-            {loading ? 'Connecting…' : 'Save account'}
+            {loading
+              ? t('ImportsRun.nc_dialog.connecting')
+              : t('ImportsRun.nc_dialog.save')}
           </Button>
         </>
       }

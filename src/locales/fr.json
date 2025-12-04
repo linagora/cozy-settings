@@ -370,7 +370,20 @@
     "helper": "Choisissez un fournisseur pour démarrer un import.",
     "disabled_helper": "Les imports sont désactivés. Activez-les dans les paramètres pour continuer.",
     "back_to_settings": "Retour aux paramètres",
-    "providers_placeholder": "Placeholder liste de fournisseurs (à brancher)."
+    "providers_placeholder": "Placeholder liste de fournisseurs (à brancher).",
+    "nc_dialog": {
+      "title": "Compte Nextcloud",
+      "login_label": "Identifiant",
+      "password_label": "Mot de passe",
+      "url_label": "URL de l’instance Nextcloud",
+      "cancel": "Annuler",
+      "save": "Enregistrer le compte",
+      "connecting": "Connexion…",
+      "error": {
+        "no_id": "Compte créé mais aucun identifiant n’a été retourné.",
+        "create_failed": "La création du compte a échoué."
+      }
+    }
   },
   "ImportsHistory": {
     "title": "Historique des imports",

@@ -372,7 +372,20 @@
     "helper": "Pick a provider to start an import.",
     "disabled_helper": "Imports are disabled. Enable them in settings to continue.",
     "back_to_settings": "Back to settings",
-    "providers_placeholder": "Providers list placeholder (to wire)."
+    "providers_placeholder": "Providers list placeholder (to wire).",
+    "nc_dialog": {
+      "title": "Nextcloud account",
+      "login_label": "Login",
+      "password_label": "Password",
+      "url_label": "Nextcloud instance URL",
+      "cancel": "Cancel",
+      "save": "Save account",
+      "connecting": "Connecting…",
+      "error": {
+        "no_id": "Account created but no ID returned.",
+        "create_failed": "Failed to create account."
+      }
+    }
   },
   "ImportsHistory": {
     "title": "Import history",
