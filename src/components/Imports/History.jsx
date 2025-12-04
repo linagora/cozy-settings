@@ -21,7 +21,6 @@ const History = () => {
           : t('ImportsHistory.disabled_helper')}
       </Typography>
 
-      {/* Placeholder historique — tu brancheras tes vraies données plus tard */}
       <div style={{ opacity: 0.7 }}>
         <Typography variant="caption">
           {t('ImportsHistory.placeholder')}

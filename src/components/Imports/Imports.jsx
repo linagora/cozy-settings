@@ -6,6 +6,7 @@ import Switch from 'cozy-ui/transpiled/react/Switch'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
+import styles from './imports.styl'
 import { routes } from '../../constants/routes'
 
 import { useImports } from '@/components/Imports/ImportsContext'
@@ -37,19 +38,12 @@ const Imports = () => {
         {t('ImportsView.helper')}
       </Typography>
 
-      <div
-        style={{
-          margin: '24px 0',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8
-        }}
-      >
+      <div className={styles['ImportsView-switchRow']}>
         <Switch checked={enabled} onChange={onSwitchChange} />
         <Typography variant="body1">{t('ImportsView.toggle')}</Typography>
       </div>
 
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+      <div className={styles['ImportsView-actionsRow']}>
         <Button
           variant="primary"
           disabled={!enabled}

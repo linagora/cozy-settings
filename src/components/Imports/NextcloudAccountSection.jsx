@@ -5,6 +5,8 @@ import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
+import styles from './imports.styl'
+
 import Select from '@/components/Select'
 
 const NextcloudAccountSection = ({
@@ -52,7 +54,7 @@ const NextcloudAccountSection = ({
 
       <Stack spacing="s">
         {checkingAccount ? (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div className={styles['ImportsNextcloudSection-row']}>
             <Spinner size="small" />
             <Typography variant="caption">Checking account…</Typography>
           </div>
@@ -71,14 +73,7 @@ const NextcloudAccountSection = ({
               }}
               isSearchable={false}
             />
-            <div
-              style={{
-                display: 'flex',
-                gap: 8,
-                alignItems: 'center',
-                flexWrap: 'wrap'
-              }}
-            >
+            <div className={styles['ImportsNextcloudSection-rowWrap']}>
               <Button size="small" variant="secondary" onClick={onAddAccount}>
                 Add account
               </Button>
@@ -93,14 +88,7 @@ const NextcloudAccountSection = ({
             </div>
           </>
         ) : (
-          <div
-            style={{
-              display: 'flex',
-              gap: 8,
-              alignItems: 'center',
-              flexWrap: 'wrap'
-            }}
-          >
+          <div className={styles['ImportsNextcloudSection-rowWrap']}>
             <Typography variant="caption" color="textSecondary">
               No Nextcloud account configured.
             </Typography>

@@ -5,6 +5,8 @@ import Stack from 'cozy-ui/transpiled/react/Stack'
 import TextField from 'cozy-ui/transpiled/react/TextField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
+import styles from './imports.styl'
+
 const NextcloudPathSection = ({
   title,
   helper,
@@ -35,14 +37,7 @@ const NextcloudPathSection = ({
         />
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          gap: 8,
-          alignItems: 'center',
-          flexWrap: 'wrap'
-        }}
-      >
+      <div className={styles['ImportsNextcloudPathSection-actions']}>
         <Button
           variant="primary"
           disabled={busy || !remotePath}

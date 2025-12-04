@@ -13,10 +13,7 @@ const ImportsContent = () => {
   const { t } = useI18n()
   const { isMobile } = useBreakpoints()
 
-  const onStartImport = () => {
-    // branche ici plus tard: open modal / navigate / trigger job
-    // pour l’instant on fait rien, c’est un squelette propre
-  }
+  const onStartImport = () => {}
 
   return (
     <Box
