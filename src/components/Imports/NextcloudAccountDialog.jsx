@@ -6,10 +6,7 @@ import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
-import {
-  createNextcloudAccount,
-  findNextcloudAccounts
-} from './Providers/nextcloud/accountService'
+import { createNextcloudAccount } from './Providers/nextcloud/accountService'
 
 const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
   const client = useClient()
@@ -47,15 +44,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
         url
       })
 
-      if (acc?.error || acc?.errors) {
-        throw new Error(
-          acc?.error || acc?.errors?.[0]?.detail || 'Account creation failed'
-        )
-      }
-
-      const all = await findNextcloudAccounts(client)
-      const newId = acc?._id || (all?.length ? all[all.length - 1]._id : null)
-
+      const newId = acc?._id
       if (!newId) {
         throw new Error('Account created but no ID returned.')
       }
