@@ -7,6 +7,7 @@ import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { createNextcloudAccount } from './Providers/nextcloud/accountService'
+import styles from './imports.styl'
 
 const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
   const client = useClient()
@@ -66,7 +67,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
       title={t('ImportsRun.nc_dialog.title')}
       content={
         <>
-          <label style={{ display: 'grid', gap: 4 }}>
+          <label className={styles['ImportsNextcloudDialog-field']}>
             <Typography variant="caption">
               {t('ImportsRun.nc_dialog.login_label')}
             </Typography>
@@ -75,11 +76,11 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
               value={login}
               onChange={e => setLogin(e.target.value)}
               disabled={loading}
-              style={{ padding: 8 }}
+              className={styles['ImportsNextcloudDialog-input']}
             />
           </label>
 
-          <label style={{ display: 'grid', gap: 4, marginTop: 8 }}>
+          <label className={styles['ImportsNextcloudDialog-fieldSpaced']}>
             <Typography variant="caption">
               {t('ImportsRun.nc_dialog.password_label')}
             </Typography>
@@ -88,11 +89,11 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
               value={password}
               onChange={e => setPassword(e.target.value)}
               disabled={loading}
-              style={{ padding: 8 }}
+              className={styles['ImportsNextcloudDialog-input']}
             />
           </label>
 
-          <label style={{ display: 'grid', gap: 4, marginTop: 8 }}>
+          <label className={styles['ImportsNextcloudDialog-fieldSpaced']}>
             <Typography variant="caption">
               {t('ImportsRun.nc_dialog.url_label')}
             </Typography>
@@ -102,7 +103,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
               onChange={e => setUrl(e.target.value)}
               disabled={loading}
               placeholder="https://mynextcloud.example.com"
-              style={{ padding: 8 }}
+              className={styles['ImportsNextcloudDialog-input']}
             />
           </label>
 
@@ -110,7 +111,7 @@ const NextcloudAccountDialog = ({ open, onClose, onCreated }) => {
             <Typography
               variant="caption"
               color="error"
-              style={{ marginTop: 8, display: 'block' }}
+              className={styles['ImportsNextcloudDialog-error']}
             >
               {String(error)}
             </Typography>
