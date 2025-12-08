@@ -30,19 +30,11 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
     abortRef.current = false
   }, [])
 
-  const readError = async e => {
-    try {
-      const raw = await e?.response?.text()
-      if (!raw) return e?.message || String(e)
-      try {
-        const j = JSON.parse(raw)
-        return j?.errors?.[0]?.detail || j?.error || raw
-      } catch {
-        return raw
-      }
-    } catch {
-      return e?.message || 'Error'
+  const readError = e => {
+    if (e?.body?.errors?.[0]) {
+      return JSON.stringify(e.body.errors[0])
     }
+    return e?.message || String(e)
   }
 
   const listRemote = async () => {
@@ -70,7 +62,7 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
         setRemotePreview(names)
       }
     } catch (e) {
-      setError(await readError(e))
+      setError(readError(e))
     } finally {
       setBusy(false)
     }
@@ -89,7 +81,7 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
     setBusy(true)
 
     try {
-      let accDoc = accounts.find(a => a._id === selectedId)
+      const accDoc = accounts.find(a => a._id === selectedId)
       const login = accDoc?.auth?.login || accDoc?.label || selectedId
 
       const { dirId: destId, path: destPath } = await ensureImportsDestination(
@@ -142,7 +134,7 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
       }
     } catch (e) {
       if (!abortRef.current) {
-        setError(await readError(e))
+        setError(readError(e))
       } else {
         setStatus('Import stopped by user.')
       }
