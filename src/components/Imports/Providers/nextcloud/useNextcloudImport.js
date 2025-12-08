@@ -92,7 +92,11 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
       let accDoc = accounts.find(a => a._id === selectedId)
       const login = accDoc?.auth?.login || accDoc?.label || selectedId
 
-      const destId = await ensureImportsDestination(client, 'Nextcloud', login)
+      const { dirId: destId, path: destPath } = await ensureImportsDestination(
+        client,
+        'Nextcloud',
+        login
+      )
 
       setStatus('Analyzing path…')
 
@@ -104,6 +108,7 @@ export const useNextcloudImport = (client, accounts, selectedId) => {
         {
           copy: true,
           maxDepth: 20,
+          baseCozyPath: destPath,
           onDiscovered: ({ files = 0 }) =>
             setProgress(prev => ({
               ...prev,

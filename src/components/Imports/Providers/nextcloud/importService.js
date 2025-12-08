@@ -1,4 +1,3 @@
-import { ensureChildDir } from './destinationService'
 import { joinRemotePath, extractName, build404Reason } from './pathUtils'
 import { probePath } from './remoteService'
 import { downstreamFile } from './transferService'
@@ -34,6 +33,12 @@ export function createLimiter(max = 3, isAborted) {
   return run
 }
 
+function buildCozyPath(baseCozyPath, remotePath) {
+  const cleanRemote = joinRemotePath(remotePath)
+  if (cleanRemote === '/') return baseCozyPath
+  return `${baseCozyPath}${cleanRemote}`
+}
+
 export async function importPathRecursive(
   client,
   accountId,
@@ -48,7 +53,8 @@ export async function importPathRecursive(
     onDiscovered,
     onProcessed,
     isAborted,
-    _limiter
+    _limiter,
+    baseCozyPath
   } = opts
 
   const limiter = _limiter || createLimiter(3, isAborted)
@@ -115,9 +121,14 @@ export async function importPathRecursive(
   let destId = targetDirId
 
   if (!isRoot) {
-    const folderName = probe.name || extractName(path)
-    const destDir = await ensureChildDir(client, targetDirId, folderName)
-    destId = destDir._id || destDir.id
+    if (!baseCozyPath) {
+      throw new Error('baseCozyPath is required to import directories')
+    }
+
+    const filesCollection = client.collection('io.cozy.files')
+    const cozyPath = buildCozyPath(baseCozyPath, path)
+    const destDirId = await filesCollection.ensureDirectoryExists(cozyPath)
+    destId = destDirId
     summary.foldersCreated += 1
   }
 
@@ -157,7 +168,8 @@ export async function importPathRecursive(
           onDiscovered,
           onProcessed,
           isAborted,
-          _limiter: limiter
+          _limiter: limiter,
+          baseCozyPath
         }
       )
       summary.filesCopied += sub.filesCopied

@@ -19,12 +19,12 @@ export const useNextcloudAccounts = (client, enabled, isNextcloud) => {
     setError(null)
 
     try {
-      const docs = await findNextcloudAccounts(client)
-      setAccounts(docs)
+      const nextcloudAccounts = await findNextcloudAccounts(client)
+      setAccounts(nextcloudAccounts)
       setSelectedId(prev => {
-        if (!docs.length) return ''
-        if (prev && docs.some(a => a._id === prev)) return prev
-        return docs[0]._id
+        if (!nextcloudAccounts.length) return ''
+        if (prev && nextcloudAccounts.some(a => a._id === prev)) return prev
+        return nextcloudAccounts[0]._id
       })
     } catch (e) {
       setError(e?.message || 'Accounts fetch failed')
