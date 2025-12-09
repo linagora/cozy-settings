@@ -10,9 +10,12 @@ export function createLimiter(max = 3, isAborted) {
     new Promise((resolve, reject) => {
       const task = async () => {
         if (isAborted?.()) {
-          resolve()
+          const err = new Error('Aborted')
+          err.isAborted = true
+          reject(err)
           return
         }
+
         active += 1
         try {
           const result = await fn()
@@ -113,7 +116,15 @@ export async function importPathRecursive(
       }
     })
 
-    await task
+    try {
+      await task
+    } catch (e) {
+      if (e?.isAborted) {
+        return summary
+      }
+      throw e
+    }
+
     return summary
   }
 
@@ -202,7 +213,14 @@ export async function importPathRecursive(
   }
 
   if (tasks.length > 0) {
-    await Promise.all(tasks)
+    try {
+      await Promise.all(tasks)
+    } catch (e) {
+      if (e?.isAborted) {
+        return summary
+      }
+      throw e
+    }
   }
 
   return summary

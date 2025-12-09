@@ -1,6 +1,6 @@
 import { Q } from 'cozy-client'
 
-import { joinRemotePath, extractName, build404Reason } from './pathUtils'
+import { joinRemotePath } from './pathUtils'
 
 const NEXTCLOUD_FILES_DOCTYPE = 'io.cozy.remote.nextcloud.files'
 
@@ -36,17 +36,9 @@ export async function probePath(client, accountId, path = '/') {
   }
 
   const parentPath = clean.split('/').slice(0, -1).join('/') || '/'
-  const name = extractName(clean)
+  const name = clean.split('/').pop()
 
-  let siblings
-  try {
-    siblings = await listRemote(client, accountId, parentPath)
-  } catch (e) {
-    const err = new Error(e?.message || 'Remote probe failed')
-    err.status = e?.status
-    err.path = clean
-    throw err
-  }
+  const siblings = await listRemote(client, accountId, parentPath)
 
   const entry = siblings.find(child => {
     const childName = child?.name || child?.attributes?.name
@@ -54,7 +46,7 @@ export async function probePath(client, accountId, path = '/') {
   })
 
   if (!entry) {
-    const err = new Error(`${name} - 404, ${build404Reason(clean)}`)
+    const err = new Error('Path not found on remote provider')
     err.status = 404
     err.path = clean
     throw err
