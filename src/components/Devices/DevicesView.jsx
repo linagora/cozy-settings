@@ -53,15 +53,24 @@ const DevicesView = () => {
     devicesQuery.definition,
     devicesQuery.options
   )
+
+  const isExpertMode = flag('settings.devices.expert')
+
   const devices = useMemo(
     () =>
       Array.isArray(data)
         ? data
-            .filter(
-              device =>
-                DISPLAYED_CLIENTS.includes(device.client_kind) &&
-                !device.pending
-            )
+            .filter(device => {
+              if (device.pending) {
+                return false
+              }
+
+              if (isExpertMode) {
+                return true
+              }
+
+              return DISPLAYED_CLIENTS.includes(device.client_kind)
+            })
             .sort((a, b) => {
               return a.client_name.localeCompare(b.client_name, lang, {
                 sensitivity: 'base',
@@ -69,8 +78,9 @@ const DevicesView = () => {
               })
             })
         : [],
-    [data, lang]
+    [data, lang, isExpertMode]
   )
+
   const isFetching = useMemo(
     () => isQueryLoading({ fetchStatus }) || hasMore,
     [fetchStatus, hasMore]
