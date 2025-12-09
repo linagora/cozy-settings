@@ -13,11 +13,3 @@ export function extractName(path) {
   const parts = clean.split('/').filter(Boolean)
   return parts.pop() || '/'
 }
-
-export function build404Reason(path) {
-  const name = extractName(path)
-  const hasWeirdChars = /[^\u0020-\u007E]/.test(name) || /[*'^()]/.test(name)
-  return hasWeirdChars
-    ? 'probable unsupported characters on Cozy side'
-    : 'not found on remote provider'
-}

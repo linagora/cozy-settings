@@ -1,4 +1,4 @@
-import { joinRemotePath, extractName, build404Reason } from './pathUtils'
+import { joinRemotePath, extractName } from './pathUtils'
 import { probePath } from './remoteService'
 import { downstreamFile } from './transferService'
 
@@ -85,7 +85,10 @@ export async function importPathRecursive(
       path,
       name: extractName(path),
       status: e?.status || null,
-      reason: e?.status === 404 ? build404Reason(path) : String(e?.message || e)
+      reason:
+        e?.status === 404
+          ? 'Folder not found on remote provider'
+          : String(e?.message || e)
     })
     return summary
   }
@@ -109,7 +112,9 @@ export async function importPathRecursive(
           name: extractName(path),
           status: e?.status || null,
           reason:
-            e?.status === 404 ? build404Reason(path) : String(e?.message || e)
+            e?.status === 404
+              ? 'File not found on remote provider'
+              : String(e?.message || e)
         })
       } finally {
         onProcessed?.({ path })
@@ -200,7 +205,7 @@ export async function importPathRecursive(
             status: e?.status || null,
             reason:
               e?.status === 404
-                ? build404Reason(childPath)
+                ? 'File not found on remote provider'
                 : String(e?.message || e)
           })
         } finally {
