@@ -40,7 +40,7 @@
     "oauth": {
       "description": "Required to manage devices connected to your Cozy",
       "type": "io.cozy.oauth.clients",
-      "verbs": ["GET", "DELETE"]
+      "verbs": ["GET", "DELETE", "POST"]
     },
     "apps": {
       "description": "Required by the cozy-bar to display the icons of the apps",

@@ -25,6 +25,7 @@ import tableStyles from '@/styles/table.styl'
 
 import { DevicesEmpty } from '@/components/Devices/DevicesEmpty'
 import DevicesModaleConfigureView from '@/components/Devices/DevicesModaleConfigureView'
+import DevicesModaleCreateOAuthClient from '@/components/Devices/DevicesModaleCreateOAuthClient'
 import { DevicesModaleRevokeView } from '@/components/Devices/DevicesModaleRevokeView'
 import { DevicesMoreMenu } from '@/components/Devices/DevicesMoreMenu'
 import {
@@ -47,6 +48,8 @@ const DevicesView = () => {
 
   const [deviceToConfigure, setDeviceToConfigure] = useState(null)
   const [deviceToRevoke, setDeviceToRevoke] = useState(null)
+  const [isCreateOAuthClientModalOpen, setIsCreateOAuthClientModalOpen] =
+    useState(false)
 
   const devicesQuery = buildDevicesQuery()
   const { data, hasMore, fetchMore, fetchStatus } = useQuery(
@@ -60,17 +63,12 @@ const DevicesView = () => {
     () =>
       Array.isArray(data)
         ? data
-            .filter(device => {
-              if (device.pending) {
-                return false
-              }
-
-              if (isExpertMode) {
-                return true
-              }
-
-              return DISPLAYED_CLIENTS.includes(device.client_kind)
-            })
+            .filter(device =>
+              isExpertMode
+                ? true
+                : DISPLAYED_CLIENTS.includes(device.client_kind) &&
+                  !device.pending
+            )
             .sort((a, b) => {
               return a.client_name.localeCompare(b.client_name, lang, {
                 sensitivity: 'base',
@@ -78,7 +76,7 @@ const DevicesView = () => {
               })
             })
         : [],
-    [data, lang, isExpertMode]
+    [data, isExpertMode, lang]
   )
 
   const isFetching = useMemo(
@@ -135,13 +133,28 @@ const DevicesView = () => {
         title={t('DevicesView.header.title')}
         subtitle={!isFetching ? t(...getSubtitle(devices.length)) : null}
         actions={
-          !hasUnlimitedDevices ? (
-            <PremiumLink
-              variant="secondary"
-              label={t('DevicesView.header.subscribe')}
-              fullWidth={false}
-            />
-          ) : null
+          <>
+            {isExpertMode && (
+              <MuiButton
+                variant="outlined"
+                color="primary"
+                className="u-mr-half"
+                onClick={() => {
+                  setIsCreateOAuthClientModalOpen(true)
+                }}
+              >
+                {t('DevicesView.create_oauth_client')}
+              </MuiButton>
+            )}
+
+            {!hasUnlimitedDevices ? (
+              <PremiumLink
+                variant="secondary"
+                label={t('DevicesView.header.subscribe')}
+                fullWidth={false}
+              />
+            ) : null}
+          </>
         }
       />
       {isFetching ? (
@@ -171,6 +184,13 @@ const DevicesView = () => {
               cancelAction={onDeviceConfigurationCanceled}
               onDeviceConfigured={onDeviceConfigured}
               device={deviceToConfigure}
+            />
+          ) : null}
+          {isCreateOAuthClientModalOpen ? (
+            <DevicesModaleCreateOAuthClient
+              onClose={() => {
+                setIsCreateOAuthClientModalOpen(false)
+              }}
             />
           ) : null}
           <TableHead>
@@ -215,6 +235,9 @@ const DevicesView = () => {
                     <Bd className="u-ml-1">
                       <span className={tableStyles['set-table-info-name']}>
                         {device.client_name}
+                        {device.pending && (
+                          <span className="u-ml-half">(pending)</span>
+                        )}
                       </span>
                       {isMobile && (
                         <span className={tableStyles['set-table-info-date']}>

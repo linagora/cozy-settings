@@ -340,7 +340,8 @@
     "head_actions": "Actions",
     "revoke": "révoquer",
     "configure": "configurer",
-    "sync_date_format": "d LLL yyyy"
+    "sync_date_format": "d LLL yyyy",
+    "create_oauth_client": "Créer un client OAuth"
   },
   "StorageView": {
     "title": "Stockage",
@@ -372,7 +373,23 @@
     "subText": "La synchronisation depuis cet appareil s'arrêtera immédiatement.",
     "validate": "Révoquer l'appareil",
     "cancel": "Annuler",
-    "error": "Je ne parviens pas à révoquer l'appareil, essayez de recharger la page."
+    "error": "Une erreur s'est produite lors de la révocation de l'appareil, essayez de recharger la page."
+  },
+  "createOAuthClient": {
+    "title": "Créer un client OAuth",
+    "description": "Créez un client OAuth pour autoriser une application tierce à accéder à votre Twake.",
+    "validation_error": "Merci de renseigner au minimum un nom de client et une URL de redirection.",
+    "error": "Une erreur s’est produite lors de la création du client OAuth, merci de réessayer plus tard.",
+    "success_description": "Le client OAuth a été créé. Copiez ces informations et conservez-les en lieu sûr. Vous ne pourrez plus voir le secret ensuite.",
+    "client_id": "Client ID",
+    "client_secret": "Client secret",
+    "client_name": "Nom du client",
+    "redirect_uri": "URL de redirection",
+    "client_kind": "Type de client",
+    "software_id": "Software ID (optionnel)",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "validate": "Créer le client"
   },
   "configureDevice": {
     "load_error": "Une erreur s'est produite pendant le chargement de vos dossiers, merci de réessayer prochainement.",

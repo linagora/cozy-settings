@@ -343,7 +343,24 @@
     "head_actions": "Actions",
     "revoke": "revoke",
     "configure": "configure",
-    "sync_date_format": "LLL d, yyyy"
+    "sync_date_format": "LLL d, yyyy",
+    "create_oauth_client": "Create OAuth client"
+  },
+  "createOAuthClient": {
+    "title": "Create OAuth client",
+    "description": "Create an OAuth client so that a third-party app can connect to your Twake.",
+    "validation_error": "Please fill at least a client name and a redirect URL.",
+    "error": "An error occurred while creating the OAuth client, please try again later.",
+    "success_description": "The OAuth client has been created. Copy these values and store them safely. You will not be able to see the secret again.",
+    "client_id": "Client ID",
+    "client_secret": "Client secret",
+    "client_name": "Client name",
+    "redirect_uri": "Redirect URL",
+    "client_kind": "Client kind",
+    "software_id": "Software ID (optional)",
+    "cancel": "Cancel",
+    "close": "Close",
+    "validate": "Create client"
   },
   "StorageView": {
     "title": "Storage",
