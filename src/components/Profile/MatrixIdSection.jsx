@@ -20,7 +20,7 @@ export const generateMatrixId = domain => {
     return ''
   }
 
-  return `${domain.substring(0, firstDotIndex)}:${domain.substring(
+  return `@${domain.substring(0, firstDotIndex)}:${domain.substring(
     firstDotIndex + 1
   )}`
 }
