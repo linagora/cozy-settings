@@ -60,7 +60,7 @@
     "accounts": {
       "description": "Required to manage accounts associated to konnectors",
       "type": "io.cozy.accounts",
-      "verbs": ["GET"]
+      "verbs": ["GET", "POST", "DELETE"]
     },
     "jobs": {
       "description": "Required to send emails to support",

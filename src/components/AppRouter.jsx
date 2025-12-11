@@ -8,6 +8,9 @@ import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import { DeleteAccount } from '@/components/DeleteAccount'
 import ChangeEmail from '@/components/Email/ChangeEmail'
+import History from '@/components/Imports/History'
+import Imports from '@/components/Imports/Imports'
+import Run from '@/components/Imports/Run'
 import PermissionsApplication from '@/components/Permissions/AppPermissions/AppPermissions'
 import DataPermissions from '@/components/Permissions/DataPermissions/DataPermissions'
 import PermissionDetails from '@/components/Permissions/PermissionDetails/PermissionDetails'
@@ -52,6 +55,14 @@ const AppRouter = () => {
       <Route path="/connectedDevices/:deviceId" element={<Devices />} />
       <Route path="/sessions" element={<Sessions />} />
       <Route path="/storage" element={<Storage />} />
+
+      {flag('settings.imports') && (
+        <>
+          <Route path={routes.imports} element={<Imports />} />
+          <Route path={routes.importsRun} element={<Run />} />
+          <Route path={routes.importsHistory} element={<History />} />
+        </>
+      )}
       <Route path={routes.lockScreen} element={<LockScreen />} />
       <Route path="/permissions/:page" element={<PermissionsTab />} />
       <Route
