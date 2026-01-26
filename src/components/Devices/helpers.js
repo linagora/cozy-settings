@@ -5,7 +5,10 @@ import DeviceBrowserIcon from 'cozy-ui/transpiled/react/Icons/DeviceBrowser'
 import LaptopIcon from 'cozy-ui/transpiled/react/Icons/Laptop'
 import PhoneIcon from 'cozy-ui/transpiled/react/Icons/Phone'
 
-import { COZY_DESKTOP_SOFTWARE_ID } from '@/lib/deviceConfigurationHelper'
+import {
+  DISPLAYED_CLIENTS,
+  COZY_DESKTOP_SOFTWARE_ID
+} from '@/lib/deviceConfigurationHelper'
 
 const deviceKindToIcon = {
   mobile: PhoneIcon,
@@ -44,4 +47,20 @@ export const getSubtitle = deviceCount => {
     'DevicesView.header.subtitle_without_flag',
     { smart_count: deviceCount }
   ]
+}
+
+export const isNeverDisplayedDevice = device => {
+  return device?.software_id === 'io.cozy.cloudery'
+}
+
+export const isDefaultDisplayedDevice = device => {
+  return (
+    DISPLAYED_CLIENTS.includes(device.client_kind) &&
+    !device.pending &&
+    !isNeverDisplayedDevice(device)
+  )
+}
+
+export const isExpertDisplayedDevice = device => {
+  return !isNeverDisplayedDevice(device)
 }
