@@ -341,7 +341,8 @@
     "revoke": "révoquer",
     "configure": "configurer",
     "sync_date_format": "d LLL yyyy",
-    "create_oauth_client": "Créer un client OAuth"
+    "create_oauth_client": "Créer un client OAuth",
+    "pending": "(En attente)"
   },
   "StorageView": {
     "title": "Stockage",
@@ -386,7 +387,7 @@
     "client_name": "Nom du client",
     "redirect_uri": "URL de redirection",
     "client_kind": "Type de client",
-    "software_id": "Software ID (optionnel)",
+    "software_id": "Software ID",
     "cancel": "Annuler",
     "close": "Fermer",
     "validate": "Créer le client"
