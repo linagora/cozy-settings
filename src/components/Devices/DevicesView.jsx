@@ -31,12 +31,14 @@ import { DevicesMoreMenu } from '@/components/Devices/DevicesMoreMenu'
 import {
   getDeviceIcon,
   canConfigureDevice,
-  getSubtitle
+  getSubtitle,
+  isDefaultDisplayedDevice,
+  isExpertDisplayedDevice,
+  isNeverDisplayedDevice
 } from '@/components/Devices/helpers'
 import Page from '@/components/Page'
 import { PageHeader } from '@/components/PageHeader'
 import { PremiumLink } from '@/components/Premium/PremiumLink'
-import { DISPLAYED_CLIENTS } from '@/lib/deviceConfigurationHelper'
 import { buildDevicesQuery } from '@/lib/queries'
 
 const DevicesView = () => {
@@ -63,12 +65,12 @@ const DevicesView = () => {
     () =>
       Array.isArray(data)
         ? data
-            .filter(device =>
-              isExpertMode
-                ? true
-                : DISPLAYED_CLIENTS.includes(device.client_kind) &&
-                  !device.pending
-            )
+            .filter(device => {
+              if (isNeverDisplayedDevice(device)) return false
+              return isExpertMode
+                ? isExpertDisplayedDevice(device)
+                : isDefaultDisplayedDevice(device)
+            })
             .sort((a, b) => {
               return a.client_name.localeCompare(b.client_name, lang, {
                 sensitivity: 'base',
@@ -236,7 +238,9 @@ const DevicesView = () => {
                       <span className={tableStyles['set-table-info-name']}>
                         {device.client_name}
                         {device.pending && (
-                          <span className="u-ml-half">(pending)</span>
+                          <span className="u-ml-half">
+                            {t('DevicesView.pending')}
+                          </span>
                         )}
                       </span>
                       {isMobile && (
@@ -282,8 +286,10 @@ const DevicesView = () => {
                     <MuiButton
                       color="primary"
                       onClick={() => {
+                        if (isNeverDisplayedDevice(device)) return
                         setDeviceToRevoke(device)
                       }}
+                      disabled={isNeverDisplayedDevice(device)}
                     >
                       {t('DevicesView.revoke')}
                     </MuiButton>

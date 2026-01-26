@@ -15,7 +15,11 @@ import tableStyles from '@/styles/table.styl'
 
 import { DevicesMoreButton } from '@/components/Devices/DevicesMoreButton'
 import { DevicesMoreMenuItem } from '@/components/Devices/DevicesMoreMenuItem'
-import { getDeviceIcon, canConfigureDevice } from '@/components/Devices/helpers'
+import {
+  getDeviceIcon,
+  canConfigureDevice,
+  isNeverDisplayedDevice
+} from '@/components/Devices/helpers'
 
 const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
   const { f, t } = useI18n()
@@ -69,10 +73,14 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
           ) : null}
           <DevicesMoreMenuItem
             className={tableStyles['action-menu-item']}
-            onClick={onRevoke}
+            onClick={() => {
+              if (isNeverDisplayedDevice(device)) return
+              onRevoke()
+            }}
             icon={TrashIcon}
             color="error"
             text={t('DevicesView.revoke')}
+            disabled={isNeverDisplayedDevice(device)}
           />
         </ActionMenu>
       ) : null}
