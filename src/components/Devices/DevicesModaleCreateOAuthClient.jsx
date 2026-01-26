@@ -3,15 +3,11 @@ import React, { useCallback, useState } from 'react'
 import { useClient } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { FixedDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import CheckIcon from 'cozy-ui/transpiled/react/Icons/Check'
-import CopyIcon from 'cozy-ui/transpiled/react/Icons/Copy'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
-import TextField from 'cozy-ui/transpiled/react/TextField'
-import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
+import DevicesCreateOAuthClientForm from '@/components/Devices/DevicesCreateOAuthClientForm'
+import DevicesCreatedOAuthClientCredentials from '@/components/Devices/DevicesCreatedOAuthClientCredentials'
 import logger from '@/lib/logger'
 
 const DevicesModaleCreateOAuthClient = ({ onClose }) => {
@@ -139,96 +135,25 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
       <Spinner size="xxlarge" />
     </div>
   ) : created ? (
-    <>
-      <Typography className="u-mb-1">
-        {t('createOAuthClient.success_description')}
-      </Typography>
-
-      <div className="u-flex u-flex-items-center u-mb-1">
-        <div className="u-flex-grow-1">
-          <TextField
-            label={t('createOAuthClient.client_id')}
-            value={created.clientId}
-            readOnly
-            fullWidth
-          />
-        </div>
-        <IconButton
-          className={
-            'u-ml-half u-mt-1' +
-            (copiedField === 'clientId' ? ' u-bg-successBackground' : '')
-          }
-          size="small"
-          onClick={() => handleCopy('clientId', created.clientId)}
-        >
-          <Icon icon={copiedField === 'clientId' ? CheckIcon : CopyIcon} />
-        </IconButton>
-      </div>
-
-      {created.clientSecret && (
-        <div className="u-flex u-flex-items-center">
-          <div className="u-flex-grow-1">
-            <TextField
-              className="u-mt-1"
-              label={t('createOAuthClient.client_secret')}
-              value={created.clientSecret}
-              readOnly
-              fullWidth
-            />
-          </div>
-          <IconButton
-            className={
-              'u-ml-half u-mt-1' +
-              (copiedField === 'clientSecret' ? ' u-bg-successBackground' : '')
-            }
-            size="small"
-            onClick={() => handleCopy('clientSecret', created.clientSecret)}
-          >
-            <Icon
-              icon={copiedField === 'clientSecret' ? CheckIcon : CopyIcon}
-            />
-          </IconButton>
-        </div>
-      )}
-    </>
+    <DevicesCreatedOAuthClientCredentials
+      t={t}
+      created={created}
+      copiedField={copiedField}
+      onCopy={handleCopy}
+    />
   ) : (
-    <>
-      {errorMessage && (
-        <div className="u-bg-errorBackground u-p-1 u-mb-1">
-          <Typography variant="body2">{errorMessage}</Typography>
-        </div>
-      )}
-      <Typography className="u-mb-1">
-        {t('createOAuthClient.description')}
-      </Typography>
-      <TextField
-        label={t('createOAuthClient.client_name')}
-        value={clientName}
-        onChange={event => setClientName(event.target.value)}
-        fullWidth
-      />
-      <TextField
-        className="u-mt-1"
-        label={t('createOAuthClient.redirect_uri')}
-        value={redirectUri}
-        onChange={event => setRedirectUri(event.target.value)}
-        fullWidth
-      />
-      <TextField
-        className="u-mt-1"
-        label={t('createOAuthClient.client_kind')}
-        value={clientKind}
-        onChange={event => setClientKind(event.target.value)}
-        fullWidth
-      />
-      <TextField
-        className="u-mt-1"
-        label={t('createOAuthClient.software_id')}
-        value={softwareId}
-        onChange={event => setSoftwareId(event.target.value)}
-        fullWidth
-      />
-    </>
+    <DevicesCreateOAuthClientForm
+      t={t}
+      errorMessage={errorMessage}
+      clientName={clientName}
+      onClientNameChange={setClientName}
+      redirectUri={redirectUri}
+      onRedirectUriChange={setRedirectUri}
+      clientKind={clientKind}
+      onClientKindChange={setClientKind}
+      softwareId={softwareId}
+      onSoftwareIdChange={setSoftwareId}
+    />
   )
 
   return (
