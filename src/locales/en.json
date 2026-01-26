@@ -361,7 +361,11 @@
     "software_id": "Software ID",
     "cancel": "Cancel",
     "close": "Close",
-    "validate": "Create client"
+    "validate": "Create client",
+    "copied": "Copied to clipboard",
+    "copy_failed": "Failed to copy to clipboard",
+    "copyClientId": "Copy client ID",
+    "copyClientSecret": "Copy client secret"
   },
   "StorageView": {
     "title": "Storage",
