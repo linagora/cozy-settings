@@ -344,7 +344,8 @@
     "revoke": "revoke",
     "configure": "configure",
     "sync_date_format": "LLL d, yyyy",
-    "create_oauth_client": "Create OAuth client"
+    "create_oauth_client": "Create OAuth client",
+    "pending": "(Pending)"
   },
   "createOAuthClient": {
     "title": "Create OAuth client",
@@ -357,7 +358,7 @@
     "client_name": "Client name",
     "redirect_uri": "Redirect URL",
     "client_kind": "Client kind",
-    "software_id": "Software ID (optional)",
+    "software_id": "Software ID",
     "cancel": "Cancel",
     "close": "Close",
     "validate": "Create client"
