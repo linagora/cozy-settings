@@ -21,7 +21,6 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
   const [loading, setLoading] = useState(false)
   const [created, setCreated] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
-  const [copiedField, setCopiedField] = useState(null)
 
   const handleSubmit = useCallback(async () => {
     if (!clientName || !redirectUri) {
@@ -31,7 +30,6 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
 
     try {
       setErrorMessage(null)
-      setCopiedField(null)
       setLoading(true)
 
       const payload = {
@@ -66,46 +64,6 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
     onClose()
   }, [onClose])
 
-  const handleCopy = useCallback(async (fieldKey, value) => {
-    if (!value) return
-
-    let copied = false
-
-    try {
-      if (
-        typeof navigator !== 'undefined' &&
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-      ) {
-        await navigator.clipboard.writeText(value)
-        copied = true
-      }
-    } catch (error) {
-      logger.warn(error)
-    }
-
-    if (!copied) {
-      try {
-        const textarea = document.createElement('textarea')
-        textarea.value = value
-        textarea.setAttribute('readonly', '')
-        textarea.style.position = 'absolute'
-        textarea.style.left = '-9999px'
-        document.body.appendChild(textarea)
-        textarea.select()
-        document.execCommand('copy')
-        document.body.removeChild(textarea)
-      } catch (error) {
-        logger.warn(error)
-      }
-    }
-
-    setCopiedField(fieldKey)
-    setTimeout(() => {
-      setCopiedField(current => (current === fieldKey ? null : current))
-    }, 2500)
-  }, [])
-
   const actions = created
     ? [
         <Button
@@ -135,12 +93,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
       <Spinner size="xxlarge" />
     </div>
   ) : created ? (
-    <DevicesCreatedOAuthClientCredentials
-      t={t}
-      created={created}
-      copiedField={copiedField}
-      onCopy={handleCopy}
-    />
+    <DevicesCreatedOAuthClientCredentials t={t} created={created} />
   ) : (
     <DevicesCreateOAuthClientForm
       t={t}

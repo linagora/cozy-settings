@@ -390,7 +390,11 @@
     "software_id": "Software ID",
     "cancel": "Annuler",
     "close": "Fermer",
-    "validate": "Créer le client"
+    "validate": "Créer le client",
+    "copied": "Copié dans le presse-papiers",
+    "copy_failed": "Échec de la copie dans le presse-papiers",
+    "copyClientId": "Copier le client ID",
+    "copyClientSecret": "Copier le client secret"
   },
   "configureDevice": {
     "load_error": "Une erreur s'est produite pendant le chargement de vos dossiers, merci de réessayer prochainement.",
