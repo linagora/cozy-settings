@@ -62,7 +62,9 @@ const ProfileView = ({
             </div>
             <PublicNameSection />
             {isEmailReadOnly ? <EmailReadOnlySection /> : <EmailSection />}
-            {isMatrixEnabled && <MatrixIdSection />}
+            {isMatrixEnabled && (
+              <MatrixIdSection email={instanceResult.data.email} />
+            )}
             {isPhoneEnabled && <PhoneNumberSection />}
             <PasswordSection />
             {isTwoFAEnabled && <TwoFA />}
