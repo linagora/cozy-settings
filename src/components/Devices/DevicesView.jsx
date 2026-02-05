@@ -159,6 +159,15 @@ const DevicesView = () => {
           </>
         }
       />
+
+      {isCreateOAuthClientModalOpen ? (
+        <DevicesModaleCreateOAuthClient
+          onClose={() => {
+            setIsCreateOAuthClientModalOpen(false)
+          }}
+        />
+      ) : null}
+
       {isFetching ? (
         <Spinner
           className="u-pos-fixed-s"
@@ -186,13 +195,6 @@ const DevicesView = () => {
               cancelAction={onDeviceConfigurationCanceled}
               onDeviceConfigured={onDeviceConfigured}
               device={deviceToConfigure}
-            />
-          ) : null}
-          {isCreateOAuthClientModalOpen ? (
-            <DevicesModaleCreateOAuthClient
-              onClose={() => {
-                setIsCreateOAuthClientModalOpen(false)
-              }}
             />
           ) : null}
           <TableHead>
