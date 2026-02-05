@@ -60,9 +60,18 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
     }
   }, [client, clientName, clientKind, redirectUri, softwareId, t])
 
-  const handleClose = useCallback(() => {
-    onClose()
-  }, [onClose])
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (
+        loading &&
+        (reason === 'backdropClick' || reason === 'escapeKeyDown')
+      ) {
+        return
+      }
+      onClose()
+    },
+    [loading, onClose]
+  )
 
   const actions = created
     ? [
