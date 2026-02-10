@@ -15,6 +15,7 @@ import {
 } from 'cozy-ui/transpiled/react/styles'
 import CozyTheme from 'cozy-ui-plus/dist/providers/CozyTheme'
 
+import { ImportsProvider } from '@/components/Imports/ImportsContext'
 import { PremiumProvider } from '@/components/Premium/PremiumProvider'
 import { FILES_DOCTYPE, CONTACTS_DOCTYPE, APPS_DOCTYPE } from '@/doctypes'
 
@@ -57,7 +58,9 @@ const AppProviders = ({ client, store, children }) => {
                     >
                       <BarProvider>
                         <PremiumProvider>
-                          <HashRouter>{children}</HashRouter>
+                          <ImportsProvider>
+                            <HashRouter>{children}</HashRouter>
+                          </ImportsProvider>
                         </PremiumProvider>
                       </BarProvider>
                     </DataProxyProvider>

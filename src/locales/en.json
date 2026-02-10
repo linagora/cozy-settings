@@ -377,6 +377,90 @@
     "storage_warning": "Storage is almost full. You can free up space by deleting unnecessary files or subscribing for more space.",
     "see_offer": "Upgrade storage"
   },
+  "ImportsView": {
+    "title": "Data imports",
+    "subtitle": "Bring your files and data from other services.",
+    "helper": "Enable imports to allow import tools to run on your device.",
+    "toggle": "Enable imports",
+    "primary": "Start an import",
+    "secondary": "View history",
+    "docs": "Documentation",
+    "load_error": "An error occurred while loading your import settings, please try again later.",
+    "action_run": "Start an import",
+    "action_history": "History",
+    "cta": "Start an import"
+  },
+  "ImportsRun": {
+    "title": "Start an import",
+    "helper": "Pick a provider to start an import.",
+    "disabled_helper": "Imports are disabled. Enable them in settings to continue.",
+    "back_to_settings": "Back to settings",
+    "providers_placeholder": "Providers list placeholder (to wire).",
+    "nc_dialog": {
+      "title": "Nextcloud account",
+      "login_label": "Login",
+      "password_label": "Password",
+      "url_label": "Nextcloud instance URL",
+      "cancel": "Cancel",
+      "save": "Save account",
+      "connecting": "Connecting…",
+      "error": {
+        "no_id": "Account created but no ID returned.",
+        "create_failed": "Failed to create account."
+      }
+    },
+    "errors": {
+      "unknown_path": "Unknown path",
+      "status_na": "n/a"
+    },
+    "providers": {
+      "nextcloud": "Nextcloud",
+      "googledrive": "Google Drive",
+      "dropbox": "Dropbox"
+    },
+    "sections": {
+      "preview": {
+        "title": "Preview (first 10)"
+      },
+      "progress": {
+        "title": "Progress",
+        "processed": "Processed: %{count}",
+        "total": "Total: %{count}",
+        "processing": "Processing: %{name}"
+      },
+      "account": {
+        "title": "Nextcloud account",
+        "helper": "Select or create a Nextcloud account to start an import.",
+        "hint_select_provider": "Select Nextcloud to check connection.",
+        "checking": "Checking account…",
+        "add": "Add account",
+        "delete_selected": "Delete selected account",
+        "none_configured": "No Nextcloud account configured.",
+        "create": "Create Nextcloud account"
+      },
+      "path": {
+        "title": "Path to import",
+        "helper": "Content will be copied into Imports/Nextcloud/<login> in Twake Drive.",
+        "label": "Remote path (Nextcloud)",
+        "placeholder": "/ or /Documents or /file.pdf",
+        "import": "Import",
+        "importing": "Importing…",
+        "list": "List remote",
+        "working": "Working…",
+        "stop": "Stop import"
+      },
+      "provider": {
+        "title": "Service",
+        "helper": "Pick a service to import your data from."
+      }
+    }
+  },
+  "ImportsHistory": {
+    "title": "Import history",
+    "helper": "Here is your import history.",
+    "disabled_helper": "Imports are disabled. Enable them to see history.",
+    "placeholder": "Execution history placeholder (to wire)."
+  },
   "SessionsView": {
     "title": "Web connection history",
     "sync_date_format": "LLL d, yyyy",

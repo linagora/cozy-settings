@@ -8,5 +8,8 @@ export const routes = {
   sessions: '/sessions',
   storage: '/storage',
   support: '/support',
-  subscription: '/subscription'
+  subscription: '/subscription',
+  imports: '/imports',
+  importsRun: '/imports/run',
+  importsHistory: '/imports/history'
 }

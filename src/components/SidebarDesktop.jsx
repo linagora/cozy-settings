@@ -6,6 +6,7 @@ import { makeDiskInfos } from 'cozy-client/dist/models/instance'
 import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
 import CloudIcon from 'cozy-ui/transpiled/react/Icons/Cloud'
+import ConnectorIcon from 'cozy-ui/transpiled/react/Icons/Connector'
 import ContractIcon from 'cozy-ui/transpiled/react/Icons/Contract'
 import DevicesIcon from 'cozy-ui/transpiled/react/Icons/Devices'
 import EmailIcon from 'cozy-ui/transpiled/react/Icons/Email'
@@ -146,7 +147,16 @@ export const SidebarDesktop = () => {
             <NavText>{t('Nav.sessions')}</NavText>
           </NavLink>
         </NavItem>
-
+        {flag('settings.imports') && (
+          <NavItem>
+            <NavLink to={routes.imports}>
+              <NavIcon icon={ConnectorIcon} />
+              <NavText className="u-flex-grow-1">
+                {t('ImportsView.title')}
+              </NavText>
+            </NavLink>
+          </NavItem>
+        )}
         <ListItem dense>
           <ListItemText
             className="u-uppercase"
