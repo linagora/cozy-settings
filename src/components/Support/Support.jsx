@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
@@ -7,7 +8,6 @@ import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
 import PaperplaneIcon from 'cozy-ui/transpiled/react/Icons/Paperplane'
 import Label from 'cozy-ui/transpiled/react/Label'
 import Textarea from 'cozy-ui/transpiled/react/Textarea'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import styles from './support.styl'
 

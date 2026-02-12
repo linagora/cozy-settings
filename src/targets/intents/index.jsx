@@ -1,6 +1,8 @@
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-ui-plus/dist/stylesheet.css'
 
+import createStore from '../../store'
+
 import '@/styles/services/index.styl'
 
 import React from 'react'
@@ -9,7 +11,9 @@ import { Provider } from 'react-redux'
 
 import CozyClient, { CozyProvider } from 'cozy-client'
 import flag from 'cozy-flags'
-import I18n from 'cozy-ui/transpiled/react/providers/I18n'
+
+import I18n from 'twake-i18n'
+
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
@@ -20,8 +24,6 @@ import {
   StylesProvider,
   createGenerateClassName
 } from '@material-ui/core/styles'
-
-import createStore from '../../store'
 
 const lang = document.documentElement.getAttribute('lang') || 'en'
 

@@ -1,8 +1,8 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { PremiumLink } from '@/components/Premium/PremiumLink'
 import ReactMarkdownWrapper from '@/components/ReactMarkdownWrapper'

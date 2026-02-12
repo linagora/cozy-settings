@@ -1,4 +1,5 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useInstanceInfo } from 'cozy-client'
 import { makeDiskInfos } from 'cozy-client/dist/models/instance'
@@ -17,7 +18,6 @@ import Logout from 'cozy-ui/transpiled/react/Icons/Logout'
 import PaletteIcon from 'cozy-ui/transpiled/react/Icons/Palette'
 import PeopleIcon from 'cozy-ui/transpiled/react/Icons/People'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import styles from '@/components/Sidebar.styl'
 

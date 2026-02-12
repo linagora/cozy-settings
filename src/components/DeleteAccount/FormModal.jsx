@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useClient, useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Textarea from 'cozy-ui/transpiled/react/Textarea'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { sendDeleteAccountRequest } from './helpers'
 

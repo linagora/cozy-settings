@@ -1,4 +1,5 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 import { UAParser } from 'ua-parser-js'
 
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -12,7 +13,6 @@ import BrowserSafariIcon from 'cozy-ui/transpiled/react/Icons/BrowserSafari'
 import DeviceBrowserIcon from 'cozy-ui/transpiled/react/Icons/DeviceBrowser'
 import { TableRow, TableCell } from 'cozy-ui/transpiled/react/deprecated/Table'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import tableStyles from '@/styles/table.styl'
 

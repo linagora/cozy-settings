@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import { IllustrationDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import exportImage from '@/assets/images/export-cozy-mail.svg?url'
 import ReactMarkdownWrapper from '@/components/ReactMarkdownWrapper'

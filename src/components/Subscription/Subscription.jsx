@@ -1,5 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import flag from 'cozy-flags'
 import PaperIcon from 'cozy-ui/transpiled/react/Icons/Paper'
@@ -8,7 +9,6 @@ import Paper from 'cozy-ui/transpiled/react/Paper'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { SubscriptionAccountsItem } from './SubscriptionAccountsItem'
 import styles from './subscription.styl'

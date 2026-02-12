@@ -6,12 +6,12 @@ import React, {
   useState
 } from 'react'
 import InputMask from 'react-input-mask'
+import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { Dialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import TextField from 'cozy-ui/transpiled/react/TextField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 interface PinCodeDialogProps {
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>

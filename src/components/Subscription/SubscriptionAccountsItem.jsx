@@ -1,11 +1,11 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import ExchangeIcon from 'cozy-ui/transpiled/react/Icons/Exchange'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
   isFlagDisabled,

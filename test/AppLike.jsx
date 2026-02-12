@@ -1,11 +1,11 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
+import I18n from 'twake-i18n'
 
 import CozyClient, { CozyProvider } from 'cozy-client'
 import { WebviewIntentProvider } from 'cozy-intent'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
-import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import en from '@/locales/en.json'
 

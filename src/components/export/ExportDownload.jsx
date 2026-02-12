@@ -1,13 +1,13 @@
 import compose from 'lodash/flowRight'
 import React, { Component } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { translate } from 'twake-i18n'
 
 import { withClient } from 'cozy-client'
 import { Dialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import ButtonAction from 'cozy-ui/transpiled/react/deprecated/ButtonAction'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 class ExportDownload extends Component {
   componentDidMount() {

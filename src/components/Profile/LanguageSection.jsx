@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useI18n } from 'twake-i18n'
 
 import { useQuery, useMutation } from 'cozy-client'
 import { isFlagshipApp } from 'cozy-device-helper'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { SET_LANG } from '@/actions'
 import Select from '@/components/Select'

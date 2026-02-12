@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import { translate } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import { Dialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import Input from 'cozy-ui/transpiled/react/legacy/Input'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import ReactMarkdownWrapper from '@/components/ReactMarkdownWrapper'
 import settingsConfig from '@/config'

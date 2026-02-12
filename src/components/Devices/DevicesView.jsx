@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React, { useMemo, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import { isQueryLoading, useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
@@ -19,7 +20,6 @@ import {
   TableCell
 } from 'cozy-ui/transpiled/react/deprecated/Table'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import tableStyles from '@/styles/table.styl'
 

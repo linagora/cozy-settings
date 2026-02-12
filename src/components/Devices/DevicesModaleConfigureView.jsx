@@ -1,6 +1,7 @@
 import cx from 'classnames'
 import React, { useCallback, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
@@ -20,7 +21,6 @@ import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { Media, Img } from 'cozy-ui/transpiled/react/deprecated/Media'
 import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { TreeItem, TreeView } from '@/components/CozyTreeView'
 import {

@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import flag from 'cozy-flags'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
   isFlagDisabled,

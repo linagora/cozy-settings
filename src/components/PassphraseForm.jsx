@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -10,7 +11,6 @@ import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { UnorderedList, ListItem } from 'cozy-ui/transpiled/react/UnorderedList'
 import Input from 'cozy-ui/transpiled/react/legacy/Input'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import styles from '@/styles/passphrase.styl'
 

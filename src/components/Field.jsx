@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { useState, useEffect, useRef } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
@@ -9,7 +10,6 @@ import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { Media, Bd, Img } from 'cozy-ui/transpiled/react/deprecated/Media'
 import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import { useTheme } from 'cozy-ui/transpiled/react/styles'
 import { useCozyTheme } from 'cozy-ui-plus/dist/providers/CozyTheme'
 

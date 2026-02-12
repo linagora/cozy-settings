@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import { useQuery, hasQueryBeenLoaded } from 'cozy-client'
 import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
   BlockingSubscriptionModal,

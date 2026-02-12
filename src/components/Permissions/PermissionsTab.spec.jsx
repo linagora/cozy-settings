@@ -5,7 +5,7 @@ import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoi
 
 import PermissionsTab from './PermissionsTab'
 
-jest.mock('cozy-ui/transpiled/react/providers/I18n/withLocales', () => {
+jest.mock('twake-i18n/dist/withLocales', () => {
   return () => Component => {
     const t = text => text
     const match = { params: { page: 'slug' } }

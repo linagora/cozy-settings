@@ -2,10 +2,10 @@ import compose from 'lodash/flowRight'
 import React from 'react'
 import { connect } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import { translate } from 'twake-i18n'
 
 import { withClient } from 'cozy-client'
 import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
   updatePassphrase,
