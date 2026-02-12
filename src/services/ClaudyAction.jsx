@@ -1,7 +1,7 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { Button, ButtonLink } from 'cozy-ui/transpiled/react/deprecated/Button'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 export const ClaudyAction = ({ action, iconSrc, url, onActionClick }) => {
   const { t } = useI18n()

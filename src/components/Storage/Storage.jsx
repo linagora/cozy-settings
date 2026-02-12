@@ -1,7 +1,7 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import StorageContent from './StorageContent'
 

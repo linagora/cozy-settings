@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { Dialog as DialogComponent } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Divider from 'cozy-ui/transpiled/react/Divider'
@@ -15,7 +16,6 @@ import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import { NavigationListSection } from 'cozy-ui/transpiled/react/NavigationList'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import withAllLocales from '../../../lib/withAllLocales'
 import { sortDataByDate } from '../helpers/permissionsHelper'

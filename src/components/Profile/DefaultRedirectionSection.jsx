@@ -1,9 +1,9 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useClient, useQuery, useMutation } from 'cozy-client'
 import { isFlagshipApp } from 'cozy-device-helper'
 import { useWebviewIntent } from 'cozy-intent'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
   formatOptions,

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useMatch, useNavigate } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import { BarCenter, BarLeft } from 'cozy-bar'
 import BarTitle from 'cozy-ui/transpiled/react/BarTitle'
@@ -8,7 +9,6 @@ import IconButton from 'cozy-ui/transpiled/react/IconButton'
 import PreviousIcon from 'cozy-ui/transpiled/react/Icons/Previous'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 const barTitleStyle = { height: '3rem', display: 'flex', alignItems: 'center' }
 

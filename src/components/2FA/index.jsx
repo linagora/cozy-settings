@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useQuery, useMutation } from 'cozy-client'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import Activate2FA from '@/components/2FA/Activate2FA'
 import Desactivate2FA from '@/components/2FA/Desactivate2FA'

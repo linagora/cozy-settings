@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
@@ -6,7 +7,6 @@ import FormTextHelper from 'cozy-ui/transpiled/react/FormHelperText'
 import PasswordInput from 'cozy-ui/transpiled/react/Labs/PasswordInput'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import CreatePasswordHint from '@/components/2FA/CreatePasswordHint'
 import { forceSetPassphrase } from '@/components/2FA/helpers'

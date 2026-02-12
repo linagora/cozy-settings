@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import PasswordField from 'cozy-ui/transpiled/react/PasswordField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import useCheckPassword from '@/hooks/useCheckPassword'
 

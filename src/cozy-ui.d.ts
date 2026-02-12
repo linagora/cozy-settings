@@ -55,7 +55,7 @@ declare module 'cozy-ui/transpiled/react/Icons/*' {
   export default (): JSX.Element => element as JSX.Element
 }
 
-declare module 'cozy-ui/transpiled/react/providers/I18n' {
+declare module 'twake-i18n' {
   const useI18n = (): {
     t: (key: string, vars?: Record<string, unknown>) => string
   } => {

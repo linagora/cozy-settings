@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
 import { isFlagshipApp } from 'cozy-device-helper'
@@ -7,7 +8,6 @@ import MenuItem from 'cozy-ui/transpiled/react/MenuItem'
 import TextField from 'cozy-ui/transpiled/react/TextField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useBreakpoints } from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import { useTheme } from 'cozy-ui/transpiled/react/styles'
 import { useCozyTheme } from 'cozy-ui-plus/dist/providers/CozyTheme'
 

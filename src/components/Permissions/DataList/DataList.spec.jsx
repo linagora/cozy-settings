@@ -6,17 +6,13 @@ import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoi
 
 import DataList from './DataList'
 
-jest.mock(
-  'cozy-ui/transpiled/react/providers/I18n/withLocales',
-  () => () => Component => () =>
-    (
-      <Component
-        t={(text, { smart_count } = {}) =>
-          smart_count ? `${text}${smart_count}` : text
-        }
-      />
-    )
-)
+jest.mock('twake-i18n/dist/withLocales', () => () => Component => () => (
+  <Component
+    t={(text, { smart_count } = {}) =>
+      smart_count ? `${text}${smart_count}` : text
+    }
+  />
+))
 
 jest.mock('react-router-dom', () => {
   return {

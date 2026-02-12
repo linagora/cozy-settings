@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import GearIcon from 'cozy-ui/transpiled/react/Icons/Gear'
@@ -9,7 +10,6 @@ import ActionMenu, {
   ActionMenuHeader
 } from 'cozy-ui/transpiled/react/deprecated/ActionMenu'
 import { Media, Img, Bd } from 'cozy-ui/transpiled/react/deprecated/Media'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import tableStyles from '@/styles/table.styl'
 

@@ -1,7 +1,7 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useQuery } from 'cozy-client'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import Input from '@/components/Input'
 import { buildSettingsInstanceQuery } from '@/lib/queries'

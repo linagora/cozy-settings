@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -6,7 +7,6 @@ import BottomIcon from 'cozy-ui/transpiled/react/Icons/Bottom'
 import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import TextField from 'cozy-ui/transpiled/react/TextField'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 const CreatePasswordHint = ({ value, onChange, sameAsPassword }) => {
   const { t } = useI18n()

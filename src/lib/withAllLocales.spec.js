@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
+import { useI18n } from 'twake-i18n'
 
 import withAllLocales from './withAllLocales'
 

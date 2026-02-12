@@ -1,4 +1,5 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
@@ -6,7 +7,6 @@ import Alert from 'cozy-ui/transpiled/react/Alert'
 import AlertTitle from 'cozy-ui/transpiled/react/AlertTitle'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Stack from 'cozy-ui/transpiled/react/Stack'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import Input from '@/components/Input'
 import { buildSettingsInstanceQuery } from '@/lib/queries'

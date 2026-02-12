@@ -1,7 +1,6 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 import { UAParser } from 'ua-parser-js'
-
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import tableStyles from '@/styles/table.styl'
 

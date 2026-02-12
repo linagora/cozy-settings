@@ -1,4 +1,5 @@
 import React from 'react'
+import { useI18n } from 'twake-i18n'
 
 import Divider from 'cozy-ui/transpiled/react/Divider'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -12,7 +13,6 @@ import NavigationList, {
 } from 'cozy-ui/transpiled/react/NavigationList'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import AppIcon from 'cozy-ui-plus/dist/AppIcon'
 
 import useAppsOrKonnectors from '@/components/Permissions/hooks/useAppsOrKonnectors'

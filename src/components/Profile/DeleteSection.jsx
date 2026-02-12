@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
@@ -7,7 +8,6 @@ import ChatIcon from 'cozy-ui/transpiled/react/Icons/Chat'
 import DriveIcon from 'cozy-ui/transpiled/react/Icons/Drive'
 import MailIcon from 'cozy-ui/transpiled/react/Icons/Mail'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 const DeleteSection = () => {
   const { t } = useI18n()

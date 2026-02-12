@@ -1,9 +1,9 @@
 import compose from 'lodash/flowRight'
 import { connect } from 'react-redux'
+import { translate } from 'twake-i18n'
 
 import { withClient } from 'cozy-client'
 import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { fetchSessions, deleteOtherSessions } from '@/actions'
 import SessionsView from '@/components/SessionsView'

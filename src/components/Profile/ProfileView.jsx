@@ -1,12 +1,12 @@
 import React from 'react'
 import { Outlet, useParams } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import { hasQueryBeenLoaded, useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import TwoFA from '@/components/2FA'
 import EmailReadOnlySection from '@/components/Email/EmailReadOnlySection'

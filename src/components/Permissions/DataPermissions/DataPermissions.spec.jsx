@@ -5,7 +5,7 @@ import { useQuery, isQueryLoading, hasQueryBeenLoaded } from 'cozy-client'
 
 import DataPermissions from './DataPermissions'
 
-jest.mock('cozy-ui/transpiled/react/providers/I18n/withLocales', () => {
+jest.mock('twake-i18n/dist/withLocales', () => {
   return () => Component => {
     const t = text => text
     const match = { params: { permission: 'io.cozy.apps' } }

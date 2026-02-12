@@ -1,8 +1,8 @@
 import compose from 'lodash/flowRight'
 import { connect } from 'react-redux'
+import { translate } from 'twake-i18n'
 
 import { withClient } from 'cozy-client'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { fetchInfos } from '@/actions'
 import { sendMessageToSupport } from '@/actions/email'

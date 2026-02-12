@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { translate } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import {
@@ -7,7 +8,6 @@ import {
 } from 'cozy-ui/transpiled/react/CozyDialogs'
 import TextField from 'cozy-ui/transpiled/react/TextField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { STACK_DOMAIN } from '@/actions'
 import importImage from '@/assets/images/import-cozy.svg?url'

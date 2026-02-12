@@ -1,6 +1,5 @@
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-ui/dist/cozy-ui.utils.min.css'
-import 'cozy-ui-plus/dist/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
 
 import { captureConsoleIntegration } from '@sentry/integrations'
@@ -18,6 +17,7 @@ import CozyClient from 'cozy-client'
 import flag from 'cozy-flags'
 import { RealtimePlugin } from 'cozy-realtime'
 import 'cozy-search/dist/stylesheet.css'
+import 'cozy-ui-plus/dist/stylesheet.css'
 
 import manifest from '../../../manifest.webapp'
 

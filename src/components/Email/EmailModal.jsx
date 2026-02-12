@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
+import { useI18n } from 'twake-i18n'
 
 import { useClient, useQuery } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import TextField from 'cozy-ui/transpiled/react/TextField'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import emailHelper from '@/lib/emailHelper'
 import { buildSettingsInstanceQuery } from '@/lib/queries'

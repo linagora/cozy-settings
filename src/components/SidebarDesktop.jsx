@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink as RouterLink } from 'react-router-dom'
+import { useI18n } from 'twake-i18n'
 
 import { useInstanceInfo } from 'cozy-client'
 import { makeDiskInfos } from 'cozy-client/dist/models/instance'
@@ -29,7 +30,6 @@ import Nav, {
 } from 'cozy-ui/transpiled/react/Nav'
 import Sidebar from 'cozy-ui/transpiled/react/Sidebar'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { usePremium } from '@/components/Premium/PremiumProvider'
 import { routes } from '@/constants/routes'
