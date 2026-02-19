@@ -38,9 +38,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
         client_kind: clientKind
       }
 
-      if (softwareId) {
-        payload.software_id = softwareId
-      }
+      payload.software_id = softwareId || 'webapp'
 
       const result = await client.stackClient.fetchJSON(
         'POST',
