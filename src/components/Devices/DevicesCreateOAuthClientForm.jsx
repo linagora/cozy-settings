@@ -28,6 +28,7 @@ const DevicesCreateOAuthClientForm = ({
       <TextField
         label={t('createOAuthClient.client_name')}
         value={clientName}
+        placeholder="My App"
         onChange={event => onClientNameChange(event.target.value)}
         fullWidth
       />
@@ -35,6 +36,7 @@ const DevicesCreateOAuthClientForm = ({
         className="u-mt-1"
         label={t('createOAuthClient.redirect_uri')}
         value={redirectUri}
+        placeholder="https://app.example.com/oauth/callback"
         onChange={event => onRedirectUriChange(event.target.value)}
         fullWidth
       />
@@ -42,6 +44,7 @@ const DevicesCreateOAuthClientForm = ({
         className="u-mt-1"
         label={t('createOAuthClient.client_kind')}
         value={clientKind}
+        placeholder="web"
         onChange={event => onClientKindChange(event.target.value)}
         fullWidth
       />
@@ -49,6 +52,7 @@ const DevicesCreateOAuthClientForm = ({
         className="u-mt-1"
         label={t('createOAuthClient.software_id')}
         value={softwareId}
+        placeholder="webapp"
         onChange={event => onSoftwareIdChange(event.target.value)}
         fullWidth
       />
