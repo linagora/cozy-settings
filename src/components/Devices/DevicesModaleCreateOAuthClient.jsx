@@ -23,11 +23,13 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
   const [errorMessage, setErrorMessage] = useState(null)
 
   const handleSubmit = useCallback(async () => {
+    const trimmedClientName = clientName.trim()
+
     const cleanedRedirectUris = redirectUris
       .map(uri => uri.trim())
       .filter(Boolean)
 
-    if (!clientName || cleanedRedirectUris.length === 0) {
+    if (!trimmedClientName || cleanedRedirectUris.length === 0) {
       setErrorMessage(t('createOAuthClient.validation_error'))
       return
     }
@@ -37,7 +39,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
       setLoading(true)
 
       const payload = {
-        client_name: clientName,
+        client_name: trimmedClientName,
         redirect_uris: cleanedRedirectUris,
         client_kind: clientKind,
         software_id: softwareId || 'webapp'
