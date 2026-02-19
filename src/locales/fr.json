@@ -394,7 +394,9 @@
     "copied": "Copié dans le presse-papiers",
     "copy_failed": "Échec de la copie dans le presse-papiers",
     "copyClientId": "Copier le client ID",
-    "copyClientSecret": "Copier le client secret"
+    "copyClientSecret": "Copier le client secret",
+    "add_redirect_uri": "Ajouter une URL de redirection",
+    "remove_redirect_uri": "Supprimer cette URL"
   },
   "configureDevice": {
     "load_error": "Une erreur s'est produite pendant le chargement de vos dossiers, merci de réessayer prochainement.",

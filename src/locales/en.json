@@ -365,7 +365,9 @@
     "copied": "Copied to clipboard",
     "copy_failed": "Failed to copy to clipboard",
     "copyClientId": "Copy client ID",
-    "copyClientSecret": "Copy client secret"
+    "copyClientSecret": "Copy client secret",
+    "add_redirect_uri": "Add redirect URL",
+    "remove_redirect_uri": "Remove this URL"
   },
   "StorageView": {
     "title": "Storage",
