@@ -81,10 +81,11 @@ const DevicesCreateOAuthClientForm = ({
           <div className="u-flex u-flex-justify-center">
             {showRemove ? (
               <IconButton
+                color="error"
                 aria-label={t('createOAuthClient.remove_redirect_uri')}
                 onClick={() => handleRemoveRedirectUri(index)}
               >
-                <Icon icon={TrashIcon} color="error" />
+                <Icon icon={TrashIcon} />
               </IconButton>
             ) : null}
           </div>
@@ -92,10 +93,11 @@ const DevicesCreateOAuthClientForm = ({
           <div className="u-flex u-flex-justify-center">
             {index === 0 ? (
               <IconButton
+                color="primary"
                 aria-label={t('createOAuthClient.add_redirect_uri')}
                 onClick={handleAddRedirectUri}
               >
-                <Icon icon={PlusIcon} color="primary" />
+                <Icon icon={PlusIcon} />
               </IconButton>
             ) : null}
           </div>
