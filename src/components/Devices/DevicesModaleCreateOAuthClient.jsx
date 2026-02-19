@@ -15,7 +15,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
   const client = useClient()
 
   const [clientName, setClientName] = useState('')
-  const [redirectUri, setRedirectUri] = useState('')
+  const [redirectUris, setRedirectUris] = useState([''])
   const [clientKind, setClientKind] = useState('web')
   const [softwareId, setSoftwareId] = useState('')
   const [loading, setLoading] = useState(false)
@@ -23,7 +23,11 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
   const [errorMessage, setErrorMessage] = useState(null)
 
   const handleSubmit = useCallback(async () => {
-    if (!clientName || !redirectUri) {
+    const cleanedRedirectUris = redirectUris
+      .map(uri => uri.trim())
+      .filter(Boolean)
+
+    if (!clientName || cleanedRedirectUris.length === 0) {
       setErrorMessage(t('createOAuthClient.validation_error'))
       return
     }
@@ -34,11 +38,10 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
 
       const payload = {
         client_name: clientName,
-        redirect_uris: [redirectUri],
-        client_kind: clientKind
+        redirect_uris: cleanedRedirectUris,
+        client_kind: clientKind,
+        software_id: softwareId || 'webapp'
       }
-
-      payload.software_id = softwareId || 'webapp'
 
       const result = await client.stackClient.fetchJSON(
         'POST',
@@ -56,7 +59,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
     } finally {
       setLoading(false)
     }
-  }, [client, clientName, clientKind, redirectUri, softwareId, t])
+  }, [client, clientName, clientKind, redirectUris, softwareId, t])
 
   const handleClose = useCallback(
     (event, reason) => {
@@ -107,8 +110,8 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
       errorMessage={errorMessage}
       clientName={clientName}
       onClientNameChange={setClientName}
-      redirectUri={redirectUri}
-      onRedirectUriChange={setRedirectUri}
+      redirectUris={redirectUris}
+      onRedirectUrisChange={setRedirectUris}
       clientKind={clientKind}
       onClientKindChange={setClientKind}
       softwareId={softwareId}
