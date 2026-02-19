@@ -49,6 +49,7 @@ const DevicesCreateOAuthClientForm = ({
       </Typography>
 
       <TextField
+        variant="outlined"
         label={t('createOAuthClient.client_name')}
         value={clientName}
         placeholder="My App"
@@ -63,12 +64,13 @@ const DevicesCreateOAuthClientForm = ({
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 40px 40px',
-            columnGap: '0.5rem',
-            alignItems: 'center',
+            columnGap: '4px',
+            alignItems: 'start',
             width: '100%'
           }}
         >
           <TextField
+            variant="outlined"
             label={t('createOAuthClient.redirect_uri')}
             value={uri}
             placeholder="https://app.example.com/oauth/callback"
@@ -78,7 +80,10 @@ const DevicesCreateOAuthClientForm = ({
             fullWidth
           />
 
-          <div className="u-flex u-flex-justify-center">
+          <div
+            style={{ paddingTop: '6px' }}
+            className="u-flex u-flex-justify-center"
+          >
             {showRemove ? (
               <IconButton
                 color="error"
@@ -90,7 +95,10 @@ const DevicesCreateOAuthClientForm = ({
             ) : null}
           </div>
 
-          <div className="u-flex u-flex-justify-center">
+          <div
+            style={{ paddingTop: '6px' }}
+            className="u-flex u-flex-justify-center"
+          >
             {index === 0 ? (
               <IconButton
                 color="primary"
@@ -106,6 +114,7 @@ const DevicesCreateOAuthClientForm = ({
 
       <TextField
         className="u-mt-1"
+        variant="outlined"
         label={t('createOAuthClient.client_kind')}
         value={clientKind}
         placeholder="web"
@@ -115,6 +124,7 @@ const DevicesCreateOAuthClientForm = ({
 
       <TextField
         className="u-mt-1"
+        variant="outlined"
         label={t('createOAuthClient.software_id')}
         value={softwareId}
         placeholder="webapp"
