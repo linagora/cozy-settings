@@ -60,7 +60,7 @@
     "prettier": "2.8.8",
     "react-hot-loader": "4.13.0",
     "react-test-renderer": "18.2.0",
-    "rsbuild-config-cozy-app": "^0.6.0",
+    "rsbuild-config-cozy-app": "^0.7.1",
     "swc_mut_cjs_exports": "^8.0.1",
     "typescript": "5.5.2",
     "typescript-plugin-css-modules": "3.4.0"
