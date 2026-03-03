@@ -3,7 +3,6 @@ import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import flag from 'cozy-flags'
-import PaperIcon from 'cozy-ui/transpiled/react/Icons/Paper'
 import List from 'cozy-ui/transpiled/react/List'
 import Paper from 'cozy-ui/transpiled/react/Paper'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
@@ -18,12 +17,9 @@ import PageTitle from '@/components/PageTitle'
 import { PremiumLink } from '@/components/Premium/PremiumLink'
 import { usePremium } from '@/components/Premium/PremiumProvider'
 import { SubscriptionDevicesItem } from '@/components/Subscription/SubscriptionDevicesItem'
-import { SubscriptionFlagItem } from '@/components/Subscription/SubscriptionFlagItem'
 import { SubscriptionNotesItem } from '@/components/Subscription/SubscriptionNotesItem'
 import { SubscriptionOnlyOfficeItem } from '@/components/Subscription/SubscriptionOnlyOfficeItem'
-import { SubscriptionPasswordsItem } from '@/components/Subscription/SubscriptionPasswordsItem'
 import { SubscriptionStorageItem } from '@/components/Subscription/SubscriptionStorageItem'
-import { SubscriptionStoreItem } from '@/components/Subscription/SubscriptionStoreItem'
 import { SubscriptionSupportItem } from '@/components/Subscription/SubscriptionSupportItem'
 
 /**
@@ -59,17 +55,10 @@ const Subscription = () => {
             <List dense disabledGutters>
               <SubscriptionStorageItem />
               <SubscriptionSupportItem />
-              <SubscriptionPasswordsItem />
               {flag('drive.office.enabled') && <SubscriptionOnlyOfficeItem />}
               <SubscriptionNotesItem />
-              <SubscriptionStoreItem />
               <SubscriptionDevicesItem />
               <SubscriptionAccountsItem />
-              <SubscriptionFlagItem
-                icon={PaperIcon}
-                name="mespapiers.papers.max"
-                hideWithoutFlag
-              />
             </List>
             {canOpenPremiumLink && premiumLink && (
               <div className="u-flex u-flex-justify-center">
