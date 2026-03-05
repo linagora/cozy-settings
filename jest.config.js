@@ -14,7 +14,7 @@ module.exports = {
     '^cozy-ui/react(.*)$': '<rootDir>/node_modules/cozy-ui/transpiled/react$1',
     '^cozy-client$': 'cozy-client/dist/index.js',
     'test/(.*)$': '<rootDir>/test/$1',
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   transformIgnorePatterns: ['node_modules/(?!cozy-ui)/'],
   transform: {
@@ -23,7 +23,7 @@ module.exports = {
       {
         jsc: {
           experimental: {
-            plugins: [['swc_mut_cjs_exports', {}]]
+            plugins: [['@swc-contrib/mut-cjs-exports', {}]]
           },
           parser: {
             jsx: true
@@ -36,7 +36,7 @@ module.exports = {
       {
         jsc: {
           experimental: {
-            plugins: [['swc_mut_cjs_exports', {}]]
+            plugins: [['@swc-contrib/mut-cjs-exports', {}]]
           },
           parser: {
             syntax: 'typescript',
