@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DevicesModaleConfigureView when the folders query yields folders with hierarchies should render a tree view of the hierarchies 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body
     style="padding-right: 0px; overflow: hidden;"
@@ -21,7 +21,7 @@ Object {
       <div
         aria-hidden="true"
         class="MuiBackdrop-root"
-        style="opacity: 1; transition-delay: 50px; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 50ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;"
+        style="opacity: 1; transition-delay: 50px; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;"
       />
       <div
         data-test="sentinelStart"
@@ -177,7 +177,7 @@ Object {
               >
                 <div
                   class="MuiCardHeader-root u-pv-0 u-pl-0 u-pr-1-half"
-                  style="flex-direction: row-reverse;"
+                  style="background-color: var(--defaultBackgroundColor); flex-direction: row-reverse;"
                 >
                   <div
                     class="MuiCardHeader-content"
