@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`AppList should display appName when query has been loaded 1`] = `
 <div>
@@ -40,6 +40,7 @@ exports[`AppList should display appName when query has been loaded 1`] = `
             <svg
               class="u-mr-1 styles__icon___23x3R"
               height="16"
+              style="color: var(--secondaryTextColor);"
               viewBox="0 0 16 16"
               width="16"
             >
@@ -85,6 +86,7 @@ exports[`AppList should display appName when query has been loaded 1`] = `
             <svg
               class="u-mr-1 styles__icon___23x3R"
               height="16"
+              style="color: var(--secondaryTextColor);"
               viewBox="0 0 16 16"
               width="16"
             >
@@ -143,6 +145,7 @@ exports[`AppList should display sorted app and konnector names when query is not
             <svg
               class="u-mr-1 styles__icon___23x3R"
               height="16"
+              style="color: var(--secondaryTextColor);"
               viewBox="0 0 16 16"
               width="16"
             >
@@ -188,6 +191,7 @@ exports[`AppList should display sorted app and konnector names when query is not
             <svg
               class="u-mr-1 styles__icon___23x3R"
               height="16"
+              style="color: var(--secondaryTextColor);"
               viewBox="0 0 16 16"
               width="16"
             >
