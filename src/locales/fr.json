@@ -396,7 +396,10 @@
     "copyClientId": "Copier le client ID",
     "copyClientSecret": "Copier le client secret",
     "add_redirect_uri": "Ajouter une URL de redirection",
-    "remove_redirect_uri": "Supprimer cette URL"
+    "remove_redirect_uri": "Supprimer cette URL",
+    "client_name_placeholder": "Mon App",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
   },
   "configureDevice": {
     "load_error": "Une erreur s'est produite pendant le chargement de vos dossiers, merci de réessayer prochainement.",

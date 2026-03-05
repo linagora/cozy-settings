@@ -367,7 +367,10 @@
     "copyClientId": "Copy client ID",
     "copyClientSecret": "Copy client secret",
     "add_redirect_uri": "Add redirect URL",
-    "remove_redirect_uri": "Remove this URL"
+    "remove_redirect_uri": "Remove this URL",
+    "client_name_placeholder": "My App",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
   },
   "StorageView": {
     "title": "Storage",
