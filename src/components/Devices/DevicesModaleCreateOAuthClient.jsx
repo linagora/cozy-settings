@@ -15,18 +15,25 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
   const client = useClient()
 
   const [clientName, setClientName] = useState('')
-  const [redirectUris, setRedirectUris] = useState([''])
+  const [redirectUris, setRedirectUris] = useState(() => [
+    { id: client.generateRandomId(), uri: '' }
+  ])
   const [clientKind, setClientKind] = useState('web')
   const [softwareId, setSoftwareId] = useState('')
   const [loading, setLoading] = useState(false)
   const [created, setCreated] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
 
+  const generateRedirectUriId = useCallback(
+    () => client.generateRandomId(),
+    [client]
+  )
+
   const handleSubmit = useCallback(async () => {
     const trimmedClientName = clientName.trim()
-
+    const trimmedSoftwareId = softwareId.trim()
     const cleanedRedirectUris = redirectUris
-      .map(uri => uri.trim())
+      .map(item => item.uri.trim())
       .filter(Boolean)
 
     if (!trimmedClientName || cleanedRedirectUris.length === 0) {
@@ -42,7 +49,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
         client_name: trimmedClientName,
         redirect_uris: cleanedRedirectUris,
         client_kind: clientKind,
-        software_id: softwareId || 'webapp'
+        software_id: trimmedSoftwareId || 'webapp'
       }
 
       const result = await client.stackClient.fetchJSON(
@@ -114,6 +121,7 @@ const DevicesModaleCreateOAuthClient = ({ onClose }) => {
       onClientNameChange={setClientName}
       redirectUris={redirectUris}
       onRedirectUrisChange={setRedirectUris}
+      generateRedirectUriId={generateRedirectUriId}
       clientKind={clientKind}
       onClientKindChange={setClientKind}
       softwareId={softwareId}
