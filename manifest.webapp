@@ -15,7 +15,7 @@
     "settings": {
       "description": "Required to manage your settings",
       "type": "io.cozy.settings",
-      "verbs": ["GET", "POST", "PUT"]
+      "verbs": ["GET", "POST", "PUT", "DELETE"]
     },
     "exports": {
       "description": "Required to export the Cozy data",

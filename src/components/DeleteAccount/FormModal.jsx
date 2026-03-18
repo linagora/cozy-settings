@@ -7,7 +7,10 @@ import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Textarea from 'cozy-ui/transpiled/react/Textarea'
 
-import { sendDeleteAccountRequest } from './helpers'
+import {
+  sendDeleteAccountRequest,
+  sendForceDeleteAccountRequest
+} from './helpers'
 
 import { getStackDomain } from '@/actions/domUtils'
 import {
@@ -51,10 +54,12 @@ const FormModal = ({ onSuccess, onError, onClose }) => {
     const STACK_DOMAIN = getStackDomain()
     const domain = STACK_DOMAIN.replace('//', '')
     const reason = reasonElementRef.current.value
+    const byEmailOnly = flag('settings.delete.byEmailOnly')
+    const forceDeleted = flag('settings.delete-user-from-signup-admin-api')
     setStatus(SENDING)
 
     try {
-      if (flag('settings.delete.byEmailOnly')) {
+      if (byEmailOnly) {
         await sendDeleteAccountByEmailOnlyEmail(
           client,
           t('DeleteAccount.byEmailOnly.mail.subject', {
@@ -63,16 +68,21 @@ const FormModal = ({ onSuccess, onError, onClose }) => {
           }),
           reason.substring(0, REASON_MAXLENGTH)
         )
-        return handleSuccess({ byEmailOnly: true })
       } else {
         await sendDeleteAccountReasonEmail(
           client,
           t('DeleteAccount.request.mail.subject', { domain }),
           reason.substring(0, REASON_MAXLENGTH)
         )
-        await sendDeleteAccountRequest(client)
-        return handleSuccess({ byEmailOnly: false })
+
+        if (forceDeleted) {
+          await sendForceDeleteAccountRequest(client)
+        } else {
+          await sendDeleteAccountRequest(client)
+        }
       }
+
+      return handleSuccess({ byEmailOnly, forceDeleted })
     } catch (error) {
       return handleError(error)
     }
