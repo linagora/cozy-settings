@@ -49,16 +49,24 @@ const DeleteAccount = () => {
     })
   }
 
-  const onRequested = ({ byEmailOnly }) => {
+  const onRequested = ({ byEmailOnly, forceDeleted }) => {
     if (byEmailOnly) {
       showAlert({
         message: t('DeleteAccount.byEmailOnly.success'),
         type: 'success'
       })
-      handleClose()
-    } else {
-      setStatus(EMAIL_CONFIRMATION)
+      return handleClose()
     }
+
+    if (forceDeleted) {
+      showAlert({
+        message: t('DeleteAccount.forceDelete.success'),
+        type: 'success'
+      })
+      return handleClose()
+    }
+
+    setStatus(EMAIL_CONFIRMATION)
   }
 
   const handleClose = () => {

@@ -11,5 +11,6 @@ export const initFlags = () => {
     flag('settings.moving-cozy')
     flag('settings.specify-blocking-subscription-vendor-dev')
     flag('settings.2fa.enabled')
+    flag('settings.delete-user-from-signup-admin-api')
   }
 }

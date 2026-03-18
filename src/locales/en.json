@@ -95,6 +95,9 @@
       },
       "success": "The request has been sent and will be processed promptly by our teams."
     },
+    "forceDelete": {
+      "success": "Your account has been successfully deleted."
+    },
     "success": {
       "message": "Your deletion request has been sent."
     }
