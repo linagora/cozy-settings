@@ -4,11 +4,11 @@ import { useI18n } from 'twake-i18n'
 import { useInstanceInfo } from 'cozy-client'
 import { makeDiskInfos } from 'cozy-client/dist/models/instance'
 import Alert from 'cozy-ui/transpiled/react/Alert'
+import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Box from 'cozy-ui/transpiled/react/Box'
-import Circle from 'cozy-ui/transpiled/react/Circle'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import CloudRainbowIcon from 'cozy-ui/transpiled/react/Icons/CloudRainbow'
-import { LinearProgress } from 'cozy-ui/transpiled/react/Progress'
+import LinearProgress from 'cozy-ui/transpiled/react/LinearProgress'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useBreakpoints } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
@@ -30,9 +30,9 @@ const StorageContent = () => {
       className="u-flex u-flex-column u-flex-items-center u-mh-auto u-mv-0"
       maxWidth={600}
     >
-      <Circle size={100} backgroundColor="var(--defaultBackgroundColor)">
+      <Avatar size={100} color="var(--defaultBackgroundColor)">
         <Icon icon={CloudRainbowIcon} size={48} />
-      </Circle>
+      </Avatar>
       <Typography className="u-mt-1-half u-mb-2" variant="h3" align="center">
         {t('StorageView.storage_title')}
       </Typography>

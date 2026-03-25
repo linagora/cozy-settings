@@ -85,8 +85,8 @@ jest.mock('@/components/PageTitle', () => {
 jest.mock('cozy-ui/transpiled/react/Spinner', () => {
   return ({ size }) => <div data-testid="Spinner" data-size={size}></div>
 })
-jest.mock('cozy-ui/transpiled/react/CircleButton', () => {
-  return () => <div data-testid="CircleButton"></div>
+jest.mock('cozy-ui/transpiled/react/IconButton', () => {
+  return () => <div data-testid="IconButton"></div>
 })
 jest.mock('twake-i18n', () => {
   return { useI18n: () => ({ t: x => x }) }

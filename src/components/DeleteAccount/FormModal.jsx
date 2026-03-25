@@ -5,7 +5,7 @@ import { useClient, useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Textarea from 'cozy-ui/transpiled/react/Textarea'
+import TextField from 'cozy-ui/transpiled/react/TextField'
 
 import {
   sendDeleteAccountRequest,
@@ -95,12 +95,15 @@ const FormModal = ({ onSuccess, onError, onClose }) => {
       content={
         <form onSubmit={handleSend}>
           <label>{t('DeleteAccount.modal.form.reason.label')}</label>
-          <Textarea
+          <TextField
+            variant="outlined"
+            rows={4}
             className="u-mt-1"
-            ref={reasonElementRef}
+            inputRef={reasonElementRef}
             aria-busy={isSending}
-            maxLength={REASON_MAXLENGTH}
-            readOnly={isSending}
+            inputProps={{ maxLength: REASON_MAXLENGTH, readOnly: isSending }}
+            multiline
+            fullWidth
           />
         </form>
       }
