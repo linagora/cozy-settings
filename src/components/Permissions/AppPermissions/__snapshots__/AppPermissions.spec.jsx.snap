@@ -12,30 +12,9 @@ exports[`AppPermissions should display slugName when query has been loaded 1`] =
         <div
           class="u-flex u-flex-items-center"
         >
-          <a
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root u-mr-half large"
-            href="#/permissions"
-            tabindex="0"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                class="styles__icon___23x3R"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-              >
-                <path
-                  d="M16 7H3.83l5.59-5.59L8 0 0 8l8 8 1.41-1.41L3.83 9H16V7z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </a>
+          <div
+            data-testid="IconButton"
+          />
           <div
             style="width: 48px;"
           >
@@ -62,13 +41,13 @@ exports[`AppPermissions should display slugName when query has been loaded 1`] =
           style="gap: 2em;"
         >
           <div
-            data-testid="CircleButton"
+            data-testid="IconButton"
           />
           <div
-            data-testid="CircleButton"
+            data-testid="IconButton"
           />
           <div
-            data-testid="CircleButton"
+            data-testid="IconButton"
           />
         </div>
       </div>

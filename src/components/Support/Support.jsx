@@ -5,9 +5,10 @@ import { useI18n } from 'twake-i18n'
 import { useClient } from 'cozy-client'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
+import Icon from 'cozy-ui/transpiled/react/Icon'
 import PaperplaneIcon from 'cozy-ui/transpiled/react/Icons/Paperplane'
-import Label from 'cozy-ui/transpiled/react/Label'
-import Textarea from 'cozy-ui/transpiled/react/Textarea'
+import InputLabel from 'cozy-ui/transpiled/react/InputLabel'
+import TextField from 'cozy-ui/transpiled/react/TextField'
 
 import styles from './support.styl'
 
@@ -51,16 +52,21 @@ export const Support = ({
   return (
     <Page narrow>
       <PageTitle>{t(`support.title`)}</PageTitle>
-      <Label htmlFor="settings-support-form-textarea">
+      <InputLabel htmlFor="settings-support-form-textarea">
         {t('support.fields.message.title')}
-      </Label>
-      <Textarea
+      </InputLabel>
+      <TextField
         id="settings-support-form-textarea"
+        className="u-mt-half"
         value={message}
         placeholder={t('support.fields.message.placeholder')}
         onChange={e => {
           setMessage(e.target.value)
         }}
+        multiline
+        fullWidth
+        rows={4}
+        variant="outlined"
       />
       <Checkbox
         className="u-mt-1"
@@ -98,7 +104,7 @@ export const Support = ({
         onClick={() => sendMessage()}
         disabled={!message}
         busy={isSending}
-        icon={PaperplaneIcon}
+        startIcon={<Icon icon={PaperplaneIcon} />}
         label={t('support.button')}
       />
     </Page>

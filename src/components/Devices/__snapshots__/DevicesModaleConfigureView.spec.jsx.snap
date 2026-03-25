@@ -10,11 +10,11 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
       aria-hidden="true"
     >
       <div
-        class="TwakeTheme--light-normal u-dc"
+        class="TwakeTheme--light u-dc"
       />
     </div>
     <div
-      class="MuiDialog-root TwakeTheme--light-normal"
+      class="MuiDialog-root TwakeTheme--light-undefined"
       role="presentation"
       style="position: fixed; z-index: var(--zIndex-modal); right: 0px; bottom: 0px; top: 0px; left: 0px;"
     >
@@ -35,7 +35,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
       >
         <div
           aria-labelledby="modal-title-50"
-          class="MuiPaper-root MuiDialog-paper medium makeStyles-paper-1105 makeStyles-paper-1106  MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiPaper-elevation24 MuiPaper-rounded"
+          class="MuiPaper-root MuiDialog-paper medium makeStyles-paper-1142 makeStyles-paper-1143  MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiPaper-elevation24 MuiPaper-rounded"
           role="dialog"
         >
           <div
@@ -97,13 +97,13 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiRadio-root MuiRadio-colorPrimary MuiIconButton-colorPrimary"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiRadio-root MuiRadio-colorPrimary MuiIconButton-colorPrimary"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-1110"
+                          class="PrivateSwitchBase-input-1147"
                           name="partialSync"
                           type="radio"
                           value="false"
@@ -134,14 +134,14 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiRadio-root MuiRadio-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiRadio-root MuiRadio-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
                           checked=""
-                          class="PrivateSwitchBase-input-1110"
+                          class="PrivateSwitchBase-input-1147"
                           name="partialSync"
                           type="radio"
                           value="true"
@@ -173,7 +173,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                 </div>
               </div>
               <div
-                class="styles__c-card___YgP7B u-mt-1 u-p-0"
+                class="MuiBox-root MuiBox-root-1148 u-mt-1"
               >
                 <div
                   class="MuiCardHeader-root u-pv-0 u-pl-0 u-pr-1-half"
@@ -205,7 +205,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-indeterminate PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-indeterminate PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                           data-testid="toggle-all-inclusion"
                         >
                           <span
@@ -216,7 +216,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                               aria-disabled="false"
                               aria-label=""
                               checked=""
-                              class="PrivateSwitchBase-input-1110"
+                              class="PrivateSwitchBase-input-1147"
                               data-indeterminate="true"
                               type="checkbox"
                               value=""
@@ -245,11 +245,11 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                 >
                   <ul
                     aria-multiselectable="false"
-                    class="MuiTreeView-root makeStyles-root-1111"
+                    class="MuiTreeView-root makeStyles-root-1149"
                     role="tree"
                   >
                     <li
-                      class="MuiTreeItem-root makeStyles-root-1113"
+                      class="MuiTreeItem-root makeStyles-root-1151"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -257,10 +257,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1112"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1150"
                         />
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1114 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1152 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -278,7 +278,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                     data-testid="toggle-Accounts-inclusion"
                                   >
                                     <span
@@ -289,7 +289,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-disabled="false"
                                         aria-label=""
                                         checked=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -375,7 +375,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       </div>
                     </li>
                     <li
-                      class="MuiTreeItem-root makeStyles-root-1116"
+                      class="MuiTreeItem-root makeStyles-root-1154"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -383,10 +383,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1115"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1153"
                         />
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1117 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1155 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -404,7 +404,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                     data-testid="toggle-Administrative-inclusion"
                                   >
                                     <span
@@ -415,7 +415,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-disabled="false"
                                         aria-label=""
                                         checked=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -501,7 +501,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       </div>
                     </li>
                     <li
-                      class="MuiTreeItem-root makeStyles-root-1119"
+                      class="MuiTreeItem-root makeStyles-root-1157"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -509,10 +509,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1118"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1156"
                         />
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1120 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1158 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -530,7 +530,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                     data-testid="toggle-Ciphers-inclusion"
                                   >
                                     <span
@@ -541,7 +541,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-disabled="false"
                                         aria-label=""
                                         checked=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -628,7 +628,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                     </li>
                     <li
                       aria-expanded="false"
-                      class="MuiTreeItem-root makeStyles-root-1122"
+                      class="MuiTreeItem-root makeStyles-root-1160"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -636,7 +636,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1121"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1159"
                         >
                           <svg
                             height="1rem"
@@ -649,7 +649,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           </svg>
                         </div>
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1123 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1161 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -667,7 +667,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                     data-testid="toggle-Konnectors-inclusion"
                                   >
                                     <span
@@ -678,7 +678,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-disabled="false"
                                         aria-label=""
                                         checked=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -764,7 +764,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       </div>
                       <li
                         aria-expanded="false"
-                        class="MuiTreeItem-root makeStyles-root-1125"
+                        class="MuiTreeItem-root makeStyles-root-1163"
                         role="treeitem"
                         tabindex="-1"
                       >
@@ -772,7 +772,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           class="MuiTreeItem-content"
                         >
                           <div
-                            class="MuiTreeItem-iconContainer makeStyles-iconContainer-1124"
+                            class="MuiTreeItem-iconContainer makeStyles-iconContainer-1162"
                           >
                             <svg
                               height="1rem"
@@ -785,7 +785,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                             </svg>
                           </div>
                           <div
-                            class="MuiTypography-root MuiTreeItem-label makeStyles-label-1126 MuiTypography-body1"
+                            class="MuiTypography-root MuiTreeItem-label makeStyles-label-1164 MuiTypography-body1"
                           >
                             <div
                               class="styles__media___1rIBu"
@@ -803,7 +803,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                   >
                                     <span
                                       aria-disabled="false"
-                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                       data-testid="toggle-Ameli-inclusion"
                                     >
                                       <span
@@ -814,7 +814,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                           aria-disabled="false"
                                           aria-label=""
                                           checked=""
-                                          class="PrivateSwitchBase-input-1110"
+                                          class="PrivateSwitchBase-input-1147"
                                           data-indeterminate="false"
                                           type="checkbox"
                                           value=""
@@ -899,7 +899,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           </div>
                         </div>
                         <li
-                          class="MuiTreeItem-root makeStyles-root-1128"
+                          class="MuiTreeItem-root makeStyles-root-1166"
                           role="treeitem"
                           tabindex="-1"
                         >
@@ -907,10 +907,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                             class="MuiTreeItem-content"
                           >
                             <div
-                              class="MuiTreeItem-iconContainer makeStyles-iconContainer-1127"
+                              class="MuiTreeItem-iconContainer makeStyles-iconContainer-1165"
                             />
                             <div
-                              class="MuiTypography-root MuiTreeItem-label makeStyles-label-1129 MuiTypography-body1"
+                              class="MuiTypography-root MuiTreeItem-label makeStyles-label-1167 MuiTypography-body1"
                             >
                               <div
                                 class="styles__media___1rIBu"
@@ -928,7 +928,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                     >
                                       <span
                                         aria-disabled="false"
-                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1108 Mui-checked MuiIconButton-colorPrimary"
+                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-1145 Mui-checked MuiIconButton-colorPrimary"
                                         data-testid="toggle-Claude-inclusion"
                                       >
                                         <span
@@ -939,7 +939,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                             aria-disabled="false"
                                             aria-label=""
                                             checked=""
-                                            class="PrivateSwitchBase-input-1110"
+                                            class="PrivateSwitchBase-input-1147"
                                             data-indeterminate="false"
                                             type="checkbox"
                                             value=""
@@ -1027,7 +1027,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       </li>
                     </li>
                     <li
-                      class="MuiTreeItem-root makeStyles-root-1131"
+                      class="MuiTreeItem-root makeStyles-root-1169"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -1035,10 +1035,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1130"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1168"
                         />
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1132 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1170 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -1056,7 +1056,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                                     data-testid="toggle-Photos-inclusion"
                                   >
                                     <span
@@ -1066,7 +1066,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-checked=""
                                         aria-disabled="false"
                                         aria-label=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -1146,7 +1146,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                     </li>
                     <li
                       aria-expanded="false"
-                      class="MuiTreeItem-root makeStyles-root-1134"
+                      class="MuiTreeItem-root makeStyles-root-1172"
                       role="treeitem"
                       tabindex="-1"
                     >
@@ -1154,7 +1154,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                         class="MuiTreeItem-content"
                       >
                         <div
-                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1133"
+                          class="MuiTreeItem-iconContainer makeStyles-iconContainer-1171"
                         >
                           <svg
                             height="1rem"
@@ -1167,7 +1167,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           </svg>
                         </div>
                         <div
-                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1135 MuiTypography-body1"
+                          class="MuiTypography-root MuiTreeItem-label makeStyles-label-1173 MuiTypography-body1"
                         >
                           <div
                             class="styles__media___1rIBu"
@@ -1185,7 +1185,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                 >
                                   <span
                                     aria-disabled="false"
-                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                                     data-testid="toggle-Videos-inclusion"
                                   >
                                     <span
@@ -1195,7 +1195,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                         aria-checked=""
                                         aria-disabled="false"
                                         aria-label=""
-                                        class="PrivateSwitchBase-input-1110"
+                                        class="PrivateSwitchBase-input-1147"
                                         data-indeterminate="false"
                                         type="checkbox"
                                         value=""
@@ -1274,7 +1274,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                       </div>
                       <li
                         aria-expanded="false"
-                        class="MuiTreeItem-root makeStyles-root-1137"
+                        class="MuiTreeItem-root makeStyles-root-1175"
                         role="treeitem"
                         tabindex="-1"
                       >
@@ -1282,7 +1282,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           class="MuiTreeItem-content"
                         >
                           <div
-                            class="MuiTreeItem-iconContainer makeStyles-iconContainer-1136"
+                            class="MuiTreeItem-iconContainer makeStyles-iconContainer-1174"
                           >
                             <svg
                               height="1rem"
@@ -1295,7 +1295,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                             </svg>
                           </div>
                           <div
-                            class="MuiTypography-root MuiTreeItem-label makeStyles-label-1138 MuiTypography-body1"
+                            class="MuiTypography-root MuiTreeItem-label makeStyles-label-1176 MuiTypography-body1"
                           >
                             <div
                               class="styles__media___1rIBu"
@@ -1313,7 +1313,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                   >
                                     <span
                                       aria-disabled="false"
-                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                                       data-testid="toggle-Movies-inclusion"
                                     >
                                       <span
@@ -1323,7 +1323,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                           aria-checked=""
                                           aria-disabled="false"
                                           aria-label=""
-                                          class="PrivateSwitchBase-input-1110"
+                                          class="PrivateSwitchBase-input-1147"
                                           data-indeterminate="false"
                                           type="checkbox"
                                           value=""
@@ -1401,7 +1401,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                           </div>
                         </div>
                         <li
-                          class="MuiTreeItem-root makeStyles-root-1140"
+                          class="MuiTreeItem-root makeStyles-root-1178"
                           role="treeitem"
                           tabindex="-1"
                         >
@@ -1409,10 +1409,10 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                             class="MuiTreeItem-content"
                           >
                             <div
-                              class="MuiTreeItem-iconContainer makeStyles-iconContainer-1139"
+                              class="MuiTreeItem-iconContainer makeStyles-iconContainer-1177"
                             />
                             <div
-                              class="MuiTypography-root MuiTreeItem-label makeStyles-label-1141 MuiTypography-body1"
+                              class="MuiTypography-root MuiTreeItem-label makeStyles-label-1179 MuiTypography-body1"
                             >
                               <div
                                 class="styles__media___1rIBu"
@@ -1430,7 +1430,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                     >
                                       <span
                                         aria-disabled="false"
-                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1107 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1144 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                                         data-testid="toggle-Comedy-inclusion"
                                       >
                                         <span
@@ -1440,7 +1440,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
                                             aria-checked=""
                                             aria-disabled="false"
                                             aria-label=""
-                                            class="PrivateSwitchBase-input-1110"
+                                            class="PrivateSwitchBase-input-1147"
                                             data-indeterminate="false"
                                             type="checkbox"
                                             value=""
@@ -1572,7 +1572,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
     aria-hidden="true"
   >
     <div
-      class="TwakeTheme--light-normal u-dc"
+      class="TwakeTheme--light u-dc"
     />
   </div>,
   "debug": [Function],

@@ -5,7 +5,8 @@ import Button from 'cozy-ui/transpiled/react/Buttons'
 import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import PaperplaneIcon from 'cozy-ui/transpiled/react/Icons/Paperplane'
-import Textarea from 'cozy-ui/transpiled/react/Textarea'
+import InputLabel from 'cozy-ui/transpiled/react/InputLabel'
+import TextField from 'cozy-ui/transpiled/react/TextField'
 
 const Support = ({
   iconSrc,
@@ -43,17 +44,22 @@ const Support = ({
         <p className="set-support-form-header-title">{t(`support.title`)}</p>
       </div>
       <div className="set-support-form-content coz-form">
-        <label className="coz-form-label">
+        <InputLabel htmlFor="settings-support-form-textarea">
           {t('support.fields.message.title')}
-          <Textarea
-            className="set-services-support-form-textarea"
-            value={message}
-            placeholder={t('support.fields.message.placeholder')}
-            onChange={e => {
-              setMessage(e.target.value)
-            }}
-          />
-        </label>
+        </InputLabel>
+        <TextField
+          id="settings-support-form-textarea"
+          className="set-services-support-form-textarea"
+          value={message}
+          placeholder={t('support.fields.message.placeholder')}
+          onChange={e => {
+            setMessage(e.target.value)
+          }}
+          multiline
+          fullWidth
+          rows={4}
+          variant="outlined"
+        />
         <Checkbox
           checked={consent}
           className="u-mt-1"

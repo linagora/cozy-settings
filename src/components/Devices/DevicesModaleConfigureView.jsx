@@ -4,8 +4,8 @@ import ReactMarkdown from 'react-markdown'
 import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
+import Box from 'cozy-ui/transpiled/react/Box'
 import Button from 'cozy-ui/transpiled/react/Buttons'
-import Card from 'cozy-ui/transpiled/react/Card'
 import CardContent from 'cozy-ui/transpiled/react/CardContent'
 import CardHeader from 'cozy-ui/transpiled/react/CardHeader'
 import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
@@ -273,7 +273,13 @@ const FoldersTree = ({
   )
 
   return (
-    <Card className="u-mt-1 u-p-0">
+    <Box
+      className="u-mt-1"
+      display="block"
+      border={1}
+      borderColor="var(--dividerColor)"
+      borderRadius={8}
+    >
       <CardHeader
         title={
           <Typography
@@ -334,7 +340,7 @@ const FoldersTree = ({
           </Typography>
         </CardContent>
       )}
-    </Card>
+    </Box>
   )
 }
 

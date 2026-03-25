@@ -2,8 +2,8 @@ import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient, generateWebLink } from 'cozy-client'
-import CircleButton from 'cozy-ui/transpiled/react/CircleButton'
 import Icon from 'cozy-ui/transpiled/react/Icon'
+import IconButton from 'cozy-ui/transpiled/react/IconButton'
 import OpenappIcon from 'cozy-ui/transpiled/react/Icons/Openapp'
 import AppLinker from 'cozy-ui-plus/dist/AppLinker'
 
@@ -30,13 +30,13 @@ export const OpenappButton = ({ type, appData }) => {
   return (
     <AppLinker app={appData} href={appWebRef}>
       {({ onClick, href }) => (
-        <CircleButton
-          label={t('Permissions.open')}
+        <IconButton
+          aria-label={t('Permissions.open')}
           href={href}
           onClick={onClick}
         >
           <Icon icon={OpenappIcon} />
-        </CircleButton>
+        </IconButton>
       )}
     </AppLinker>
   )
