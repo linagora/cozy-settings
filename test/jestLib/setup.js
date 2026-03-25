@@ -20,6 +20,10 @@ jest.mock('cozy-dataproxy-lib', () => ({
   DataProxyProvider: ({ children }) => children
 }))
 
+jest.mock('cozy-search', () => ({
+  AssistantDialog: ({ children }) => children
+}))
+
 // polyfill for requestAnimationFrame
 /* istanbul ignore next */
 global.requestAnimationFrame = cb => {
