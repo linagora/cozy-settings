@@ -14,7 +14,7 @@ exports[`DevicesModaleConfigureView when the folders query yields folders with h
       />
     </div>
     <div
-      class="MuiDialog-root TwakeTheme--light-undefined"
+      class="MuiDialog-root TwakeTheme--light"
       role="presentation"
       style="position: fixed; z-index: var(--zIndex-modal); right: 0px; bottom: 0px; top: 0px; left: 0px;"
     >
