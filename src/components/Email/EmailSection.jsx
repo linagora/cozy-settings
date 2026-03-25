@@ -32,7 +32,7 @@ const EmailSection = () => {
           pendingEmail: instance.pending_email
         })
       })
-    } catch (e) {
+    } catch (_e) {
       setSnackbar({
         severity: 'error',
         message: t('EmailSection.snackbar.server_error')
@@ -43,7 +43,7 @@ const EmailSection = () => {
   const onCancel = async () => {
     try {
       await client.stackClient.fetchJSON('DELETE', '/settings/email')
-    } catch (e) {
+    } catch (_e) {
       setSnackbar({
         severity: 'error',
         message: t('EmailSection.snackbar.server_error')

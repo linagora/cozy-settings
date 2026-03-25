@@ -20,6 +20,7 @@ const Support = ({
   useEffect(() => {
     // reset message if successfully sent
     if (isSent) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setMessage('')
       setConsent(false)
     }

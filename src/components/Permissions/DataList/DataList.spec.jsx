@@ -28,7 +28,6 @@ jest.mock('react-router-dom', () => {
 jest.mock('cozy-client')
 
 jest.mock('@/components/Page', () => {
-  // eslint-disable-next-line react/display-name
   return ({ narrow, children }) => (
     <div data-testid="page" data-narrow={narrow}>
       {children}
@@ -53,12 +52,10 @@ jest.mock('cozy-ui/transpiled/react/NavigationList', () => {
 })
 
 jest.mock('cozy-ui/transpiled/react/Icon', () => {
-  // eslint-disable-next-line react/display-name
   return () => <div data-testid="Icon"></div>
 })
 
 jest.mock('cozy-ui/transpiled/react/ListItemText', () => {
-  // eslint-disable-next-line react/display-name
   return ({ primary, secondary }) => (
     <div
       data-testid="ListItemText"

@@ -28,11 +28,13 @@ const handleChange = async (
 
   const res = await webviewIntent.call('toggleSetting', setting, params)
 
-  typeof res === 'boolean'
-    ? dispatch(res)
-    : logger.error(
-        `Error while calling toggleSetting('${setting}'), returned value is null or undefined."`
-      )
+  if (typeof res === 'boolean') {
+    dispatch(res)
+  } else {
+    logger.error(
+      `Error while calling toggleSetting('${setting}'), returned value is null or undefined."`
+    )
+  }
 
   return res
 }
@@ -86,13 +88,16 @@ export const LockScreen = (): JSX.Element => {
         webviewIntent
       )
 
-      value && setAutoLock(true)
+      if (value) {
+        setAutoLock(true)
+      }
 
-      if (!biometryEnabled && flagshipMetadata.platform?.OS === 'android')
+      if (!biometryEnabled && flagshipMetadata.platform?.OS === 'android') {
         await webviewIntent.call('setFlagshipUI', {
           bottomOverlay: 'transparent',
           topOverlay: 'transparent'
         })
+      }
     }
 
     doOnBiometryLock().catch(onrejected =>
@@ -113,9 +118,13 @@ export const LockScreen = (): JSX.Element => {
       pinCode ? { pinCode } : undefined
     )
 
-    value && setAutoLock(true)
+    if (value) {
+      setAutoLock(true)
+    }
 
-    pinCode && setPinModalVisible(false)
+    if (pinCode) {
+      setPinModalVisible(false)
+    }
   }
 
   const onAutoLock = (): void =>
@@ -140,10 +149,10 @@ export const LockScreen = (): JSX.Element => {
                 biometryType === 'Biometrics'
                   ? t('Nav.primary_biometry_android')
                   : biometryType === 'TouchID'
-                  ? t('Nav.primary_biometry_touchid')
-                  : biometryType === 'FaceID'
-                  ? t('Nav.primary_biometry_faceid')
-                  : t('Nav.primary_biometry')
+                    ? t('Nav.primary_biometry_touchid')
+                    : biometryType === 'FaceID'
+                      ? t('Nav.primary_biometry_faceid')
+                      : t('Nav.primary_biometry')
               }
               icon={biometryType === 'FaceID' ? FaceId : Fingerprint}
               onClick={onBiometryLock}

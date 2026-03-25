@@ -50,7 +50,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
                     size={8}
                     color="var(--secondaryTextColor)"
                   />
-                  {/* eslint-disable-next-line no-irregular-whitespace */}
+                  {}
                   <span className={tableStyles['more-menu-infos']}>
                     {device.synchronized_at
                       ? f(

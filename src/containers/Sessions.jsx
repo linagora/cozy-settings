@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     try {
       await dispatch(deleteOtherSessions(client))
       Alerter.success(t('SessionsView.infos.sessions_deleted'))
-    } catch (error) {
+    } catch (_error) {
       Alerter.error(t('SessionsView.infos.server_error'))
     }
   }

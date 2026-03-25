@@ -72,7 +72,7 @@ export const consolidateClaudyActionsInfos = claudyActions => {
       try {
         const appsResponse = await cozyFetch('GET', '/apps/')
         apps = appsResponse.data
-      } catch (e) {
+      } catch (_e) {
         // eslint-disable-next-line no-console
         console.warn &&
           // eslint-disable-next-line no-console
@@ -88,8 +88,7 @@ export const consolidateClaudyActionsInfos = claudyActions => {
     if (claudyActions.find(a => ACTIONS_WITH_ACCOUNTS.includes(a.slug))) {
       try {
         accounts = await getAllAccounts()
-      } catch (e) {
-        // eslint-disable-next-line no-console
+      } catch (_e) {
         // eslint-disable-next-line no-console
         console.warn && console.warn('Cannot fetch accounts infos for Claudy.')
         accounts = [] // keep list empty if apps cannot be fetched

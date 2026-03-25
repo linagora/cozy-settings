@@ -63,7 +63,6 @@ jest.mock('cozy-ui/transpiled/react/Spinner', () => {
 })
 
 jest.mock('cozy-ui-plus/dist/AppIcon', () => {
-  // eslint-disable-next-line react/display-name
   return () => <div data-testid="AppIcon"></div>
 })
 jest.mock('cozy-ui/transpiled/react/Spinner', () => {

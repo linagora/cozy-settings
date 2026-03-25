@@ -38,10 +38,9 @@ describe('send email', () => {
       }
     })
 
-    let jobId = 0
     const mockJobCollection = {
       create: jest.fn().mockResolvedValue({
-        data: { attributes: { _id: `job-id-${jobId++}` } }
+        data: { attributes: { _id: 'job-id-0' } }
       })
     }
 

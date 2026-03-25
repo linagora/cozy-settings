@@ -56,8 +56,9 @@ const DataList = ({ t }) => {
                       <ListItemIcon>
                         <Icon
                           icon={
-                            require(`cozy-ui/transpiled/react/Icons/${iconName}`)
-                              .default
+                            require(
+                              `cozy-ui/transpiled/react/Icons/${iconName}`
+                            ).default
                           }
                           size={mediumSize}
                         />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components */
 import React from 'react'
 import { NavLink as RouterLink } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'

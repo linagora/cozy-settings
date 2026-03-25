@@ -1,5 +1,4 @@
 /* eslint-disable promise/always-return */
-// eslint-disable-next-line no-redeclare
 
 import { getStackDomain, getStackToken } from './domUtils'
 

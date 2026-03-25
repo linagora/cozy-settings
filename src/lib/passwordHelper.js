@@ -32,26 +32,22 @@ module.exports.getStrength = function (password) {
   const _at66percent = 100
   const _at100percent = 150
 
-  let strengthLabel = ''
-  let strengthPercentage = 0
-
   // between 0% and 33%
   if (passwordStrength <= _at33percent) {
-    strengthPercentage = (passwordStrength * 33) / _at33percent
-    strengthLabel = 'weak'
+    return { percentage: (passwordStrength * 33) / _at33percent, label: 'weak' }
   } else if (
     passwordStrength > _at33percent &&
     passwordStrength <= _at66percent
   ) {
     // between 33% and 66%
-    strengthPercentage = (passwordStrength * 66) / _at66percent
-    strengthLabel = 'moderate'
+    return {
+      percentage: (passwordStrength * 66) / _at66percent,
+      label: 'moderate'
+    }
   } else {
     // passwordStrength > 192
-    strengthPercentage = (passwordStrength * 100) / _at100percent
-    if (strengthPercentage > 100) strengthPercentage = 100
-    strengthLabel = 'strong'
+    const strengthPercentage = (passwordStrength * 100) / _at100percent
+    if (strengthPercentage > 100) return { percentage: 100, label: 'strong' }
+    return { percentage: strengthPercentage, label: 'strong' }
   }
-
-  return { percentage: strengthPercentage, label: strengthLabel }
 }

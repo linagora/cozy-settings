@@ -38,6 +38,7 @@ const PremiumProvider = ({ children }) => {
     if (isFlagshipApp()) {
       fetchIapAvailability()
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIapLoaded(true)
     }
   }, [webviewIntent])

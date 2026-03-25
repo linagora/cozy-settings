@@ -4,8 +4,8 @@ export const displayPermissions = verbs => {
   return !verbs || (verbs.length > 1 && verbs.includes('GET'))
     ? 'Permissions.readAndWrite'
     : verbs.length === 1 && verbs.includes('GET')
-    ? 'Permissions.read'
-    : 'Permissions.write'
+      ? 'Permissions.read'
+      : 'Permissions.write'
 }
 
 export const getPermissionIconName = type => {
@@ -14,10 +14,9 @@ export const getPermissionIconName = type => {
 
 export const completePermission = (apps, konnectors) => {
   const hiddenSlugs = ['home', 'store', 'settings']
-  let slugs = []
   const permissionsToDisplay = {}
   if (apps?.data?.length > 0 || konnectors?.data?.length > 0) {
-    slugs = [
+    const slugs = [
       ...apps.data.filter(({ slug }) => !hiddenSlugs.includes(slug)),
       ...konnectors.data
     ]

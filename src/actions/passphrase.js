@@ -115,9 +115,8 @@ export const updatePassphrase2FAFirst = (
     dispatch({ type: UPDATE_PASSPHRASE_2FA_1 })
     try {
       await vaultClient.login(currentPassphrase)
-      const currentPasswordHash = await vaultClient.computeHashedPassword(
-        currentPassphrase
-      )
+      const currentPasswordHash =
+        await vaultClient.computeHashedPassword(currentPassphrase)
       const data = await cozyFetch(client, 'PUT', '/settings/passphrase', {
         current_passphrase: currentPasswordHash
       })

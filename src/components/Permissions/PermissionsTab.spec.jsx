@@ -27,32 +27,30 @@ jest.mock('@/components/PageTitle', () => {
 jest.mock(
   'cozy-ui/transpiled/react/Tabs',
   () =>
-    ({ value, onChange, children }) =>
-      (
-        <button
-          value={value}
-          onClick={event => onChange(event, 'data')}
-          data-testid="tabs"
-        >
-          {children}
-        </button>
-      )
+    ({ value, onChange, children }) => (
+      <button
+        value={value}
+        onClick={event => onChange(event, 'data')}
+        data-testid="tabs"
+      >
+        {children}
+      </button>
+    )
 )
 
 jest.mock(
   'cozy-ui/transpiled/react/Tab',
   () =>
-    ({ value, label, href, id, 'aria-controls': ariaControls }) =>
-      (
-        <div
-          data-testid="tab"
-          value={value}
-          label={label}
-          href={href}
-          id={id}
-          aria-controls={ariaControls}
-        ></div>
-      )
+    ({ value, label, href, id, 'aria-controls': ariaControls }) => (
+      <div
+        data-testid="tab"
+        value={value}
+        label={label}
+        href={href}
+        id={id}
+        aria-controls={ariaControls}
+      ></div>
+    )
 )
 
 jest.mock('./AppList/AppList', () => {

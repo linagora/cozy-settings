@@ -47,7 +47,7 @@ export function sendMessageToSupport(client, message, t) {
             `[cozy-support] ${t('support.response_email.subject')}`,
             'noreply'
           )
-        } catch (e) {
+        } catch (_e) {
           // ignore errors for this sending
           // eslint-disable-next-line no-console
           console.warn(
