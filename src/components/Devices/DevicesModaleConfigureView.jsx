@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useI18n } from 'twake-i18n'
 
@@ -353,7 +353,8 @@ const ConfigureDeviceSyncDialog = ({
   const hasFolders = useMemo(() => folders.length > 0, [folders])
   const { showAlert } = useAlert()
 
-  useEffect(() => {
+  // eslint-disable-next-line react-hooks/void-use-memo
+  useMemo(() => {
     if (failed) {
       showAlert({
         message: t('configureDevice.load_error'),
@@ -362,11 +363,13 @@ const ConfigureDeviceSyncDialog = ({
     } else if (!loading) {
       const { areMixed, hierarchy } = initializeHierarchy(folders, device)
 
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+      // eslint-disable-next-line react-hooks/set-state-in-render
       setHierarchy(hierarchy)
 
       if (levels(hierarchy).some(level => !level.isSelected)) {
+        // eslint-disable-next-line react-hooks/set-state-in-render
         setExpanded(areMixed.map(({ _id }) => _id))
+        // eslint-disable-next-line react-hooks/set-state-in-render
         setPartialSync(true)
       }
     }
