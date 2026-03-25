@@ -33,7 +33,7 @@ const TwoFactorCode = ({ onCodeConfirmed }) => {
         }
       )
       onCodeConfirmed()
-    } catch (e) {
+    } catch (_e) {
       setError('ProfileView.infos.server_error')
     }
   }

@@ -19,7 +19,7 @@ jest.mock('twake-i18n/dist/withLocales', () => {
   return () => Component => {
     const t = text => text
     const match = { params: { slug: 'Drive' } }
-    // eslint-disable-next-line react/display-name
+
     return () => <Component match={match} t={t} />
   }
 })

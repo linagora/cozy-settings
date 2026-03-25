@@ -51,7 +51,7 @@ const EmailModal = ({ onClose, onSuccess, passwordHash, skipConfirmation }) => {
       }
       setStatus('success')
       onSuccess()
-    } catch (e) {
+    } catch (_e) {
       setStatus('error')
       setError('server')
     }

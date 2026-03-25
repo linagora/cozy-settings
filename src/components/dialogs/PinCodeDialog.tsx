@@ -37,28 +37,39 @@ export const PinCodeDialog = ({
     event: ChangeEvent<HTMLInputElement> | KeyboardEvent
   ): void => {
     if ('value' in event.target) {
-      flowStep === 'initial'
-        ? setInitialValue(event.target.value)
-        : setConfirmValue(event.target.value)
+      if (flowStep === 'initial') {
+        setInitialValue(event.target.value)
+      } else {
+        setConfirmValue(event.target.value)
+      }
     }
 
     if ('key' in event && flowStep === 'initial') {
-      validatePinCode(initialValue) && setFlowStep('confirm')
+      if (validatePinCode(initialValue)) {
+        setFlowStep('confirm')
+      }
       inputRef.current?.blur()
     }
 
-    if ('key' in event && flowStep === 'confirm')
-      validatePinCode(initialValue) && trySetPinCode()
+    if ('key' in event && flowStep === 'confirm') {
+      if (validatePinCode(initialValue)) {
+        trySetPinCode()
+      }
+    }
   }
 
   const trySetPinCode = (): void => {
-    initialValue !== confirmValue
-      ? setError(t('LockScreenView.confirm_pin_error'))
-      : setPinCode(initialValue)
+    if (initialValue !== confirmValue) {
+      setError(t('LockScreenView.confirm_pin_error'))
+    } else {
+      setPinCode(initialValue)
+    }
   }
 
   useEffect(() => {
-    flowStep === 'confirm' && inputRef.current?.focus()
+    if (flowStep === 'confirm') {
+      inputRef.current?.focus()
+    }
   }, [flowStep])
 
   return (

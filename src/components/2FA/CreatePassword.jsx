@@ -40,7 +40,7 @@ const CreatePassword = ({ onSuccess }) => {
     try {
       await forceSetPassphrase(client, formData.passphrase, formData.hint)
       onSuccess()
-    } catch (e) {
+    } catch (_e) {
       setServerError(true)
     } finally {
       setSubmitting(false)

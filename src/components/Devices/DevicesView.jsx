@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'
 
@@ -99,7 +99,7 @@ const DevicesView = () => {
     setDeviceToConfigure(null)
   }
 
-  useMemo(() => {
+  useEffect(() => {
     if (fetchStatus === 'failed') {
       Alerter.error(t('DevicesView.load_error'))
     } else if (hasMore) {
@@ -107,6 +107,7 @@ const DevicesView = () => {
     } else if (deviceId && !isFetching) {
       const device = devices.find(d => d.id === deviceId)
       if (device != null && deviceToConfigure == null) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setDeviceToConfigure(device)
       } else if (device == null) {
         Alerter.error(t('DevicesView.device_load_error'))

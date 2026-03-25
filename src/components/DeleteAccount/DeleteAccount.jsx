@@ -37,6 +37,7 @@ const DeleteAccount = () => {
   const { showAlert } = useAlert()
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus(hasPassword ? CONFIRMING : REQUESTING)
   }, [hasPassword])
 

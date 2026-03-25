@@ -149,8 +149,9 @@ export class Claudy extends Component {
     const claudyActions = this.consolidateActions(claudyInfos)
     let SelectedActionComponent = null
     if (selectedAction && selectedAction.component) {
-      SelectedActionComponent =
-        require(`./ClaudyActionComponents${selectedAction.component}.jsx`).default
+      SelectedActionComponent = require(
+        `./ClaudyActionComponents${selectedAction.component}.jsx`
+      ).default
     }
     if (!alreadyResized && claudyInfos.actions.length && service.instance) {
       this.resizeDefaultClaudy() // very first resizing

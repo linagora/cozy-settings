@@ -12,6 +12,7 @@ export const OpenappButton = ({ type, appData }) => {
   const client = useClient()
   const { subdomain: subDomainType } = client.getInstanceOptions()
 
+  // eslint-disable-next-line no-useless-assignment
   let appWebRef = ''
   if (type === 'konnector') {
     appWebRef =

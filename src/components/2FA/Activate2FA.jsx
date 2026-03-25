@@ -33,7 +33,7 @@ export const Activate2FA = ({ onActivation, closeModal }) => {
         }
       )
       setCurrentStep('confirmation')
-    } catch (e) {
+    } catch (_e) {
       setValidationError('ProfileView.infos.server_error')
     } finally {
       setSubmitting(false)

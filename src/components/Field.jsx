@@ -41,6 +41,7 @@ const StatusIcon = ({
 
   useEffect(() => {
     if (saved && copyable) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowCopyIcon(false)
 
       if (timerRef.current) {
@@ -70,6 +71,7 @@ const StatusIcon = ({
           type: 'success'
         })
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error('Could not copy text: ', err)
         showAlert({
           message: t('Input.copy_failed', 'Failed to copy to clipboard'),
