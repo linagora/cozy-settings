@@ -161,47 +161,17 @@
         "empty": "Trường này không được để trống"
       },
       "twofa": {
-        "title": {
-          "activate": "Xác thực hai bước",
-          "desactivate": "Tắt xác thực hai bước",
-          "validation": "Xác nhận xác thực hai bước"
-        },
-        "password_creation": {
-          "title": "Chọn mật khẩu",
-          "help": "Sử dụng ít nhất tám ký tự với chữ cái, số và ký hiệu."
-        },
-        "passphrase": {
-          "title": "Xác thực hai bước",
-          "description": "Twake của bạn đã gửi mã xác nhận 6 chữ số đến %{email}.<br/>Nhập mã để thay đổi mật khẩu:"
-        },
-        "label": "Vì hai bước tốt hơn một, cải thiện bảo mật Twake với bước bổ sung.<br/>[Xem trang web hỗ trợ →](%{link})",
-        "modal": {
-          "code": "Mã (6 chữ số)",
-          "protect": "Bảo vệ Twake bằng xác thực hai bước",
-          "change": "**Điều gì thay đổi?** Mỗi khi kết nối với Twake, bạn sẽ cần mật khẩu và mã xác nhận.<br/>[Xem trang web hỗ trợ →](%{link})",
-          "secu_title": "Thêm mức bảo mật bổ sung",
-          "secu_description": "Mật khẩu tốt, nhưng nếu không \"phức tạp\", kẻ trộm có thể dễ dàng đoán. Nhận mã xác nhận qua email đảm bảo kiểm soát Twake của bạn.",
-          "protect_title": "Cải thiện bảo vệ dữ liệu",
-          "protect_description": "Ngay cả khi kẻ trộm có mật khẩu, bạn vẫn là người duy nhất có thể kết nối với Twake",
-          "desactivate_title": "Bạn có chắc muốn tắt tùy chọn này?",
-          "desactivate_description": "Khi nhấp \"Hủy kích hoạt\", mật khẩu sẽ là chìa khóa duy nhất để truy cập Twake. Bạn sẽ xóa một mức bảo mật.",
-          "confirmation_title": "Xác thực 2 bước",
-          "confirmation_description": "Nhập mã xác nhận vừa được gửi đến **%{email}**",
-          "nocode": "Bạn không nhận được mã?",
-          "nocode_claude": "Liên hệ Claude tại ",
-          "validation_title": "Chúc mừng! Email đã được xác nhận.",
-          "validation_description": "Twake của bạn hiện được bảo mật với 2 bước.",
-          "validation_logs": "Nhớ thông tin đăng nhập:",
-          "email": "Bạn cần cung cấp địa chỉ email hợp lệ",
-          "button": {
-            "activate": "Kích hoạt xác thực",
-            "cancel": "hủy",
-            "desactivate": "hủy kích hoạt",
-            "validate": "xác nhận",
-            "terminate": "hoàn thành",
-            "confirm": "xác nhận",
-            "next": "Tiếp theo"
+        "external-email": {
+          "title": "Email bên ngoài",
+          "label": "Email này sẽ được sử dụng để nhận mã xác thực hai yếu tố.",
+          "cta": {
+            "change": "Thay đổi email khôi phục",
+            "add": "Thêm email khôi phục"
           }
+        },
+        "auth": {
+          "title": "Xác thực hai yếu tố",
+          "label": "Thêm lớp bảo mật bổ sung bằng cách yêu cầu mã xác nhận khi đăng nhập. Thêm email khôi phục để nhận mã xác thực hai yếu tố."
         }
       },
       "public_name": {

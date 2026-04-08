@@ -130,47 +130,17 @@
       "empty": "Dit veld mag niet leeg worden gelaten"
     },
     "twofa": {
-      "title": {
-        "activate": "Authenticatie in twee stappen",
-        "desactivate": "Authenticatie in twee stappen uitschakelen",
-        "validation": "Verificatie van authenticatie in twee stappen"
-      },
-      "password_creation": {
-        "title": "Kies een wachtwoord",
-        "help": "Gebruik minimaal acht tekens: letters, cijfers en speciale tekens."
-      },
-      "passphrase": {
-        "title": "Authenticatie in twee stappen",
-        "description": "Twake heeft een verificatiecode van 6 getallen verstuurd naar %{email}.<br/>Voer die code hier in om je wachtwoord te wijzigen:"
-      },
-      "label": "Twee stappen zijn beter dan één: daarom kun je de veiligheid verbeteren met een extra stap.<br/>[Bekijk onze hulppagina →](%{link})",
-      "modal": {
-        "code": "Code (6 cijfers)",
-        "protect": "Bescherm je Twake met authenticatie in twee stappen",
-        "change": "**Wat verandert er?** Elke keer als je verbinding maakt met je Twake, dan heb je je wachtwoord nodig en een verificatiecode.<br/>[Bekijk onze hulppagina →](%{link})",
-        "secu_title": "Voeg een extra beveiligingsniveau toe",
-        "secu_description": "Een wachtwoord is goed, maar als het niet ‘complex’ genoeg is, dan kan een dief dit gemakkelijk raden. Ontvang per mail een verificatiecode om de veiligheid van je Twake te waarborgen.",
-        "protect_title": "Verbeter de beveiliging van je gegevens",
-        "protect_description": "Zelfs als een dief je wachtwoord raadt, dan blijf jij de enige die kan verbinden met je Twake.",
-        "desactivate_title": "Weet je zeker dat je deze optie wilt uitschakelen?",
-        "desactivate_description": "Als je op de knop ‘Uitschakelen’ klikt, dan wordt je wachtwoord de enige toegang tot je Twake. Je verwijdert hiermee dus een beveiligingsniveau.",
-        "confirmation_title": "Verificatie in 2 stappen",
-        "confirmation_description": "Voer de verificatiecode in die verstuurd is naar **%{email}**",
-        "nocode": "Heb je geen code ontvangen?",
-        "nocode_claude": "Neem dan contact op met Claude via",
-        "validation_title": "Gefeliciteerd! Je e-mailadres is bevestigd.",
-        "validation_description": "Je Twake wordt nu beveiligd door authenticatie in twee stappen.",
-        "validation_logs": "Inloggegevens onthouden:",
-        "email": "Je moet een geldig e-mailadres opgeven.",
-        "button": {
-          "activate": "Authenticatie activeren",
-          "cancel": "annuleren",
-          "desactivate": "uitschakelen",
-          "validate": "verifiëren",
-          "terminate": "afbreken",
-          "confirm": "Bevestigen",
-          "next": "Volgende"
+      "external-email": {
+        "title": "Externe e-mail",
+        "label": "Deze e-mail wordt gebruikt om tweefactorauthenticatiecodes te ontvangen.",
+        "cta": {
+          "change": "Herstel-e-mail wijzigen",
+          "add": "Herstel-e-mail toevoegen"
         }
+      },
+      "auth": {
+        "title": "Tweefactorauthenticatie",
+        "label": "Voeg een extra beveiligingslaag toe door een verificatiecode te vereisen wanneer u inlogt. Voeg herstel-e-mail toe om tweefactorauthenticatiecodes te ontvangen."
       }
     },
     "public_name": {

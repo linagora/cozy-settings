@@ -105,41 +105,17 @@
       "error": "メールアドレスは正しくないようです。 正しく入力していますか(例：john@wayne.com)?"
     },
     "twofa": {
-      "title": {
-        "activate": "二段階認証",
-        "desactivate": "二段階認証を無効にする",
-        "validation": "二段階認証の検証"
-      },
-      "passphrase": {
-        "title": "二段階認証",
-        "description": "Twake が %{email} に 6 桁の確認コードを送信しました。<br/>コードを入力してパスワードを変更してください:"
-      },
-      "label": "二段階は一段階より安全です。追加のステップで Twake のセキュリティを向上させます。<br/>[ウェブサイトをご覧ください →](%{link})",
-      "modal": {
-        "code": "コード",
-        "protect": "二段階認証で Twake を保護します",
-        "change": "**何が変わりますか?** Twake に接続するたびに、パスワードと確認コードを入力する必要があります。<br/>[ウェブサイトをご覧ください →](%{link})",
-        "secu_title": "セキュリティレベルを上げる",
-        "secu_description": "パスワードもいいですが、\"複雑\" にしないと、他人が簡単に推測できます。メールで検証コードを受信すると、Twake の制御が保証されます。",
-        "protect_title": "データの保護を向上",
-        "protect_description": "他人があなたのパスワードを入手しても、Twake に接続できるのはあなただけです",
-        "desactivate_title": "このオプションを無効にしてもよろしいですか?",
-        "desactivate_description": "\"無効にする\" ボタンをクリックすると、Twake にはパスワードのみでアクセスします。セキュリティレベルが低下します。",
-        "confirmation_title": "検証コードの確認",
-        "confirmation_description": "Twake が %{email} に 6 桁の確認コードを送信しました。<br/>コードを入力して認証を有効にしてください。",
-        "nocode": "コードを受信していませんか?",
-        "nocode_claude": "お問い合せは",
-        "validation_title": "おめでとうございます! メールアドレスを確認しました。",
-        "validation_description": "Twake は二段階で安全に保護されます。",
-        "validation_logs": "ID 覚えておいてください:",
-        "email": "正しいメールアドレスを入力する必要があります",
-        "button": {
-          "activate": "認証を有効にする",
-          "cancel": "キャンセル",
-          "desactivate": "無効にする",
-          "validate": "検証",
-          "terminate": "終了"
+      "external-email": {
+        "title": "外部メール",
+        "label": "このメールは、二要素認証コードの受信用に使用されます。",
+        "cta": {
+          "change": "回復メールを変更",
+          "add": "回復メールを追加"
         }
+      },
+      "auth": {
+        "title": "二要素認証",
+        "label": "サインイン時に確認コードを必要とすることで、セキュリティを強化します。二要素認証コードを受け取るために回復メールを追加してください。"
       }
     },
     "public_name": {

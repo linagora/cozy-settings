@@ -105,41 +105,17 @@
       "error": "Su correo electrónico no parece correcto. ¿Está usted seguro de haberlo escrito correctamente (p.e. antonio@banderas.com)?"
     },
     "twofa": {
-      "title": {
-        "activate": "Autenticación en dos pasos",
-        "desactivate": "Desactivar la autenticación en dos pasos",
-        "validation": "Validar la autenticación en dos pasos"
-      },
-      "passphrase": {
-        "title": "Autenticación en dos pasos",
-        "description": "Su Twake envía un código de validación de 6 dígitos a %{email}.<br/>\nintroduzca el código arriba mencionado para cambiar su contraseña:."
-      },
-      "label": "<br/>Debido a que dos pasos son mejores que uno, mejore la seguridad de su Twake con un paso adicional. \n[Échele un vistazo a nuestro sitio web de asistencia?]( %{link})",
-      "modal": {
-        "code": "código",
-        "protect": "Proteger su Twake con una autenticación en dos pasos",
-        "change": "¿Qué está cambiando?** Cada vez que usted se conecta a su Twake, va a necesitar su contraseña y un código de validación. 1[¿Échele un vistazo a nuestro sitio web de asistencia?](%{link})",
-        "secu_title": "Agregar un nivel de seguridad adicional",
-        "secu_description": "Una contraseña, es una buena cosa, pero si no es \"complicada\", cualquier ladrón puede fácilmente adivinarla. Reciba un código de validación por correo electrónico para hacer más seguro el control de su Twake.",
-        "protect_title": "Mejorar la protección de sus datos",
-        "protect_description": "Incluso si un intruso obtiene su contraseña, usted sigue siendo el único capitán capaz de conectarse a su Twake",
-        "desactivate_title": "¿Etá usted seguro de querer desactivar esta opción?",
-        "desactivate_description": "Al hacer clic en el botón \"Desactivar\", su contraseña será la única clave para acceder a su Twake. Anulará un nivel de seguridad.",
-        "confirmation_title": "Validación del código de confirmación",
-        "confirmation_description": "Su Twake envía un código de validación de 6 dígitos a %{email}.\nIntroduzca el código arriba mencionado para activar la autenticación.",
-        "nocode": "¿No ha recibido  usted un código?",
-        "nocode_claude": "Contactar a Claudia al",
-        "validation_title": "Felicitaciones! Su dirección de correo electrónico ha sido confirmada.",
-        "validation_description": "Su Twake ahora esta seguro con la identificación a 2 pasos.",
-        "validation_logs": "Recuerden sus identificadores:",
-        "email": "Debe suministrar una dirección de correo electrónico válida",
-        "button": {
-          "activate": "Activar la autenticación",
-          "cancel": "anular",
-          "desactivate": "desactivar",
-          "validate": "validar",
-          "terminate": "terminar"
+      "external-email": {
+        "title": "Email externo",
+        "label": "Este email se utilizará para recibir códigos de autenticación de dos factores.",
+        "cta": {
+          "change": "Cambiar email de recuperación",
+          "add": "Añadir email de recuperación"
         }
+      },
+      "auth": {
+        "title": "Autenticación de dos factores",
+        "label": "Añada una capa adicional de seguridad exigiendo un código de verificación al iniciar sesión. Añada el email de recuperación para recibir los códigos de autenticación de dos factores."
       }
     },
     "public_name": {

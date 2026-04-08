@@ -167,47 +167,17 @@
       "empty": "This field cannot be empty"
     },
     "twofa": {
-      "title": {
-        "activate": "Two steps authentication",
-        "desactivate": "Desactivate two steps authentication",
-        "validation": "Two steps authentication validation"
-      },
-      "password_creation": {
-        "title": "Choose a password",
-        "help": "Use at least eight characters with letters, numbers and symbols."
-      },
-      "passphrase": {
-        "title": "Two steps authentication",
-        "description": "Your Twake sent a 6 digits validation code to %{email}.<br/>Entre the code inside to change your password:"
-      },
-      "label": "Because two steps are better than one, improve your Twake security with an additional step.<br/>[Check out our assistance website →](%{link})",
-      "modal": {
-        "code": "Code (6 digits)",
-        "protect": "Protect your Twake with two steps authentication",
-        "change": "**What's changing?** Everytime you'll connect to your Twake, you'll need your password and a validation code.<br/>[Check out our assistance website →](%{link})",
-        "secu_title": "Add an additional security level",
-        "secu_description": "Password, that's good, but if it isn't \"complicated\", a thief can easily guess it. Receive a validation code by mail assures the control of your Twake.",
-        "protect_title": "Improve the protection of your data",
-        "protect_description": "Even if a thief gets your password, you stay the only captain able to connect to your Twake",
-        "desactivate_title": "Are you sure to disable this option?",
-        "desactivate_description": "On clicking on \"Desactivate\" button, your password will be the only key to access your Twake. You will delete a security level.",
-        "confirmation_title": "Authentication in 2 steps",
-        "confirmation_description": "Enter the verification code that has just been emailed to you at **%{email}**",
-        "nocode": "You do not receive any code?",
-        "nocode_claude": "Contact Claude at ",
-        "validation_title": "Congratulations! Your email is confirmed.",
-        "validation_description": "Your Twake is now secured with 2 steps.",
-        "validation_logs": "Remember your identifiers:",
-        "email": "You should provide a valid email address",
-        "button": {
-          "activate": "Activate authentication",
-          "cancel": "cancel",
-          "desactivate": "desactivate",
-          "validate": "validate",
-          "terminate": "terminate",
-          "confirm": "confirm",
-          "next": "Next"
+      "external-email": {
+        "title": "External email",
+        "label": "This email will be used to receive two-factor authentication codes.",
+        "cta": {
+          "change": "Change recovery email",
+          "add": "Add recovery email"
         }
+      },
+      "auth": {
+        "title": "Two-Factor Authentication",
+        "label": "Add an extra layer of security by requiring a verification code when you sign in. Add recovery email to receive two-factor authentication codes."
       }
     },
     "public_name": {
