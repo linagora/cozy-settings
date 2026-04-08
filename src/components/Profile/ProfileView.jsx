@@ -48,6 +48,7 @@ const ProfileView = ({
   const isPhoneEnabled = flag('settings.phone.enabled')
   const isDeleteEnabled = flag('settings.delete.enabled')
   const isEmailReadOnly = flag('settings.email.readonly')
+  const isSignupEnabled = flag('signup.url')
 
   return (
     <Page narrow>
@@ -66,8 +67,8 @@ const ProfileView = ({
               <MatrixIdSection email={instanceResult.data.email} />
             )}
             {isPhoneEnabled && <PhoneNumberSection />}
+            {isTwoFAEnabled && isSignupEnabled && <TwoFA />}
             <PasswordSection />
-            {isTwoFAEnabled && <TwoFA />}
             <LanguageSection />
             <DefaultRedirectionSection />
             <div>

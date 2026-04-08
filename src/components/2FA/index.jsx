@@ -1,93 +1,71 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useI18n } from 'twake-i18n'
 
-import { useQuery, useMutation } from 'cozy-client'
+import { useInstanceInfo } from 'cozy-client'
+import flag from 'cozy-flags'
+import Button from 'cozy-ui/transpiled/react/Buttons'
+import FormControlLabel from 'cozy-ui/transpiled/react/FormControlLabel'
+import FormGroup from 'cozy-ui/transpiled/react/FormGroup'
+import Stack from 'cozy-ui/transpiled/react/Stack'
+import Switch from 'cozy-ui/transpiled/react/Switch'
+import Typography from 'cozy-ui/transpiled/react/Typography'
 
-import Activate2FA from '@/components/2FA/Activate2FA'
-import Desactivate2FA from '@/components/2FA/Desactivate2FA'
-import Input from '@/components/Input'
-import { buildSettingsInstanceQuery } from '@/lib/queries'
+import { AUTH_MODE } from '@/actions/twoFactor'
 
 const TwoFA = () => {
   const { t } = useI18n()
+  const {
+    instance: { data }
+  } = useInstanceInfo()
 
-  const instanceQuery = buildSettingsInstanceQuery()
-  const { data: instance } = useQuery(
-    instanceQuery.definition,
-    instanceQuery.options
-  )
-
-  const { mutate } = useMutation()
-
-  const [isActivationModalOpen, setActivationModalOpen] = useState(false)
-  const [isDesactivationModalOpen, setDesactivationModalOpen] = useState(false)
-
-  const openActivationModal = () => {
-    setActivationModalOpen(true)
-  }
-
-  const closeActivationModal = () => {
-    setActivationModalOpen(false)
-  }
-
-  const openDesactivationModal = () => {
-    setDesactivationModalOpen(true)
-  }
-  const closeDesactivationModal = () => {
-    setDesactivationModalOpen(false)
-  }
-
-  const onActivation = () => {
-    mutate({
-      _rev: instance.meta.rev,
-      ...instance,
-      attributes: {
-        ...instance.attributes,
-        auth_mode: 'two_factor_mail'
-      }
-    })
-  }
-
-  const onDesactivation = () => {
-    mutate({
-      _rev: instance.meta.rev,
-      ...instance,
-      attributes: {
-        ...instance.attributes,
-        auth_mode: 'basic'
-      }
-    })
-  }
-
-  const isTwoFactorEnabled = instance.auth_mode === 'two_factor_mail'
+  const signUpUrl = flag('signup.url')
+  const isTwoFactorEnabled = data.auth_mode === AUTH_MODE.TWO_FA_OIDC
+  const recoveryEmail = data.recovery_email
 
   return (
-    <div>
-      <Input
-        name="two_fa"
-        type="checkbox"
-        title={t('ProfileView.twofa.title.activate')}
-        label={t('ProfileView.twofa.label', {
-          link: 'https://support.cozy.io/article/114-doubleauthentification'
-        })}
-        value={isTwoFactorEnabled}
-        onChange={
-          isTwoFactorEnabled ? openDesactivationModal : openActivationModal
-        }
-      />
-      {isActivationModalOpen && (
-        <Activate2FA
-          onActivation={onActivation}
-          closeModal={closeActivationModal}
+    <>
+      <Stack spacing="m">
+        <Typography variant="h5" gutterBottom>
+          {t('ProfileView.twofa.external-email.title')}
+        </Typography>
+        <Typography gutterBottom>
+          {t('ProfileView.twofa.external-email.label')}
+        </Typography>
+        {!!recoveryEmail && (
+          <Typography style={{ fontWeight: 700 }} gutterBottom>
+            {recoveryEmail}
+          </Typography>
+        )}
+        <Button
+          component="a"
+          variant="secondary"
+          label={
+            recoveryEmail
+              ? t('ProfileView.twofa.external-email.cta.change')
+              : t('ProfileView.twofa.external-email.cta.add')
+          }
+          href={`${signUpUrl}/change-recovery-email`}
+          target="_blank"
         />
-      )}
-      {isDesactivationModalOpen && (
-        <Desactivate2FA
-          onDesactivation={onDesactivation}
-          closeModal={closeDesactivationModal}
-        />
-      )}
-    </div>
+      </Stack>
+      <div>
+        <Typography variant="h5" gutterBottom>
+          {t('ProfileView.twofa.auth.title')}
+        </Typography>
+        <FormGroup row>
+          <FormControlLabel
+            className="u-m-0"
+            label={t('ProfileView.twofa.auth.label')}
+            labelPlacement="start"
+            control={<Switch color="primary" checked={isTwoFactorEnabled} />}
+            onClick={ev => {
+              ev.preventDefault()
+              window.open(`${signUpUrl}/configure-2fa`)
+            }}
+          />
+        </FormGroup>
+      </div>
+    </>
   )
 }
 
