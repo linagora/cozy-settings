@@ -105,41 +105,17 @@
       "error": "Die E-Mail-Adresse fühlt sich nicht richtig an. Bist du sicher, dass du sie richtig geschrieben hast (z. B. john@wayne.com)?"
     },
     "twofa": {
-      "title": {
-        "activate": "Zwei-Faktor-Authentifizierung",
-        "desactivate": "Zwei-Faktor-Authentifizierung deaktivieren",
-        "validation": "Zwei-Faktor-Authentifizierung Überprüfung"
-      },
-      "passphrase": {
-        "title": "Zwei-Faktor-Authentifizierung",
-        "description": "Dein Twake hat einen 6-stelligen Bestätigungscode an %{email} geschickt.<br/>Gib den Code ein, um dein Passwort zu ändern:"
-      },
-      "label": "Weil zwei Schritte besser sind als einer, verbessere deine Twake Sicherheit mit einem zusätzlichen Schritt.<br/>[Schaue auch auf unsere Unterstützungswebsite →](%{link})",
-      "modal": {
-        "code": "Code",
-        "protect": "Schütze deinen Twake mit der Zwei-Faktor-Authentifizierung",
-        "change": "**Was ändert sich?** Für jedes Mal, das du dich mit deinem Twake verbindest, wirst du dein Passwort und einen Validierungscode brauchen.</br>[Check out our assistance website →](%{link})",
-        "secu_title": "Füge eine weitere Sicherheitsebene hinzu",
-        "secu_description": "Passwörter sind gut. Aber wenn es nicht \"kompliziert\" genug ist, kann ein Dieb es leicht erraten. Erhalte einen Überprüfungscode per E-Mail, um die Kontrolle über dein Twake zu sichern.",
-        "protect_title": "Verbessere den Schutz deiner Daten",
-        "protect_description": "Selbst wenn ein Dieb dein Passwort erhält, bleibst du der einzige Kapitän mit Zugriff auf dein Twake",
-        "desactivate_title": "Bist du sicher, dass du diese Option abschalten möchtest?",
-        "desactivate_description": "Beim Klicken auf den \"Deaktivieren\" Button, wird dein Passwort der einzige Zugangsschlüssel zu deinem Twake sein. Du wirst eine Sicherheitsebene verlieren.",
-        "confirmation_title": "Validierungscode-Bestätigung",
-        "confirmation_description": "Dein Twake hat einen 6-stelligen Bestätigungscode an %{email} gesendet.<br/>Gib den Code ein, um die Echtheitsprüfung zu aktivieren.",
-        "nocode": "Du hast keinen Code bekommen?",
-        "nocode_claude": "Kontaktiere Claude über",
-        "validation_title": "Glückwunsch! Deine E-Mail wurde bestätigt.",
-        "validation_description": "Dein Twake ist nun mit 2 Schritten abgesichert.",
-        "validation_logs": "Merke dir deine Kennungen:",
-        "email": "Du solltest eine gültige E-Mail Adresse angeben",
-        "button": {
-          "activate": "Echtheitsprüfung aktivieren",
-          "cancel": "abbrechen",
-          "desactivate": "deaktivieren",
-          "validate": "bestätigen",
-          "terminate": "beenden"
+      "external-email": {
+        "title": "Externe E-Mail",
+        "label": "Diese E-Mail wird verwendet, um Zwei-Faktor-Authentifizierungscodes zu erhalten.",
+        "cta": {
+          "change": "Wiederherstellungs-E-Mail ändern",
+          "add": "Wiederherstellungs-E-Mail hinzufügen"
         }
+      },
+      "auth": {
+        "title": "Zwei-Faktor-Authentifizierung",
+        "label": "Fügen Sie eine zusätzliche Sicherheitsebene hinzu, indem Sie bei der Anmeldung einen Bestätigungscode verlangen. Fügen Sie die Wiederherstellungs-E-Mail hinzu, um Zwei-Faktor-Authentifizierungscodes zu erhalten."
       }
     },
     "public_name": {

@@ -164,47 +164,17 @@
       "empty": "Le champ ne peut pas être vide"
     },
     "twofa": {
-      "title": {
-        "activate": "Authentification en deux étapes",
-        "desactivate": "Désactiver l'authentification en deux étapes",
-        "validation": "Validation de la double authentification"
-      },
-      "password_creation": {
-        "title": "Choisir un mot de passe",
-        "help": "Utiliser au moins huit caractères avec des lettres, des chiffres et des symboles."
-      },
-      "passphrase": {
-        "title": "Authentification en deux étapes",
-        "description": "Votre Twake vous a envoyé un code de validation à 6 chiffres à l'adresse suivante : %{email}<br/>Saississez-le ci-dessous pour activer l'authentification :"
-      },
-      "label": "Parce que deux étapes valent mieux qu'une, renforcez la sécurité de votre Twake avec une étape supplémentaire.<br/> [Consulter notre site d'aide →](%{link}). ",
-      "modal": {
-        "code": "Code (6 chiffres)",
-        "protect": "Protégez votre Twake avec l'authentification en deux étapes",
-        "change": " **Qu'est-ce que ça change ?** Chaque fois que vous vous connecterez à votre Twake, vous aurez besoin de votre mot de passe et d'un code d'activation. <br/>[Consulter notre site d'aide →](%{link}). ",
-        "secu_title": "Ajoutez un niveau de sécurité supplémentaire",
-        "secu_description": "Un mot de passe, c'est bien mais s'il n'est pas \"compliqué\", un intrus peut le deviner facilement. Recevoir un code de validation par e-mail vous garantit le contrôle de votre Twake.",
-        "protect_title": "Renforcez la protection de vos données",
-        "protect_description": "Même si un inconnu obtient votre mot de passe, vous restez le seul maître à bord et le seul à pouvoir vous connecter à votre Twake.",
-        "desactivate_title": "Êtes-vous certain·e de désactiver cette option ?",
-        "desactivate_description": "En cliquant sur le bouton\" Désactiver\", votre mot de passe sera le seul sésame pour accéder à votre Twake. Vous supprimez ainsi un niveau de sécurité.",
-        "confirmation_title": "Authentification en 2 étapes",
-        "confirmation_description": "Entrer le code de vérification qui vient de vous être envoyé par email à **%{email}**",
-        "nocode": "Vous ne recevez aucun code ?",
-        "nocode_claude": "Contactez Claude à l'adresse : ",
-        "validation_title": "Bravo ! Votre adresse email est confirmée.",
-        "validation_description": "La sécurisation de votre Twake se fera, à partir de maintenant, en deux étapes.",
-        "validation_logs": "Rappel de vos identifiants :",
-        "email": "Vous devez renseigner une adresse email valide pour que votre Twake puisse vous envoyer votre code de confirmation.",
-        "button": {
-          "activate": "Activer l'authentification",
-          "cancel": "Annuler",
-          "desactivate": "Désactiver",
-          "validate": "Valider",
-          "terminate": "Terminer",
-          "confirm": "Confirmer",
-          "next": "Suivant"
+      "external-email": {
+        "title": "Email externe",
+        "label": "Cet email sera utilisé pour recevoir les codes d'authentification à deux facteurs.",
+        "cta": {
+          "change": "Changer l'email de récupération",
+          "add": "Ajouter l'email de récupération"
         }
+      },
+      "auth": {
+        "title": "Authentification à deux facteurs",
+        "label": "Ajoutez une couche de sécurité supplémentaire en exigeant un code de vérification lors de votre connexion. Ajoutez l'email de récupération pour recevoir les codes d'authentification à deux facteurs."
       }
     },
     "public_name": {
