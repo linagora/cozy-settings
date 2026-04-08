@@ -20,6 +20,6 @@ export const CHECK_TWO_FACTOR_CODE_SUCCESS = 'CHECK_TWO_FACTOR_CODE_SUCCESS'
 export const CANCEL_2FA_ACTIVATION = 'CANCEL_2FA_ACTIVATION'
 
 export const AUTH_MODE = {
-  TWO_FA_MAIL: 'two_factor_mail',
+  TWO_FA_OIDC: 'two_factor_oidc',
   BASIC: 'basic'
 }

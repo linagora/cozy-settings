@@ -7,12 +7,7 @@ import { translate } from 'twake-i18n'
 import { withClient } from 'cozy-client'
 import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
 
-import {
-  updatePassphrase,
-  updatePassphrase2FAFirst,
-  updatePassphrase2FASecond,
-  updateHint
-} from '@/actions/passphrase'
+import { updatePassphrase, updateHint } from '@/actions/passphrase'
 import PassphraseView from '@/components/PassphraseView'
 
 const mapStateToProps = state => ({
@@ -32,45 +27,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
           ownProps.client,
           currentPassphrase,
           newPassphrase,
-          ownProps.client.getStackClient().uri
-        )
-      )
-      showSuccess(ownProps.t)
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e)
-    }
-  },
-  onPassphrase2FAStep1: async currentPassphrase => {
-    try {
-      await dispatch(
-        updatePassphrase2FAFirst(
-          ownProps.client,
-          currentPassphrase,
-          ownProps.client.getStackClient().uri
-        )
-      )
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e)
-    }
-  },
-  onPassphrase2FAStep2: async (
-    currentPassphrase,
-    newPassphrase,
-    twoFactorCode,
-    twoFactorToken,
-    hint
-  ) => {
-    try {
-      await dispatch(updateHint(ownProps.client, hint))
-      await dispatch(
-        updatePassphrase2FASecond(
-          ownProps.client,
-          currentPassphrase,
-          newPassphrase,
-          twoFactorCode,
-          twoFactorToken,
           ownProps.client.getStackClient().uri
         )
       )
