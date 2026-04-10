@@ -8,6 +8,7 @@ import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import { DeleteAccount } from '@/components/DeleteAccount'
 import ChangeEmail from '@/components/Email/ChangeEmail'
+import { Migration } from '@/components/Migration/Migration'
 import PermissionsApplication from '@/components/Permissions/AppPermissions/AppPermissions'
 import DataPermissions from '@/components/Permissions/DataPermissions/DataPermissions'
 import PermissionDetails from '@/components/Permissions/PermissionDetails/PermissionDetails'
@@ -74,6 +75,9 @@ const AppRouter = () => {
       <Route path="/support" element={<Support />} />
       {flag('settings.subscription') && (
         <Route path="/subscription" element={<Subscription />} />
+      )}
+      {flag('settings.migration.enabled') && (
+        <Route path="/migration" element={<Migration />} />
       )}
       {BarRoutes.map(BarRoute => BarRoute)}
       <Route
