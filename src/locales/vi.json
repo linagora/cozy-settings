@@ -1,611 +1,627 @@
 {
-    "manifest": {
-      "name": "Cài đặt"
+  "manifest": {
+    "name": "Cài đặt"
+  },
+  "DeleteAccount": {
+    "title": "Xóa tài khoản của bạn",
+    "label": "Bạn có thể xóa Twake của mình bất cứ lúc nào. Hãy cẩn thận, sau khi tài khoản bị xóa, dữ liệu của bạn sẽ bị xóa hoàn toàn, không thể khôi phục.",
+    "button": {
+      "label": "Xóa tài khoản của tôi"
     },
-    "DeleteAccount": {
-      "title": "Xóa tài khoản của bạn",
-      "label": "Bạn có thể xóa Twake của mình bất cứ lúc nào. Hãy cẩn thận, sau khi tài khoản bị xóa, dữ liệu của bạn sẽ bị xóa hoàn toàn, không thể khôi phục.",
-      "button": {
-        "label": "Xóa tài khoản của tôi"
-      },
-      "error": {
-        "message": "Đã xảy ra lỗi trong quá trình yêu cầu xóa tài khoản. Vui lòng thử lại hoặc liên hệ bộ phận hỗ trợ."
-      },
-      "popup": {
-        "deleteLater": "Xóa sau",
-        "continue": "Tiếp tục",
-        "chat": {
-          "conversations": {
-            "title": "Mất các cuộc trò chuyện",
-            "description": "Khi xóa tài khoản, tất cả cuộc trò chuyện của bạn trên Twake Chat sẽ bị mất vĩnh viễn. Bạn sẽ không thể truy cập hoặc khôi phục lịch sử trò chuyện."
-          },
-          "groupChat": {
-            "title": "Trò chuyện nhóm của bạn",
-            "description": "Sau khi tài khoản bị xóa, tất cả tin nhắn riêng tư và nhóm sẽ bị xóa mà không thể khôi phục. Vui lòng đảm bảo lưu lại các cuộc trò chuyện quan trọng trước khi tiếp tục."
-          }
+    "error": {
+      "message": "Đã xảy ra lỗi trong quá trình yêu cầu xóa tài khoản. Vui lòng thử lại hoặc liên hệ bộ phận hỗ trợ."
+    },
+    "popup": {
+      "deleteLater": "Xóa sau",
+      "continue": "Tiếp tục",
+      "chat": {
+        "conversations": {
+          "title": "Mất các cuộc trò chuyện",
+          "description": "Khi xóa tài khoản, tất cả cuộc trò chuyện của bạn trên Twake Chat sẽ bị mất vĩnh viễn. Bạn sẽ không thể truy cập hoặc khôi phục lịch sử trò chuyện."
         },
-        "drive": {
-          "title": "Mất các tệp của bạn",
-          "description": "Tất cả tệp được lưu trữ trong Twake Drive của bạn sẽ bị xóa. Đảm bảo sao lưu dữ liệu trước khi xóa tài khoản."
-        },
-        "mail": {
-          "title": "Mất email của bạn",
-          "description": "Khi xóa tài khoản, tất cả email Twake Mail của bạn sẽ bị xóa vĩnh viễn. Nếu có thông tin quan trọng, vui lòng lưu trữ trước khi tiếp tục."
+        "groupChat": {
+          "title": "Trò chuyện nhóm của bạn",
+          "description": "Sau khi tài khoản bị xóa, tất cả tin nhắn riêng tư và nhóm sẽ bị xóa mà không thể khôi phục. Vui lòng đảm bảo lưu lại các cuộc trò chuyện quan trọng trước khi tiếp tục."
         }
       },
+      "drive": {
+        "title": "Mất các tệp của bạn",
+        "description": "Tất cả tệp được lưu trữ trong Twake Drive của bạn sẽ bị xóa. Đảm bảo sao lưu dữ liệu trước khi xóa tài khoản."
+      },
+      "mail": {
+        "title": "Mất email của bạn",
+        "description": "Khi xóa tài khoản, tất cả email Twake Mail của bạn sẽ bị xóa vĩnh viễn. Nếu có thông tin quan trọng, vui lòng lưu trữ trước khi tiếp tục."
+      }
+    },
+    "modal": {
+      "confirm": {
+        "title": "Xóa Twake của bạn?",
+        "description": {
+          "line": {
+            "1": "Twake của bạn sẽ bị xóa",
+            "2": "Bạn sẽ không thể truy cập Twake của mình nữa",
+            "3": "Tất cả dữ liệu của bạn sẽ bị xóa",
+            "4": "Vui lòng nhập mật khẩu để xác nhận hành động này:"
+          }
+        },
+        "password": {
+          "required": "Trường này là bắt buộc",
+          "errors": {
+            "invalid_password": "Mật khẩu của bạn có vẻ không đúng",
+            "server_error": "Đã xảy ra lỗi, vui lòng thử lại"
+          }
+        },
+        "button": {
+          "cancel": {
+            "label": "Hủy"
+          },
+          "submit": {
+            "label": "Xóa"
+          }
+        }
+      },
+      "form": {
+        "title": "Yêu cầu xóa Twake của bạn",
+        "reason": {
+          "label": "Tại sao bạn muốn xóa Twake của mình (tùy chọn)?"
+        },
+        "button": {
+          "cancel": {
+            "label": "Hủy"
+          },
+          "submit": {
+            "label": "Gửi"
+          }
+        }
+      },
+      "email_confirmation": {
+        "title": "Mở email của bạn",
+        "description": "Một email đã được gửi đến **%{email}**. Để xác nhận việc xóa tài khoản, vui lòng nhấp vào liên kết xác nhận trong email này.",
+        "button": {
+          "submit": {
+            "label": "Tôi đã hiểu"
+          }
+        }
+      }
+    },
+    "request": {
+      "mail": {
+        "subject": "Lý do xóa Twake %{domain}"
+      }
+    },
+    "byEmailOnly": {
+      "success": "Yêu cầu đã được gửi và sẽ được đội ngũ của chúng tôi xử lý nhanh chóng."
+    },
+    "success": {
+      "message": "Yêu cầu xóa của bạn đã được gửi."
+    }
+  },
+  "Nav": {
+    "activated_services": "Dịch vụ đã kích hoạt",
+    "connected_devices": "Thiết bị đã kết nối",
+    "email_notifications": "Thông báo email",
+    "header_data": "Bảo mật và dữ liệu",
+    "header_flagship": "Ứng dụng Twake",
+    "header_general": "Tổng quan",
+    "header_other": "Khác",
+    "permissions": "Quyền truy cập",
+    "primary_biometry": "Mở khóa bằng vân tay sinh trắc học",
+    "primary_biometry_android": "Mở khóa bằng vân tay sinh trắc học",
+    "primary_biometry_faceid": "Mở khóa bằng Face ID",
+    "primary_biometry_touchid": "Mở khóa bằng Touch ID",
+    "primary_faq": "Câu hỏi thường gặp",
+    "primary_lock_screen": "Màn hình mở khóa",
+    "primary_lock_switch": "Khóa khi ứng dụng chạy nền",
+    "primary_logout": "Đăng xuất",
+    "primary_photo_sync": "Tự động đồng bộ ảnh",
+    "primary_pin_switch": "Mở khóa bằng mã PIN",
+    "primary_plan": "Gói và tùy chọn",
+    "primary_save_journeys": "Ghi lại chuyến đi",
+    "primary_support": "Hỗ trợ",
+    "primary_wifi_sync": "Chỉ đồng bộ khi có wifi",
+    "profile": "Hồ sơ",
+    "appearance": "Giao diện",
+    "secondary_free": "Miễn phí",
+    "secondary_used": "Đã sử dụng %{percent}%",
+    "sessions": "Kết nối web",
+    "storage": "Lưu trữ",
+    "contact_support": "Liên hệ chúng tôi",
+    "terms_of_service": "Điều khoản dịch vụ",
+    "legal_notice": "Thông báo pháp lý",
+    "migration": "Migration"
+  },
+  "loading": {
+    "loading": "Đang tải"
+  },
+  "Input": {
+    "copied": "Đã sao chép vào clipboard"
+  },
+  "Empty": {
+    "devices": {
+      "title": "Bạn không có thiết bị nào đã kết nối",
+      "text": "Bằng cách cài đặt các ứng dụng khách khác nhau, bạn sẽ có thể truy cập tệp của mình trên tất cả màn hình và đồng thời. Twake sẽ luôn trong tầm tay, ngay cả khi bạn luôn di chuyển!",
+      "link": {
+        "href": "https://cozy.io/en/download/",
+        "text": "Tải xuống một trong các ứng dụng của chúng tôi"
+      }
+    }
+  },
+  "ProfileView": {
+    "instance": {
+      "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang."
+    },
+    "title": "Hồ sơ",
+    "password": {
+      "title": "Mật khẩu",
+      "label": "Twake của bạn hiện được bảo vệ bằng mật khẩu",
+      "cta": "Cập nhật mật khẩu của tôi"
+    },
+    "infos": {
+      "success": "Thông tin của bạn đã được thay đổi",
+      "server_error": "Đã xảy ra lỗi. Thông tin của bạn chưa được lưu.",
+      "empty": "Trường này không được để trống"
+    },
+    "twofa": {
+      "external-email": {
+        "title": "Email bên ngoài",
+        "label": "Email này sẽ được sử dụng để nhận mã xác thực hai yếu tố.",
+        "cta": {
+          "change": "Thay đổi email khôi phục",
+          "add": "Thêm email khôi phục"
+        }
+      },
+      "auth": {
+        "title": "Xác thực hai yếu tố",
+        "label": "Thêm lớp bảo mật bổ sung bằng cách yêu cầu mã xác nhận khi đăng nhập. Thêm email khôi phục để nhận mã xác thực hai yếu tố."
+      }
+    },
+    "public_name": {
+      "title": "Tên người dùng",
+      "label": "Hiển thị khi bạn chia sẻ tệp với người dùng Twake."
+    },
+    "matrix_id": {
+      "title": "Matrix ID",
+      "label": "Định danh duy nhất trong nền tảng Twake dùng cho nhắn tin thời gian thực trong giao thức Matrix mã nguồn mở."
+    },
+    "phone_number": {
+      "title": "Số điện thoại",
+      "label": "Được dùng để gửi thông báo và cho phép khôi phục mật khẩu.",
+      "change_button": "Thay đổi số điện thoại",
+      "invalid": "Số điện thoại không hợp lệ"
+    },
+    "default_redirection": {
+      "title": "Màn hình chính",
+      "label": "Đây là màn hình đầu tiên bạn thấy khi mở Twake.",
+      "app_list": "Bảng điều khiển"
+    },
+    "move": {
+      "button": "Chuyển Twake của tôi",
+      "label": "Thay đổi Twake mà không mất dữ liệu"
+    },
+    "export": {
+      "title": "Dữ liệu của tôi",
+      "label": "Twake Drive cam kết cung cấp tất cả tệp lưu trữ:",
+      "link": "Xuất dữ liệu Twake Drive",
+      "server_error": "Đã xảy ra lỗi, vui lòng thử lại hoặc liên hệ chúng tôi.",
+      "fetch_error": "Đã xảy ra lỗi khi lấy dữ liệu xuất. Vui lòng thử lại hoặc liên hệ chúng tôi.",
+      "missing_error": "Tệp lưu trữ có vẻ bị thiếu hoặc hết hạn. Vui lòng thử lại hoặc liên hệ chúng tôi.",
+      "success": "Yêu cầu của bạn đã được gửi thành công!",
       "modal": {
-        "confirm": {
-          "title": "Xóa Twake của bạn?",
-          "description": {
-            "line": {
-              "1": "Twake của bạn sẽ bị xóa",
-              "2": "Bạn sẽ không thể truy cập Twake của mình nữa",
-              "3": "Tất cả dữ liệu của bạn sẽ bị xóa",
-              "4": "Vui lòng nhập mật khẩu để xác nhận hành động này:"
-            }
-          },
-          "password": {
-            "required": "Trường này là bắt buộc",
-            "errors": {
-              "invalid_password": "Mật khẩu của bạn có vẻ không đúng",
-              "server_error": "Đã xảy ra lỗi, vui lòng thử lại"
-            }
-          },
-          "button": {
-            "cancel": {
-              "label": "Hủy"
-            },
-            "submit": {
-              "label": "Xóa"
-            }
-          }
-        },
-        "form": {
-          "title": "Yêu cầu xóa Twake của bạn",
-          "reason": {
-            "label": "Tại sao bạn muốn xóa Twake của mình (tùy chọn)?"
-          },
-          "button": {
-            "cancel": {
-              "label": "Hủy"
-            },
-            "submit": {
-              "label": "Gửi"
-            }
-          }
-        },
-        "email_confirmation": {
-          "title": "Mở email của bạn",
-          "description": "Một email đã được gửi đến **%{email}**. Để xác nhận việc xóa tài khoản, vui lòng nhấp vào liên kết xác nhận trong email này.",
-          "button": {
-            "submit": {
-              "label": "Tôi đã hiểu"
-            }
-          }
-        }
+        "title": "Lấy lại dữ liệu của tôi",
+        "description": "Twake sẽ thu thập tất cả dữ liệu về bạn và gửi tệp lưu trữ để tải xuống.<br/><br/>Liên kết tải xuống sẽ được gửi đến địa chỉ email __%{email}__ khi tệp lưu trữ sẵn sàng.",
+        "cancel": "Hủy",
+        "CTA": "Gửi dữ liệu cho tôi"
       },
-      "request": {
-        "mail": {
-          "subject": "Lý do xóa Twake %{domain}"
-        }
-      },
-      "byEmailOnly": {
-        "success": "Yêu cầu đã được gửi và sẽ được đội ngũ của chúng tôi xử lý nhanh chóng."
-      },
-      "success": {
-        "message": "Yêu cầu xóa của bạn đã được gửi."
+      "download": {
+        "title": "Tải xuống dữ liệu của tôi",
+        "description": "Đây là tất cả tệp lưu trữ dữ liệu có sẵn từ Twake của bạn:",
+        "CTA": "Tải xuống tệp lưu trữ",
+        "CTA_part": "Tải xuống (phần %{number})"
       }
     },
-    "Nav": {
-      "activated_services": "Dịch vụ đã kích hoạt",
-      "connected_devices": "Thiết bị đã kết nối",
-      "email_notifications": "Thông báo email",
-      "header_data": "Bảo mật và dữ liệu",
-      "header_flagship": "Ứng dụng Twake",
-      "header_general": "Tổng quan",
-      "header_other": "Khác",
-      "permissions": "Quyền truy cập",
-      "primary_biometry": "Mở khóa bằng vân tay sinh trắc học",
-      "primary_biometry_android": "Mở khóa bằng vân tay sinh trắc học",
-      "primary_biometry_faceid": "Mở khóa bằng Face ID",
-      "primary_biometry_touchid": "Mở khóa bằng Touch ID",
-      "primary_faq": "Câu hỏi thường gặp",
-      "primary_lock_screen": "Màn hình mở khóa",
-      "primary_lock_switch": "Khóa khi ứng dụng chạy nền",
-      "primary_logout": "Đăng xuất",
-      "primary_photo_sync": "Tự động đồng bộ ảnh",
-      "primary_pin_switch": "Mở khóa bằng mã PIN",
-      "primary_plan": "Gói và tùy chọn",
-      "primary_save_journeys": "Ghi lại chuyến đi",
-      "primary_support": "Hỗ trợ",
-      "primary_wifi_sync": "Chỉ đồng bộ khi có wifi",
-      "profile": "Hồ sơ",
-      "appearance": "Giao diện",
-      "secondary_free": "Miễn phí",
-      "secondary_used": "Đã sử dụng %{percent}%",
-      "sessions": "Kết nối web",
-      "storage": "Lưu trữ",
-      "contact_support": "Liên hệ chúng tôi",
-      "terms_of_service": "Điều khoản dịch vụ",
-      "legal_notice": "Thông báo pháp lý"
-    },
-    "loading": {
-      "loading": "Đang tải"
-    },
-    "Input": {
-      "copied": "Đã sao chép vào clipboard"
-    },
-    "Empty": {
-      "devices": {
-        "title": "Bạn không có thiết bị nào đã kết nối",
-        "text": "Bằng cách cài đặt các ứng dụng khách khác nhau, bạn sẽ có thể truy cập tệp của mình trên tất cả màn hình và đồng thời. Twake sẽ luôn trong tầm tay, ngay cả khi bạn luôn di chuyển!",
-        "link": {
-          "href": "https://cozy.io/en/download/",
-          "text": "Tải xuống một trong các ứng dụng của chúng tôi"
-        }
+    "import": {
+      "link": "Nhập dữ liệu Twake Drive",
+      "server_error": "Đã xảy ra lỗi, vui lòng thử lại hoặc liên hệ chúng tôi.",
+      "invalid_url": "Liên kết không tương ứng với liên kết tải xuống của Twake.",
+      "quota_too_small": "Không gian lưu trữ Twake không đủ để nhập tất cả dữ liệu. Có 2 giải pháp: tăng không gian lưu trữ hoặc xóa dữ liệu không cần thiết.",
+      "modal": {
+        "title": "Nhập Twake",
+        "description": "Điền liên kết tải xuống được gửi qua email bên dưới. Để lấy liên kết tải xuống của Twake, bạn chỉ cần khởi động xuất dữ liệu.",
+        "cancel": "Hủy",
+        "CTA": "Nhập"
+      },
+      "confirmation": {
+        "title": "Cảnh báo",
+        "description": "Khi nhập, dữ liệu hiện có trong Twake **%{url}** sẽ bị ghi đè. Truy cập vào Twake sẽ bị chặn cho đến khi hoàn thành.\n\nBạn có thực sự muốn tiếp tục?",
+        "cancel": "Hủy",
+        "CTA": "Ghi đè dữ liệu"
+      },
+      "url": {
+        "label": "Liên kết tải xuống"
       }
     },
-    "ProfileView": {
-      "instance": {
-        "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang."
+    "locale": {
+      "title": "Ngôn ngữ",
+      "label": "Đây sẽ là ngôn ngữ được sử dụng trong Twake của bạn.",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español",
+      "ja": "日本語",
+      "de": "Deutsch",
+      "de_DE": "Deutsch",
+      "ru": "Русский",
+      "vi": "Tiếng Việt",
+      "nl": "Nederlands",
+      "nl_NL": "Nederlands",
+      "ko": "Tiếng Hàn",
+      "pl": "Tiếng Ba Lan",
+      "pt": "Tiếng Bồ Đào Nha",
+      "da": "Tiếng Đan Mạch",
+      "ro_RO": "Tiếng Romania (Romania)",
+      "pt_BR": "Tiếng Bồ Đào Nha (Brazil)",
+      "zh_CN": "Tiếng Trung (Trung Quốc)",
+      "ar": "Tiếng Ả Rập",
+      "it": "Tiếng Ý",
+      "ro": "Tiếng Romania",
+      "eo": "Tiếng Esperanto",
+      "sq": "Tiếng Albania",
+      "tr": "Tiếng Thổ Nhĩ Kỳ",
+      "uk_UA": "Tiếng Ukraine (Ukraine)",
+      "ru_RU": "Tiếng Nga (Nga)",
+      "sq_AL": "Tiếng Albania (Albania)",
+      "ca": "Tiếng Catalan",
+      "ca_ES": "Tiếng Catalan (Tây Ban Nha)",
+      "zh": "Tiếng Trung",
+      "zh_TW": "Tiếng Trung (Đài Loan)",
+      "cs": "Tiếng Séc",
+      "cs_CZ": "Tiếng Séc (Cộng hòa Séc)",
+      "el": "Tiếng Hy Lạp",
+      "id": "Tiếng Indonesia",
+      "it_IT": "Tiếng Ý (Ý)",
+      "sk": "Tiếng Slovak",
+      "sk_SK": "Tiếng Slovak (Slovakia)",
+      "es_CO": "Tiếng Tây Ban Nha (Colombia)",
+      "es_ES": "Tiếng Tây Ban Nha (Tây Ban Nha)",
+      "sv": "Tiếng Thụy Điển"
+    }
+  },
+  "AppearanceView": {
+    "title": "Giao diện",
+    "subtitle": "Chế độ hiển thị (sáng/tối)",
+    "light": "Chế độ sáng",
+    "dark": "Chế độ tối",
+    "auto": "Tự động (cài đặt thiết bị)"
+  },
+  "DevicesView": {
+    "header": {
+      "title": "Thiết bị đã kết nối",
+      "subtitle": "%{smart_count}/%{limit} thiết bị đã kết nối |||| %{smart_count}/%{limit} thiết bị đã kết nối",
+      "subtitle_without_flag": "%{smart_count} thiết bị đã kết nối |||| %{smart_count} thiết bị đã kết nối",
+      "subscribe": "Tăng giới hạn"
+    },
+    "load_error": "Đã xảy ra lỗi khi tải thiết bị của bạn, vui lòng thử lại sau.",
+    "device_load_error": "Không thể tìm thấy thiết bị yêu cầu.",
+    "load_more": "Tải thêm",
+    "head_name": "Tên",
+    "head_sync": "Đồng bộ lần cuối",
+    "head_activity": "Hoạt động lần cuối",
+    "head_permissions": "Quyền",
+    "head_actions": "Hành động",
+    "revoke": "thu hồi",
+    "configure": "cấu hình",
+    "sync_date_format": "d LLL, yyyy"
+  },
+  "StorageView": {
+    "title": "Lưu trữ",
+    "load_error": "Đã xảy ra lỗi khi tải thông tin lưu trữ, vui lòng thử lại sau.",
+    "storage_title": "Không gian khả dụng trong Twake Workplace",
+    "storage_used": "%{humanDiskUsage} GB",
+    "storage_total": " trong tổng số %{humanDiskQuota} GB đã sử dụng",
+    "storage_available": "Khả dụng: %{spaceAvailable} GB",
+    "storage_warning": "Bộ nhớ gần đầy. Bạn có thể giải phóng không gian bằng cách xóa tệp không cần thiết hoặc đăng ký thêm dung lượng.",
+    "see_offer": "Nâng cấp lưu trữ"
+  },
+  "SessionsView": {
+    "title": "Lịch sử kết nối web",
+    "sync_date_format": "d LLL, yyyy",
+    "delete": "Xóa tất cả phiên khác",
+    "infos": {
+      "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
+      "sessions_deleted": "Tất cả phiên khác đã bị xóa."
+    },
+    "modal_title": "Chi tiết",
+    "modal_date": "Ngày:",
+    "modal_os": "Hệ điều hành:",
+    "modal_browser": "Trình duyệt:",
+    "modal_ip": "IP:"
+  },
+  "revokeDevice": {
+    "title": "Thu hồi thiết bị này",
+    "description": "Bạn sắp hủy liên kết %{name}.",
+    "subText": "Nó sẽ ngừng đồng bộ với thiết bị này ngay lập tức.",
+    "validate": "Thu hồi thiết bị",
+    "cancel": "Hủy",
+    "error": "Không thể thu hồi thiết bị, thử tải lại trang."
+  },
+  "configureDevice": {
+    "load_error": "Đã xảy ra lỗi khi tải thư mục, vui lòng thử lại sau.",
+    "configure_success": "Các mục đồng bộ đã được lưu thành công.",
+    "configure_error": "Không thể cấu hình các mục đồng bộ với thiết bị, thử tải lại trang.",
+    "description": "Chọn thư mục để đồng bộ với máy tính:",
+    "no_folders": "Bạn không có thư mục nào trong Twake.",
+    "my_cozy": "Twake của tôi",
+    "partialSync": {
+      "disable": "Đồng bộ toàn bộ Twake",
+      "enable": "Bỏ chọn thư mục không cần đồng bộ:"
+    },
+    "validate": "Xác nhận",
+    "cancel": "Hủy"
+  },
+  "ServicesView": {
+    "title": "Dịch vụ đã kích hoạt",
+    "load_error": "Đã xảy ra lỗi khi tải dịch vụ, vui lòng thử lại sau.",
+    "head_services": "Dịch vụ",
+    "head_account": "Tài khoản",
+    "head_sync": "Đồng bộ lần cuối",
+    "head_status": "Trạng thái",
+    "unsync": "Chưa đồng bộ",
+    "konnector_link": "Truy cập danh sách đầy đủ dịch vụ tại đây"
+  },
+  "PassphraseView": {
+    "title": "Cập nhật mật khẩu của tôi",
+    "title_oidc": "Cập nhật mật khẩu Twake Pass",
+    "current_passphrase": {
+      "label": "Nhập mật khẩu hiện tại",
+      "placeholder": "Mật khẩu hiện tại",
+      "wrong_passphrase": "Mật khẩu hiện tại có vẻ sai."
+    },
+    "new_passphrase": {
+      "label": "Chọn mật khẩu mới",
+      "placeholder": "Mật khẩu Twake mới",
+      "confirmation_placeholder": "Xác nhận mật khẩu",
+      "dont_match": "Mật khẩu không khớp"
+    },
+    "advices": {
+      "strong_passphrase": "**Ưu tiên mật khẩu mạnh:** Mật khẩu dài với số và ký tự đặc biệt sẽ không thể bị phá.",
+      "memorize": "**Ghi nhớ kỹ:** Trong trường hợp mất, bạn sẽ không thể khôi phục mật khẩu đã mã hóa trong Twake.",
+      "our_tip": "**Mẹo của chúng tôi:** Tìm một cụm từ ngắn phù hợp với bạn, ví dụ: "
+    },
+    "hint": {
+      "title": "Để lại gợi ý",
+      "placeholder": "Gợi ý (tùy chọn)",
+      "description": "Gợi ý sẽ được gửi qua email nếu bạn quên mật khẩu, chọn gợi ý chỉ bạn mới hiểu",
+      "same_as_passphrase": "Gợi ý không thể là mật khẩu của bạn"
+    },
+    "submit": "Cập nhật mật khẩu",
+    "cancel": "Giữ mật khẩu hiện tại",
+    "server_error": "Đã xảy ra lỗi. Mật khẩu chưa được lưu.",
+    "wrong_two_fa_code": "Mã xác thực hai yếu tố có vẻ sai.",
+    "success": "Mật khẩu đã được thay đổi."
+  },
+  "BiometryDeniedDialog": {
+    "title": "Không thể kích hoạt",
+    "content": "Để kích hoạt tính năng này, ứng dụng cần quyền truy cập FaceID",
+    "open_settings": "Mở cài đặt",
+    "cancel": "Hủy"
+  },
+  "LockScreenView": {
+    "choose_pin_body": "Đặt mã PIN để mở khóa ứng dụng sau thời gian không hoạt động",
+    "choose_pin_cancel": "Hủy",
+    "choose_pin_label": "Mã PIN",
+    "choose_pin_next": "Tiếp theo",
+    "choose_pin_title": "Chọn mã PIN",
+    "confirm_pin_body": "Vì lý do bảo mật, vui lòng nhập lại mã PIN.",
+    "confirm_pin_cancel": "Hủy",
+    "confirm_pin_error": "Mã PIN không khớp",
+    "confirm_pin_next": "Hoàn thành",
+    "confirm_pin_title": "Xác nhận mã PIN",
+    "title": "Màn hình mở khóa"
+  },
+  "soon": {
+    "title": "Sắp ra mắt",
+    "description": "Tính năng này chưa khả dụng. Để biết thêm thông tin, vui lòng liên hệ chúng tôi tại contact@cozycloud.cc"
+  },
+  "support": {
+    "title": "Liên hệ chúng tôi",
+    "emailDetail": "Tin nhắn sẽ được gửi từ địa chỉ email đã lưu trong cài đặt Twake của bạn.",
+    "fields": {
+      "message": {
+        "title": "Yêu cầu của bạn",
+        "placeholder": "Chia sẻ mọi điều (yêu cầu trợ giúp, phản hồi hoặc chỉ chào hỏi). Chúng tôi rất vui được trò chuyện với bạn. "
       },
-      "title": "Hồ sơ",
-      "password": {
-        "title": "Mật khẩu",
-        "label": "Twake của bạn hiện được bảo vệ bằng mật khẩu",
-        "cta": "Cập nhật mật khẩu của tôi"
+      "consent": {
+        "label": "Tôi tạm thời cho phép bộ phận hỗ trợ Twake Workplace xem dữ liệu cần thiết trong Twake của tôi, với mục đích duy nhất là trả lời câu hỏi này"
+      }
+    },
+    "response_email": {
+      "subject": "Yêu cầu của bạn đã được nhận",
+      "allowConsent": "Cảm ơn bạn đã tạm thời cho phép bộ phận hỗ trợ Twake Workplace xem dữ liệu cần thiết trong Twake của bạn, với mục đích duy nhất là trả lời câu hỏi của bạn.",
+      "body": "Xin chào,\n\nChúng tôi đã nhận được yêu cầu hỗ trợ của bạn:\n%{message}\n\nChúng tôi đang cố gắng hết sức để trả lời bạn sớm nhất có thể.\n\nClaude từ Twake."
+    },
+    "button": "Bắt đầu!",
+    "sending": "Đang gửi...",
+    "success": "👏 Tin nhắn của bạn đã được gửi. Cảm ơn!",
+    "error": "Đã xảy ra lỗi khi gửi tin nhắn"
+  },
+  "claudy": {
+    "title": "Làm thế nào để sử dụng Twake của bạn?",
+    "actions": {
+      "desktop": {
+        "title": "Truy cập tệp trên máy tính",
+        "description": "Đồng bộ tất cả tệp Twake Drive trên máy tính",
+        "button": "Cài đặt Twake Drive trên máy tính",
+        "link": "https://cozy.io/en/download/"
       },
-      "infos": {
-        "success": "Thông tin của bạn đã được thay đổi",
-        "server_error": "Đã xảy ra lỗi. Thông tin của bạn chưa được lưu.",
-        "empty": "Trường này không được để trống"
+      "mobile": {
+        "title": "Sao lưu và đồng bộ ảnh từ điện thoại",
+        "description": "Tất cả kỷ niệm được an toàn trên Twake Drive",
+        "button": "Cài đặt ứng dụng Twake Drive trên điện thoại",
+        "link": "https://cozy.io/en/download/"
       },
-      "twofa": {
-        "external-email": {
-          "title": "Email bên ngoài",
-          "label": "Email này sẽ được sử dụng để nhận mã xác thực hai yếu tố.",
-          "cta": {
-            "change": "Thay đổi email khôi phục",
-            "add": "Thêm email khôi phục"
+      "cozy-collect": {
+        "title": "Lấy lại hóa đơn ngay lập tức",
+        "description": "Twake Collect sắp xếp tất cả tệp của bạn ngay lập tức",
+        "button": "Khám phá Twake Collect"
+      },
+      "support": {
+        "title": "Liên hệ chúng tôi",
+        "description": "Xin chào! Chúng tôi có thể giúp gì cho bạn?",
+        "emailDetail": "Tin nhắn sẽ được gửi từ địa chỉ email đã lưu trong cài đặt Twake của bạn.",
+        "fields": {
+          "message": {
+            "title": "Yêu cầu của bạn",
+            "placeholder": "Chia sẻ mọi điều (yêu cầu trợ giúp, phản hồi hoặc chỉ chào hỏi). Chúng tôi rất vui được trò chuyện với bạn. "
           }
         },
-        "auth": {
-          "title": "Xác thực hai yếu tố",
-          "label": "Thêm lớp bảo mật bổ sung bằng cách yêu cầu mã xác nhận khi đăng nhập. Thêm email khôi phục để nhận mã xác thực hai yếu tố."
-        }
-      },
-      "public_name": {
-        "title": "Tên người dùng",
-        "label": "Hiển thị khi bạn chia sẻ tệp với người dùng Twake."
-      },
-      "matrix_id": {
-        "title": "Matrix ID",
-        "label": "Định danh duy nhất trong nền tảng Twake dùng cho nhắn tin thời gian thực trong giao thức Matrix mã nguồn mở."
-      },
-      "phone_number": {
-        "title": "Số điện thoại",
-        "label": "Được dùng để gửi thông báo và cho phép khôi phục mật khẩu.",
-        "change_button": "Thay đổi số điện thoại",
-        "invalid": "Số điện thoại không hợp lệ"
-      },
-      "default_redirection": {
-        "title": "Màn hình chính",
-        "label": "Đây là màn hình đầu tiên bạn thấy khi mở Twake.",
-        "app_list": "Bảng điều khiển"
-      },
-      "move": {
-        "button": "Chuyển Twake của tôi",
-        "label": "Thay đổi Twake mà không mất dữ liệu"
-      },
-      "export": {
-        "title": "Dữ liệu của tôi",
-        "label": "Twake Drive cam kết cung cấp tất cả tệp lưu trữ:",
-        "link": "Xuất dữ liệu Twake Drive",
-        "server_error": "Đã xảy ra lỗi, vui lòng thử lại hoặc liên hệ chúng tôi.",
-        "fetch_error": "Đã xảy ra lỗi khi lấy dữ liệu xuất. Vui lòng thử lại hoặc liên hệ chúng tôi.",
-        "missing_error": "Tệp lưu trữ có vẻ bị thiếu hoặc hết hạn. Vui lòng thử lại hoặc liên hệ chúng tôi.",
-        "success": "Yêu cầu của bạn đã được gửi thành công!",
-        "modal": {
-          "title": "Lấy lại dữ liệu của tôi",
-          "description": "Twake sẽ thu thập tất cả dữ liệu về bạn và gửi tệp lưu trữ để tải xuống.<br/><br/>Liên kết tải xuống sẽ được gửi đến địa chỉ email __%{email}__ khi tệp lưu trữ sẵn sàng.",
-          "cancel": "Hủy",
-          "CTA": "Gửi dữ liệu cho tôi"
-        },
-        "download": {
-          "title": "Tải xuống dữ liệu của tôi",
-          "description": "Đây là tất cả tệp lưu trữ dữ liệu có sẵn từ Twake của bạn:",
-          "CTA": "Tải xuống tệp lưu trữ",
-          "CTA_part": "Tải xuống (phần %{number})"
-        }
-      },
-      "import": {
-        "link": "Nhập dữ liệu Twake Drive",
-        "server_error": "Đã xảy ra lỗi, vui lòng thử lại hoặc liên hệ chúng tôi.",
-        "invalid_url": "Liên kết không tương ứng với liên kết tải xuống của Twake.",
-        "quota_too_small": "Không gian lưu trữ Twake không đủ để nhập tất cả dữ liệu. Có 2 giải pháp: tăng không gian lưu trữ hoặc xóa dữ liệu không cần thiết.",
-        "modal": {
-          "title": "Nhập Twake",
-          "description": "Điền liên kết tải xuống được gửi qua email bên dưới. Để lấy liên kết tải xuống của Twake, bạn chỉ cần khởi động xuất dữ liệu.",
-          "cancel": "Hủy",
-          "CTA": "Nhập"
-        },
-        "confirmation": {
-          "title": "Cảnh báo",
-          "description": "Khi nhập, dữ liệu hiện có trong Twake **%{url}** sẽ bị ghi đè. Truy cập vào Twake sẽ bị chặn cho đến khi hoàn thành.\n\nBạn có thực sự muốn tiếp tục?",
-          "cancel": "Hủy",
-          "CTA": "Ghi đè dữ liệu"
-        },
-        "url": {
-          "label": "Liên kết tải xuống"
-        }
-      },
-      "locale": {
-        "title": "Ngôn ngữ",
-        "label": "Đây sẽ là ngôn ngữ được sử dụng trong Twake của bạn.",
-        "fr": "Français",
-        "en": "English",
-        "es": "Español",
-        "ja": "日本語",
-        "de": "Deutsch",
-        "de_DE": "Deutsch",
-        "ru": "Русский",
-        "vi": "Tiếng Việt",
-        "nl": "Nederlands",
-        "nl_NL": "Nederlands",
-        "ko": "Tiếng Hàn",
-        "pl": "Tiếng Ba Lan",
-        "pt": "Tiếng Bồ Đào Nha",
-        "da": "Tiếng Đan Mạch",
-        "ro_RO": "Tiếng Romania (Romania)",
-        "pt_BR": "Tiếng Bồ Đào Nha (Brazil)",
-        "zh_CN": "Tiếng Trung (Trung Quốc)",
-        "ar": "Tiếng Ả Rập",
-        "it": "Tiếng Ý",
-        "ro": "Tiếng Romania",
-        "eo": "Tiếng Esperanto",
-        "sq": "Tiếng Albania",
-        "tr": "Tiếng Thổ Nhĩ Kỳ",
-        "uk_UA": "Tiếng Ukraine (Ukraine)",
-        "ru_RU": "Tiếng Nga (Nga)",
-        "sq_AL": "Tiếng Albania (Albania)",
-        "ca": "Tiếng Catalan",
-        "ca_ES": "Tiếng Catalan (Tây Ban Nha)",
-        "zh": "Tiếng Trung",
-        "zh_TW": "Tiếng Trung (Đài Loan)",
-        "cs": "Tiếng Séc",
-        "cs_CZ": "Tiếng Séc (Cộng hòa Séc)",
-        "el": "Tiếng Hy Lạp",
-        "id": "Tiếng Indonesia",
-        "it_IT": "Tiếng Ý (Ý)",
-        "sk": "Tiếng Slovak",
-        "sk_SK": "Tiếng Slovak (Slovakia)",
-        "es_CO": "Tiếng Tây Ban Nha (Colombia)",
-        "es_ES": "Tiếng Tây Ban Nha (Tây Ban Nha)",
-        "sv": "Tiếng Thụy Điển"
+        "button": "Bắt đầu!",
+        "sending": "Đang gửi...",
+        "success": "👏 Tin nhắn của bạn đã được gửi. Cảm ơn!",
+        "error": "Đã xảy ra lỗi khi gửi tin nhắn"
       }
-    },
-    "AppearanceView": {
-      "title": "Giao diện",
-      "subtitle": "Chế độ hiển thị (sáng/tối)",
-      "light": "Chế độ sáng",
-      "dark": "Chế độ tối",
-      "auto": "Tự động (cài đặt thiết bị)"
-    },
-    "DevicesView": {
-      "header": {
-        "title": "Thiết bị đã kết nối",
-        "subtitle": "%{smart_count}/%{limit} thiết bị đã kết nối |||| %{smart_count}/%{limit} thiết bị đã kết nối",
-        "subtitle_without_flag": "%{smart_count} thiết bị đã kết nối |||| %{smart_count} thiết bị đã kết nối",
-        "subscribe": "Tăng giới hạn"
-      },
-      "load_error": "Đã xảy ra lỗi khi tải thiết bị của bạn, vui lòng thử lại sau.",
-      "device_load_error": "Không thể tìm thấy thiết bị yêu cầu.",
-      "load_more": "Tải thêm",
-      "head_name": "Tên",
-      "head_sync": "Đồng bộ lần cuối",
-      "head_activity": "Hoạt động lần cuối",
-      "head_permissions": "Quyền",
-      "head_actions": "Hành động",
-      "revoke": "thu hồi",
-      "configure": "cấu hình",
-      "sync_date_format": "d LLL, yyyy"
-    },
-    "StorageView": {
-      "title": "Lưu trữ",
-      "load_error": "Đã xảy ra lỗi khi tải thông tin lưu trữ, vui lòng thử lại sau.",
-      "storage_title": "Không gian khả dụng trong Twake Workplace",
-      "storage_used": "%{humanDiskUsage} GB",
-      "storage_total": " trong tổng số %{humanDiskQuota} GB đã sử dụng",
-      "storage_available": "Khả dụng: %{spaceAvailable} GB",
-      "storage_warning": "Bộ nhớ gần đầy. Bạn có thể giải phóng không gian bằng cách xóa tệp không cần thiết hoặc đăng ký thêm dung lượng.",
-      "see_offer": "Nâng cấp lưu trữ"
-    },
-    "SessionsView": {
-      "title": "Lịch sử kết nối web",
-      "sync_date_format": "d LLL, yyyy",
-      "delete": "Xóa tất cả phiên khác",
-      "infos": {
-        "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
-        "sessions_deleted": "Tất cả phiên khác đã bị xóa."
-      },
-      "modal_title": "Chi tiết",
-      "modal_date": "Ngày:",
-      "modal_os": "Hệ điều hành:",
-      "modal_browser": "Trình duyệt:",
-      "modal_ip": "IP:"
-    },
-    "revokeDevice": {
-      "title": "Thu hồi thiết bị này",
-      "description": "Bạn sắp hủy liên kết %{name}.",
-      "subText": "Nó sẽ ngừng đồng bộ với thiết bị này ngay lập tức.",
-      "validate": "Thu hồi thiết bị",
-      "cancel": "Hủy",
-      "error": "Không thể thu hồi thiết bị, thử tải lại trang."
-    },
-    "configureDevice": {
-      "load_error": "Đã xảy ra lỗi khi tải thư mục, vui lòng thử lại sau.",
-      "configure_success": "Các mục đồng bộ đã được lưu thành công.",
-      "configure_error": "Không thể cấu hình các mục đồng bộ với thiết bị, thử tải lại trang.",
-      "description": "Chọn thư mục để đồng bộ với máy tính:",
-      "no_folders": "Bạn không có thư mục nào trong Twake.",
-      "my_cozy": "Twake của tôi",
-      "partialSync": {
-        "disable": "Đồng bộ toàn bộ Twake",
-        "enable": "Bỏ chọn thư mục không cần đồng bộ:"
-      },
-      "validate": "Xác nhận",
+    }
+  },
+  "errors": {
+    "noEmailFound": "Không tìm thấy địa chỉ email. Vui lòng thêm trong cài đặt Twake rồi thử lại."
+  },
+  "Toolbar": {
+    "more": "Thêm"
+  },
+  "Permissions": {
+    "title": "Kiểm soát ứng dụng",
+    "failedRequest": "Yêu cầu thất bại",
+    "read": "Đọc",
+    "readAndWrite": "Đọc và Ghi",
+    "write": "Ghi",
+    "numberOfPermissions": "%{smart_count} quyền |||| %{smart_count} quyền",
+    "numberOfApplications": "%{smart_count} ứng dụng |||| %{smart_count} ứng dụng",
+    "applications": "Ứng dụng",
+    "data": "Dữ liệu",
+    "open": "Mở",
+    "access": "Ứng dụng có quyền này có thể truy cập ",
+    "about": "Giới thiệu",
+    "limited_right_access": "Quyền dữ liệu cục bộ",
+    "latest_data_releases": "Lịch sử dữ liệu đi ra gần đây",
+    "monthly_statistics": "Thống kê hàng tháng",
+    "monthly_stats_phrase": "Báo cáo phát hành dữ liệu từ Twake đến %{app} vào %{date}:",
+    "exit_rights": "Quyền dữ liệu đi ra",
+    "uninstall": "Gỡ cài đặt",
+    "exit_rights_secondary": "Dữ liệu có thể được đưa ra khỏi Twake, sẽ không còn được bảo mật",
+    "limited_right_access_secondary": "Dữ liệu chỉ có thể truy cập cục bộ, không bao giờ rời khỏi Twake của bạn.",
+    "permissions": "Quyền",
+    "exit_right": "%{app} có quyền đi ra trên %{doctype}",
+    "exit_right_description": "Dữ liệu có thể truy cập bên ngoài Twake. Có thể được truyền ra bên ngoài",
+    "access_right": "%{app} có quyền truy cập cục bộ trên %{doctype}",
+    "access_right_description": "Dữ liệu chỉ có thể truy cập cục bộ trong Twake. %{app} không thể truyền dữ liệu ra ngoài Twake Workplace hoặc cho bất kỳ ai khác.",
+    "details": "Chi tiết",
+    "read_right_title": "Quyền đọc",
+    "read_right_text": "Ứng dụng có thể đọc dữ liệu trong Twake mà không cho phép nhà phát triển truy cập",
+    "write_right_title": "Quyền ghi",
+    "write_right_text": "Ứng dụng có thể thêm, sửa đổi hoặc xóa dữ liệu",
+    "right_reason": "Tại sao %{app} yêu cầu quyền này?"
+  },
+  "Accessibility": {
+    "previous": "Trước"
+  },
+  "EmailSection": {
+    "title": "Email",
+    "subtitle": "Twake cần địa chỉ email để gửi thông báo và cho phép khôi phục mật khẩu.",
+    "action": "Sửa đổi email",
+    "alert": {
+      "title": "Đang chờ sửa đổi",
+      "content": "Một email đã được gửi đến %{pendingEmail} để xác minh danh tính và hoàn tất thay đổi địa chỉ email.",
+      "resend": "Gửi lại email",
       "cancel": "Hủy"
     },
-    "ServicesView": {
-      "title": "Dịch vụ đã kích hoạt",
-      "load_error": "Đã xảy ra lỗi khi tải dịch vụ, vui lòng thử lại sau.",
-      "head_services": "Dịch vụ",
-      "head_account": "Tài khoản",
-      "head_sync": "Đồng bộ lần cuối",
-      "head_status": "Trạng thái",
-      "unsync": "Chưa đồng bộ",
-      "konnector_link": "Truy cập danh sách đầy đủ dịch vụ tại đây"
+    "snackbar": {
+      "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
+      "resend_success": "Một email đã được gửi đến %{pendingEmail}"
+    }
+  },
+  "EmailReadOnlySection": {
+    "title": "Email",
+    "subtitle": "Cố định và được sử dụng để xác thực trong mạng Matrix."
+  },
+  "EmailModal": {
+    "title": "Email mới",
+    "cancel": "Hủy",
+    "submit": "OK",
+    "errors": {
+      "server": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
+      "same_email": "Email mới không thể giống email cũ.",
+      "email_format": "Địa chỉ email có vẻ không đúng. Bạn có chắc đã viết đúng không (ví dụ: john@wayne.com)?"
+    }
+  },
+  "Subscription": {
+    "title": "Gói và tùy chọn",
+    "included": {
+      "title": "Bao gồm trong gói của bạn:",
+      "flags": {
+        "harvest.accounts.max": "Tự động thu thập tài liệu và dữ liệu",
+        "mespapiers.papers.max": "Số giấy tờ thêm thủ công",
+        "drive.office.write": "Trình chỉnh sửa tài liệu Office trực tuyến (xử lý văn bản, bảng tính và trình chiếu)",
+        "passwords.can-share-organizations": "Chia sẻ mật khẩu",
+        "cozy.oauthclients.max": "Số thiết bị được phép tối đa",
+        "coachco2.max-days-to-capture": "Ghi lại chuyến đi"
+      },
+      "storage": "Lưu trữ: %{humanDiskQuota} GB",
+      "max_days": ": tối đa %{smart_count} ngày |||| : tối đa %{smart_count} ngày",
+      "accounts": ": %{smart_count} dịch vụ đã kết nối |||| : %{smart_count} dịch vụ đã kết nối",
+      "accounts_unlimited": ": số lượng dịch vụ kết nối không giới hạn",
+      "accounts_offer": "(%{max} bao gồm trong gói + 1 tặng thêm) |||| (%{max} bao gồm trong gói + %{smart_count} tặng thêm)",
+      "numeric_flag": ": lên đến %{smart_count}",
+      "numeric_flag_unlimited": ": không giới hạn"
     },
-    "PassphraseView": {
-      "title": "Cập nhật mật khẩu của tôi",
-      "title_oidc": "Cập nhật mật khẩu Twake Pass",
-      "current_passphrase": {
-        "label": "Nhập mật khẩu hiện tại",
-        "placeholder": "Mật khẩu hiện tại",
-        "wrong_passphrase": "Mật khẩu hiện tại có vẻ sai."
-      },
-      "new_passphrase": {
-        "label": "Chọn mật khẩu mới",
-        "placeholder": "Mật khẩu Twake mới",
-        "confirmation_placeholder": "Xác nhận mật khẩu",
-        "dont_match": "Mật khẩu không khớp"
-      },
-      "advices": {
-        "strong_passphrase": "**Ưu tiên mật khẩu mạnh:** Mật khẩu dài với số và ký tự đặc biệt sẽ không thể bị phá.",
-        "memorize": "**Ghi nhớ kỹ:** Trong trường hợp mất, bạn sẽ không thể khôi phục mật khẩu đã mã hóa trong Twake.",
-        "our_tip": "**Mẹo của chúng tôi:** Tìm một cụm từ ngắn phù hợp với bạn, ví dụ: "
-      },
-      "hint": {
-        "title": "Để lại gợi ý",
-        "placeholder": "Gợi ý (tùy chọn)",
-        "description": "Gợi ý sẽ được gửi qua email nếu bạn quên mật khẩu, chọn gợi ý chỉ bạn mới hiểu",
-        "same_as_passphrase": "Gợi ý không thể là mật khẩu của bạn"
-      },
-      "submit": "Cập nhật mật khẩu",
-      "cancel": "Giữ mật khẩu hiện tại",
-      "server_error": "Đã xảy ra lỗi. Mật khẩu chưa được lưu.",
-      "wrong_two_fa_code": "Mã xác thực hai yếu tố có vẻ sai.",
-      "success": "Mật khẩu đã được thay đổi."
+    "action": "Quản lý gói của tôi"
+  },
+  "AvatarSection": {
+    "success": {
+      "updated": "Cập nhật ảnh đại diện thành công",
+      "deleted": "Xóa ảnh đại diện thành công"
     },
-    "BiometryDeniedDialog": {
-      "title": "Không thể kích hoạt",
-      "content": "Để kích hoạt tính năng này, ứng dụng cần quyền truy cập FaceID",
-      "open_settings": "Mở cài đặt",
-      "cancel": "Hủy"
+    "error": {
+      "timeout": "Tải ảnh đại diện đã hết thời gian. Vui lòng thử lại.",
+      "fileSizeLimit": "Giới hạn kích thước tệp là 5MB.",
+      "fileType": "Loại tệp không được hỗ trợ. Vui lòng thử lại.",
+      "deleteFailed": "Xóa ảnh đại diện thất bại. Vui lòng thử lại.",
+      "uploadFailed": "Tải ảnh đại diện thất bại. Vui lòng thử lại.",
+      "serverError": "Không thể cập nhật ảnh đại diện. Vui lòng thử lại.",
+      "verificationFailed": "Hành động hoàn tất, nhưng không thể xác minh thay đổi. Vui lòng làm mới."
     },
-    "LockScreenView": {
-      "choose_pin_body": "Đặt mã PIN để mở khóa ứng dụng sau thời gian không hoạt động",
-      "choose_pin_cancel": "Hủy",
-      "choose_pin_label": "Mã PIN",
-      "choose_pin_next": "Tiếp theo",
-      "choose_pin_title": "Chọn mã PIN",
-      "confirm_pin_body": "Vì lý do bảo mật, vui lòng nhập lại mã PIN.",
-      "confirm_pin_cancel": "Hủy",
-      "confirm_pin_error": "Mã PIN không khớp",
-   "confirm_pin_next": "Hoàn thành",
-   "confirm_pin_title": "Xác nhận mã PIN",
-   "title": "Màn hình mở khóa"
- },
- "soon": {
-   "title": "Sắp ra mắt",
-   "description": "Tính năng này chưa khả dụng. Để biết thêm thông tin, vui lòng liên hệ chúng tôi tại contact@cozycloud.cc"
- },
- "support": {
-   "title": "Liên hệ chúng tôi",
-   "emailDetail": "Tin nhắn sẽ được gửi từ địa chỉ email đã lưu trong cài đặt Twake của bạn.",
-   "fields": {
-     "message": {
-       "title": "Yêu cầu của bạn",
-       "placeholder": "Chia sẻ mọi điều (yêu cầu trợ giúp, phản hồi hoặc chỉ chào hỏi). Chúng tôi rất vui được trò chuyện với bạn. "
-     },
-     "consent": {
-       "label": "Tôi tạm thời cho phép bộ phận hỗ trợ Twake Workplace xem dữ liệu cần thiết trong Twake của tôi, với mục đích duy nhất là trả lời câu hỏi này"
-     }
-   },
-   "response_email": {
-     "subject": "Yêu cầu của bạn đã được nhận",
-     "allowConsent": "Cảm ơn bạn đã tạm thời cho phép bộ phận hỗ trợ Twake Workplace xem dữ liệu cần thiết trong Twake của bạn, với mục đích duy nhất là trả lời câu hỏi của bạn.",
-     "body": "Xin chào,\n\nChúng tôi đã nhận được yêu cầu hỗ trợ của bạn:\n%{message}\n\nChúng tôi đang cố gắng hết sức để trả lời bạn sớm nhất có thể.\n\nClaude từ Twake."
-   },
-   "button": "Bắt đầu!",
-   "sending": "Đang gửi...",
-   "success": "👏 Tin nhắn của bạn đã được gửi. Cảm ơn!",
-   "error": "Đã xảy ra lỗi khi gửi tin nhắn"
- },
- "claudy": {
-   "title": "Làm thế nào để sử dụng Twake của bạn?",
-   "actions": {
-     "desktop": {
-       "title": "Truy cập tệp trên máy tính",
-       "description": "Đồng bộ tất cả tệp Twake Drive trên máy tính",
-       "button": "Cài đặt Twake Drive trên máy tính",
-       "link": "https://cozy.io/en/download/"
-     },
-     "mobile": {
-       "title": "Sao lưu và đồng bộ ảnh từ điện thoại",
-       "description": "Tất cả kỷ niệm được an toàn trên Twake Drive",
-       "button": "Cài đặt ứng dụng Twake Drive trên điện thoại",
-       "link": "https://cozy.io/en/download/"
-     },
-     "cozy-collect": {
-       "title": "Lấy lại hóa đơn ngay lập tức",
-       "description": "Twake Collect sắp xếp tất cả tệp của bạn ngay lập tức",
-       "button": "Khám phá Twake Collect"
-     },
-     "support": {
-       "title": "Liên hệ chúng tôi",
-       "description": "Xin chào! Chúng tôi có thể giúp gì cho bạn?",
-       "emailDetail": "Tin nhắn sẽ được gửi từ địa chỉ email đã lưu trong cài đặt Twake của bạn.",
-       "fields": {
-         "message": {
-           "title": "Yêu cầu của bạn",
-           "placeholder": "Chia sẻ mọi điều (yêu cầu trợ giúp, phản hồi hoặc chỉ chào hỏi). Chúng tôi rất vui được trò chuyện với bạn. "
-         }
-       },
-       "button": "Bắt đầu!",
-       "sending": "Đang gửi...",
-       "success": "👏 Tin nhắn của bạn đã được gửi. Cảm ơn!",
-       "error": "Đã xảy ra lỗi khi gửi tin nhắn"
-     }
-   }
- },
- "errors": {
-   "noEmailFound": "Không tìm thấy địa chỉ email. Vui lòng thêm trong cài đặt Twake rồi thử lại."
- },
- "Toolbar": {
-   "more": "Thêm"
- },
- "Permissions": {
-   "title": "Kiểm soát ứng dụng",
-   "failedRequest": "Yêu cầu thất bại",
-   "read": "Đọc",
-   "readAndWrite": "Đọc và Ghi",
-   "write": "Ghi",
-   "numberOfPermissions": "%{smart_count} quyền |||| %{smart_count} quyền",
-   "numberOfApplications": "%{smart_count} ứng dụng |||| %{smart_count} ứng dụng",
-   "applications": "Ứng dụng",
-   "data": "Dữ liệu",
-   "open": "Mở",
-   "access": "Ứng dụng có quyền này có thể truy cập ",
-   "about": "Giới thiệu",
-   "limited_right_access": "Quyền dữ liệu cục bộ",
-   "latest_data_releases": "Lịch sử dữ liệu đi ra gần đây",
-   "monthly_statistics": "Thống kê hàng tháng",
-   "monthly_stats_phrase": "Báo cáo phát hành dữ liệu từ Twake đến %{app} vào %{date}:",
-   "exit_rights": "Quyền dữ liệu đi ra",
-   "uninstall": "Gỡ cài đặt",
-   "exit_rights_secondary": "Dữ liệu có thể được đưa ra khỏi Twake, sẽ không còn được bảo mật",
-   "limited_right_access_secondary": "Dữ liệu chỉ có thể truy cập cục bộ, không bao giờ rời khỏi Twake của bạn.",
-   "permissions": "Quyền",
-   "exit_right": "%{app} có quyền đi ra trên %{doctype}",
-   "exit_right_description": "Dữ liệu có thể truy cập bên ngoài Twake. Có thể được truyền ra bên ngoài",
-   "access_right": "%{app} có quyền truy cập cục bộ trên %{doctype}",
-   "access_right_description": "Dữ liệu chỉ có thể truy cập cục bộ trong Twake. %{app} không thể truyền dữ liệu ra ngoài Twake Workplace hoặc cho bất kỳ ai khác.",
-   "details": "Chi tiết",
-   "read_right_title": "Quyền đọc",
-   "read_right_text": "Ứng dụng có thể đọc dữ liệu trong Twake mà không cho phép nhà phát triển truy cập",
-   "write_right_title": "Quyền ghi",
-   "write_right_text": "Ứng dụng có thể thêm, sửa đổi hoặc xóa dữ liệu",
-   "right_reason": "Tại sao %{app} yêu cầu quyền này?"
- },
- "Accessibility": {
-   "previous": "Trước"
- },
- "EmailSection": {
-   "title": "Email",
-   "subtitle": "Twake cần địa chỉ email để gửi thông báo và cho phép khôi phục mật khẩu.",
-   "action": "Sửa đổi email",
-   "alert": {
-     "title": "Đang chờ sửa đổi",
-     "content": "Một email đã được gửi đến %{pendingEmail} để xác minh danh tính và hoàn tất thay đổi địa chỉ email.",
-     "resend": "Gửi lại email",
-     "cancel": "Hủy"
-   },
-   "snackbar": {
-     "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
-     "resend_success": "Một email đã được gửi đến %{pendingEmail}"
-   }
- },
- "EmailReadOnlySection": {
-   "title": "Email",
-   "subtitle": "Cố định và được sử dụng để xác thực trong mạng Matrix."
- },
- "EmailModal": {
-   "title": "Email mới",
-   "cancel": "Hủy",
-   "submit": "OK",
-   "errors": {
-     "server": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
-     "same_email": "Email mới không thể giống email cũ.",
-     "email_format": "Địa chỉ email có vẻ không đúng. Bạn có chắc đã viết đúng không (ví dụ: john@wayne.com)?"
-   }
- },
- "Subscription": {
-   "title": "Gói và tùy chọn",
-   "included": {
-     "title": "Bao gồm trong gói của bạn:",
-     "flags": {
-       "harvest.accounts.max": "Tự động thu thập tài liệu và dữ liệu",
-       "mespapiers.papers.max": "Số giấy tờ thêm thủ công",
-       "drive.office.write": "Trình chỉnh sửa tài liệu Office trực tuyến (xử lý văn bản, bảng tính và trình chiếu)",
-       "passwords.can-share-organizations": "Chia sẻ mật khẩu",
-       "cozy.oauthclients.max": "Số thiết bị được phép tối đa",
-       "coachco2.max-days-to-capture": "Ghi lại chuyến đi"
-     },
-     "storage": "Lưu trữ: %{humanDiskQuota} GB",
-     "max_days": ": tối đa %{smart_count} ngày |||| : tối đa %{smart_count} ngày",
-     "accounts": ": %{smart_count} dịch vụ đã kết nối |||| : %{smart_count} dịch vụ đã kết nối",
-     "accounts_unlimited": ": số lượng dịch vụ kết nối không giới hạn",
-     "accounts_offer": "(%{max} bao gồm trong gói + 1 tặng thêm) |||| (%{max} bao gồm trong gói + %{smart_count} tặng thêm)",
-     "numeric_flag": ": lên đến %{smart_count}",
-     "numeric_flag_unlimited": ": không giới hạn"
-   },
-   "action": "Quản lý gói của tôi"
- },
- "AvatarSection": {
-   "success": {
-     "updated": "Cập nhật ảnh đại diện thành công",
-     "deleted": "Xóa ảnh đại diện thành công"
-   },
-   "error": {
-     "timeout": "Tải ảnh đại diện đã hết thời gian. Vui lòng thử lại.",
-     "fileSizeLimit": "Giới hạn kích thước tệp là 5MB.",
-     "fileType": "Loại tệp không được hỗ trợ. Vui lòng thử lại.",
-     "deleteFailed": "Xóa ảnh đại diện thất bại. Vui lòng thử lại.",
-     "uploadFailed": "Tải ảnh đại diện thất bại. Vui lòng thử lại.",
-     "serverError": "Không thể cập nhật ảnh đại diện. Vui lòng thử lại.",
-     "verificationFailed": "Hành động hoàn tất, nhưng không thể xác minh thay đổi. Vui lòng làm mới."
-   },
-   "menu": {
-     "update": "Cập nhật ảnh đại diện",
-     "delete": "Xóa ảnh đại diện"
-   }
- },
- "BlockingSubscriptionModal": {
-   "title": {
-     "delete": "Xóa Twake của bạn?",
-     "move": "Chuyển Twake của bạn?"
-   },
-   "content": {
-     "delete": "Bạn đã đăng ký gói Twake qua %{vendor}. **Vui lòng hủy đăng ký trước khi xóa tài khoản Twake.**\n\nNếu bạn đã làm điều này, hoặc muốn thực hiện sau trực tiếp qua cửa hàng, bạn có thể bỏ qua thông báo này và tiếp tục xóa Twake.",
-     "move": "Bạn đã đăng ký gói Twake qua %{vendor}. **Vui lòng hủy đăng ký trước khi chuyển tài khoản Twake.**\n\nNếu bạn đã làm điều này, hoặc muốn thực hiện sau trực tiếp qua cửa hàng, bạn có thể bỏ qua thông báo này và tiếp tục chuyển Twake.",
-     "vendor": {
-       "android": "Play store",
-       "ios": "App Store",
-       "both": "Play store hoặc App Store"
-     }
-   },
-   "manage": "Quản lý gói của tôi",
-   "resume": "Tiếp tục"
- }
+    "menu": {
+      "update": "Cập nhật ảnh đại diện",
+      "delete": "Xóa ảnh đại diện"
+    }
+  },
+  "BlockingSubscriptionModal": {
+    "title": {
+      "delete": "Xóa Twake của bạn?",
+      "move": "Chuyển Twake của bạn?"
+    },
+    "content": {
+      "delete": "Bạn đã đăng ký gói Twake qua %{vendor}. **Vui lòng hủy đăng ký trước khi xóa tài khoản Twake.**\n\nNếu bạn đã làm điều này, hoặc muốn thực hiện sau trực tiếp qua cửa hàng, bạn có thể bỏ qua thông báo này và tiếp tục xóa Twake.",
+      "move": "Bạn đã đăng ký gói Twake qua %{vendor}. **Vui lòng hủy đăng ký trước khi chuyển tài khoản Twake.**\n\nNếu bạn đã làm điều này, hoặc muốn thực hiện sau trực tiếp qua cửa hàng, bạn có thể bỏ qua thông báo này và tiếp tục chuyển Twake.",
+      "vendor": {
+        "android": "Play store",
+        "ios": "App Store",
+        "both": "Play store hoặc App Store"
+      }
+    },
+    "manage": "Quản lý gói của tôi",
+    "resume": "Tiếp tục"
+  },
+  "MigrationView": {
+    "title": "Di chuyển dữ liệu của bạn sang Twake Workplace",
+    "subtitle": "Tất cả các tệp, email, lịch và danh bạ của bạn — trong một không gian Twake duy nhất, sẵn sàng sử dụng",
+    "secureTransfer": "Truyền tải bảo mật",
+    "startMigration": "Bắt đầu di chuyển",
+    "nextcloud": {
+      "name": "Nextcloud",
+      "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake."
+    },
+    "help": {
+      "title": "Cần hỗ trợ?",
+      "description": "Đội ngũ của chúng tôi có thể giúp bạn di chuyển dữ liệu và bắt đầu nhanh hơn.",
+      "contactSupport": "Liên hệ hỗ trợ"
+    }
+  }
 }

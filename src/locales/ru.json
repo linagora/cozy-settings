@@ -127,7 +127,8 @@
     "storage": "Хранилище",
     "contact_support": "Связаться с нами",
     "terms_of_service": "Условия использования",
-    "legal_notice": "Юридическая информация"
+    "legal_notice": "Юридическая информация",
+    "migration": "Migration"
   },
   "loading": {
     "loading": "Загрузка"
@@ -607,5 +608,20 @@
     },
     "manage": "Управлять планом",
     "resume": "Продолжить"
+  },
+  "MigrationView": {
+    "title": "Перенесите данные в Twake Workplace",
+    "subtitle": "Все ваши файлы, письма, календари и контакты — в едином рабочем пространстве Twake",
+    "secureTransfer": "Безопасная передача",
+    "startMigration": "Начать миграцию",
+    "nextcloud": {
+      "name": "Nextcloud",
+      "description": "Ваши файлы, папки и документы будут скопированы в ваш Twake."
+    },
+    "help": {
+      "title": "Нужна помощь?",
+      "description": "Наша команда поможет вам перенести данные и быстро начать работу.",
+      "contactSupport": "Связаться с поддержкой"
+    }
   }
 }

@@ -133,7 +133,8 @@
     "storage": "Storage",
     "contact_support": "Contact us",
     "terms_of_service": "Terms of Service",
-    "legal_notice": "Legal notice"
+    "legal_notice": "Legal notice",
+    "migration": "Migration"
   },
   "loading": {
     "loading": "Loading"
@@ -654,5 +655,20 @@
     },
     "manage": "Manage my plan",
     "resume": "Continue"
+  },
+  "MigrationView": {
+    "title": "Migrate your data to Twake Workplace",
+    "subtitle": "All your files, emails, calendars, and contacts — in one Twake workspace, ready to use",
+    "secureTransfer": "Secure Transfer",
+    "startMigration": "Start migration",
+    "nextcloud": {
+      "name": "Nextcloud",
+      "description": "Your files, folders and documents will be copied to your Twake."
+    },
+    "help": {
+      "title": "Need Help?",
+      "description": "Our team can help you migrate your data and get started faster.",
+      "contactSupport": "Contact support"
+    }
   }
 }

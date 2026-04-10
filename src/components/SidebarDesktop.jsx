@@ -8,6 +8,7 @@ import { makeDiskInfos } from 'cozy-client/dist/models/instance'
 import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
 import CloudIcon from 'cozy-ui/transpiled/react/Icons/Cloud'
+import CloudSyncIcon from 'cozy-ui/transpiled/react/Icons/CloudSync'
 import ContractIcon from 'cozy-ui/transpiled/react/Icons/Contract'
 import DevicesIcon from 'cozy-ui/transpiled/react/Icons/Devices'
 import EmailIcon from 'cozy-ui/transpiled/react/Icons/Email'
@@ -120,6 +121,15 @@ export const SidebarDesktop = () => {
             )}
           </NavLink>
         </NavItem>
+
+        {flag('settings.migration.enabled') && (
+          <NavItem>
+            <NavLink to={routes.migration}>
+              <NavIcon icon={CloudSyncIcon} />
+              <NavText>{t('Nav.migration')}</NavText>
+            </NavLink>
+          </NavItem>
+        )}
 
         <ListItem dense>
           <ListItemText
