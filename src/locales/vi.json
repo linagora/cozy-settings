@@ -616,7 +616,19 @@
     "startMigration": "Bắt đầu di chuyển",
     "nextcloud": {
       "name": "Nextcloud",
-      "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake."
+      "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake.",
+      "dialog": {
+        "title": "Chuyển dữ liệu từ Nextcloud",
+        "subtitle": "Chọn cách bạn muốn tích hợp bộ nhớ Nextcloud",
+        "transfer": {
+          "title": "Chuyển tệp từ Nextcloud sang Twake Drive",
+          "description": "Di chuyển tất cả tệp hiện có trực tiếp vào Twake Drive. Thao tác này tạo một bản sao đầy đủ dữ liệu của bạn."
+        },
+        "external": {
+          "title": "Kết nối Nextcloud như ổ đĩa ngoài",
+          "description": "Truy cập tệp Nextcloud trực tiếp trong Twake mà không cần di chuyển. Các tệp vẫn ở trong Nextcloud."
+        }
+      }
     },
     "help": {
       "title": "Cần hỗ trợ?",

@@ -616,7 +616,19 @@
     "startMigration": "Начать миграцию",
     "nextcloud": {
       "name": "Nextcloud",
-      "description": "Ваши файлы, папки и документы будут скопированы в ваш Twake."
+      "description": "Ваши файлы, папки и документы будут скопированы в ваш Twake.",
+      "dialog": {
+        "title": "Перенести данные из Nextcloud",
+        "subtitle": "Выберите способ интеграции вашего хранилища Nextcloud",
+        "transfer": {
+          "title": "Перенести файлы из Nextcloud в Twake Drive",
+          "description": "Перенесите все существующие файлы прямо в Twake Drive. Будет создана полная копия ваших данных."
+        },
+        "external": {
+          "title": "Подключить Nextcloud как внешний диск",
+          "description": "Получайте доступ к файлам Nextcloud прямо в Twake без миграции. Файлы остаются в Nextcloud."
+        }
+      }
     },
     "help": {
       "title": "Нужна помощь?",
