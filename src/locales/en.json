@@ -663,7 +663,19 @@
     "startMigration": "Start migration",
     "nextcloud": {
       "name": "Nextcloud",
-      "description": "Your files, folders and documents will be copied to your Twake."
+      "description": "Your files, folders and documents will be copied to your Twake.",
+      "dialog": {
+        "title": "Transfer your data from Nextcloud",
+        "subtitle": "Choose how you want to integrate your Nextcloud storage",
+        "transfer": {
+          "title": "Transfer files from Nextcloud to Twake Drive",
+          "description": "Migrate all your existing files directly into Twake Drive. This creates a complete copy of your data."
+        },
+        "external": {
+          "title": "Connect Nextcloud as external drive",
+          "description": "Access Nextcloud files directly in Twake without migration. Files remain in Nextcloud."
+        }
+      }
     },
     "help": {
       "title": "Need Help?",

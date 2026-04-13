@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
@@ -14,6 +14,7 @@ import Paper from 'cozy-ui/transpiled/react/Paper'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
+import NextcloudMigrationDialog from '@/components/Migration/NextcloudMigrationDialog'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
 
@@ -23,6 +24,7 @@ const ProviderLogo = ({ icon, alt }) => (
 
 const Migration = () => {
   const { t } = useI18n()
+  const [showNextcloudDialog, setShowNextcloudDialog] = useState(false)
 
   const providers = [
     {
@@ -72,6 +74,7 @@ const Migration = () => {
                     label={t('MigrationView.startMigration')}
                     size="small"
                     className="u-m-1"
+                    onClick={() => setShowNextcloudDialog(true)}
                   />
                 </ListItemSecondaryAction>
               </ListItem>
@@ -79,6 +82,12 @@ const Migration = () => {
           ))}
         </List>
       </Paper>
+
+      {showNextcloudDialog && (
+        <NextcloudMigrationDialog
+          onClose={() => setShowNextcloudDialog(false)}
+        />
+      )}
 
       <Typography variant="h6" className="u-mb-half">
         {t('MigrationView.help.title')}
