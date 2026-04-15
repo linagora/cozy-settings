@@ -187,7 +187,8 @@
     },
     "matrix_id": {
       "title": "Matrix ID",
-      "label": "A unique identifier in the Twake platform used for real-time messaging in the open-source Matrix protocol."
+      "label": "A unique identifier in the Twake platform used for real-time messaging in the open-source Matrix protocol.",
+      "tag": "Not active"
     },
     "phone_number": {
       "title": "Phone number",
@@ -574,7 +575,8 @@
   },
   "EmailReadOnlySection": {
     "title": "E-mail",
-    "subtitle": "Fixed and used for authentication within the Matrix network."
+    "subtitle": "Fixed and used for authentication within the Matrix network.",
+    "tag": "Not active"
   },
   "EmailModal": {
     "title": "New email",
