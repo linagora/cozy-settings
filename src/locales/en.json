@@ -675,6 +675,24 @@
           "title": "Connect Nextcloud as external drive",
           "description": "Access Nextcloud files directly in Twake without migration. Files remain in Nextcloud."
         }
+      },
+      "connect": {
+        "title": "Connect to Nextcloud",
+        "subtitle": "Enter your Nextcloud credentials to securely connect your account",
+        "url": {
+          "label": "Nextcloud URL",
+          "placeholder": "https://username.nextcloud.com"
+        },
+        "username": {
+          "label": "Username or Email",
+          "placeholder": "Enter your login"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "error": "We couldn't sign you in. Please check your login or password and try again.",
+        "cancel": "Cancel",
+        "submit": "Next"
       }
     },
     "help": {

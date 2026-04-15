@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient, generateWebLink } from 'cozy-client'
@@ -16,11 +16,13 @@ import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
+import NextcloudConnectDialog from '@/components/Migration/NextcloudConnectDialog'
 
 const NextcloudMigrationDialog = ({ onClose }) => {
   const { t } = useI18n()
   const client = useClient()
   const { subdomain: subDomainType } = client.getInstanceOptions()
+  const [showConnectDialog, setShowConnectDialog] = useState(false)
 
   const nextcloudStoreUrl = generateWebLink({
     cozyUrl: client.getStackClient().uri,
@@ -35,7 +37,7 @@ const NextcloudMigrationDialog = ({ onClose }) => {
       icon: MigrateIcon,
       primary: t('MigrationView.nextcloud.dialog.transfer.title'),
       secondary: t('MigrationView.nextcloud.dialog.transfer.description'),
-      href: null
+      onClick: () => setShowConnectDialog(true)
     },
     {
       id: 'external',
@@ -45,6 +47,12 @@ const NextcloudMigrationDialog = ({ onClose }) => {
       href: nextcloudStoreUrl
     }
   ]
+
+  if (showConnectDialog) {
+    return (
+      <NextcloudConnectDialog onClose={() => setShowConnectDialog(false)} />
+    )
+  }
 
   return (
     <IllustrationDialog
@@ -80,6 +88,7 @@ const NextcloudMigrationDialog = ({ onClose }) => {
                 component={option.href ? 'a' : 'li'}
                 href={option.href || undefined}
                 rel={option.href ? 'noopener noreferrer' : undefined}
+                onClick={option.onClick}
               >
                 <ListItemIcon>
                   <Icon

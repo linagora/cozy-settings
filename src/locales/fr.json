@@ -673,6 +673,24 @@
           "title": "Connecter Nextcloud comme disque externe",
           "description": "Accédez aux fichiers Nextcloud directement dans Twake sans migration. Les fichiers restent dans Nextcloud."
         }
+      },
+      "connect": {
+        "title": "Se connecter à Nextcloud",
+        "subtitle": "Entrez vos identifiants Nextcloud pour connecter votre compte en toute sécurité",
+        "url": {
+          "label": "URL Nextcloud",
+          "placeholder": "https://utilisateur.nextcloud.com"
+        },
+        "username": {
+          "label": "Nom d'utilisateur ou Email",
+          "placeholder": "Entrez votre identifiant"
+        },
+        "password": {
+          "label": "Mot de passe"
+        },
+        "error": "Nous n'avons pas pu vous connecter. Veuillez vérifier vos identifiants et réessayer.",
+        "cancel": "Annuler",
+        "submit": "Suivant"
       }
     },
     "help": {
