@@ -630,6 +630,24 @@
           "title": "Подключить Nextcloud как внешний диск",
           "description": "Получайте доступ к файлам Nextcloud прямо в Twake без миграции. Файлы остаются в Nextcloud."
         }
+      },
+      "connect": {
+        "title": "Подключиться к Nextcloud",
+        "subtitle": "Введите данные для входа в Nextcloud для безопасного подключения",
+        "url": {
+          "label": "URL Nextcloud",
+          "placeholder": "https://username.nextcloud.com"
+        },
+        "username": {
+          "label": "Имя пользователя или Email",
+          "placeholder": "Введите логин"
+        },
+        "password": {
+          "label": "Пароль"
+        },
+        "error": "Не удалось войти. Проверьте логин или пароль и попробуйте снова.",
+        "cancel": "Отмена",
+        "submit": "Далее"
       }
     },
     "help": {

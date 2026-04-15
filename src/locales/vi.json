@@ -630,6 +630,24 @@
           "title": "Kết nối Nextcloud như ổ đĩa ngoài",
           "description": "Truy cập tệp Nextcloud trực tiếp trong Twake mà không cần di chuyển. Các tệp vẫn ở trong Nextcloud."
         }
+      },
+      "connect": {
+        "title": "Kết nối đến Nextcloud",
+        "subtitle": "Nhập thông tin đăng nhập Nextcloud của bạn để kết nối tài khoản một cách bảo mật",
+        "url": {
+          "label": "URL Nextcloud",
+          "placeholder": "https://username.nextcloud.com"
+        },
+        "username": {
+          "label": "Tên người dùng hoặc Email",
+          "placeholder": "Nhập tên đăng nhập"
+        },
+        "password": {
+          "label": "Mật khẩu"
+        },
+        "error": "Chúng tôi không thể đăng nhập. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
+        "cancel": "Hủy",
+        "submit": "Tiếp theo"
       }
     },
     "help": {
