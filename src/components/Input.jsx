@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Chip from 'cozy-ui/transpiled/react/Chips'
 import Switch from 'cozy-ui/transpiled/react/Switch'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import UIInput from 'cozy-ui/transpiled/react/legacy/Input'
@@ -12,6 +13,7 @@ const Input = ({
   placeholder = '',
   value,
   submitting,
+  tag,
   errors,
   onChange,
   onBlur,
@@ -21,7 +23,12 @@ const Input = ({
     if (value) {
       return (
         <div className="u-pv-half u-h-2 u-flex u-flex-items-center">
-          <Typography variant="button">{value}</Typography>
+          <Typography className="u-mr-half" variant="button">
+            {value}
+          </Typography>
+          {!!tag && (
+            <Chip variant="ghost" color="warning" size="small" label={tag} />
+          )}
         </div>
       )
     }
