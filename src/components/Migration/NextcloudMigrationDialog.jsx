@@ -6,8 +6,6 @@ import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import { IllustrationDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Divider from 'cozy-ui/transpiled/react/Divider'
 import Icon from 'cozy-ui/transpiled/react/Icon'
-import ConnectIcon from '/src/assets/icons/connect.svg'
-import MigrateIcon from '/src/assets/icons/migrate.svg'
 import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import List from 'cozy-ui/transpiled/react/List'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
@@ -15,10 +13,12 @@ import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
+import ConnectIcon from '@/assets/icons/connect.svg'
+import MigrateIcon from '@/assets/icons/migrate.svg'
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import NextcloudConnectDialog from '@/components/Migration/NextcloudConnectDialog'
 
-const NextcloudMigrationDialog = ({ onClose }) => {
+const NextcloudMigrationDialog = ({ onCloseAll }) => {
   const { t } = useI18n()
   const client = useClient()
   const { subdomain: subDomainType } = client.getInstanceOptions()
@@ -49,15 +49,13 @@ const NextcloudMigrationDialog = ({ onClose }) => {
   ]
 
   if (showConnectDialog) {
-    return (
-      <NextcloudConnectDialog onClose={() => setShowConnectDialog(false)} />
-    )
+    return <NextcloudConnectDialog onCloseAll={onCloseAll} />
   }
 
   return (
     <IllustrationDialog
       open
-      onClose={onClose}
+      onClose={onCloseAll}
       title={
         <div className="u-flex u-flex-column u-flex-items-center">
           <Avatar

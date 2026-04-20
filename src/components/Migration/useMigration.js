@@ -136,7 +136,8 @@ const useMigration = ({
     isLoading,
     isCanceling,
     cancelSuccess,
-    error
+    error,
+    setError
   }
 }
 
