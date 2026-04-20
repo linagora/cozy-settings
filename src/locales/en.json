@@ -695,6 +695,24 @@
         "error": "We couldn't sign you in. Please check your login or password and try again.",
         "cancel": "Cancel",
         "submit": "Next"
+      },
+      "progress": {
+        "title": "Transferring your data",
+        "subtitle": "Please wait while we migrate your files from Nextcloud…",
+        "percent": "%{percent}% complete",
+        "remaining": "~%{time} remaining",
+        "timeSeconds": "%{count} second",
+        "timeSeconds_plural": "%{count} seconds",
+        "timeMinutes": "~%{count} min",
+        "timeMinutes_plural": "~%{count} min",
+        "cancel": "Cancel transfer",
+        "cancelSuccess": "Cancellation requested. The transfer will stop shortly.",
+        "cancelError": "The cancellation could not be sent. Please try again."
+      },
+      "done": {
+        "title": "All done",
+        "subtitle": "Files transferred successfully. We created a folder with the transferred files.",
+        "openFolder": "Open folder"
       }
     },
     "help": {
