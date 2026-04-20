@@ -85,7 +85,7 @@ const Migration = () => {
 
       {showNextcloudDialog && (
         <NextcloudMigrationDialog
-          onClose={() => setShowNextcloudDialog(false)}
+          onCloseAll={() => setShowNextcloudDialog(false)}
         />
       )}
 
@@ -94,7 +94,12 @@ const Migration = () => {
       </Typography>
       <Typography variant="body2" color="textSecondary">
         {t('MigrationView.help.description')}{' '}
-        <a href="#/support" className="u-link">
+        <a
+          href="https://twake.app/en/support/"
+          target="_blank"
+          className="u-link"
+          rel="noreferrer"
+        >
           {t('MigrationView.help.contactSupport')}
         </a>
       </Typography>

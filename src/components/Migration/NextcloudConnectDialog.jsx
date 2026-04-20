@@ -13,29 +13,47 @@ import TextField from 'cozy-ui/transpiled/react/TextField'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
+import NextcloudProgressDialog from '@/components/Migration/NextcloudProgressDialog'
+import useMigration from '@/components/Migration/useMigration'
 
-const NextcloudConnectDialog = ({ onClose }) => {
+const NextcloudConnectDialog = ({ onCloseAll }) => {
   const { t } = useI18n()
   const [url, setUrl] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const {
+    start,
+    cancel,
+    migrationId,
+    startedAt,
+    progress,
+    isLoading,
+    isCanceling,
+    cancelSuccess,
+    error,
+    setError
+  } = useMigration()
 
-  const handleSubmit = async () => {
-    setError(null)
-    setIsLoading(true)
+  const handleSubmit = () =>
+    start({
+      nextcloud_url: url,
+      nextcloud_login: username,
+      nextcloud_app_password: password,
+      target_dir: 'Nextcloud imported files'
+    })
 
-    try {
-      // TODO: Implement actual connection logic
-      // For now, simulate an error to show the UI
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      setError(t('MigrationView.nextcloud.connect.error'))
-    } catch {
-      setError(t('MigrationView.nextcloud.connect.error'))
-    } finally {
-      setIsLoading(false)
-    }
+  if (migrationId) {
+    return (
+      <NextcloudProgressDialog
+        progress={progress}
+        startedAt={startedAt}
+        onCloseAll={onCloseAll}
+        onCancel={cancel}
+        isCanceling={isCanceling}
+        cancelSuccess={cancelSuccess}
+        cancelError={error}
+      />
+    )
   }
 
   const canSubmit = !!url.trim() && !!username.trim() && !!password.trim()
@@ -43,7 +61,7 @@ const NextcloudConnectDialog = ({ onClose }) => {
   return (
     <IllustrationDialog
       open
-      onClose={onClose}
+      onClose={onCloseAll}
       title={
         <div className="u-flex u-flex-column u-flex-items-center">
           <Avatar
@@ -129,7 +147,7 @@ const NextcloudConnectDialog = ({ onClose }) => {
               icon={<Icon icon={WarningIcon} size={20} />}
               className="u-mt-half"
             >
-              {error}
+              {t('MigrationView.nextcloud.connect.error')}
             </Alert>
           )}
         </div>
@@ -138,7 +156,7 @@ const NextcloudConnectDialog = ({ onClose }) => {
         <>
           <Buttons
             variant="secondary"
-            onClick={onClose}
+            onClick={onCloseAll}
             label={t('MigrationView.nextcloud.connect.cancel')}
           />
           <Buttons

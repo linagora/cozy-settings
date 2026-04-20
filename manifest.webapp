@@ -86,6 +86,11 @@
       "description": "Required to manage your settings about default redirection",
       "type": "io.cozy.home.settings",
       "verbs": ["GET", "POST", "PUT"]
+    },
+    "nextcloud_migrations": {
+      "description": "",
+      "type": "io.cozy.nextcloud.migrations",
+      "verbs": ["ALL"]
     }
   },
   "routes": {
