@@ -648,6 +648,24 @@
         "error": "Chúng tôi không thể đăng nhập. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
         "cancel": "Hủy",
         "submit": "Tiếp theo"
+      },
+      "progress": {
+        "title": "Đang truyền dữ liệu",
+        "subtitle": "Vui lòng chờ trong khi chúng tôi di chuyển tệp của bạn từ Nextcloud…",
+        "percent": "%{percent}% hoàn thành",
+        "remaining": "~%{time} còn lại",
+        "timeSeconds": "%{count} giây",
+        "timeSeconds_plural": "%{count} giây",
+        "timeMinutes": "~%{count} phút",
+        "timeMinutes_plural": "~%{count} phút",
+        "cancel": "Hủy truyền",
+        "cancelSuccess": "Đã gửi yêu cầu hủy. Quá trình truyền sẽ dừng lại ngay sau đây.",
+        "cancelError": "Không thể gửi yêu cầu hủy. Vui lòng thử lại."
+      },
+      "done": {
+        "title": "Hoàn tất!",
+        "subtitle": "Tệp đã được truyền thành công. Chúng tôi đã tạo một thư mục chứa các tệp đã chuyển.",
+        "openFolder": "Mở thư mục"
       }
     },
     "help": {
