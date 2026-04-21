@@ -625,6 +625,8 @@
     "subtitle": "Tous vos fichiers, e-mails, calendriers et contacts — dans un seul espace Twake, prêt à l'emploi",
     "secureTransfer": "Transfert sécurisé",
     "startMigration": "Démarrer la migration",
+    "migrated": "Migré",
+    "cleanNextcloud": "Nettoyer Nextcloud",
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Vos fichiers, dossiers et documents seront copiés dans votre Twake.",
@@ -681,6 +683,16 @@
       "title": "Besoin d'aide ?",
       "description": "Notre équipe peut vous aider à migrer vos données et à démarrer plus vite.",
       "contactSupport": "Contacter le support"
+    }
+  },
+  "MigrationProgressBanner": {
+    "title": "Migration depuis Nextcloud en cours",
+    "percent": "%{percent}%\u00a0terminé",
+    "importing": "Importation de %{count} fichiers depuis Nextcloud\u00a0...",
+    "cancel": "Annuler",
+    "done": {
+      "title": "Migration terminée\u00a0!",
+      "body": "%{count} fichiers importés avec succès depuis Nextcloud"
     }
   }
 }
