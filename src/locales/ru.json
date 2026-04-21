@@ -616,6 +616,8 @@
     "subtitle": "Все ваши файлы, письма, календари и контакты — в едином рабочем пространстве Twake",
     "secureTransfer": "Безопасная передача",
     "startMigration": "Начать миграцию",
+    "migrated": "Миграция завершена",
+    "cleanNextcloud": "Очистить Nextcloud",
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Ваши файлы, папки и документы будут скопированы в ваш Twake.",
@@ -672,6 +674,16 @@
       "title": "Нужна помощь?",
       "description": "Наша команда поможет вам перенести данные и быстро начать работу.",
       "contactSupport": "Связаться с поддержкой"
+    }
+  },
+  "MigrationProgressBanner": {
+    "title": "Миграция с Nextcloud в процессе",
+    "percent": "%{percent}% завершено",
+    "importing": "Импорт %{count} файлов из Nextcloud...",
+    "cancel": "Отменить",
+    "done": {
+      "title": "Миграция завершена!",
+      "body": "Успешно импортировано %{count} файлов из Nextcloud"
     }
   }
 }

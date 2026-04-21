@@ -15,6 +15,7 @@ import { AppRouter } from './AppRouter'
 
 import styles from '@/styles/index.styl'
 
+import MigrationProgressBanner from '@/components/Migration/MigrationProgressBanner'
 import SettingsRealTimeQueries from '@/components/SettingsRealTimeQueries'
 import SidebarDesktop from '@/components/SidebarDesktop'
 import { initFlags } from '@/lib/flags'
@@ -37,6 +38,7 @@ export const App = () => {
       <RealTimeQueries doctype="io.cozy.oauth.clients" />
       <SettingsRealTimeQueries />
       <Main>
+        <MigrationProgressBanner />
         <Content>
           <AppRouter />
         </Content>

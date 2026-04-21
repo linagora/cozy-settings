@@ -616,6 +616,8 @@
     "subtitle": "Tất cả các tệp, email, lịch và danh bạ của bạn — trong một không gian Twake duy nhất, sẵn sàng sử dụng",
     "secureTransfer": "Truyền tải bảo mật",
     "startMigration": "Bắt đầu di chuyển",
+    "migrated": "Đã di chuyển",
+    "cleanNextcloud": "Dọn dẹp Nextcloud",
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake.",
@@ -672,6 +674,16 @@
       "title": "Cần hỗ trợ?",
       "description": "Đội ngũ của chúng tôi có thể giúp bạn di chuyển dữ liệu và bắt đầu nhanh hơn.",
       "contactSupport": "Liên hệ hỗ trợ"
+    }
+  },
+  "MigrationProgressBanner": {
+    "title": "Đang di chuyển từ Nextcloud",
+    "percent": "%{percent}% hoàn thành",
+    "importing": "Đang nhập %{count} tệp từ Nextcloud...",
+    "cancel": "Hủy",
+    "done": {
+      "title": "Di chuyển hoàn tất!",
+      "body": "Đã nhập thành công %{count} tệp từ Nextcloud"
     }
   }
 }
