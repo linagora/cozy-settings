@@ -74,7 +74,7 @@
     "cozy-search": "^0.25.0",
     "cozy-sharing": "^30.0.0",
     "cozy-stack-client": "^60.23.0",
-    "cozy-ui": "^138.6.0",
+    "cozy-ui": "^138.6.2",
     "cozy-ui-plus": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "15.8.1",
