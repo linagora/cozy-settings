@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
+import { useInstanceInfo } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Divider from 'cozy-ui/transpiled/react/Divider'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -25,6 +26,9 @@ const ProviderLogo = ({ icon, alt }) => (
 const Migration = () => {
   const { t } = useI18n()
   const [showNextcloudDialog, setShowNextcloudDialog] = useState(false)
+
+  const { context } = useInstanceInfo()
+  const helpLink = context?.data?.help_link || 'https://twake.app/en/support/'
 
   const providers = [
     {
@@ -94,12 +98,7 @@ const Migration = () => {
       </Typography>
       <Typography variant="body2" color="textSecondary">
         {t('MigrationView.help.description')}{' '}
-        <a
-          href="https://twake.app/en/support/"
-          target="_blank"
-          className="u-link"
-          rel="noreferrer"
-        >
+        <a href={helpLink} target="_blank" className="u-link" rel="noreferrer">
           {t('MigrationView.help.contactSupport')}
         </a>
       </Typography>
