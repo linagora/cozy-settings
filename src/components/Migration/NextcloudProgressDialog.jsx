@@ -191,7 +191,7 @@ const NextcloudProgressDialog = ({
                 {t('MigrationView.nextcloud.progress.cancelSuccess')}
               </Alert>
             )}
-            {cancelError === 'cancel_unavailable' && (
+            {cancelError && (
               <Alert severity="error" className="u-mt-1 u-w-100">
                 {t('MigrationView.nextcloud.progress.cancelError')}
               </Alert>

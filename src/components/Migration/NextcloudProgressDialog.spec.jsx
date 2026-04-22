@@ -122,8 +122,8 @@ describe('NextcloudProgressDialog', () => {
       ).not.toBeInTheDocument()
     })
 
-    it('shows error alert when cancelError is cancel_unavailable', () => {
-      setup({ cancelError: 'cancel_unavailable' })
+    it('shows error alert when cancelError is set', () => {
+      setup({ cancelError: 'cancel_error' })
       expect(
         screen.getByText(
           'The cancellation could not be sent. Please try again.'
