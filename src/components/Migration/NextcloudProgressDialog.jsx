@@ -3,7 +3,6 @@ import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient } from 'cozy-client'
-import Alert from 'cozy-ui/transpiled/react/Alert'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Dialog from 'cozy-ui/transpiled/react/Dialog'
@@ -11,9 +10,9 @@ import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
 import Cross from 'cozy-ui/transpiled/react/Icons/Cross'
 import FolderOpen from 'cozy-ui/transpiled/react/Icons/FolderOpen'
-import LinearProgress from 'cozy-ui/transpiled/react/LinearProgress'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
+import MigrationProgressInfo from './MigrationProgressInfo'
 import styles from './NextcloudProgressDialog.styl'
 import {
   computeRemainingSeconds,
@@ -24,16 +23,6 @@ import {
 
 import migrationAnimationDone from '@/assets/images/migration-animation-done.json'
 import migrationAnimation from '@/assets/images/migration-animation.json'
-
-const formatRemainingTime = (seconds, t) => {
-  if (!seconds || seconds <= 0) return null
-  if (seconds < 60)
-    return t('MigrationView.nextcloud.progress.timeSeconds', {
-      count: Math.round(seconds)
-    })
-  const minutes = Math.round(seconds / 60)
-  return t('MigrationView.nextcloud.progress.timeMinutes', { count: minutes })
-}
 
 const ANIMATION_SIZE = 322
 const AVATAR_SIZE = 146
@@ -157,49 +146,13 @@ const NextcloudProgressDialog = ({
               {t('MigrationView.nextcloud.progress.subtitle')}
             </Typography>
 
-            <div className="u-w-100 u-mb-1 u-mt-1">
-              <LinearProgress
-                variant="determinate"
-                value={percent}
-                style={{ height: 8, borderRadius: 4 }}
-              />
-            </div>
-
-            <div className="u-flex u-flex-justify-between u-w-100 u-mb-4">
-              <Typography variant="body2" color="textSecondary">
-                {t('MigrationView.nextcloud.progress.percent', { percent })}
-              </Typography>
-              {(() => {
-                const formattedTime = formatRemainingTime(
-                  remainingTimeSeconds,
-                  t
-                )
-                return formattedTime ? (
-                  <Typography variant="body2" color="textSecondary">
-                    {t('MigrationView.nextcloud.progress.remaining', {
-                      time: formattedTime
-                    })}
-                  </Typography>
-                ) : null
-              })()}
-            </div>
-
-            {cancelSuccess && (
-              <Alert severity="success" className="u-mt-1 u-w-100">
-                {t('MigrationView.nextcloud.progress.cancelSuccess')}
-              </Alert>
-            )}
-            {cancelError && (
-              <Alert severity="error" className="u-mt-1 u-w-100">
-                {t('MigrationView.nextcloud.progress.cancelError')}
-              </Alert>
-            )}
-            <Buttons
-              variant="text"
-              label={t('MigrationView.nextcloud.progress.cancel')}
-              onClick={onCancel}
-              disabled={isCanceling}
-              busy={isCanceling}
+            <MigrationProgressInfo
+              percent={percent}
+              remainingTimeSeconds={remainingTimeSeconds}
+              cancelSuccess={cancelSuccess}
+              cancelError={cancelError}
+              onCancel={onCancel}
+              isCanceling={isCanceling}
             />
           </>
         )}
