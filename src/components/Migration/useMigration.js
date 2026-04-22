@@ -14,6 +14,16 @@ export const computeRemainingSeconds = (progress, startedAt) => {
   return remainingBytes / speed
 }
 
+export const isMigrationDone = progress =>
+  progress &&
+  progress.files_imported >= progress.files_total &&
+  progress.files_total > 0
+
+export const computeProgressPercent = progress =>
+  progress && progress.files_total > 0
+    ? Math.round((progress.files_imported / progress.files_total) * 100)
+    : 0
+
 export const useDriveUrl = (isDone, client, subDomainType) => {
   const [driveUrl, setDriveUrl] = useState(null)
   useEffect(() => {
