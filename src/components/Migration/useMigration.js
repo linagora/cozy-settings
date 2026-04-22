@@ -4,6 +4,8 @@ import { useClient, generateWebLink } from 'cozy-client'
 
 import useMigrationMock from './useMigrationMock'
 
+export const NEXTCLOUD_IMPORTED_FILES_DIR_NAME = '/Nextcloud imported files'
+
 export const computeRemainingSeconds = (progress, startedAt) => {
   if (!progress || !progress.bytes_imported || !progress.bytes_total)
     return null
@@ -35,7 +37,7 @@ export const useDriveUrl = (isDone, client, subDomainType) => {
       try {
         const { data: folder } = await client
           .collection('io.cozy.files')
-          .statByPath('/Nextcloud imported files')
+          .statByPath(`/${NEXTCLOUD_IMPORTED_FILES_DIR_NAME}`)
         setDriveUrl(
           generateWebLink({ ...baseLink, hash: `folder/${folder._id}` })
         )
