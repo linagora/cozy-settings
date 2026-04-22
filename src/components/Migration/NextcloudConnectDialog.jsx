@@ -14,7 +14,9 @@ import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import NextcloudProgressDialog from '@/components/Migration/NextcloudProgressDialog'
-import useMigration from '@/components/Migration/useMigration'
+import useMigration, {
+  NEXTCLOUD_IMPORTED_FILES_DIR_NAME
+} from '@/components/Migration/useMigration'
 
 const NextcloudConnectDialog = ({ onCloseAll }) => {
   const { t } = useI18n()
@@ -40,7 +42,7 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
       nextcloud_url: url,
       nextcloud_login: username,
       nextcloud_app_password: password,
-      target_dir: 'Nextcloud imported files'
+      target_dir: `/${NEXTCLOUD_IMPORTED_FILES_DIR_NAME}`
     })
 
   if (migrationId) {
