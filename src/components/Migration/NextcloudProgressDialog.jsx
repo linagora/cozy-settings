@@ -53,7 +53,7 @@ const NextcloudProgressDialog = ({
   const avatarSrc = `${client.getStackClient().uri}/public/avatar?fallback=initials`
   const { subdomain: subDomainType } = client.getInstanceOptions()
 
-  const isDone = isMigrationDone(progress)
+  const isDone = isMigrationDone(status)
   const percent = computeProgressPercent(progress)
 
   const driveUrl = useDriveUrl(isDone, client, subDomainType)

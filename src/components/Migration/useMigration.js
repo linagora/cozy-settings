@@ -14,14 +14,11 @@ export const computeRemainingSeconds = (progress, startedAt) => {
   return remainingBytes / speed
 }
 
-export const isMigrationDone = progress =>
-  progress &&
-  progress.files_imported >= progress.files_total &&
-  progress.files_total > 0
+export const isMigrationDone = status => status === 'completed'
 
 export const computeProgressPercent = progress =>
-  progress && progress.files_total > 0
-    ? Math.round((progress.files_imported / progress.files_total) * 100)
+  progress && progress.bytes_total > 0
+    ? Math.round((progress.bytes_imported / progress.bytes_total) * 100)
     : 0
 
 export const useDriveUrl = (isDone, client, subDomainType) => {
@@ -73,6 +70,7 @@ const useMigration = ({
   const [isCanceling, setIsCanceling] = useState(false)
   const [cancelSuccess, setCancelSuccess] = useState(false)
   const [error, setError] = useState(null)
+  const [status, setStatus] = useState(null)
 
   const start = useCallback(
     async (credentials = {}) => {
@@ -85,6 +83,7 @@ const useMigration = ({
           .fetchJSON('POST', '/remote/nextcloud/migration', credentials)
         setStartedAt(result.data.started_at || new Date().toISOString())
         setProgress(result.data.progress || null)
+        setStatus(result.data.status)
         setMigrationId(result.data.id)
       } catch {
         setError('start_error')
@@ -116,6 +115,7 @@ const useMigration = ({
 
     const handleUpdate = doc => {
       setProgress(doc.progress || null)
+      setStatus(doc.status)
     }
 
     client.plugins.realtime.subscribe(
@@ -147,7 +147,8 @@ const useMigration = ({
     isCanceling,
     cancelSuccess,
     error,
-    setError
+    setError,
+    status
   }
 }
 

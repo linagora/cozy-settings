@@ -31,7 +31,8 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
     isCanceling,
     cancelSuccess,
     error,
-    setError
+    setError,
+    status
   } = useMigration()
 
   const handleSubmit = () =>
@@ -52,6 +53,7 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
         isCanceling={isCanceling}
         cancelSuccess={cancelSuccess}
         cancelError={error}
+        status={status}
       />
     )
   }
