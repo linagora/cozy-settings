@@ -59,7 +59,7 @@ const Migration = () => {
         </Typography>
       </div>
 
-      <Paper elevation={2} className="u-mb-3">
+      <Paper elevation={1} className="u-mb-3">
         <List disablePadding>
           {providers.map((provider, index) => (
             <React.Fragment key={provider.id}>
