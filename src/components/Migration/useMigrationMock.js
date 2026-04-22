@@ -29,7 +29,7 @@ const useMigrationMock = ({
 
   const cancel = useCallback(() => {
     if (cancelFails) {
-      setError('cancel_unavailable')
+      setError('cancel_error')
       return
     }
     canceledRef.current = true

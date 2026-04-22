@@ -94,7 +94,7 @@ const useMigration = ({
         .fetchJSON('POST', `/remote/nextcloud/migration/${migrationId}/cancel`)
       setCancelSuccess(true)
     } catch (e) {
-      if (e.status === 503) setError('cancel_unavailable')
+      if (e.status !== 409) setError('cancel_error')
       // 409 means already terminal: not an error from the user's perspective
     } finally {
       setIsCanceling(false)
