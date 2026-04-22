@@ -15,7 +15,12 @@ import LinearProgress from 'cozy-ui/transpiled/react/LinearProgress'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import styles from './NextcloudProgressDialog.styl'
-import { computeRemainingSeconds, useDriveUrl } from './useMigration'
+import {
+  computeRemainingSeconds,
+  isMigrationDone,
+  computeProgressPercent,
+  useDriveUrl
+} from './useMigration'
 
 import migrationAnimationDone from '@/assets/images/migration-animation-done.json'
 import migrationAnimation from '@/assets/images/migration-animation.json'
@@ -48,15 +53,8 @@ const NextcloudProgressDialog = ({
   const avatarSrc = `${client.getStackClient().uri}/public/avatar?fallback=initials`
   const { subdomain: subDomainType } = client.getInstanceOptions()
 
-  const isDone =
-    progress &&
-    progress.files_imported >= progress.files_total &&
-    progress.files_total > 0
-
-  const percent =
-    progress && progress.files_total > 0
-      ? Math.round((progress.files_imported / progress.files_total) * 100)
-      : 0
+  const isDone = isMigrationDone(progress)
+  const percent = computeProgressPercent(progress)
 
   const driveUrl = useDriveUrl(isDone, client, subDomainType)
   const remainingTimeSeconds = computeRemainingSeconds(progress, startedAt)
