@@ -3,9 +3,9 @@ import { useCallback, useEffect, useState } from 'react'
 import { useClient, generateWebLink } from 'cozy-client'
 
 import useMigrationMock from './useMigrationMock'
+import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '../../doctypes'
 
 export const NEXTCLOUD_IMPORTED_FILES_DIR_NAME = '/Nextcloud imported files'
-export const NEXTCLOUD_MIGRATIONS_DOCTYPE = 'io.cozy.nextcloud.migrations'
 
 export const computeRemainingSeconds = (progress, startedAt) => {
   if (!progress || !progress.bytes_imported || !progress.bytes_total)
