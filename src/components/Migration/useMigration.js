@@ -37,7 +37,7 @@ export const useDriveUrl = (isDone, client, subDomainType) => {
       try {
         const { data: folder } = await client
           .collection('io.cozy.files')
-          .statByPath(`/${NEXTCLOUD_IMPORTED_FILES_DIR_NAME}`)
+          .statByPath(NEXTCLOUD_IMPORTED_FILES_DIR_NAME)
         setDriveUrl(
           generateWebLink({ ...baseLink, hash: `folder/${folder._id}` })
         )
