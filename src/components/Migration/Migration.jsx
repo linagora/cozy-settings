@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import {
@@ -8,6 +8,7 @@ import {
   isQueryLoading,
   useClient
 } from 'cozy-client'
+import flag from 'cozy-flags'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Chip from 'cozy-ui/transpiled/react/Chips'
 import Divider from 'cozy-ui/transpiled/react/Divider'
@@ -24,10 +25,17 @@ import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import NextcloudMigrationDialog from '@/components/Migration/NextcloudMigrationDialog'
+import {
+  NEXTCLOUD_MIGRATIONS_DOCTYPE,
+} from '@/components/Migration/useMigration'
+
+import {
+  resetNextcloudMigrationForTests,
+  RESET_NEXTCLOUD_MIGRATION_FLAG
+} from '@/components/Migration/resetNextcloudMigration'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
-
-const NEXTCLOUD_MIGRATIONS_DOCTYPE = 'io.cozy.nextcloud.migrations'
+import logger from '@/lib/logger'
 
 const buildCompletedNextcloudMigrationsQuery = () => ({
   definition: Q(NEXTCLOUD_MIGRATIONS_DOCTYPE)
@@ -38,6 +46,7 @@ const buildCompletedNextcloudMigrationsQuery = () => ({
     as: `${NEXTCLOUD_MIGRATIONS_DOCTYPE}/completed`
   }
 })
+const completedMigrationsQuery = buildCompletedNextcloudMigrationsQuery()
 
 const ProviderLogo = ({ icon, alt }) => (
   <Icon icon={icon} aria-label={alt} size={40} />
@@ -92,6 +101,25 @@ const Migration = () => {
       )
     }
   }, [client, completedMigrationsQuery])
+
+  const handleCleanNextcloud = useCallback(async () => {
+    if (!flag(RESET_NEXTCLOUD_MIGRATION_FLAG) || isCleaningNextcloud) return
+
+    setIsCleaningNextcloud(true)
+
+    try {
+      setHasCompletedNextcloudMigration(false)
+      const hasCompletedMigration = await resetNextcloudMigrationForTests({
+        client,
+        completedMigrationsQuery
+      })
+      setHasCompletedNextcloudMigration(hasCompletedMigration)
+    } catch (error) {
+      logger.error('Failed to reset Nextcloud migration for tests', error)
+    } finally {
+      setIsCleaningNextcloud(false)
+    }
+  }, [client, completedMigrationsQuery, isCleaningNextcloud])
 
   const providers = [
     {
@@ -157,6 +185,8 @@ const Migration = () => {
                       className="u-m-1"
                       startIcon={<Icon icon={DeleteIcon} size={14} />}
                       color="error"
+                      onClick={handleCleanNextcloud}
+                      disabled={isCleaningNextcloud}
                     />
                   ) : (
                     <Button
