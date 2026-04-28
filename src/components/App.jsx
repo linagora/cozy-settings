@@ -15,7 +15,7 @@ import { AppRouter } from './AppRouter'
 
 import styles from '@/styles/index.styl'
 
-import MigrationProgressBanner from '@/components/Migration/MigrationProgressBanner'
+import { MigrationProgressBanner } from '@/components/Migration/MigrationProgressBanner'
 import SettingsRealTimeQueries from '@/components/SettingsRealTimeQueries'
 import SidebarDesktop from '@/components/SidebarDesktop'
 import { initFlags } from '@/lib/flags'
@@ -36,6 +36,7 @@ export const App = () => {
       <Alerter />
       {isBigView && <SidebarDesktop />}
       <RealTimeQueries doctype="io.cozy.oauth.clients" />
+      <RealTimeQueries doctype="io.cozy.nextcloud.migrations" />
       <SettingsRealTimeQueries />
       <Main>
         <MigrationProgressBanner />

@@ -1,17 +1,15 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import {
   useInstanceInfo,
   useQuery,
-  Q,
   isQueryLoading,
   useClient
 } from 'cozy-client'
 import flag from 'cozy-flags'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Chip from 'cozy-ui/transpiled/react/Chips'
-import Divider from 'cozy-ui/transpiled/react/Divider'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import CheckCircleIcon from 'cozy-ui/transpiled/react/Icons/CheckCircle'
 import DeleteIcon from 'cozy-ui/transpiled/react/Icons/Trash'
@@ -26,26 +24,18 @@ import Typography from 'cozy-ui/transpiled/react/Typography'
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import NextcloudMigrationDialog from '@/components/Migration/NextcloudMigrationDialog'
 import {
-  NEXTCLOUD_MIGRATIONS_DOCTYPE,
-} from '@/components/Migration/useMigration'
-
-import {
   resetNextcloudMigrationForTests,
   RESET_NEXTCLOUD_MIGRATION_FLAG
 } from '@/components/Migration/resetNextcloudMigration'
+import { clearNextcloudImportedFiles } from '@/components/Migration/useMigration'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
+import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '@/doctypes'
 import logger from '@/lib/logger'
+import { buildCompletedNextcloudMigrationsQuery } from '@/lib/queries'
 
-const buildCompletedNextcloudMigrationsQuery = () => ({
-  definition: Q(NEXTCLOUD_MIGRATIONS_DOCTYPE)
-    .where({ status: 'completed' })
-    .limitBy(1)
-    .indexFields(['status']),
-  options: {
-    as: `${NEXTCLOUD_MIGRATIONS_DOCTYPE}/completed`
-  }
-})
+const RESET_NEXTCLOUD_MIGRATION_FLAG = 'settings.reset-for-migration.enabled'
+
 const completedMigrationsQuery = buildCompletedNextcloudMigrationsQuery()
 
 const ProviderLogo = ({ icon, alt }) => (
@@ -62,10 +52,6 @@ const Migration = () => {
 
   const { context } = useInstanceInfo()
   const helpLink = context?.data?.help_link || 'https://twake.app/en/support/'
-  const completedMigrationsQuery = useMemo(
-    () => buildCompletedNextcloudMigrationsQuery(),
-    []
-  )
   const { data: completedMigrations, ...completedMigrationsQueryState } =
     useQuery(
       completedMigrationsQuery.definition,
@@ -75,32 +61,6 @@ const Migration = () => {
     if (isQueryLoading(completedMigrationsQueryState)) return
     setHasCompletedNextcloudMigration(completedMigrations?.length > 0)
   }, [completedMigrations, completedMigrationsQueryState])
-
-  const isNextcloudMigrated = hasCompletedNextcloudMigration
-
-  useEffect(() => {
-    const handleUpdate = doc => {
-      if (doc.status === 'completed') {
-        setHasCompletedNextcloudMigration(true)
-        client.query(
-          completedMigrationsQuery.definition,
-          completedMigrationsQuery.options
-        )
-      }
-    }
-    client.plugins.realtime.subscribe(
-      'updated',
-      NEXTCLOUD_MIGRATIONS_DOCTYPE,
-      handleUpdate
-    )
-    return () => {
-      client.plugins.realtime.unsubscribe(
-        'updated',
-        NEXTCLOUD_MIGRATIONS_DOCTYPE,
-        handleUpdate
-      )
-    }
-  }, [client, completedMigrationsQuery])
 
   const handleCleanNextcloud = useCallback(async () => {
     if (!flag(RESET_NEXTCLOUD_MIGRATION_FLAG) || isCleaningNextcloud) return
@@ -116,19 +76,11 @@ const Migration = () => {
       setHasCompletedNextcloudMigration(hasCompletedMigration)
     } catch (error) {
       logger.error('Failed to reset Nextcloud migration for tests', error)
+      setHasCompletedNextcloudMigration(true)
     } finally {
       setIsCleaningNextcloud(false)
     }
-  }, [client, completedMigrationsQuery, isCleaningNextcloud])
-
-  const providers = [
-    {
-      id: 'nextcloud',
-      icon: nextcloudLogo,
-      name: t('MigrationView.nextcloud.name'),
-      description: t('MigrationView.nextcloud.description')
-    }
-  ]
+  }, [client, isCleaningNextcloud])
 
   return (
     <Page className="u-maw-7">
@@ -152,58 +104,53 @@ const Migration = () => {
 
       <Paper elevation={1} className="u-mb-3">
         <List disablePadding>
-          {providers.map((provider, index) => (
-            <React.Fragment key={provider.id}>
-              {index > 0 && <Divider component="li" />}
-              <ListItem>
-                <ListItemIcon>
-                  <ProviderLogo icon={provider.icon} alt={provider.name} />
-                </ListItemIcon>
-                <ListItemText
-                  primary={
-                    <span className="u-flex u-flex-items-center">
-                      {provider.name}
-                      {provider.id === 'nextcloud' && isNextcloudMigrated && (
-                        <Chip
-                          label={t('MigrationView.migrated')}
-                          color="success"
-                          variant="ghost"
-                          icon={<Icon icon={CheckCircleIcon} size="12" />}
-                          className="u-ml-half"
-                        />
-                      )}
-                    </span>
-                  }
-                  secondary={provider.description}
-                />
-                <ListItemSecondaryAction>
-                  {provider.id === 'nextcloud' && isNextcloudMigrated ? (
-                    <Button
-                      variant="text"
-                      label={t('MigrationView.cleanNextcloud')}
-                      size="small"
-                      className="u-m-1"
-                      startIcon={<Icon icon={DeleteIcon} size={14} />}
-                      color="error"
-                      onClick={handleCleanNextcloud}
-                      disabled={isCleaningNextcloud}
-                    />
-                  ) : (
-                    <Button
-                      variant="secondary"
-                      label={t('MigrationView.startMigration')}
-                      size="small"
-                      className="u-m-1"
-                      onClick={() =>
-                        provider.id === 'nextcloud' &&
-                        setShowNextcloudDialog(true)
-                      }
+          <ListItem>
+            <ListItemIcon>
+              <ProviderLogo
+                icon={nextcloudLogo}
+                alt={t('MigrationView.nextcloud.name')}
+              />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <span className="u-flex u-flex-items-center">
+                  {t('MigrationView.nextcloud.name')}
+                  {hasCompletedNextcloudMigration && (
+                    <Chip
+                      label={t('MigrationView.migrated')}
+                      color="success"
+                      variant="ghost"
+                      icon={<Icon icon={CheckCircleIcon} size="12" />}
+                      className="u-ml-half"
                     />
                   )}
-                </ListItemSecondaryAction>
-              </ListItem>
-            </React.Fragment>
-          ))}
+                </span>
+              }
+              secondary={t('MigrationView.nextcloud.description')}
+            />
+            <ListItemSecondaryAction>
+              {hasCompletedNextcloudMigration ? (
+                <Button
+                  variant="text"
+                  label={t('MigrationView.cleanNextcloud')}
+                  size="small"
+                  className="u-m-1"
+                  startIcon={<Icon icon={DeleteIcon} size={14} />}
+                  color="error"
+                  onClick={handleCleanNextcloud}
+                  disabled={isCleaningNextcloud}
+                />
+              ) : (
+                <Button
+                  variant="secondary"
+                  label={t('MigrationView.startMigration')}
+                  size="small"
+                  className="u-m-1"
+                  onClick={() => setShowNextcloudDialog(true)}
+                />
+              )}
+            </ListItemSecondaryAction>
+          </ListItem>
         </List>
       </Paper>
 
