@@ -23,6 +23,8 @@ jest.mock('cozy-ui/transpiled/react/Collapse', () => {
 })
 
 jest.mock('cozy-ui/transpiled/react/providers/Alert', () => ({
+  __esModule: true,
+  default: ({ children }) => children,
   useAlert: jest.fn()
 }))
 

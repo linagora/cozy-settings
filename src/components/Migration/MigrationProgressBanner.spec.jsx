@@ -1,12 +1,22 @@
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import React from 'react'
 
-import { createMockClient } from 'cozy-client'
+import { createMockClient, useQuery } from 'cozy-client'
 
-import MigrationProgressBanner from './MigrationProgressBanner'
+import { MigrationProgressBanner } from './MigrationProgressBanner'
 import AppLike from 'test/AppLike'
 
 import logger from '@/lib/logger'
+
+jest.mock('cozy-client', () => {
+  const actual = jest.requireActual('cozy-client')
+  return {
+    __esModule: true,
+    ...actual,
+    default: actual.default,
+    useQuery: jest.fn()
+  }
+})
 
 jest.mock('@/lib/logger', () => ({ error: jest.fn() }))
 
@@ -21,11 +31,8 @@ const RUNNING_DOC = {
   }
 }
 
-const buildMockClient = ({ runningMigration = null, fetchJSON } = {}) => {
+const buildMockClient = ({ fetchJSON } = {}) => {
   const client = createMockClient({})
-  client.query = jest.fn().mockResolvedValue({
-    data: runningMigration ? [runningMigration] : []
-  })
   const subscribers = {}
   const keyOf = (event, doctype, idOrHandler) =>
     typeof idOrHandler === 'string'
@@ -54,35 +61,48 @@ const buildMockClient = ({ runningMigration = null, fetchJSON } = {}) => {
   return client
 }
 
-const setup = clientOpts => {
-  const client = buildMockClient(clientOpts)
+const setup = ({ runningMigration = null, fetchJSON } = {}) => {
+  const client = buildMockClient({ fetchJSON })
+  useQuery.mockReturnValue({
+    data: runningMigration ? [runningMigration] : [],
+    fetchStatus: 'loaded'
+  })
   const utils = render(
     <AppLike client={client}>
       <MigrationProgressBanner />
     </AppLike>
   )
-  return { client, ...utils }
+  const rerenderWith = nextRunning => {
+    useQuery.mockReturnValue({
+      data: nextRunning ? [nextRunning] : [],
+      fetchStatus: 'loaded'
+    })
+    utils.rerender(
+      <AppLike client={client}>
+        <MigrationProgressBanner />
+      </AppLike>
+    )
+  }
+  return { client, rerenderWith, ...utils }
 }
 
 describe('MigrationProgressBanner', () => {
   beforeEach(() => jest.clearAllMocks())
 
   describe('idle state', () => {
-    it('does not render the banner when no migration is running', async () => {
+    it('does not render the banner when no migration is running', () => {
       setup()
-      await waitFor(() =>
-        expect(
-          screen.queryByTestId('migration-progress-banner')
-        ).not.toBeInTheDocument()
-      )
+      expect(
+        screen.queryByTestId('migration-progress-banner-percent')
+      ).not.toBeInTheDocument()
     })
   })
 
   describe('running state', () => {
-    it('renders the banner when a migration is running on mount', async () => {
+    it('renders the banner when a migration is running', () => {
       setup({ runningMigration: RUNNING_DOC })
       expect(
-        await screen.findByTestId('migration-progress-banner')
+        screen.getByTestId('migration-progress-banner-percent')
       ).toBeInTheDocument()
       expect(
         screen.getByTestId('migration-progress-banner-percent')
@@ -92,32 +112,23 @@ describe('MigrationProgressBanner', () => {
       ).toHaveTextContent('100 files')
     })
 
-    it('shows the banner when a created event arrives', async () => {
-      const { client } = setup()
-      await waitFor(() =>
-        expect(client.plugins.realtime.subscribe).toHaveBeenCalledWith(
-          'created',
-          'io.cozy.nextcloud.migrations',
-          expect.any(Function)
-        )
-      )
-      act(() =>
-        client.__emit('created', 'io.cozy.nextcloud.migrations', RUNNING_DOC)
-      )
+    it('shows the banner when the query starts returning a running migration', () => {
+      const { rerenderWith } = setup()
       expect(
-        await screen.findByTestId('migration-progress-banner')
+        screen.queryByTestId('migration-progress-banner-percent')
+      ).not.toBeInTheDocument()
+      rerenderWith(RUNNING_DOC)
+      expect(
+        screen.getByTestId('migration-progress-banner-percent')
       ).toBeInTheDocument()
     })
 
-    it('updates progress when an updated event arrives', async () => {
-      const { client } = setup({ runningMigration: RUNNING_DOC })
-      await screen.findByTestId('migration-progress-banner')
-      act(() =>
-        client.__emit('updated', 'io.cozy.nextcloud.migrations', {
-          ...RUNNING_DOC,
-          progress: { ...RUNNING_DOC.progress, bytes_imported: 2_500_000 }
-        })
-      )
+    it('updates progress when the query data changes', () => {
+      const { rerenderWith } = setup({ runningMigration: RUNNING_DOC })
+      rerenderWith({
+        ...RUNNING_DOC,
+        progress: { ...RUNNING_DOC.progress, bytes_imported: 2_500_000 }
+      })
       expect(
         screen.getByTestId('migration-progress-banner-percent')
       ).toHaveTextContent('50% complete')
@@ -125,55 +136,28 @@ describe('MigrationProgressBanner', () => {
   })
 
   describe('terminal states', () => {
-    it('hides the banner and shows the snackbar on completed', async () => {
-      const { client } = setup({ runningMigration: RUNNING_DOC })
-      await screen.findByTestId('migration-progress-banner')
+    it('hides the banner and shows the snackbar on completed', () => {
+      const { client, rerenderWith } = setup({ runningMigration: RUNNING_DOC })
       act(() =>
         client.__emit('updated', 'io.cozy.nextcloud.migrations', {
           ...RUNNING_DOC,
           status: 'completed'
         })
       )
+      rerenderWith(null)
       expect(
-        screen.queryByTestId('migration-progress-banner')
+        screen.queryByTestId('migration-progress-banner-percent')
       ).not.toBeInTheDocument()
-      expect(
-        await screen.findByTestId('migration-progress-banner-done')
-      ).toBeInTheDocument()
+      expect(screen.getByText('Migration Complete!')).toBeInTheDocument()
     })
 
-    it('hides the banner without snackbar on cancelled', async () => {
-      const { client } = setup({ runningMigration: RUNNING_DOC })
-      await screen.findByTestId('migration-progress-banner')
-      act(() =>
-        client.__emit('updated', 'io.cozy.nextcloud.migrations', {
-          ...RUNNING_DOC,
-          status: 'cancelled'
-        })
-      )
+    it('hides the banner without snackbar when the running query empties', () => {
+      const { rerenderWith } = setup({ runningMigration: RUNNING_DOC })
+      rerenderWith(null)
       expect(
-        screen.queryByTestId('migration-progress-banner')
+        screen.queryByTestId('migration-progress-banner-percent')
       ).not.toBeInTheDocument()
-      expect(
-        screen.queryByTestId('migration-progress-banner-done')
-      ).not.toBeInTheDocument()
-    })
-
-    it('hides the banner without snackbar on error', async () => {
-      const { client } = setup({ runningMigration: RUNNING_DOC })
-      await screen.findByTestId('migration-progress-banner')
-      act(() =>
-        client.__emit('updated', 'io.cozy.nextcloud.migrations', {
-          ...RUNNING_DOC,
-          status: 'error'
-        })
-      )
-      expect(
-        screen.queryByTestId('migration-progress-banner')
-      ).not.toBeInTheDocument()
-      expect(
-        screen.queryByTestId('migration-progress-banner-done')
-      ).not.toBeInTheDocument()
+      expect(screen.queryByText('Migration Complete!')).not.toBeInTheDocument()
     })
   })
 
@@ -181,7 +165,6 @@ describe('MigrationProgressBanner', () => {
     it('calls the cancel endpoint when the cancel button is clicked', async () => {
       const fetchJSON = jest.fn().mockResolvedValue({})
       setup({ runningMigration: RUNNING_DOC, fetchJSON })
-      await screen.findByTestId('migration-progress-banner')
       fireEvent.click(screen.getByTestId('migration-progress-banner-cancel'))
       await waitFor(() =>
         expect(fetchJSON).toHaveBeenCalledWith(
@@ -194,7 +177,6 @@ describe('MigrationProgressBanner', () => {
     it('silently ignores a 409 response', async () => {
       const fetchJSON = jest.fn().mockRejectedValue({ status: 409 })
       setup({ runningMigration: RUNNING_DOC, fetchJSON })
-      await screen.findByTestId('migration-progress-banner')
       fireEvent.click(screen.getByTestId('migration-progress-banner-cancel'))
       await waitFor(() => expect(fetchJSON).toHaveBeenCalled())
       expect(logger.error).not.toHaveBeenCalled()
@@ -203,7 +185,6 @@ describe('MigrationProgressBanner', () => {
     it('logs other errors', async () => {
       const fetchJSON = jest.fn().mockRejectedValue({ status: 500 })
       setup({ runningMigration: RUNNING_DOC, fetchJSON })
-      await screen.findByTestId('migration-progress-banner')
       fireEvent.click(screen.getByTestId('migration-progress-banner-cancel'))
       await waitFor(() => expect(logger.error).toHaveBeenCalled())
     })
