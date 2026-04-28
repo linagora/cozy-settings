@@ -42,7 +42,7 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
       nextcloud_url: url,
       nextcloud_login: username,
       nextcloud_app_password: password,
-      target_dir: `/${NEXTCLOUD_IMPORTED_FILES_DIR_NAME}`
+      target_dir: NEXTCLOUD_IMPORTED_FILES_DIR_NAME
     })
 
   if (migrationId) {
