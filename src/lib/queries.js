@@ -1,5 +1,6 @@
 import CozyClient, { Q } from 'cozy-client'
 
+import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '@/doctypes'
 import {
   APPS_DOCTYPE,
   KONNECTORS_DOCTYPE,
@@ -76,6 +77,25 @@ export const buildDevicesQuery = () => ({
   definition: () => Q(OAUTH_CLIENTS_DOCTYPE).limitBy(DEVICES_QUERY_LIMIT),
   options: {
     as: `${OAUTH_CLIENTS_DOCTYPE} _id asc`
+  }
+})
+
+export const buildRunningMigrationQuery = () => ({
+  definition: Q(NEXTCLOUD_MIGRATIONS_DOCTYPE)
+    .where({ status: 'running' })
+    .indexFields(['status', 'cozyMetadata.createdAt'])
+    .sortBy([{ status: 'desc' }, { 'cozyMetadata.createdAt': 'desc' }])
+    .limitBy(1),
+  options: { as: `${NEXTCLOUD_MIGRATIONS_DOCTYPE}/running` }
+})
+
+export const buildCompletedNextcloudMigrationsQuery = () => ({
+  definition: Q(NEXTCLOUD_MIGRATIONS_DOCTYPE)
+    .where({ status: 'completed' })
+    .limitBy(1)
+    .indexFields(['status']),
+  options: {
+    as: `${NEXTCLOUD_MIGRATIONS_DOCTYPE}/completed`
   }
 })
 

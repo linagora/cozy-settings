@@ -4,6 +4,7 @@ import I18n from 'twake-i18n'
 
 import CozyClient, { CozyProvider } from 'cozy-client'
 import { WebviewIntentProvider } from 'cozy-intent'
+import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 
@@ -26,7 +27,9 @@ const AppLike = ({ children, client }) => {
         <HashRouter>
           <BreakpointsProvider>
             <TestI18n>
-              <CozyTheme>{children}</CozyTheme>
+              <CozyTheme>
+                <AlertProvider>{children}</AlertProvider>
+              </CozyTheme>
             </TestI18n>
           </BreakpointsProvider>
         </HashRouter>

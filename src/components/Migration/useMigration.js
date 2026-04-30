@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useClient, generateWebLink } from 'cozy-client'
 
 import useMigrationMock from './useMigrationMock'
+import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '../../doctypes'
 
 export const NEXTCLOUD_IMPORTED_FILES_DIR_NAME = '/Nextcloud imported files'
 
@@ -17,6 +18,20 @@ export const computeRemainingSeconds = (progress, startedAt) => {
 }
 
 export const isMigrationDone = status => status === 'completed'
+
+export const clearNextcloudImportedFiles = async client => {
+  try {
+    const { data: nextcloudImportedFilesDirectory } = await client
+      .collection('io.cozy.files')
+      .statByPath(NEXTCLOUD_IMPORTED_FILES_DIR_NAME)
+
+    await client
+      .collection('io.cozy.files')
+      .destroy(nextcloudImportedFilesDirectory)
+  } catch (error) {
+    if (error.status !== 404) throw error
+  }
+}
 
 export const computeProgressPercent = progress =>
   progress && progress.bytes_total > 0
@@ -37,7 +52,7 @@ export const useDriveUrl = (isDone, client, subDomainType) => {
       try {
         const { data: folder } = await client
           .collection('io.cozy.files')
-          .statByPath(`/${NEXTCLOUD_IMPORTED_FILES_DIR_NAME}`)
+          .statByPath(NEXTCLOUD_IMPORTED_FILES_DIR_NAME)
         setDriveUrl(
           generateWebLink({ ...baseLink, hash: `folder/${folder._id}` })
         )
@@ -103,6 +118,7 @@ const useMigration = ({
       await client
         .getStackClient()
         .fetchJSON('POST', `/remote/nextcloud/migration/${migrationId}/cancel`)
+
       setCancelSuccess(true)
     } catch (e) {
       if (e.status !== 409) setError('cancel_error')
@@ -122,7 +138,7 @@ const useMigration = ({
 
     client.plugins.realtime.subscribe(
       'updated',
-      'io.cozy.nextcloud.migrations',
+      NEXTCLOUD_MIGRATIONS_DOCTYPE,
       migrationId,
       handleUpdate
     )
@@ -130,7 +146,7 @@ const useMigration = ({
     return () => {
       client.plugins.realtime.unsubscribe(
         'updated',
-        'io.cozy.nextcloud.migrations',
+        NEXTCLOUD_MIGRATIONS_DOCTYPE,
         migrationId,
         handleUpdate
       )
