@@ -95,8 +95,6 @@ const useMigration = ({
   const [error, setError] = useState(null)
   const [status, setStatus] = useState(null)
   const [isCleaning, setIsCleaning] = useState(false)
-  const [cleanSuccess, setCleanSuccess] = useState(false)
-  const [cleanError, setCleanError] = useState(null)
 
   const start = useCallback(
     async (credentials = {}) => {
@@ -138,9 +136,9 @@ const useMigration = ({
   }, [client, migrationId])
 
   const clean = useCallback(async () => {
-    if (!migrationId) return
+    if (!migrationId) return { success: false, error: null }
+
     setIsCleaning(true)
-    setCleanError(null)
     try {
       await client
         .getStackClient()
@@ -148,10 +146,10 @@ const useMigration = ({
           'POST',
           `/remote/nextcloud/migration/${migrationId}/delete-source`
         )
-      setCleanSuccess(true)
+      return { success: true, error: null }
     } catch (err) {
       logger.error('Failed to clean Nextcloud', err)
-      setCleanError('clean_error')
+      return { success: false, error: 'clean_error' }
     } finally {
       setIsCleaning(false)
     }
@@ -195,10 +193,6 @@ const useMigration = ({
     isCanceling,
     cancelSuccess,
     isCleaning,
-    cleanSuccess,
-    cleanError,
-    setCleanSuccess,
-    setCleanError,
     error,
     setError,
     status

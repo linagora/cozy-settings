@@ -169,7 +169,7 @@ describe('useMigration — clean', () => {
     )
   })
 
-  it('sets cleanSuccess to true on success', async () => {
+  it('returns success after cleaning succeeds', async () => {
     const fetchJSON = jest.fn().mockResolvedValue({})
     useClient.mockReturnValue(buildMockClient({ fetchJSON }))
 
@@ -177,14 +177,15 @@ describe('useMigration — clean', () => {
       useMigration({ migrationId: 'migration-42' })
     )
 
+    let cleanResult
     await act(async () => {
-      await result.current.clean()
+      cleanResult = await result.current.clean()
     })
 
-    expect(result.current.cleanSuccess).toBe(true)
+    expect(cleanResult).toEqual({ success: true, error: null })
   })
 
-  it('sets cleanError and does not set cleanSuccess on failure', async () => {
+  it('returns clean_error after cleaning fails', async () => {
     const fetchJSON = jest.fn().mockRejectedValue(new Error('server error'))
     useClient.mockReturnValue(buildMockClient({ fetchJSON }))
 
@@ -192,12 +193,12 @@ describe('useMigration — clean', () => {
       useMigration({ migrationId: 'migration-42' })
     )
 
+    let cleanResult
     await act(async () => {
-      await result.current.clean()
+      cleanResult = await result.current.clean()
     })
 
-    expect(result.current.cleanSuccess).toBe(false)
-    expect(result.current.cleanError).toBe('clean_error')
+    expect(cleanResult).toEqual({ success: false, error: 'clean_error' })
   })
 
   it('does nothing when migrationId is null', async () => {
@@ -206,10 +207,12 @@ describe('useMigration — clean', () => {
 
     const { result } = renderHook(() => useMigration())
 
+    let cleanResult
     await act(async () => {
-      await result.current.clean()
+      cleanResult = await result.current.clean()
     })
 
+    expect(cleanResult).toEqual({ success: false, error: null })
     expect(fetchJSON).not.toHaveBeenCalled()
   })
 })
