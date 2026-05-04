@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useInstanceInfo, useQuery, isQueryLoading } from 'cozy-client'
@@ -164,14 +164,7 @@ const Migration = () => {
   const isNextcloudMigrated = Boolean(completedMigration)
   const completedMigrationId = completedMigration?._id ?? null
 
-  const {
-    clean,
-    isCleaning,
-    cleanSuccess,
-    cleanError,
-    setCleanSuccess,
-    setCleanError
-  } = useMigration({
+  const { clean, isCleaning } = useMigration({
     migrationId: completedMigrationId
   })
 
@@ -183,32 +176,28 @@ const Migration = () => {
     setShowCleanConfirmDialog(false)
     setCleaningDialogDismissed(false)
     if (isCleaning) return
-    await clean()
-  }, [isCleaning, clean])
 
-  useEffect(() => {
-    if (!cleanSuccess) return
+    const { success, error } = await clean()
 
-    showAlert({
-      title: t('MigrationView.cleanedSnackbar.title'),
-      message: t('MigrationView.cleanedSnackbar.description'),
-      severity: 'success',
-      duration: SNACKBAR_AUTO_HIDE_MS
-    })
-    setCleanSuccess(false)
-  }, [cleanSuccess, setCleanSuccess, showAlert, t])
+    if (success) {
+      showAlert({
+        title: t('MigrationView.cleanedSnackbar.title'),
+        message: t('MigrationView.cleanedSnackbar.description'),
+        severity: 'success',
+        duration: SNACKBAR_AUTO_HIDE_MS
+      })
+      return
+    }
 
-  useEffect(() => {
-    if (!cleanError) return
-
-    showAlert({
-      title: t('MigrationView.cleanErrorSnackbar.title'),
-      message: t('MigrationView.cleanErrorSnackbar.description'),
-      severity: 'error',
-      duration: SNACKBAR_AUTO_HIDE_MS
-    })
-    setCleanError(null)
-  }, [cleanError, setCleanError, showAlert, t])
+    if (error) {
+      showAlert({
+        title: t('MigrationView.cleanErrorSnackbar.title'),
+        message: t('MigrationView.cleanErrorSnackbar.description'),
+        severity: 'error',
+        duration: SNACKBAR_AUTO_HIDE_MS
+      })
+    }
+  }, [isCleaning, clean, showAlert, t])
 
   return (
     <DumbMigration
