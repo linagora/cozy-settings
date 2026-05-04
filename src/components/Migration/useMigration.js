@@ -5,6 +5,8 @@ import { useClient, generateWebLink } from 'cozy-client'
 import useMigrationMock from './useMigrationMock'
 import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '../../doctypes'
 
+import logger from '@/lib/logger'
+
 export const NEXTCLOUD_IMPORTED_FILES_DIR_NAME = '/Nextcloud imported files'
 
 export const computeRemainingSeconds = (progress, startedAt) => {
@@ -81,6 +83,10 @@ const useMigration = ({
 
   const client = useClient()
   const [migrationId, setMigrationId] = useState(externalId)
+
+  useEffect(() => {
+    setMigrationId(externalId)
+  }, [externalId])
   const [startedAt, setStartedAt] = useState(externalStartedAt)
   const [progress, setProgress] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -88,6 +94,9 @@ const useMigration = ({
   const [cancelSuccess, setCancelSuccess] = useState(false)
   const [error, setError] = useState(null)
   const [status, setStatus] = useState(null)
+  const [isCleaning, setIsCleaning] = useState(false)
+  const [cleanSuccess, setCleanSuccess] = useState(false)
+  const [cleanError, setCleanError] = useState(null)
 
   const start = useCallback(
     async (credentials = {}) => {
@@ -128,6 +137,26 @@ const useMigration = ({
     }
   }, [client, migrationId])
 
+  const clean = useCallback(async () => {
+    if (!migrationId) return
+    setIsCleaning(true)
+    setCleanError(null)
+    try {
+      await client
+        .getStackClient()
+        .fetchJSON(
+          'POST',
+          `/remote/nextcloud/migration/${migrationId}/delete-source`
+        )
+      setCleanSuccess(true)
+    } catch (err) {
+      logger.error('Failed to clean Nextcloud', err)
+      setCleanError('clean_error')
+    } finally {
+      setIsCleaning(false)
+    }
+  }, [client, migrationId])
+
   useEffect(() => {
     if (!migrationId) return
 
@@ -158,12 +187,18 @@ const useMigration = ({
   return {
     start,
     cancel,
+    clean,
     migrationId,
     startedAt,
     progress,
     isLoading,
     isCanceling,
     cancelSuccess,
+    isCleaning,
+    cleanSuccess,
+    cleanError,
+    setCleanSuccess,
+    setCleanError,
     error,
     setError,
     status

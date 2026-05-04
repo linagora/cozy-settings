@@ -1,13 +1,7 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { useI18n } from 'twake-i18n'
 
-import {
-  useInstanceInfo,
-  useQuery,
-  isQueryLoading,
-  useClient
-} from 'cozy-client'
-import flag from 'cozy-flags'
+import { useInstanceInfo, useQuery, isQueryLoading } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Chip from 'cozy-ui/transpiled/react/Chips'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -20,31 +14,32 @@ import ListItemSecondaryAction from 'cozy-ui/transpiled/react/ListItemSecondaryA
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import Paper from 'cozy-ui/transpiled/react/Paper'
 import Typography from 'cozy-ui/transpiled/react/Typography'
+import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
-import NextcloudMigrationDialog from '@/components/Migration/NextcloudMigrationDialog'
-import {
-  resetNextcloudMigrationForTests,
-  RESET_NEXTCLOUD_MIGRATION_FLAG
-} from '@/components/Migration/resetNextcloudMigration'
+import { NextcloudCleanConfirmDialog } from '@/components/Migration/NextcloudCleanConfirmDialog'
+import { NextcloudCleaningDialog } from '@/components/Migration/NextcloudCleaningDialog'
+import { NextcloudMigrationDialog } from '@/components/Migration/NextcloudMigrationDialog'
+import useMigration from '@/components/Migration/useMigration'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
-import logger from '@/lib/logger'
 import { buildCompletedNextcloudMigrationsQuery } from '@/lib/queries'
 
-const completedMigrationsQuery = buildCompletedNextcloudMigrationsQuery()
-
-const ProviderLogo = ({ icon, alt }) => (
-  <Icon icon={icon} aria-label={alt} size={40} />
-)
+const SNACKBAR_AUTO_HIDE_MS = 6000
 
 const DumbMigration = ({
   helpLink,
-  hasCompletedNextcloudMigration,
-  isCleaningNextcloud,
+  isNextcloudMigrated,
+  isCleaning,
   showNextcloudDialog,
-  onCleanNextcloud,
-  onShowNextcloudDialog
+  showCleanConfirmDialog,
+  showCleaningDialog,
+  onStartMigration,
+  onRequestClean,
+  onCancelClean,
+  onConfirmClean,
+  onCloseNextcloudDialog,
+  onDismissCleaningDialog
 }) => {
   const { t } = useI18n()
 
@@ -72,16 +67,17 @@ const DumbMigration = ({
         <List disablePadding>
           <ListItem>
             <ListItemIcon>
-              <ProviderLogo
+              <Icon
                 icon={nextcloudLogo}
-                alt={t('MigrationView.nextcloud.name')}
+                aria-label={t('MigrationView.nextcloud.name')}
+                size={40}
               />
             </ListItemIcon>
             <ListItemText
               primary={
                 <span className="u-flex u-flex-items-center">
                   {t('MigrationView.nextcloud.name')}
-                  {hasCompletedNextcloudMigration && (
+                  {isNextcloudMigrated && (
                     <Chip
                       label={t('MigrationView.migrated')}
                       color="success"
@@ -95,7 +91,7 @@ const DumbMigration = ({
               secondary={t('MigrationView.nextcloud.description')}
             />
             <ListItemSecondaryAction>
-              {hasCompletedNextcloudMigration ? (
+              {isNextcloudMigrated ? (
                 <Button
                   variant="text"
                   label={t('MigrationView.cleanNextcloud')}
@@ -103,8 +99,8 @@ const DumbMigration = ({
                   className="u-m-1"
                   startIcon={<Icon icon={DeleteIcon} size={14} />}
                   color="error"
-                  onClick={onCleanNextcloud}
-                  disabled={isCleaningNextcloud}
+                  onClick={onRequestClean}
+                  disabled={isCleaning}
                 />
               ) : (
                 <Button
@@ -112,7 +108,7 @@ const DumbMigration = ({
                   label={t('MigrationView.startMigration')}
                   size="small"
                   className="u-m-1"
-                  onClick={() => onShowNextcloudDialog(true)}
+                  onClick={onStartMigration}
                 />
               )}
             </ListItemSecondaryAction>
@@ -121,9 +117,19 @@ const DumbMigration = ({
       </Paper>
 
       {showNextcloudDialog && (
-        <NextcloudMigrationDialog
-          onCloseAll={() => onShowNextcloudDialog(false)}
+        <NextcloudMigrationDialog onCloseAll={onCloseNextcloudDialog} />
+      )}
+
+      {showCleanConfirmDialog && (
+        <NextcloudCleanConfirmDialog
+          isCleaning={isCleaning}
+          onCancel={onCancelClean}
+          onConfirm={onConfirmClean}
         />
+      )}
+
+      {showCleaningDialog && (
+        <NextcloudCleaningDialog onClose={onDismissCleaningDialog} />
       )}
 
       <Typography variant="h6" className="u-mb-half">
@@ -140,47 +146,84 @@ const DumbMigration = ({
 }
 
 const Migration = () => {
-  const client = useClient()
-  const [showNextcloudDialog, setShowNextcloudDialog] = useState(false)
-  const [isCleaningNextcloud, setIsCleaningNextcloud] = useState(false)
-
+  const { t } = useI18n()
+  const { showAlert } = useAlert()
   const { context } = useInstanceInfo()
   const helpLink = context?.data?.help_link || 'https://twake.app/en/support/'
 
+  const completedMigrationsQuery = buildCompletedNextcloudMigrationsQuery()
   const { data: completedMigrations, ...completedMigrationsQueryState } =
     useQuery(
       completedMigrationsQuery.definition,
       completedMigrationsQuery.options
     )
-  const hasCompletedNextcloudMigration =
-    !isQueryLoading(completedMigrationsQueryState) &&
-    (completedMigrations?.length ?? 0) > 0
 
-  const handleCleanNextcloud = useCallback(async () => {
-    if (!flag(RESET_NEXTCLOUD_MIGRATION_FLAG) || isCleaningNextcloud) return
+  const completedMigration = isQueryLoading(completedMigrationsQueryState)
+    ? null
+    : (completedMigrations?.[0] ?? null)
+  const isNextcloudMigrated = Boolean(completedMigration)
+  const completedMigrationId = completedMigration?._id ?? null
 
-    setIsCleaningNextcloud(true)
+  const {
+    clean,
+    isCleaning,
+    cleanSuccess,
+    cleanError,
+    setCleanSuccess,
+    setCleanError
+  } = useMigration({
+    migrationId: completedMigrationId
+  })
 
-    try {
-      await resetNextcloudMigrationForTests({
-        client,
-        completedMigrationsQuery
-      })
-    } catch (error) {
-      logger.error('Failed to reset Nextcloud migration for tests', error)
-    } finally {
-      setIsCleaningNextcloud(false)
-    }
-  }, [client, isCleaningNextcloud])
+  const [showNextcloudDialog, setShowNextcloudDialog] = useState(false)
+  const [showCleanConfirmDialog, setShowCleanConfirmDialog] = useState(false)
+  const [cleaningDialogDismissed, setCleaningDialogDismissed] = useState(false)
+
+  const handleConfirmClean = useCallback(async () => {
+    setShowCleanConfirmDialog(false)
+    setCleaningDialogDismissed(false)
+    if (isCleaning) return
+    await clean()
+  }, [isCleaning, clean])
+
+  useEffect(() => {
+    if (!cleanSuccess) return
+
+    showAlert({
+      title: t('MigrationView.cleanedSnackbar.title'),
+      message: t('MigrationView.cleanedSnackbar.description'),
+      severity: 'success',
+      duration: SNACKBAR_AUTO_HIDE_MS
+    })
+    setCleanSuccess(false)
+  }, [cleanSuccess, setCleanSuccess, showAlert, t])
+
+  useEffect(() => {
+    if (!cleanError) return
+
+    showAlert({
+      title: t('MigrationView.cleanErrorSnackbar.title'),
+      message: t('MigrationView.cleanErrorSnackbar.description'),
+      severity: 'error',
+      duration: SNACKBAR_AUTO_HIDE_MS
+    })
+    setCleanError(null)
+  }, [cleanError, setCleanError, showAlert, t])
 
   return (
     <DumbMigration
       helpLink={helpLink}
-      hasCompletedNextcloudMigration={hasCompletedNextcloudMigration}
-      isCleaningNextcloud={isCleaningNextcloud}
+      isNextcloudMigrated={isNextcloudMigrated}
+      isCleaning={isCleaning}
       showNextcloudDialog={showNextcloudDialog}
-      onCleanNextcloud={handleCleanNextcloud}
-      onShowNextcloudDialog={setShowNextcloudDialog}
+      showCleanConfirmDialog={showCleanConfirmDialog}
+      showCleaningDialog={isCleaning && !cleaningDialogDismissed}
+      onStartMigration={() => setShowNextcloudDialog(true)}
+      onRequestClean={() => setShowCleanConfirmDialog(true)}
+      onCancelClean={() => setShowCleanConfirmDialog(false)}
+      onConfirmClean={handleConfirmClean}
+      onCloseNextcloudDialog={() => setShowNextcloudDialog(false)}
+      onDismissCleaningDialog={() => setCleaningDialogDismissed(true)}
     />
   )
 }

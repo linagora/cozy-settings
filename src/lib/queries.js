@@ -92,8 +92,9 @@ export const buildRunningMigrationQuery = () => ({
 export const buildCompletedNextcloudMigrationsQuery = () => ({
   definition: Q(NEXTCLOUD_MIGRATIONS_DOCTYPE)
     .where({ status: 'completed' })
-    .limitBy(1)
-    .indexFields(['status']),
+    .partialIndex({ source_deleted_at: { $exists: false } })
+    .indexFields(['status'])
+    .limitBy(1),
   options: {
     as: `${NEXTCLOUD_MIGRATIONS_DOCTYPE}/completed`
   }

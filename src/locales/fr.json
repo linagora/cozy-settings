@@ -627,6 +627,26 @@
     "startMigration": "Démarrer la migration",
     "migrated": "Migré",
     "cleanNextcloud": "Nettoyer Nextcloud",
+    "cleanNextcloudDialog": {
+      "title": "Nettoyer Nextcloud Drive",
+      "description": "Vous êtes sur le point de supprimer définitivement toutes les données stockées dans votre Nextcloud Drive.",
+      "disclaimer1": "Cette action n'affecte que les données côté Nextcloud.",
+      "disclaimer2": "Aucune donnée ne sera supprimée de Twake ou de nos autres services connectés.",
+      "confirm": "Nettoyer Nextcloud",
+      "cancel": "Annuler"
+    },
+    "cleaningNextcloudDialog": {
+      "title": "Nettoyage de Nextcloud Drive",
+      "description": "Suppression définitive de toutes les données de votre Nextcloud Drive…"
+    },
+    "cleanedSnackbar": {
+      "title": "Nextcloud Drive nettoyé",
+      "description": "Toutes les données ont été définitivement supprimées de votre Nextcloud Drive."
+    },
+    "cleanErrorSnackbar": {
+      "title": "Impossible de nettoyer Nextcloud Drive",
+      "description": "Veuillez réessayer ou contacter le support."
+    },
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Vos fichiers, dossiers et documents seront copiés dans votre Twake.",

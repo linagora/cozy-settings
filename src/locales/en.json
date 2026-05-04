@@ -629,6 +629,26 @@
     "startMigration": "Start migration",
     "migrated": "Migrated",
     "cleanNextcloud": "Clean Nextcloud",
+    "cleanNextcloudDialog": {
+      "title": "Clean Nextcloud Drive",
+      "description": "You are about to permanently delete all data stored in your Nextcloud Drive.",
+      "disclaimer1": "This action only affects data on the Nextcloud side.",
+      "disclaimer2": "No data will be deleted from Twake or any of our other connected services.",
+      "confirm": "Clean Nextcloud",
+      "cancel": "Cancel"
+    },
+    "cleaningNextcloudDialog": {
+      "title": "Cleaning Nextcloud Drive",
+      "description": "Permanently deleting all data from your Nextcloud Drive…"
+    },
+    "cleanedSnackbar": {
+      "title": "Nextcloud drive cleaned",
+      "description": "All data has been permanently removed from your Nextcloud drive."
+    },
+    "cleanErrorSnackbar": {
+      "title": "Nextcloud drive could not be cleaned",
+      "description": "Please try again or contact support."
+    },
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Your files, folders and documents will be copied to your Twake.",
