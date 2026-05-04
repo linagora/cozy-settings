@@ -582,6 +582,26 @@
     "startMigration": "Bắt đầu di chuyển",
     "migrated": "Đã di chuyển",
     "cleanNextcloud": "Dọn dẹp Nextcloud",
+    "cleanNextcloudDialog": {
+      "title": "Dọn dẹp Nextcloud Drive",
+      "description": "Bạn sắp xóa vĩnh viễn tất cả dữ liệu được lưu trữ trong Nextcloud Drive của bạn.",
+      "disclaimer1": "Hành động này chỉ ảnh hưởng đến dữ liệu phía Nextcloud.",
+      "disclaimer2": "Không có dữ liệu nào bị xóa khỏi Twake hoặc các dịch vụ kết nối khác của chúng tôi.",
+      "confirm": "Dọn dẹp Nextcloud",
+      "cancel": "Hủy"
+    },
+    "cleaningNextcloudDialog": {
+      "title": "Đang dọn dẹp Nextcloud Drive",
+      "description": "Đang xóa vĩnh viễn tất cả dữ liệu khỏi Nextcloud Drive của bạn…"
+    },
+    "cleanedSnackbar": {
+      "title": "Đã dọn dẹp Nextcloud drive",
+      "description": "Tất cả dữ liệu đã được xóa vĩnh viễn khỏi Nextcloud drive của bạn."
+    },
+    "cleanErrorSnackbar": {
+      "title": "Không thể dọn dẹp Nextcloud drive",
+      "description": "Vui lòng thử lại hoặc liên hệ bộ phận hỗ trợ."
+    },
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake.",

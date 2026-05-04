@@ -109,4 +109,4 @@ const NextcloudMigrationDialog = ({ onCloseAll }) => {
   )
 }
 
-export default NextcloudMigrationDialog
+export { NextcloudMigrationDialog }

@@ -12,6 +12,5 @@ export const initFlags = () => {
     flag('settings.specify-blocking-subscription-vendor-dev')
     flag('settings.2fa.enabled')
     flag('settings.delete-user-from-signup-admin-api')
-    flag('settings.reset-for-migration.enabled')
   }
 }

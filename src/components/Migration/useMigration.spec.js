@@ -1,12 +1,26 @@
 import { renderHook, act } from '@testing-library/react'
 
-import { generateWebLink } from 'cozy-client'
+import { generateWebLink, useClient } from 'cozy-client'
 
 import { computeRemainingSeconds, useDriveUrl } from './useMigration'
+import useMigration from './useMigration'
 
 jest.mock('cozy-client', () => ({
-  generateWebLink: jest.fn(() => 'https://drive.example.com')
+  generateWebLink: jest.fn(() => 'https://drive.example.com'),
+  useClient: jest.fn()
 }))
+
+jest.mock('@/lib/logger', () => ({ error: jest.fn() }))
+
+const buildMockClient = ({ fetchJSON } = {}) => ({
+  plugins: {
+    realtime: {
+      subscribe: jest.fn(),
+      unsubscribe: jest.fn()
+    }
+  },
+  getStackClient: () => ({ fetchJSON: fetchJSON || jest.fn() })
+})
 
 describe('computeRemainingSeconds', () => {
   const baseProgress = {
@@ -129,5 +143,73 @@ describe('useDriveUrl', () => {
     await act(async () => rerender({ isDone: true }))
 
     expect(statByPath).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('useMigration — clean', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  it('calls POST delete-source with the migrationId', async () => {
+    const fetchJSON = jest.fn().mockResolvedValue({})
+    useClient.mockReturnValue(buildMockClient({ fetchJSON }))
+
+    const { result } = renderHook(() =>
+      useMigration({ migrationId: 'migration-42' })
+    )
+
+    await act(async () => {
+      await result.current.clean()
+    })
+
+    expect(fetchJSON).toHaveBeenCalledWith(
+      'POST',
+      '/remote/nextcloud/migration/migration-42/delete-source'
+    )
+  })
+
+  it('sets cleanSuccess to true on success', async () => {
+    const fetchJSON = jest.fn().mockResolvedValue({})
+    useClient.mockReturnValue(buildMockClient({ fetchJSON }))
+
+    const { result } = renderHook(() =>
+      useMigration({ migrationId: 'migration-42' })
+    )
+
+    await act(async () => {
+      await result.current.clean()
+    })
+
+    expect(result.current.cleanSuccess).toBe(true)
+  })
+
+  it('sets cleanError and does not set cleanSuccess on failure', async () => {
+    const fetchJSON = jest.fn().mockRejectedValue(new Error('server error'))
+    useClient.mockReturnValue(buildMockClient({ fetchJSON }))
+
+    const { result } = renderHook(() =>
+      useMigration({ migrationId: 'migration-42' })
+    )
+
+    await act(async () => {
+      await result.current.clean()
+    })
+
+    expect(result.current.cleanSuccess).toBe(false)
+    expect(result.current.cleanError).toBe('clean_error')
+  })
+
+  it('does nothing when migrationId is null', async () => {
+    const fetchJSON = jest.fn()
+    useClient.mockReturnValue(buildMockClient({ fetchJSON }))
+
+    const { result } = renderHook(() => useMigration())
+
+    await act(async () => {
+      await result.current.clean()
+    })
+
+    expect(fetchJSON).not.toHaveBeenCalled()
   })
 })

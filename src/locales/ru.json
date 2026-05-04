@@ -580,6 +580,26 @@
     "startMigration": "Начать миграцию",
     "migrated": "Миграция завершена",
     "cleanNextcloud": "Очистить Nextcloud",
+    "cleanNextcloudDialog": {
+      "title": "Очистить Nextcloud Drive",
+      "description": "Вы собираетесь безвозвратно удалить все данные, хранящиеся в вашем Nextcloud Drive.",
+      "disclaimer1": "Это действие затрагивает только данные на стороне Nextcloud.",
+      "disclaimer2": "Никакие данные не будут удалены из Twake или других подключённых сервисов.",
+      "confirm": "Очистить Nextcloud",
+      "cancel": "Отмена"
+    },
+    "cleaningNextcloudDialog": {
+      "title": "Очистка Nextcloud Drive",
+      "description": "Безвозвратное удаление всех данных из вашего Nextcloud Drive…"
+    },
+    "cleanedSnackbar": {
+      "title": "Nextcloud Drive очищен",
+      "description": "Все данные были безвозвратно удалены из вашего Nextcloud Drive."
+    },
+    "cleanErrorSnackbar": {
+      "title": "Не удалось очистить Nextcloud Drive",
+      "description": "Пожалуйста, попробуйте снова или обратитесь в поддержку."
+    },
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Ваши файлы, папки и документы будут скопированы в ваш Twake.",
