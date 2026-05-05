@@ -24,6 +24,7 @@ import PaletteIcon from 'cozy-ui/transpiled/react/Icons/Palette'
 import PeopleIcon from 'cozy-ui/transpiled/react/Icons/People'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
+import { NavDesktopDropdown } from 'cozy-ui/transpiled/react/Nav'
 import Nav, {
   NavItem,
   NavIcon,
@@ -68,12 +69,6 @@ export const SidebarDesktop = () => {
           </>
         )}
 
-        <ListItem dense>
-          <ListItemText
-            className="u-uppercase"
-            primary={t('Nav.header_general')}
-          />
-        </ListItem>
         <NavItem>
           <NavLink to={routes.profile}>
             <NavIcon icon={PeopleIcon} />
@@ -131,83 +126,77 @@ export const SidebarDesktop = () => {
           </NavItem>
         )}
 
-        <ListItem dense>
-          <ListItemText
-            className="u-uppercase"
-            primary={t('Nav.header_data')}
-          />
-        </ListItem>
-        {flag('settings.permissions-dashboard') && (
+        <NavDesktopDropdown label={t('Nav.header_data')}>
+          {flag('settings.permissions-dashboard') && (
+            <NavItem>
+              <NavLink to={routes.appList}>
+                <NavIcon icon={HandIcon} />
+                <NavText>{t('Nav.permissions')}</NavText>
+              </NavLink>
+            </NavItem>
+          )}
           <NavItem>
-            <NavLink to={routes.appList}>
-              <NavIcon icon={HandIcon} />
-              <NavText>{t('Nav.permissions')}</NavText>
+            <NavLink to={routes.connectedDevices}>
+              <NavIcon icon={DevicesIcon} />
+              <NavText>{t('Nav.connected_devices')}</NavText>
             </NavLink>
           </NavItem>
-        )}
-        <NavItem>
-          <NavLink to={routes.connectedDevices}>
-            <NavIcon icon={DevicesIcon} />
-            <NavText>{t('Nav.connected_devices')}</NavText>
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to={routes.sessions}>
-            <NavIcon icon={GlobeIcon} />
-            <NavText>{t('Nav.sessions')}</NavText>
-          </NavLink>
-        </NavItem>
-
-        <ListItem dense>
-          <ListItemText
-            className="u-uppercase"
-            primary={t('Nav.header_other')}
-          />
-        </ListItem>
-        <NavItem>
-          <NavLink to={context?.data?.help_link} target="_blank">
-            <NavIcon icon={HelpOutlinedIcon} />
-            <NavText className="u-flex-grow-1">{t('Nav.primary_faq')}</NavText>
-            <NavIcon icon={OpenwithIcon} />
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to={routes.support}>
-            <NavIcon icon={EmailIcon} />
-            <NavText>{t('Nav.contact_support')}</NavText>
-          </NavLink>
-        </NavItem>
-        {instance.data.legal_notice_url && (
           <NavItem>
-            <NavLink to={instance.data.legal_notice_url} target="_blank">
-              <NavIcon icon={JusticeIcon} />
+            <NavLink to={routes.sessions}>
+              <NavIcon icon={GlobeIcon} />
+              <NavText>{t('Nav.sessions')}</NavText>
+            </NavLink>
+          </NavItem>
+        </NavDesktopDropdown>
+
+        <NavDesktopDropdown label={t('Nav.header_other')}>
+          <NavItem>
+            <NavLink to={context?.data?.help_link} target="_blank">
+              <NavIcon icon={HelpOutlinedIcon} />
               <NavText className="u-flex-grow-1">
-                {t('Nav.legal_notice')}
+                {t('Nav.primary_faq')}
               </NavText>
               <NavIcon icon={OpenwithIcon} />
             </NavLink>
           </NavItem>
-        )}
-        <NavItem>
-          <NavLink
-            to={`https://files.cozycloud.cc/TOS${
-              instance.data.tos ? `-${instance.data.tos}` : '-201711'
-            }.pdf`}
-            target="_blank"
-          >
-            <NavIcon icon={ContractIcon} />
-            <NavText className="u-flex-grow-1">
-              {t('Nav.terms_of_service')}
-            </NavText>
-            <NavIcon icon={OpenwithIcon} />
-          </NavLink>
-        </NavItem>
-        <NavItem onClick={() => logout()}>
-          <NavLink to="" reloadDocument>
-            <NavIcon icon={Logout} />
-            <NavText>{t('Nav.primary_logout')}</NavText>
-          </NavLink>
-        </NavItem>
+          <NavItem>
+            <NavLink to={routes.support}>
+              <NavIcon icon={EmailIcon} />
+              <NavText>{t('Nav.contact_support')}</NavText>
+            </NavLink>
+          </NavItem>
+          {instance.data.legal_notice_url && (
+            <NavItem>
+              <NavLink to={instance.data.legal_notice_url} target="_blank">
+                <NavIcon icon={JusticeIcon} />
+                <NavText className="u-flex-grow-1">
+                  {t('Nav.legal_notice')}
+                </NavText>
+                <NavIcon icon={OpenwithIcon} />
+              </NavLink>
+            </NavItem>
+          )}
+          <NavItem>
+            <NavLink
+              to={`https://files.cozycloud.cc/TOS${
+                instance.data.tos ? `-${instance.data.tos}` : '-201711'
+              }.pdf`}
+              target="_blank"
+            >
+              <NavIcon icon={ContractIcon} />
+              <NavText className="u-flex-grow-1">
+                {t('Nav.terms_of_service')}
+              </NavText>
+              <NavIcon icon={OpenwithIcon} />
+            </NavLink>
+          </NavItem>
+          <NavItem onClick={() => logout()}>
+            <NavLink to="" reloadDocument>
+              <NavIcon icon={Logout} />
+              <NavText>{t('Nav.primary_logout')}</NavText>
+            </NavLink>
+          </NavItem>
+        </NavDesktopDropdown>
       </Nav>
     </Sidebar>
   )
