@@ -632,6 +632,10 @@
           "label": "Mật khẩu"
         },
         "error": "Chúng tôi không thể đăng nhập. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
+        "errors": {
+          "loginFailed": "Chúng tôi không thể kết nối tới phiên bản Nextcloud của bạn. Vui lòng kiểm tra thông tin đăng nhập.",
+          "timeout": "Hết thời gian chờ kết nối. Vui lòng thử lại."
+        },
         "cancel": "Hủy",
         "submit": "Tiếp theo"
       },
@@ -648,10 +652,18 @@
         "cancelSuccess": "Đã gửi yêu cầu hủy. Quá trình truyền sẽ dừng lại ngay sau đây.",
         "cancelError": "Không thể gửi yêu cầu hủy. Vui lòng thử lại."
       },
+      "connectionProgress": {
+        "title": "Đang kết nối ổ đĩa ngoài của bạn",
+        "subtitle": "Vui lòng chờ trong khi chúng tôi kết nối ổ đĩa Nextcloud của bạn…"
+      },
       "done": {
         "title": "Hoàn tất!",
         "subtitle": "Tệp đã được truyền thành công. Chúng tôi đã tạo một thư mục chứa các tệp đã chuyển.",
         "openFolder": "Mở thư mục"
+      },
+      "connectionDone": {
+        "subtitle": "Ổ đĩa ngoài đã được kết nối. Ổ đĩa Nextcloud của bạn hiện có thể truy cập trong Twake.",
+        "openDrive": "Mở ổ đĩa ngoài"
       }
     },
     "help": {

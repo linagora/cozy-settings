@@ -2,7 +2,7 @@ import Lottie from 'lottie-react'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
-import { useClient } from 'cozy-client'
+import { generateWebLink, useClient } from 'cozy-client'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Dialog from 'cozy-ui/transpiled/react/Dialog'
@@ -27,26 +27,24 @@ import migrationAnimation from '@/assets/images/migration-animation.json'
 const ANIMATION_SIZE = 322
 const AVATAR_SIZE = 146
 
-const NextcloudProgressDialog = ({
-  progress,
-  startedAt,
+const NextcloudProgressDialogView = ({
   onCloseAll,
-  onCancel,
-  isCanceling,
+  avatarSrc,
+  isDone,
+  progressTitle,
+  progressSubtitle,
+  doneSubtitle,
+  doneButtonLabel,
+  showProgressInfo,
+  percent,
+  remainingTimeSeconds,
   cancelSuccess,
   cancelError,
-  status
+  onCancel,
+  isCanceling,
+  driveUrl
 }) => {
   const { t } = useI18n()
-  const client = useClient()
-  const avatarSrc = `${client.getStackClient().uri}/public/avatar?fallback=initials`
-  const { subdomain: subDomainType } = client.getInstanceOptions()
-
-  const isDone = isMigrationDone(status)
-  const percent = computeProgressPercent(progress)
-
-  const driveUrl = useDriveUrl(isDone, client, subDomainType)
-  const remainingTimeSeconds = computeRemainingSeconds(progress, startedAt)
 
   return (
     <Dialog
@@ -119,12 +117,12 @@ const NextcloudProgressDialog = ({
             </Typography>
 
             <Typography variant="body1" align="center" color="textSecondary">
-              {t('MigrationView.nextcloud.done.subtitle')}
+              {doneSubtitle}
             </Typography>
 
             <Buttons
               variant="primary"
-              label={t('MigrationView.nextcloud.done.openFolder')}
+              label={doneButtonLabel}
               className="u-mt-1"
               startIcon={<Icon icon={FolderOpen} size={16} />}
               component="a"
@@ -139,26 +137,120 @@ const NextcloudProgressDialog = ({
               align="center"
               className="u-fw-bold u-mb-1"
             >
-              {t('MigrationView.nextcloud.progress.title')}
+              {progressTitle}
             </Typography>
 
             <Typography variant="body1" align="center" color="textSecondary">
-              {t('MigrationView.nextcloud.progress.subtitle')}
+              {progressSubtitle}
             </Typography>
 
-            <MigrationProgressInfo
-              percent={percent}
-              remainingTimeSeconds={remainingTimeSeconds}
-              cancelSuccess={cancelSuccess}
-              cancelError={cancelError}
-              onCancel={onCancel}
-              isCanceling={isCanceling}
-            />
+            {showProgressInfo && (
+              <MigrationProgressInfo
+                percent={percent}
+                remainingTimeSeconds={remainingTimeSeconds}
+                cancelSuccess={cancelSuccess}
+                cancelError={cancelError}
+                onCancel={onCancel}
+                isCanceling={isCanceling}
+              />
+            )}
           </>
         )}
       </div>
     </Dialog>
   )
+}
+
+const NextcloudConnectionProgressDialog = ({ onCloseAll, isDone }) => {
+  const { t } = useI18n()
+  const client = useClient()
+  const { subdomain: subDomainType } = client.getInstanceOptions()
+  const avatarSrc = `${client.getStackClient().uri}/public/avatar?fallback=initials`
+  const driveRootUrl = generateWebLink({
+    cozyUrl: client.getStackClient().uri,
+    slug: 'drive',
+    subDomainType,
+    hash: ''
+  })
+
+  return (
+    <NextcloudProgressDialogView
+      onCloseAll={onCloseAll}
+      avatarSrc={avatarSrc}
+      isDone={isDone}
+      progressTitle={t('MigrationView.nextcloud.connectionProgress.title')}
+      progressSubtitle={t(
+        'MigrationView.nextcloud.connectionProgress.subtitle'
+      )}
+      doneSubtitle={t('MigrationView.nextcloud.connectionDone.subtitle')}
+      doneButtonLabel={t('MigrationView.nextcloud.connectionDone.openDrive')}
+      showProgressInfo={false}
+      percent={0}
+      remainingTimeSeconds={null}
+      cancelSuccess={false}
+      cancelError={null}
+      onCancel={null}
+      isCanceling={false}
+      driveUrl={driveRootUrl}
+    />
+  )
+}
+
+const NextcloudTransferProgressDialog = ({
+  progress,
+  startedAt,
+  onCloseAll,
+  onCancel,
+  isCanceling,
+  cancelSuccess,
+  cancelError,
+  status
+}) => {
+  const { t } = useI18n()
+  const client = useClient()
+  const avatarSrc = `${client.getStackClient().uri}/public/avatar?fallback=initials`
+  const { subdomain: subDomainType } = client.getInstanceOptions()
+  const isDone = isMigrationDone(status)
+  const percent = computeProgressPercent(progress)
+  const migrationDriveUrl = useDriveUrl(isDone, client, subDomainType)
+  const remainingTimeSeconds = computeRemainingSeconds(progress, startedAt)
+
+  return (
+    <NextcloudProgressDialogView
+      onCloseAll={onCloseAll}
+      avatarSrc={avatarSrc}
+      isDone={isDone}
+      progressTitle={t('MigrationView.nextcloud.progress.title')}
+      progressSubtitle={t('MigrationView.nextcloud.progress.subtitle')}
+      doneSubtitle={t('MigrationView.nextcloud.done.subtitle')}
+      doneButtonLabel={t('MigrationView.nextcloud.done.openFolder')}
+      showProgressInfo
+      percent={percent}
+      remainingTimeSeconds={remainingTimeSeconds}
+      cancelSuccess={cancelSuccess}
+      cancelError={cancelError}
+      onCancel={onCancel}
+      isCanceling={isCanceling}
+      driveUrl={migrationDriveUrl}
+    />
+  )
+}
+
+const NextcloudProgressDialog = ({ mode, ...props }) => {
+  if (mode === 'connect') {
+    return (
+      <NextcloudConnectionProgressDialog
+        onCloseAll={props.onCloseAll}
+        isDone={props.isDone}
+      />
+    )
+  }
+
+  if (mode === 'transfer') {
+    return <NextcloudTransferProgressDialog {...props} />
+  }
+
+  return null
 }
 
 export default NextcloudProgressDialog

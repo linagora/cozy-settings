@@ -17,50 +17,36 @@ import NextcloudProgressDialog from '@/components/Migration/NextcloudProgressDia
 import useMigration, {
   NEXTCLOUD_IMPORTED_FILES_DIR_NAME
 } from '@/components/Migration/useMigration'
+import useNextcloudKonnector from '@/components/Migration/useNextcloudKonnector'
 
-const NextcloudConnectDialog = ({ onCloseAll }) => {
-  const { t } = useI18n()
-  const [url, setUrl] = useState('')
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const {
-    start,
-    cancel,
-    migrationId,
-    startedAt,
-    progress,
-    isLoading,
-    isCanceling,
-    cancelSuccess,
-    error,
-    setError,
-    status
-  } = useMigration()
-
-  const handleSubmit = () =>
-    start({
-      nextcloud_url: url,
-      nextcloud_login: username,
-      nextcloud_app_password: password,
-      target_dir: NEXTCLOUD_IMPORTED_FILES_DIR_NAME
-    })
-
-  if (migrationId) {
-    return (
-      <NextcloudProgressDialog
-        progress={progress}
-        startedAt={startedAt}
-        onCloseAll={onCloseAll}
-        onCancel={cancel}
-        isCanceling={isCanceling}
-        cancelSuccess={cancelSuccess}
-        cancelError={error}
-        status={status}
-      />
-    )
+const getKonnectorErrorMessage = ({ konnectorErrorMessage, t }) => {
+  if (konnectorErrorMessage === 'LOGIN_FAILED') {
+    return t('MigrationView.nextcloud.connect.errors.loginFailed')
   }
 
-  const canSubmit = !!url.trim() && !!username.trim() && !!password.trim()
+  if (konnectorErrorMessage === 'TIMEOUT') {
+    return t('MigrationView.nextcloud.connect.errors.timeout')
+  }
+
+  return t('MigrationView.nextcloud.connect.error')
+}
+
+const NextcloudCredentialsDialogView = ({
+  onCloseAll,
+  url,
+  username,
+  password,
+  onUrlChange,
+  onUsernameChange,
+  onPasswordChange,
+  onPasswordKeyDown,
+  onSubmit,
+  canSubmit,
+  isSubmitting,
+  currentError,
+  currentErrorMessage
+}) => {
+  const { t } = useI18n()
 
   return (
     <IllustrationDialog
@@ -96,10 +82,7 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
               id="nextcloud-url"
               placeholder={t('MigrationView.nextcloud.connect.url.placeholder')}
               value={url}
-              onChange={e => {
-                setUrl(e.target.value)
-                setError(null)
-              }}
+              onChange={onUrlChange}
               fullWidth
               variant="outlined"
             />
@@ -115,10 +98,7 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
                 'MigrationView.nextcloud.connect.username.placeholder'
               )}
               value={username}
-              onChange={e => {
-                setUsername(e.target.value)
-                setError(null)
-              }}
+              onChange={onUsernameChange}
               fullWidth
               variant="outlined"
             />
@@ -131,27 +111,20 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
             <PasswordField
               id="nextcloud-password"
               value={password}
-              onChange={e => {
-                setPassword(e.target.value)
-                setError(null)
-              }}
-              onKeyDown={e => {
-                if (e.key === 'Enter' && canSubmit && !isLoading) {
-                  handleSubmit()
-                }
-              }}
+              onChange={onPasswordChange}
+              onKeyDown={onPasswordKeyDown}
               fullWidth
               variant="outlined"
             />
           </div>
 
-          {error && (
+          {currentError && (
             <Alert
               severity="error"
               icon={<Icon icon={WarningIcon} size={20} />}
               className="u-mt-half"
             >
-              {t('MigrationView.nextcloud.connect.error')}
+              {currentErrorMessage}
             </Alert>
           )}
         </div>
@@ -165,15 +138,194 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
           />
           <Buttons
             variant="primary"
-            onClick={handleSubmit}
-            disabled={!canSubmit || isLoading}
-            busy={isLoading}
+            onClick={onSubmit}
+            disabled={!canSubmit || isSubmitting}
+            busy={isSubmitting}
             label={t('MigrationView.nextcloud.connect.submit')}
           />
         </>
       }
     />
   )
+}
+
+const NextcloudConnectModeDialog = ({ onCloseAll }) => {
+  const { t } = useI18n()
+  const [url, setUrl] = useState('')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const {
+    start: startNextcloudKonnector,
+    isLoading: isKonnectorLoading,
+    success: isKonnectorSuccess,
+    error: konnectorError,
+    errorMessage: konnectorErrorMessage,
+    setError: setKonnectorError,
+    setErrorMessage: setKonnectorErrorMessage
+  } = useNextcloudKonnector()
+
+  const handleUrlChange = event => {
+    setUrl(event.target.value)
+    setKonnectorError(null)
+    setKonnectorErrorMessage(null)
+  }
+
+  const handleUsernameChange = event => {
+    setUsername(event.target.value)
+    setKonnectorError(null)
+    setKonnectorErrorMessage(null)
+  }
+
+  const handlePasswordChange = event => {
+    setPassword(event.target.value)
+    setKonnectorError(null)
+    setKonnectorErrorMessage(null)
+  }
+
+  const handleSubmit = async () => {
+    await startNextcloudKonnector({
+      url,
+      username,
+      password
+    })
+  }
+
+  const canSubmit = !!url.trim() && !!username.trim() && !!password.trim()
+
+  const handlePasswordKeyDown = event => {
+    if (event.key === 'Enter' && canSubmit && !isKonnectorLoading) {
+      handleSubmit()
+    }
+  }
+
+  if (isKonnectorLoading || isKonnectorSuccess) {
+    return (
+      <NextcloudProgressDialog
+        mode="connect"
+        onCloseAll={onCloseAll}
+        isDone={isKonnectorSuccess}
+      />
+    )
+  }
+
+  return (
+    <NextcloudCredentialsDialogView
+      onCloseAll={onCloseAll}
+      url={url}
+      username={username}
+      password={password}
+      onUrlChange={handleUrlChange}
+      onUsernameChange={handleUsernameChange}
+      onPasswordChange={handlePasswordChange}
+      onPasswordKeyDown={handlePasswordKeyDown}
+      onSubmit={handleSubmit}
+      canSubmit={canSubmit}
+      isSubmitting={isKonnectorLoading}
+      currentError={konnectorError}
+      currentErrorMessage={getKonnectorErrorMessage({
+        konnectorErrorMessage,
+        t
+      })}
+    />
+  )
+}
+
+const NextcloudTransferModeDialog = ({ onCloseAll }) => {
+  const { t } = useI18n()
+  const [url, setUrl] = useState('')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const {
+    start,
+    cancel,
+    migrationId,
+    startedAt,
+    progress,
+    isLoading,
+    isCanceling,
+    cancelSuccess,
+    error,
+    setError,
+    status
+  } = useMigration()
+
+  const handleUrlChange = event => {
+    setUrl(event.target.value)
+    setError(null)
+  }
+
+  const handleUsernameChange = event => {
+    setUsername(event.target.value)
+    setError(null)
+  }
+
+  const handlePasswordChange = event => {
+    setPassword(event.target.value)
+    setError(null)
+  }
+
+  const handleSubmit = async () => {
+    await start({
+      nextcloud_url: url,
+      nextcloud_login: username,
+      nextcloud_app_password: password,
+      target_dir: NEXTCLOUD_IMPORTED_FILES_DIR_NAME
+    })
+  }
+
+  const canSubmit = !!url.trim() && !!username.trim() && !!password.trim()
+
+  const handlePasswordKeyDown = event => {
+    if (event.key === 'Enter' && canSubmit && !isLoading) {
+      handleSubmit()
+    }
+  }
+
+  if (migrationId) {
+    return (
+      <NextcloudProgressDialog
+        mode="transfer"
+        progress={progress}
+        startedAt={startedAt}
+        onCloseAll={onCloseAll}
+        onCancel={cancel}
+        isCanceling={isCanceling}
+        cancelSuccess={cancelSuccess}
+        cancelError={error}
+        status={status}
+      />
+    )
+  }
+
+  return (
+    <NextcloudCredentialsDialogView
+      onCloseAll={onCloseAll}
+      url={url}
+      username={username}
+      password={password}
+      onUrlChange={handleUrlChange}
+      onUsernameChange={handleUsernameChange}
+      onPasswordChange={handlePasswordChange}
+      onPasswordKeyDown={handlePasswordKeyDown}
+      onSubmit={handleSubmit}
+      canSubmit={canSubmit}
+      isSubmitting={isLoading}
+      currentError={error}
+      currentErrorMessage={t('MigrationView.nextcloud.connect.error')}
+    />
+  )
+}
+
+const NextcloudConnectDialog = ({ mode, onCloseAll }) => {
+  if (mode === 'connect') {
+    return <NextcloudConnectModeDialog onCloseAll={onCloseAll} />
+  }
+
+  if (mode === 'transfer') {
+    return <NextcloudTransferModeDialog onCloseAll={onCloseAll} />
+  }
+
+  return null
 }
 
 export default NextcloudConnectDialog

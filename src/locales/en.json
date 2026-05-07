@@ -679,6 +679,10 @@
           "label": "Password"
         },
         "error": "We couldn't sign you in. Please check your login or password and try again.",
+        "errors": {
+          "loginFailed": "We could not connect to your Nextcloud instance. Please check your credentials.",
+          "timeout": "Connection timed out. Please try again."
+        },
         "cancel": "Cancel",
         "submit": "Next"
       },
@@ -695,10 +699,18 @@
         "cancelSuccess": "Cancellation requested. The transfer will stop shortly.",
         "cancelError": "The cancellation could not be sent. Please try again."
       },
+      "connectionProgress": {
+        "title": "Connecting your external drive",
+        "subtitle": "Please wait while we connect your Nextcloud drive…"
+      },
       "done": {
         "title": "All done",
         "subtitle": "Files transferred successfully. We created a folder with the transferred files.",
         "openFolder": "Open folder"
+      },
+      "connectionDone": {
+        "subtitle": "External drive connected. Your Nextcloud drive is now accessible in Twake.",
+        "openDrive": "Open external drive"
       }
     },
     "help": {

@@ -34,6 +34,7 @@ const DONE = {
 }
 
 const defaultProps = {
+  mode: 'transfer',
   progress: IN_PROGRESS,
   startedAt: new Date(Date.now() - 30_000).toISOString(),
   onCloseAll: jest.fn(),
@@ -102,6 +103,20 @@ describe('NextcloudProgressDialog', () => {
     it('does not show the cancel button', () => {
       setup({ progress: DONE, status: 'completed' })
       expect(screen.queryByText('Cancel transfer')).not.toBeInTheDocument()
+    })
+
+    it('shows connection mode text and button label', () => {
+      setup({
+        mode: 'connect',
+        isDone: true
+      })
+
+      expect(
+        screen.getByText(
+          'External drive connected. Your Nextcloud drive is now accessible in Twake.'
+        )
+      ).toBeInTheDocument()
+      expect(screen.getByText('Open external drive')).toBeInTheDocument()
     })
   })
 

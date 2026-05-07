@@ -677,6 +677,10 @@
           "label": "Mot de passe"
         },
         "error": "Nous n'avons pas pu vous connecter. Veuillez vérifier vos identifiants et réessayer.",
+        "errors": {
+          "loginFailed": "Nous n'avons pas pu nous connecter à votre instance Nextcloud, vérifiez vos identifiants",
+          "timeout": "La connexion a expiré. Veuillez réessayer."
+        },
         "cancel": "Annuler",
         "submit": "Suivant"
       },
@@ -693,10 +697,18 @@
         "cancelSuccess": "Annulation demandée. Le transfert va s'arrêter dans quelques instants.",
         "cancelError": "L'annulation n'a pas pu être envoyée. Veuillez réessayer."
       },
+      "connectionProgress": {
+        "title": "Connexion de votre disque externe",
+        "subtitle": "Veuillez patienter pendant que nous connectons votre disque Nextcloud…"
+      },
       "done": {
         "title": "C'est fait !",
         "subtitle": "Fichiers transférés avec succès. Nous avons créé un dossier avec vos fichiers transférés.",
         "openFolder": "Ouvrir le dossier"
+      },
+      "connectionDone": {
+        "subtitle": "Disque externe connecté. Votre disque Nextcloud est maintenant accessible dans Twake.",
+        "openDrive": "Ouvrir le disque externe"
       }
     },
     "help": {

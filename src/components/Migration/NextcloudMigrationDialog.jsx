@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
-import { useClient, generateWebLink } from 'cozy-client'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import { IllustrationDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Divider from 'cozy-ui/transpiled/react/Divider'
@@ -20,16 +19,7 @@ import NextcloudConnectDialog from '@/components/Migration/NextcloudConnectDialo
 
 const NextcloudMigrationDialog = ({ onCloseAll }) => {
   const { t } = useI18n()
-  const client = useClient()
-  const { subdomain: subDomainType } = client.getInstanceOptions()
-  const [showConnectDialog, setShowConnectDialog] = useState(false)
-
-  const nextcloudStoreUrl = generateWebLink({
-    cozyUrl: client.getStackClient().uri,
-    slug: 'home',
-    subDomainType,
-    hash: 'connected/nextcloud/new'
-  })
+  const [connectMode, setConnectMode] = useState(null)
 
   const options = [
     {
@@ -37,19 +27,19 @@ const NextcloudMigrationDialog = ({ onCloseAll }) => {
       icon: MigrateIcon,
       primary: t('MigrationView.nextcloud.dialog.transfer.title'),
       secondary: t('MigrationView.nextcloud.dialog.transfer.description'),
-      onClick: () => setShowConnectDialog(true)
+      onClick: () => setConnectMode('transfer')
     },
     {
       id: 'external',
       icon: ConnectIcon,
       primary: t('MigrationView.nextcloud.dialog.external.title'),
       secondary: t('MigrationView.nextcloud.dialog.external.description'),
-      href: nextcloudStoreUrl
+      onClick: () => setConnectMode('connect')
     }
   ]
 
-  if (showConnectDialog) {
-    return <NextcloudConnectDialog onCloseAll={onCloseAll} />
+  if (connectMode) {
+    return <NextcloudConnectDialog mode={connectMode} onCloseAll={onCloseAll} />
   }
 
   return (
@@ -81,13 +71,7 @@ const NextcloudMigrationDialog = ({ onCloseAll }) => {
           {options.map((option, index) => (
             <React.Fragment key={option.id}>
               {index > 0 && <Divider component="li" />}
-              <ListItem
-                button
-                component={option.href ? 'a' : 'li'}
-                href={option.href || undefined}
-                rel={option.href ? 'noopener noreferrer' : undefined}
-                onClick={option.onClick}
-              >
+              <ListItem button onClick={option.onClick}>
                 <ListItemIcon>
                   <Icon
                     icon={option.icon}
