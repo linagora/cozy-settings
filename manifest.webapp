@@ -60,10 +60,15 @@
     "accounts": {
       "description": "Required to manage accounts associated to konnectors",
       "type": "io.cozy.accounts",
-      "verbs": ["GET"]
+      "verbs": ["GET", "POST", "PUT"]
+    },
+    "triggers": {
+      "description": "Required to run the konnectors",
+      "type": "io.cozy.triggers",
+      "verbs": ["GET", "POST", "PUT"]
     },
     "jobs": {
-      "description": "Required to send emails to support",
+      "description": "Required to launch and monitor konnector jobs",
       "type": "io.cozy.jobs",
       "verbs": ["ALL"]
     },
