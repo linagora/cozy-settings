@@ -20,10 +20,13 @@ desktop.ini
 .floo
 .flooignore
 .vscode
+.opencode
 
 # Default
 !.gitkeep
 
 # SWC
 .swc
-.opencode
+
+# eslint cache
+.eslintcache

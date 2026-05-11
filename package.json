@@ -5,7 +5,7 @@
   "scripts": {
     "tx": "tx pull --all || true",
     "lint": "yarn lint:js",
-    "lint:js": "eslint '{src,test}/**/*.{js,jsx,ts,tsx}'",
+    "lint:js": "eslint --concurrency 4 --cache --cache-strategy=content '{src,test}/**/*.{js,jsx,ts,tsx}'",
     "build": "rsbuild build",
     "watch": "rsbuild build --watch --mode development",
     "start": "rsbuild dev",
