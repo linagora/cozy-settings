@@ -652,21 +652,9 @@
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Your files, folders and documents will be copied to your Twake.",
-      "dialog": {
-        "title": "Transfer your data from Nextcloud",
-        "subtitle": "Choose how you want to integrate your Nextcloud storage",
-        "transfer": {
-          "title": "Transfer files from Nextcloud to Twake Drive",
-          "description": "Migrate all your existing files directly into Twake Drive. This creates a complete copy of your data."
-        },
-        "external": {
-          "title": "Connect Nextcloud as external drive",
-          "description": "Access Nextcloud files directly in Twake without migration. Files remain in Nextcloud."
-        }
-      },
       "connect": {
-        "title": "Connect to Nextcloud",
-        "subtitle": "Enter your Nextcloud credentials to securely connect your account",
+        "title": "Transfer your data from Nextcloud",
+        "subtitle": "Enter your Nextcloud credentials to securely start the transfer", 
         "url": {
           "label": "Nextcloud URL",
           "placeholder": "https://username.nextcloud.com"
@@ -678,7 +666,7 @@
         "password": {
           "label": "Password"
         },
-        "error": "We couldn't sign you in. Please check your login or password and try again.",
+        "error": "We couldn't start the transfer. Please check your login or password and try again.",
         "cancel": "Cancel",
         "submit": "Next"
       },
