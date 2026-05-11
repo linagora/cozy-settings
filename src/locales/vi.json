@@ -605,21 +605,9 @@
     "nextcloud": {
       "name": "Nextcloud",
       "description": "Các tệp, thư mục và tài liệu của bạn sẽ được sao chép sang Twake.",
-      "dialog": {
-        "title": "Chuyển dữ liệu từ Nextcloud",
-        "subtitle": "Chọn cách bạn muốn tích hợp bộ nhớ Nextcloud",
-        "transfer": {
-          "title": "Chuyển tệp từ Nextcloud sang Twake Drive",
-          "description": "Di chuyển tất cả tệp hiện có trực tiếp vào Twake Drive. Thao tác này tạo một bản sao đầy đủ dữ liệu của bạn."
-        },
-        "external": {
-          "title": "Kết nối Nextcloud như ổ đĩa ngoài",
-          "description": "Truy cập tệp Nextcloud trực tiếp trong Twake mà không cần di chuyển. Các tệp vẫn ở trong Nextcloud."
-        }
-      },
       "connect": {
-        "title": "Kết nối đến Nextcloud",
-        "subtitle": "Nhập thông tin đăng nhập Nextcloud của bạn để kết nối tài khoản một cách bảo mật",
+        "title": "Chuyển dữ liệu từ Nextcloud",
+        "subtitle": "Nhập thông tin đăng nhập Nextcloud để bắt đầu chuyển dữ liệu một cách bảo mật",
         "url": {
           "label": "URL Nextcloud",
           "placeholder": "https://username.nextcloud.com"
@@ -631,7 +619,7 @@
         "password": {
           "label": "Mật khẩu"
         },
-        "error": "Chúng tôi không thể đăng nhập. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
+        "error": "Chúng tôi không thể bắt đầu chuyển dữ liệu. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
         "cancel": "Hủy",
         "submit": "Tiếp theo"
       },

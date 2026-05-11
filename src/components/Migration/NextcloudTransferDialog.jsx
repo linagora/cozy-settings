@@ -18,7 +18,7 @@ import useMigration, {
   NEXTCLOUD_IMPORTED_FILES_DIR_NAME
 } from '@/components/Migration/useMigration'
 
-const NextcloudConnectDialog = ({ onCloseAll }) => {
+const NextcloudTransferDialog = ({ onCloseAll }) => {
   const { t } = useI18n()
   const [url, setUrl] = useState('')
   const [username, setUsername] = useState('')
@@ -176,4 +176,4 @@ const NextcloudConnectDialog = ({ onCloseAll }) => {
   )
 }
 
-export default NextcloudConnectDialog
+export default NextcloudTransferDialog

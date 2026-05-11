@@ -19,7 +19,7 @@ import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import { NextcloudCleanConfirmDialog } from '@/components/Migration/NextcloudCleanConfirmDialog'
 import { NextcloudCleaningDialog } from '@/components/Migration/NextcloudCleaningDialog'
-import { NextcloudMigrationDialog } from '@/components/Migration/NextcloudMigrationDialog'
+import NextcloudTransferDialog from '@/components/Migration/NextcloudTransferDialog'
 import useMigration from '@/components/Migration/useMigration'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
@@ -117,7 +117,7 @@ const DumbMigration = ({
       </Paper>
 
       {showNextcloudDialog && (
-        <NextcloudMigrationDialog onCloseAll={onCloseNextcloudDialog} />
+        <NextcloudTransferDialog onCloseAll={onCloseNextcloudDialog} />
       )}
 
       {showCleanConfirmDialog && (
