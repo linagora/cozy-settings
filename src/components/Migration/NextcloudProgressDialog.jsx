@@ -66,7 +66,7 @@ const NextcloudProgressDialog = ({
         {t('MigrationView.nextcloud.progress.hide')}
       </DropdownButton>
       <div
-        className="u-flex u-flex-column u-flex-items-center u-ph-3"
+        className="u-p-1 u-flex u-flex-column u-flex-items-center u-bxz"
         style={{ width: '100%', maxWidth: 560 }}
       >
         <div
