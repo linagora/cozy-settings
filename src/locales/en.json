@@ -624,6 +624,7 @@
   },
   "MigrationView": {
     "title": "Migrate your data to Twake Workplace",
+    "mobileTitle": "Migrate",
     "subtitle": "All your files, emails, calendars, and contacts — in one Twake workspace, ready to use",
     "secureTransfer": "Secure Transfer",
     "startMigration": "Start migration",

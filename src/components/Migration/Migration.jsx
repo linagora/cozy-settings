@@ -15,6 +15,7 @@ import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import Paper from 'cozy-ui/transpiled/react/Paper'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
+import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
 import { NextcloudCleanConfirmDialog } from '@/components/Migration/NextcloudCleanConfirmDialog'
@@ -42,10 +43,13 @@ const DumbMigration = ({
   onDismissCleaningDialog
 }) => {
   const { t } = useI18n()
+  const { isMobile } = useBreakpoints()
 
   return (
     <Page className="u-maw-7">
-      <PageTitle>{t('MigrationView.title')}</PageTitle>
+      <PageTitle>
+        {isMobile ? t('MigrationView.mobileTitle') : t('MigrationView.title')}
+      </PageTitle>
 
       <Typography variant="body1" className="u-mv-1" color="textSecondary">
         {t('MigrationView.subtitle')}
