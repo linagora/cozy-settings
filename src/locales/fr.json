@@ -677,6 +677,7 @@
         "timeSeconds_plural": "%{count} secondes restantes",
         "timeMinutes": "~%{count} min restante",
         "timeMinutes_plural": "~%{count} min restantes",
+        "hide": "Masquer",
         "cancel": "Annuler le transfert",
         "cancelSuccess": "Annulation demandée. Le transfert va s'arrêter dans quelques instants.",
         "cancelError": "L'annulation n'a pas pu être envoyée. Veuillez réessayer."
