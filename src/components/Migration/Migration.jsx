@@ -28,6 +28,114 @@ import { buildCompletedNextcloudMigrationsQuery } from '@/lib/queries'
 
 const SNACKBAR_AUTO_HIDE_MS = 6000
 
+const NextcloudNameWithStatus = ({ t, isNextcloudMigrated }) => (
+  <span className="u-flex u-flex-items-center">
+    {t('MigrationView.nextcloud.name')}
+    {isNextcloudMigrated && (
+      <Chip
+        label={t('MigrationView.migrated')}
+        color="success"
+        variant="ghost"
+        icon={<Icon icon={CheckCircleIcon} size="12" />}
+        className="u-ml-half"
+      />
+    )}
+  </span>
+)
+
+const NextcloudMigrationActionButton = ({
+  t,
+  isNextcloudMigrated,
+  isCleaning,
+  onRequestClean,
+  onStartMigration,
+  className
+}) => {
+  if (isNextcloudMigrated) {
+    return (
+      <Button
+        variant="text"
+        label={t('MigrationView.cleanNextcloud')}
+        size="small"
+        className={className}
+        startIcon={<Icon icon={DeleteIcon} size={14} />}
+        color="error"
+        onClick={onRequestClean}
+        disabled={isCleaning}
+      />
+    )
+  }
+
+  return (
+    <Button
+      variant="secondary"
+      label={t('MigrationView.startMigration')}
+      size="small"
+      className={className}
+      onClick={onStartMigration}
+    />
+  )
+}
+
+const NextcloudMigrationMobileItem = ({
+  t,
+  isNextcloudMigrated,
+  isCleaning,
+  onRequestClean,
+  onStartMigration
+}) => (
+  <div className="u-w-100">
+    <div className="u-flex u-flex-items-center u-mb-half">
+      <NextcloudNameWithStatus
+        t={t}
+        isNextcloudMigrated={isNextcloudMigrated}
+      />
+    </div>
+    <Typography variant="body2" color="textSecondary">
+      {t('MigrationView.nextcloud.description')}
+    </Typography>
+    <div className="u-flex u-flex-justify-end u-mt-half">
+      <NextcloudMigrationActionButton
+        t={t}
+        isNextcloudMigrated={isNextcloudMigrated}
+        isCleaning={isCleaning}
+        onRequestClean={onRequestClean}
+        onStartMigration={onStartMigration}
+      />
+    </div>
+  </div>
+)
+
+const NextcloudMigrationDesktopItem = ({
+  t,
+  isNextcloudMigrated,
+  isCleaning,
+  onRequestClean,
+  onStartMigration
+}) => (
+  <>
+    <ListItemText
+      primary={
+        <NextcloudNameWithStatus
+          t={t}
+          isNextcloudMigrated={isNextcloudMigrated}
+        />
+      }
+      secondary={t('MigrationView.nextcloud.description')}
+    />
+    <ListItemSecondaryAction>
+      <NextcloudMigrationActionButton
+        t={t}
+        isNextcloudMigrated={isNextcloudMigrated}
+        isCleaning={isCleaning}
+        onRequestClean={onRequestClean}
+        onStartMigration={onStartMigration}
+        className="u-m-1"
+      />
+    </ListItemSecondaryAction>
+  </>
+)
+
 const DumbMigration = ({
   helpLink,
   isNextcloudMigrated,
@@ -69,7 +177,7 @@ const DumbMigration = ({
 
       <Paper elevation={1} className="u-mb-3">
         <List disablePadding>
-          <ListItem>
+          <ListItem className={isMobile ? 'u-flex u-flex-items-start' : ''}>
             <ListItemIcon>
               <Icon
                 icon={nextcloudLogo}
@@ -77,45 +185,24 @@ const DumbMigration = ({
                 size={40}
               />
             </ListItemIcon>
-            <ListItemText
-              primary={
-                <span className="u-flex u-flex-items-center">
-                  {t('MigrationView.nextcloud.name')}
-                  {isNextcloudMigrated && (
-                    <Chip
-                      label={t('MigrationView.migrated')}
-                      color="success"
-                      variant="ghost"
-                      icon={<Icon icon={CheckCircleIcon} size="12" />}
-                      className="u-ml-half"
-                    />
-                  )}
-                </span>
-              }
-              secondary={t('MigrationView.nextcloud.description')}
-            />
-            <ListItemSecondaryAction>
-              {isNextcloudMigrated ? (
-                <Button
-                  variant="text"
-                  label={t('MigrationView.cleanNextcloud')}
-                  size="small"
-                  className="u-m-1"
-                  startIcon={<Icon icon={DeleteIcon} size={14} />}
-                  color="error"
-                  onClick={onRequestClean}
-                  disabled={isCleaning}
-                />
-              ) : (
-                <Button
-                  variant="secondary"
-                  label={t('MigrationView.startMigration')}
-                  size="small"
-                  className="u-m-1"
-                  onClick={onStartMigration}
-                />
-              )}
-            </ListItemSecondaryAction>
+
+            {isMobile ? (
+              <NextcloudMigrationMobileItem
+                t={t}
+                isNextcloudMigrated={isNextcloudMigrated}
+                isCleaning={isCleaning}
+                onRequestClean={onRequestClean}
+                onStartMigration={onStartMigration}
+              />
+            ) : (
+              <NextcloudMigrationDesktopItem
+                t={t}
+                isNextcloudMigrated={isNextcloudMigrated}
+                isCleaning={isCleaning}
+                onRequestClean={onRequestClean}
+                onStartMigration={onStartMigration}
+              />
+            )}
           </ListItem>
         </List>
       </Paper>
