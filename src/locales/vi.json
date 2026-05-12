@@ -577,6 +577,7 @@
   },
   "MigrationView": {
     "title": "Di chuyển dữ liệu của bạn sang Twake Workplace",
+    "mobileTitle": "Di chuyển",
     "subtitle": "Tất cả các tệp, email, lịch và danh bạ của bạn — trong một không gian Twake duy nhất, sẵn sàng sử dụng",
     "secureTransfer": "Truyền tải bảo mật",
     "startMigration": "Bắt đầu di chuyển",

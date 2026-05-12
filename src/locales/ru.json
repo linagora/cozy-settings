@@ -575,6 +575,7 @@
   },
   "MigrationView": {
     "title": "Перенесите данные в Twake Workplace",
+    "mobileTitle": "Миграция",
     "subtitle": "Все ваши файлы, письма, календари и контакты — в едином рабочем пространстве Twake",
     "secureTransfer": "Безопасная передача",
     "startMigration": "Начать миграцию",
