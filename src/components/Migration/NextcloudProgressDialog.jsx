@@ -6,9 +6,8 @@ import { useClient } from 'cozy-client'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Dialog from 'cozy-ui/transpiled/react/Dialog'
+import DropdownButton from 'cozy-ui/transpiled/react/DropdownButton'
 import Icon from 'cozy-ui/transpiled/react/Icon'
-import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import Cross from 'cozy-ui/transpiled/react/Icons/Cross'
 import FolderOpen from 'cozy-ui/transpiled/react/Icons/FolderOpen'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
@@ -58,13 +57,14 @@ const NextcloudProgressDialog = ({
         style: { background: 'var(--defaultBackgroundColor, #fff)' }
       }}
     >
-      <IconButton
+      <DropdownButton
         onClick={onCloseAll}
+        color="textSecondary"
         className="u-top-xs u-right-xs"
         style={{ position: 'absolute' }}
       >
-        <Icon icon={Cross} size={16} />
-      </IconButton>
+        {t('MigrationView.nextcloud.progress.hide')}
+      </DropdownButton>
       <div
         className="u-flex u-flex-column u-flex-items-center u-ph-3"
         style={{ width: '100%', maxWidth: 560 }}

@@ -679,6 +679,7 @@
         "timeSeconds_plural": "%{count} seconds",
         "timeMinutes": "~%{count} min",
         "timeMinutes_plural": "~%{count} min",
+        "hide": "Hide",
         "cancel": "Cancel transfer",
         "cancelSuccess": "Cancellation requested. The transfer will stop shortly.",
         "cancelError": "The cancellation could not be sent. Please try again."

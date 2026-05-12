@@ -632,6 +632,7 @@
         "timeSeconds_plural": "%{count} giây",
         "timeMinutes": "~%{count} phút",
         "timeMinutes_plural": "~%{count} phút",
+        "hide": "Ẩn",
         "cancel": "Hủy truyền",
         "cancelSuccess": "Đã gửi yêu cầu hủy. Quá trình truyền sẽ dừng lại ngay sau đây.",
         "cancelError": "Không thể gửi yêu cầu hủy. Vui lòng thử lại."

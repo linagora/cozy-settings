@@ -630,6 +630,7 @@
         "timeSeconds_plural": "%{count} секунд",
         "timeMinutes": "~%{count} мин",
         "timeMinutes_plural": "~%{count} мин",
+        "hide": "Скрыть",
         "cancel": "Отменить перенос",
         "cancelSuccess": "Запрос на отмену отправлен. Перенос скоро остановится.",
         "cancelError": "Не удалось отправить отмену. Пожалуйста, попробуйте снова."
