@@ -150,7 +150,7 @@ describe('NextcloudProgressDialog', () => {
     it('calls onCloseAll when the hide button is clicked', () => {
       const onCloseAll = jest.fn()
       setup({ onCloseAll })
-      fireEvent.click(screen.getByRole('button', { name: /Hide/ }))
+      fireEvent.click(screen.getByRole('button', { name: /Close/ }))
       expect(onCloseAll).toHaveBeenCalledTimes(1)
     })
   })

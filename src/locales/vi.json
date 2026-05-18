@@ -626,14 +626,14 @@
       },
       "progress": {
         "title": "Đang truyền dữ liệu",
-        "subtitle": "Vui lòng chờ trong khi chúng tôi di chuyển tệp của bạn từ Nextcloud…",
+        "subtitle": "Vui lòng chờ trong khi chúng tôi di chuyển tệp của bạn từ Nextcloud. Bạn có thể đóng cửa sổ này, quá trình di chuyển sẽ tiếp tục",
         "percent": "%{percent}% hoàn thành",
         "remaining": "~%{time} còn lại",
         "timeSeconds": "%{count} giây",
         "timeSeconds_plural": "%{count} giây",
         "timeMinutes": "~%{count} phút",
         "timeMinutes_plural": "~%{count} phút",
-        "hide": "Ẩn",
+        "hide": "Đóng",
         "cancel": "Hủy truyền",
         "cancelSuccess": "Đã gửi yêu cầu hủy. Quá trình truyền sẽ dừng lại ngay sau đây.",
         "cancelError": "Không thể gửi yêu cầu hủy. Vui lòng thử lại."
