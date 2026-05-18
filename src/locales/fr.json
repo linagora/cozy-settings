@@ -671,14 +671,14 @@
       },
       "progress": {
         "title": "Transfert de vos données en cours",
-        "subtitle": "Veuillez patienter pendant que nous migrons vos fichiers depuis Nextcloud…",
+        "subtitle": "Veuillez patienter pendant que nous migrons vos fichiers depuis Nextcloud. Vous pouvez fermer cette fenêtre, la migration continuera",
         "percent": "%{percent}% terminé",
         "remaining": "~%{time} restant",
         "timeSeconds": "%{count} seconde restante",
         "timeSeconds_plural": "%{count} secondes restantes",
         "timeMinutes": "~%{count} min restante",
         "timeMinutes_plural": "~%{count} min restantes",
-        "hide": "Masquer",
+        "hide": "Fermer",
         "cancel": "Annuler le transfert",
         "cancelSuccess": "Annulation demandée. Le transfert va s'arrêter dans quelques instants.",
         "cancelError": "L'annulation n'a pas pu être envoyée. Veuillez réessayer."
