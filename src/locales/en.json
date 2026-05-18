@@ -667,7 +667,7 @@
         "password": {
           "label": "Password"
         },
-        "error": "We couldn't start the transfer. Please check your login or password and try again.",
+        "error": "We couldn't start the transfer. Please check your credentials, or deactivate 2FA on your Nextcloud instance, and try again.",
         "cancel": "Cancel",
         "submit": "Next"
       },

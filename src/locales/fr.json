@@ -665,7 +665,7 @@
         "password": {
           "label": "Mot de passe"
         },
-        "error": "Nous n'avons pas pu démarrer le transfert. Veuillez vérifier vos identifiants et réessayer.",
+        "error": "Nous n'avons pas pu démarrer le transfert. Veuillez vérifier vos identifiants, ou désactiver la 2FA sur votre instance Nextcloud, et réessayer.",
         "cancel": "Annuler",
         "submit": "Suivant"
       },
