@@ -620,7 +620,7 @@
         "password": {
           "label": "Mật khẩu"
         },
-        "error": "Chúng tôi không thể bắt đầu chuyển dữ liệu. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
+        "error": "Chúng tôi không thể bắt đầu chuyển dữ liệu. Vui lòng kiểm tra thông tin đăng nhập hoặc vô hiệu hóa 2FA trên phiên bản Nextcloud của bạn và thử lại.",
         "cancel": "Hủy",
         "submit": "Tiếp theo"
       },
