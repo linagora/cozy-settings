@@ -13,10 +13,10 @@ const PasswordSection = () => {
   const { t } = useI18n()
   const { hasPassword } = useHasPassword()
 
-  const signUpUrl = flag('signup.url')
+  const passwordUrl = flag('settings.password.url')
   const isPasswordReadonly = flag('settings.password.readonly')
 
-  if (signUpUrl) {
+  if (passwordUrl) {
     return (
       <Stack spacing="m">
         <Typography variant="h5" gutterBottom>
@@ -29,7 +29,7 @@ const PasswordSection = () => {
           variant="secondary"
           size="medium"
           label={t('ProfileView.password.cta')}
-          href={`${signUpUrl}/change-password`}
+          href={passwordUrl}
           target="_blank"
           disabled={isPasswordReadonly}
         />
