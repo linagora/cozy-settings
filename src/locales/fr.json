@@ -176,6 +176,9 @@
       "auth": {
         "title": "Authentification à deux facteurs",
         "label": "Ajoutez une couche de sécurité supplémentaire en exigeant un code de vérification lors de votre connexion. Ajoutez l'email de récupération pour recevoir les codes d'authentification à deux facteurs."
+      },
+      "sso": {
+        "cta": "Gérer la 2FA"
       }
     },
     "public_name": {
