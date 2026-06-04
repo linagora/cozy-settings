@@ -173,6 +173,9 @@
       "auth": {
         "title": "Xác thực hai yếu tố",
         "label": "Thêm lớp bảo mật bổ sung bằng cách yêu cầu mã xác nhận khi đăng nhập. Thêm email khôi phục để nhận mã xác thực hai yếu tố."
+      },
+      "sso": {
+        "cta": "Quản lý 2FA"
       }
     },
     "public_name": {

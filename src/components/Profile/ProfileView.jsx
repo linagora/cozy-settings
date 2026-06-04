@@ -9,6 +9,7 @@ import Stack from 'cozy-ui/transpiled/react/Stack'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import TwoFA from '@/components/2FA'
+import TwoFASSO from '@/components/2FA/TwoFASSO'
 import EmailReadOnlySection from '@/components/Email/EmailReadOnlySection'
 import EmailSection from '@/components/Email/EmailSection'
 import Page from '@/components/Page'
@@ -46,6 +47,7 @@ const ProfileView = ({
   const isDeleteEnabled = flag('settings.delete.enabled')
   const isEmailReadOnly = flag('settings.email.readonly')
   const isSignupEnabled = flag('signup.url')
+  const ssoTwoFaUrl = flag('sso.portail.2fa-url')
 
   return (
     <>
@@ -67,6 +69,9 @@ const ProfileView = ({
         )}
         {isPhoneEnabled && <PhoneNumberSection />}
         {isTwoFAEnabled && isSignupEnabled && <TwoFA />}
+        {isTwoFAEnabled && !isSignupEnabled && ssoTwoFaUrl && (
+          <TwoFASSO url={ssoTwoFaUrl} />
+        )}
         <PasswordSection />
         <LanguageSection />
         <DefaultRedirectionSection />

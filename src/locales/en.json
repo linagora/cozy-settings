@@ -179,6 +179,9 @@
       "auth": {
         "title": "Two-Factor Authentication",
         "label": "Add an extra layer of security by requiring a verification code when you sign in. Add recovery email to receive two-factor authentication codes."
+      },
+      "sso": {
+        "cta": "Manage 2FA"
       }
     },
     "public_name": {
