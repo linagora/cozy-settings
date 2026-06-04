@@ -21,12 +21,12 @@ describe('PasswordSection', () => {
 
   const setup = ({
     hasPassword,
-    signUpUrl = null,
+    passwordUrl = null,
     isPasswordReadonly = false
   }) => {
     useHasPassword.mockReturnValue({ hasPassword })
     flag.mockImplementation(flagName => {
-      if (flagName === 'signup.url') return signUpUrl
+      if (flagName === 'settings.password.url') return passwordUrl
       if (flagName === 'settings.password.readonly') return isPasswordReadonly
       return null
     })
@@ -37,9 +37,12 @@ describe('PasswordSection', () => {
     )
   }
 
-  describe('when signUpUrl flag is set', () => {
+  describe('when passwordUrl flag is set', () => {
     it('should render external link button', () => {
-      setup({ hasPassword: true, signUpUrl: 'https://example.com' })
+      setup({
+        hasPassword: true,
+        passwordUrl: 'https://example.com/change-password'
+      })
       const button = screen.getByText('Update my password')
       expect(button).toBeTruthy()
       expect(button.closest('a')).toHaveAttribute(
@@ -52,7 +55,7 @@ describe('PasswordSection', () => {
     it('should disable button when password is readonly', () => {
       setup({
         hasPassword: true,
-        signUpUrl: 'https://example.com',
+        passwordUrl: 'https://example.com/change-password',
         isPasswordReadonly: true
       })
       const button = screen.getByText('Update my password').closest('a')
@@ -60,7 +63,7 @@ describe('PasswordSection', () => {
     })
   })
 
-  describe('when signUpUrl flag is not set', () => {
+  describe('when passwordUrl flag is not set', () => {
     it('should render internal link button when user has password', () => {
       setup({ hasPassword: true })
       const button = screen.getByText('Update my password')

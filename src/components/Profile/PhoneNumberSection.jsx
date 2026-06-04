@@ -20,8 +20,8 @@ const PhoneNumberSection = () => {
     instanceQuery.options
   )
 
-  const signUpUrl = flag('signup.url')
-  const isPhoneReadonly = flag('settings.phone.readonly') || !signUpUrl
+  const phoneUrl = flag('settings.phone.url')
+  const isPhoneReadonly = flag('settings.phone.readonly') || !phoneUrl
 
   return (
     <Stack spacing="m">
@@ -38,7 +38,7 @@ const PhoneNumberSection = () => {
         variant="secondary"
         size="medium"
         label={t('ProfileView.phone_number.change_button')}
-        href={`${signUpUrl}/change-phone`}
+        href={phoneUrl}
         target="_blank"
         disabled={isPhoneReadonly}
       />

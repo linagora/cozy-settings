@@ -46,8 +46,8 @@ const ProfileView = ({
   const isPhoneEnabled = flag('settings.phone.enabled')
   const isDeleteEnabled = flag('settings.delete.enabled')
   const isEmailReadOnly = flag('settings.email.readonly')
-  const isSignupEnabled = flag('signup.url')
-  const ssoTwoFaUrl = flag('sso.portail.2fa-url')
+  const signupUrl = flag('signup.url')
+  const ssoTwoFaUrl = flag('settings.2fa.url')
 
   return (
     <>
@@ -68,10 +68,8 @@ const ProfileView = ({
           />
         )}
         {isPhoneEnabled && <PhoneNumberSection />}
-        {isTwoFAEnabled && isSignupEnabled && <TwoFA />}
-        {isTwoFAEnabled && !isSignupEnabled && ssoTwoFaUrl && (
-          <TwoFASSO url={ssoTwoFaUrl} />
-        )}
+        {isTwoFAEnabled && ssoTwoFaUrl && <TwoFASSO url={ssoTwoFaUrl} />}
+        {isTwoFAEnabled && !ssoTwoFaUrl && signupUrl && <TwoFA />}
         <PasswordSection />
         <LanguageSection />
         <DefaultRedirectionSection />
