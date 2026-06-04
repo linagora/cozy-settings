@@ -160,7 +160,8 @@
     "password": {
       "title": "Password",
       "label": "Your Twake is currently protected by a password",
-      "cta": "Update my password"
+      "cta": "Update my password",
+      "external_label": "Your password can be changed in your identity provider"
     },
     "infos": {
       "success": "Your informations has been changed",

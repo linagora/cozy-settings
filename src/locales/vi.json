@@ -154,7 +154,8 @@
     "password": {
       "title": "Mật khẩu",
       "label": "Twake của bạn hiện được bảo vệ bằng mật khẩu",
-      "cta": "Cập nhật mật khẩu của tôi"
+      "cta": "Cập nhật mật khẩu của tôi",
+      "external_label": "Mật khẩu của bạn có thể được thay đổi tại nhà cung cấp danh tính của bạn"
     },
     "infos": {
       "success": "Thông tin của bạn đã được thay đổi",

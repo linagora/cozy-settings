@@ -157,7 +157,8 @@
     "password": {
       "title": "Mot de passe",
       "label": "Votre Twake est actuellement protégé par un mot de passe.",
-      "cta": "Modifier le mot de passe"
+      "cta": "Modifier le mot de passe",
+      "external_label": "Votre mot de passe peut être modifié depuis votre fournisseur d'identité"
     },
     "infos": {
       "success": "Vos informations ont été modifiées.",
