@@ -88,5 +88,6 @@
     "semver": "7.5.2",
     "twake-i18n": "^0.3.1",
     "ua-parser-js": "0.7.33"
-  }
+  },
+  "packageManager": "yarn@4.16.0"
 }
