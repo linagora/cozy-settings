@@ -159,6 +159,11 @@
       "label": "Votre Twake est actuellement protégé par un mot de passe.",
       "cta": "Modifier le mot de passe"
     },
+    "applicative_accounts": {
+      "title": "Client de messagerie externe",
+      "label": "Connectez votre boîte mail Twake à n'importe quel client de messagerie à l'aide d'un compte applicatif dédié.",
+      "cta": "Gérer les comptes applicatifs"
+    },
     "infos": {
       "success": "Vos informations ont été modifiées.",
       "server_error": "Une erreur s'est produite. Vos informations n'ont pas pu être enregistrées.",

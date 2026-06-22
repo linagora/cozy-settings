@@ -14,6 +14,7 @@ import EmailReadOnlySection from '@/components/Email/EmailReadOnlySection'
 import EmailSection from '@/components/Email/EmailSection'
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
+import { ApplicativeAccountsSection } from '@/components/Profile/ApplicativeAccountsSection'
 import AvatarSection from '@/components/Profile/AvatarSection'
 import DefaultRedirectionSection from '@/components/Profile/DefaultRedirectionSection'
 import { DeleteSection } from '@/components/Profile/DeleteSection'
@@ -46,6 +47,9 @@ const ProfileView = ({
   const isPhoneEnabled = flag('settings.phone.enabled')
   const isDeleteEnabled = flag('settings.delete.enabled')
   const isEmailReadOnly = flag('settings.email.readonly')
+  const isApplicativeAccountsEnabled = flag(
+    'settings.applicative-accounts.enabled'
+  )
   const signupUrl = flag('signup.url')
   const ssoTwoFaUrl = flag('settings.2fa.url')
 
@@ -61,6 +65,7 @@ const ProfileView = ({
         ) : (
           <EmailSection />
         )}
+        {isApplicativeAccountsEnabled && <ApplicativeAccountsSection />}
         {isMatrixEnabled && (
           <MatrixIdSection
             email={instanceData.email}
