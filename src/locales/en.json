@@ -162,6 +162,11 @@
       "label": "Your Twake is currently protected by a password",
       "cta": "Update my password"
     },
+    "applicative_accounts": {
+      "title": "External mail client",
+      "label": "Connect your Twake mailbox to any email client using a dedicated application account.",
+      "cta": "Manage application accounts"
+    },
     "infos": {
       "success": "Your informations has been changed",
       "server_error": "Something went wrong. Your informations has not been saved.",

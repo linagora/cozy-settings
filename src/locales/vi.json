@@ -156,6 +156,11 @@
       "label": "Twake của bạn hiện được bảo vệ bằng mật khẩu",
       "cta": "Cập nhật mật khẩu của tôi"
     },
+    "applicative_accounts": {
+      "title": "Ứng dụng thư điện tử bên ngoài",
+      "label": "Kết nối hộp thư Twake của bạn với bất kỳ ứng dụng email nào bằng tài khoản ứng dụng riêng.",
+      "cta": "Quản lý tài khoản ứng dụng"
+    },
     "infos": {
       "success": "Thông tin của bạn đã được thay đổi",
       "server_error": "Đã xảy ra lỗi. Thông tin của bạn chưa được lưu.",
