@@ -70,8 +70,6 @@ export function sendMessageToSupport(client, message, t) {
 }
 
 export function sendDeleteAccountReasonEmail(client, subject, message) {
-  if (!message) return
-
   return sendEmail(
     client,
     CONTACT_RECIPIENT_LIST,
@@ -81,8 +79,6 @@ export function sendDeleteAccountReasonEmail(client, subject, message) {
 }
 
 export function sendDeleteAccountByEmailOnlyEmail(client, subject, message) {
-  if (!message) return
-
   return sendEmail(
     client,
     CONTACT_RECIPIENT_LIST,
