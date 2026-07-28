@@ -1,3 +1,4 @@
+import { Bottom, Right } from '@linagora/twake-icons'
 import { makeStyles } from '@material-ui/core/styles'
 import MuiTreeItem from '@material-ui/lab/TreeItem'
 import MuiTreeView from '@material-ui/lab/TreeView'
@@ -5,8 +6,6 @@ import mergeClasses from '@material-ui/styles/mergeClasses'
 import React from 'react'
 
 import Collapse from 'cozy-ui/transpiled/react/Collapse'
-import BottomIcon from 'cozy-ui/transpiled/react/Icons/Bottom'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 
 const useItemClasses = divider =>
   makeStyles(theme => ({
@@ -66,8 +65,8 @@ const useViewClasses = makeStyles(() => ({
 export const TreeView = ({ classes, children, ...other }) => {
   return (
     <MuiTreeView
-      defaultCollapseIcon={<BottomIcon width="1rem" height="1rem" />}
-      defaultExpandIcon={<RightIcon width="1rem" height="1rem" />}
+      defaultCollapseIcon={<Bottom width="1rem" height="1rem" />}
+      defaultExpandIcon={<Right width="1rem" height="1rem" />}
       disableSelection={true}
       classes={mergeClasses({
         baseClasses: useViewClasses(),

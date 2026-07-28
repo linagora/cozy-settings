@@ -1,3 +1,4 @@
+import { Icon, Sync } from '@linagora/twake-icons'
 import classNames from 'classnames'
 import React, { useMemo, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
@@ -6,8 +7,6 @@ import { useI18n } from 'twake-i18n'
 import { isQueryLoading, useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
 import MuiButton from 'cozy-ui/transpiled/react/Button'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import SyncIcon from 'cozy-ui/transpiled/react/Icons/Sync'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
 import { Media, Img, Bd } from 'cozy-ui/transpiled/react/deprecated/Media'
@@ -250,7 +249,7 @@ const DevicesView = () => {
                       {isMobile && (
                         <span className={tableStyles['set-table-info-date']}>
                           <Icon
-                            icon={SyncIcon}
+                            icon={Sync}
                             size={8}
                             color="var(--secondaryTextColor)"
                           />

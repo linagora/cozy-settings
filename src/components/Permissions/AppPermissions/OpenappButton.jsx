@@ -1,10 +1,9 @@
+import { Icon, Openapp } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient, generateWebLink } from 'cozy-client'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import OpenappIcon from 'cozy-ui/transpiled/react/Icons/Openapp'
 import AppLinker from 'cozy-ui-plus/dist/AppLinker'
 
 export const OpenappButton = ({ type, appData }) => {
@@ -35,7 +34,7 @@ export const OpenappButton = ({ type, appData }) => {
           href={href}
           onClick={onClick}
         >
-          <Icon icon={OpenappIcon} />
+          <Icon icon={Openapp} />
         </IconButton>
       )}
     </AppLinker>

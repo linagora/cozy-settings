@@ -1,8 +1,8 @@
+import { Icon } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import LinearProgress from 'cozy-ui/transpiled/react/LinearProgress'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 

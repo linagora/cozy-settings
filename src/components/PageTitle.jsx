@@ -1,12 +1,11 @@
+import { Icon, Previous } from '@linagora/twake-icons'
 import React from 'react'
 import { useMatch, useNavigate } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'
 
 import { BarCenter, BarLeft } from 'cozy-bar'
 import BarTitle from 'cozy-ui/transpiled/react/BarTitle'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import PreviousIcon from 'cozy-ui/transpiled/react/Icons/Previous'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
@@ -32,7 +31,7 @@ const PageTitle = ({ children, backButtonPath, ...rest }) => {
             size="large"
             title={t('Accessibility.previous')}
           >
-            <Icon color="secondary" icon={PreviousIcon} />
+            <Icon color="secondary" icon={Previous} />
           </IconButton>
         </BarLeft>
       )}

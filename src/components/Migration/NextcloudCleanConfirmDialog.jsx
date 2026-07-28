@@ -1,10 +1,9 @@
+import { Icon, Trash } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import DeleteIcon from 'cozy-ui/transpiled/react/Icons/Trash'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import nextcloudLogo from '@/assets/icons/nextcloud-logo.svg'
@@ -46,7 +45,7 @@ const NextcloudCleanConfirmDialog = ({ isCleaning, onCancel, onConfirm }) => {
             label={t('MigrationView.cleanNextcloudDialog.confirm')}
             color="error"
             className="u-fz-small"
-            startIcon={<Icon icon={DeleteIcon} size={14} />}
+            startIcon={<Icon icon={Trash} size={14} />}
             onClick={onConfirm}
             disabled={isCleaning}
           />

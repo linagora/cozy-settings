@@ -1,3 +1,4 @@
+import { Icon, Paperplane } from '@linagora/twake-icons'
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useI18n } from 'twake-i18n'
@@ -5,8 +6,6 @@ import { useI18n } from 'twake-i18n'
 import { useClient } from 'cozy-client'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import PaperplaneIcon from 'cozy-ui/transpiled/react/Icons/Paperplane'
 import InputLabel from 'cozy-ui/transpiled/react/InputLabel'
 import TextField from 'cozy-ui/transpiled/react/TextField'
 
@@ -104,7 +103,7 @@ export const Support = ({
         onClick={() => sendMessage()}
         disabled={!message}
         busy={isSending}
-        startIcon={<Icon icon={PaperplaneIcon} />}
+        startIcon={<Icon icon={Paperplane} />}
         label={t('support.button')}
       />
     </Page>

@@ -1,11 +1,9 @@
+import { Icon, Right, Rise } from '@linagora/twake-icons'
 import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { Dialog as DialogComponent } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Divider from 'cozy-ui/transpiled/react/Divider'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
-import RiseIcon from 'cozy-ui/transpiled/react/Icons/Rise'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon, {
   smallSize,
@@ -67,7 +65,7 @@ const LatestOutgoingDataHistory = ({
               <ListItem button onClick={() => openModal(data)} ellipsis={false}>
                 <ListItemIcon>
                   <Icon
-                    icon={RiseIcon}
+                    icon={Rise}
                     size={mediumSize}
                     color="var(--warningColor)"
                     rotate={90}
@@ -82,7 +80,7 @@ const LatestOutgoingDataHistory = ({
                 />
                 <ListItemSecondaryAction>
                   <Icon
-                    icon={RightIcon}
+                    icon={Right}
                     size={smallSize}
                     className="u-mr-1"
                     style={{ color: 'var(--secondaryTextColor)' }}

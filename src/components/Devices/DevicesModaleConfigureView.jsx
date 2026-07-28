@@ -1,3 +1,4 @@
+import { Icon, FileTypeFolder } from '@linagora/twake-icons'
 import cx from 'classnames'
 import React, { useCallback, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -12,9 +13,7 @@ import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
 import { FixedDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import FormControl from 'cozy-ui/transpiled/react/FormControl'
 import FormControlLabel from 'cozy-ui/transpiled/react/FormControlLabel'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import FileTypeFolderIcon from 'cozy-ui/transpiled/react/Icons/FileTypeFolder'
 import RadioGroup from 'cozy-ui/transpiled/react/RadioGroup'
 import Radio from 'cozy-ui/transpiled/react/Radios'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
@@ -159,7 +158,7 @@ const FolderLevel = ({
             />
           </Img>
           <Img className="u-pr-1">
-            <Icon icon={FileTypeFolderIcon} width="16" height="16" />
+            <Icon icon={FileTypeFolder} width="16" height="16" />
           </Img>
           <Typography
             noWrap
@@ -330,7 +329,7 @@ const FoldersTree = ({
       ) : (
         <CardContent className="u-ta-center">
           <Icon
-            icon={FileTypeFolderIcon}
+            icon={FileTypeFolder}
             width="64"
             height="64"
             className="u-o-50"

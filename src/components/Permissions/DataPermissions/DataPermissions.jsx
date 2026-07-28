@@ -1,11 +1,9 @@
+import { Icon, Previous, Right } from '@linagora/twake-icons'
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 import Divider from 'cozy-ui/transpiled/react/Divider'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import PreviousIcon from 'cozy-ui/transpiled/react/Icons/Previous'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon, {
   smallSize,
@@ -81,13 +79,11 @@ const DataPermissions = ({ t }) => {
       ) : (
         <>
           <IconButton className="u-mr-half" href="#/permissions/data">
-            <Icon icon={PreviousIcon} size={16} />
+            <Icon icon={Previous} size={16} />
           </IconButton>
           <div style={{ textAlign: 'center' }}>
             <Icon
-              icon={
-                require(`cozy-ui/transpiled/react/Icons/${iconName}`).default
-              }
+              icon={require('@linagora/twake-icons')[iconName]}
               size={mediumSize}
             />
             <PageTitle backButtonPath="/permissions/data">
@@ -127,7 +123,7 @@ const DataPermissions = ({ t }) => {
                         />
                         <ListItemSecondaryAction>
                           <Icon
-                            icon={RightIcon}
+                            icon={Right}
                             size={smallSize}
                             className="u-mr-1"
                             style={{ color: 'var(--secondaryTextColor)' }}

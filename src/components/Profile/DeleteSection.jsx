@@ -1,12 +1,10 @@
+import { Chat, Drive, Mail } from '@linagora/twake-icons'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import ChatIcon from 'cozy-ui/transpiled/react/Icons/Chat'
-import DriveIcon from 'cozy-ui/transpiled/react/Icons/Drive'
-import MailIcon from 'cozy-ui/transpiled/react/Icons/Mail'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 const DeleteSection = () => {
@@ -33,22 +31,22 @@ const DeleteSection = () => {
 
   const popupData = [
     {
-      icon: ChatIcon,
+      icon: Chat,
       title: t('DeleteAccount.popup.chat.conversations.title'),
       description: t('DeleteAccount.popup.chat.conversations.description')
     },
     {
-      icon: ChatIcon,
+      icon: Chat,
       title: t('DeleteAccount.popup.chat.groupChat.title'),
       description: t('DeleteAccount.popup.chat.groupChat.description')
     },
     {
-      icon: DriveIcon,
+      icon: Drive,
       title: t('DeleteAccount.popup.drive.title'),
       description: t('DeleteAccount.popup.drive.description')
     },
     {
-      icon: MailIcon,
+      icon: Mail,
       title: t('DeleteAccount.popup.mail.title'),
       description: t('DeleteAccount.popup.mail.description')
     }

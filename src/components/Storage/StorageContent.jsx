@@ -1,3 +1,4 @@
+import { Icon, CloudRainbow } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
@@ -6,8 +7,6 @@ import { makeDiskInfos } from 'cozy-client/dist/models/instance'
 import Alert from 'cozy-ui/transpiled/react/Alert'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Box from 'cozy-ui/transpiled/react/Box'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import CloudRainbowIcon from 'cozy-ui/transpiled/react/Icons/CloudRainbow'
 import LinearProgress from 'cozy-ui/transpiled/react/LinearProgress'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { useBreakpoints } from 'cozy-ui/transpiled/react/providers/Breakpoints'
@@ -31,7 +30,7 @@ const StorageContent = () => {
       maxWidth={600}
     >
       <Avatar size={100} color="var(--defaultBackgroundColor)">
-        <Icon icon={CloudRainbowIcon} size={48} />
+        <Icon icon={CloudRainbow} size={48} />
       </Avatar>
       <Typography className="u-mt-1-half u-mb-2" variant="h3" align="center">
         {t('StorageView.storage_title')}

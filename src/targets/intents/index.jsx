@@ -16,7 +16,6 @@ import I18n from 'twake-i18n'
 
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
-import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
 
 import IntentService from '@/containers/IntentService'
 
@@ -24,6 +23,7 @@ import {
   StylesProvider,
   createGenerateClassName
 } from '@material-ui/core/styles'
+import { Sprite } from '@linagora/twake-icons'
 
 const lang = document.documentElement.getAttribute('lang') || 'en'
 

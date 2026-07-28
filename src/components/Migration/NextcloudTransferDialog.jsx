@@ -1,3 +1,4 @@
+import { Icon, Warning } from '@linagora/twake-icons'
 import React, { useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
@@ -5,8 +6,6 @@ import Alert from 'cozy-ui/transpiled/react/Alert'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import { IllustrationDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import WarningIcon from 'cozy-ui/transpiled/react/Icons/Warning'
 import InputLabel from 'cozy-ui/transpiled/react/InputLabel'
 import PasswordField from 'cozy-ui/transpiled/react/PasswordField'
 import TextField from 'cozy-ui/transpiled/react/TextField'
@@ -148,7 +147,7 @@ const NextcloudTransferDialog = ({ onCloseAll }) => {
           {error && (
             <Alert
               severity="error"
-              icon={<Icon icon={WarningIcon} size={20} />}
+              icon={<Icon icon={Warning} size={20} />}
               className="u-mt-half"
             >
               {t('MigrationView.nextcloud.connect.error')}

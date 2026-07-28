@@ -1,8 +1,7 @@
+import { Icon, Right } from '@linagora/twake-icons'
 import React from 'react'
 
 import Divider from 'cozy-ui/transpiled/react/Divider'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon, {
   smallSize,
@@ -55,11 +54,7 @@ const DataList = ({ t }) => {
                     >
                       <ListItemIcon>
                         <Icon
-                          icon={
-                            require(
-                              `cozy-ui/transpiled/react/Icons/${iconName}`
-                            ).default
-                          }
+                          icon={require('@linagora/twake-icons')[iconName]}
                           size={mediumSize}
                         />
                       </ListItemIcon>
@@ -71,7 +66,7 @@ const DataList = ({ t }) => {
                       />
                       <ListItemSecondaryAction>
                         <Icon
-                          icon={RightIcon}
+                          icon={Right}
                           size={smallSize}
                           className="u-mr-1"
                           style={{ color: 'var(--secondaryTextColor)' }}

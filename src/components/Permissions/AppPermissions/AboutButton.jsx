@@ -1,10 +1,9 @@
+import { Icon, Info } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient, generateWebLink } from 'cozy-client'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import InfoIcon from 'cozy-ui/transpiled/react/Icons/Info'
 import AppLinker from 'cozy-ui-plus/dist/AppLinker'
 
 export const AboutButton = ({ appData }) => {
@@ -28,7 +27,7 @@ export const AboutButton = ({ appData }) => {
           href={href}
           onClick={onClick}
         >
-          <Icon icon={InfoIcon} />
+          <Icon icon={Info} />
         </IconButton>
       )}
     </AppLinker>
