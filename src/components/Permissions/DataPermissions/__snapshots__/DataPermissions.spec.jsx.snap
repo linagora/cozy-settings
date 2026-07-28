@@ -19,13 +19,9 @@ exports[`DataPermissions should display DataPermissions 1`] = `
           data-size="16"
           data-testid="Icon"
         >
-          <svg
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M16 7H3.83l5.59-5.59L8 0 0 8l8 8 1.41-1.41L3.83 9H16V7z"
-            />
-          </svg>
+          <div
+            data-testid="Previous"
+          />
         </div>
       </span>
       <span
@@ -38,53 +34,7 @@ exports[`DataPermissions should display DataPermissions 1`] = `
       <div
         data-size="24"
         data-testid="Icon"
-      >
-        <svg
-          fill="none"
-          viewBox="0 0 16 13"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M8 1.625h6.4c.88 0 1.6.731 1.6 1.625v8.125c0 .894-.72 1.625-1.6 1.625H1.6C.72 13 0 12.269 0 11.375l.008-9.75C.008.731.72 0 1.6 0h4.8L8 1.625z"
-            fill="url(#files_svg__paint0_linear_11302_1583)"
-            fill-rule="evenodd"
-          />
-          <path
-            clip-rule="evenodd"
-            d="M8 1.625h6.4c.88 0 1.6.731 1.6 1.625v8.125c0 .894-.72 1.625-1.6 1.625H1.6C.72 13 0 12.269 0 11.375l.008-9.75C.008.731.72 0 1.6 0h4.8L8 1.625z"
-            fill="#000"
-            fill-rule="evenodd"
-            style="mix-blend-mode: hue;"
-          />
-          <defs>
-            <lineargradient
-              gradientUnits="userSpaceOnUse"
-              id="files_svg__paint0_linear_11302_1583"
-              x1="8"
-              x2="8"
-              y1="0"
-              y2="15.75"
-            >
-              <stop
-                offset="0.044"
-                stop-color="#1D7AFF"
-              />
-              <stop
-                offset="0.13"
-                stop-color="#7CB2FF"
-              />
-              <stop
-                offset="0.617"
-                stop-color="#76AFFF"
-              />
-              <stop
-                offset="1"
-                stop-color="#4290FF"
-              />
-            </lineargradient>
-          </defs>
-        </svg>
-      </div>
+      />
       <div
         data-testid="page-title"
       >
@@ -134,13 +84,9 @@ exports[`DataPermissions should display DataPermissions 1`] = `
                 data-size="16"
                 data-testid="Icon"
               >
-                <svg
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.6 8L4.7 4.1a.948.948 0 01-.275-.7c0-.284.092-.517.275-.7a.948.948 0 01.7-.275c.283 0 .517.091.7.275l4.6 4.6c.1.1.17.208.213.325.041.116.062.241.062.375 0 .133-.02.258-.063.375a.878.878 0 01-.212.325l-4.6 4.6a.948.948 0 01-.7.275.948.948 0 01-.7-.275.948.948 0 01-.275-.7c0-.284.092-.517.275-.7L8.6 8z"
-                  />
-                </svg>
+                <div
+                  data-testid="Right"
+                />
               </div>
             </div>
           </li>
@@ -180,13 +126,9 @@ exports[`DataPermissions should display DataPermissions 1`] = `
                 data-size="16"
                 data-testid="Icon"
               >
-                <svg
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.6 8L4.7 4.1a.948.948 0 01-.275-.7c0-.284.092-.517.275-.7a.948.948 0 01.7-.275c.283 0 .517.091.7.275l4.6 4.6c.1.1.17.208.213.325.041.116.062.241.062.375 0 .133-.02.258-.063.375a.878.878 0 01-.212.325l-4.6 4.6a.948.948 0 01-.7.275.948.948 0 01-.7-.275.948.948 0 01-.275-.7c0-.284.092-.517.275-.7L8.6 8z"
-                  />
-                </svg>
+                <div
+                  data-testid="Right"
+                />
               </div>
             </div>
           </li>

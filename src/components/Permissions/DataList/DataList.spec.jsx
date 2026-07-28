@@ -51,8 +51,15 @@ jest.mock('cozy-ui/transpiled/react/NavigationList', () => {
   }
 })
 
-jest.mock('cozy-ui/transpiled/react/Icon', () => {
-  return () => <div data-testid="Icon"></div>
+jest.mock('@linagora/twake-icons', () => {
+  return {
+    Icon: ({ icon, size }) => (
+      <div data-size={size} data-testid="Icon">
+        {icon && icon()}
+      </div>
+    ),
+    Right: () => <div data-testid="Right" />
+  }
 })
 
 jest.mock('cozy-ui/transpiled/react/ListItemText', () => {

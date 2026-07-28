@@ -1,10 +1,9 @@
+import { Icon, Check } from '@linagora/twake-icons'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'
 
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import CheckIcon from 'cozy-ui/transpiled/react/Icons/Check'
 import PasswordInput from 'cozy-ui/transpiled/react/Labs/PasswordInput'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import Typography from 'cozy-ui/transpiled/react/Typography'
@@ -185,7 +184,7 @@ const PassphraseForm = ({ errors, submitting, saved, onSubmit }) => {
           className="u-mb-half"
           type="submit"
         >
-          {saved && <Icon className="u-ml-half u-valid" icon={CheckIcon} />}
+          {saved && <Icon className="u-ml-half u-valid" icon={Check} />}
         </Buttons>
         <Buttons
           component={Link}

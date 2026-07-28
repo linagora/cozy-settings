@@ -1,11 +1,9 @@
+import { Icon, Check, Copy } from '@linagora/twake-icons'
 import classNames from 'classnames'
 import React, { useState, useEffect, useRef } from 'react'
 import { useI18n } from 'twake-i18n'
 
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import CheckIcon from 'cozy-ui/transpiled/react/Icons/Check'
-import CopyIcon from 'cozy-ui/transpiled/react/Icons/Copy'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import { Media, Bd, Img } from 'cozy-ui/transpiled/react/deprecated/Media'
@@ -102,7 +100,7 @@ const StatusIcon = ({
           disabled
         >
           <Icon
-            icon={CheckIcon}
+            icon={Check}
             className={classNames(styles['set-field-saved'], 'u-valid')}
           />
         </IconButton>
@@ -120,7 +118,7 @@ const StatusIcon = ({
             zIndex: 1
           }}
         >
-          <Icon icon={CopyIcon} />
+          <Icon icon={Copy} />
         </IconButton>
       )}
     </span>

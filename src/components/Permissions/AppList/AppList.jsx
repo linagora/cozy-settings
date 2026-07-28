@@ -1,9 +1,8 @@
+import { Icon, Right } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import Divider from 'cozy-ui/transpiled/react/Divider'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon, { smallSize } from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemSecondaryAction from 'cozy-ui/transpiled/react/ListItemSecondaryAction'
@@ -62,7 +61,7 @@ const AppList = () => {
                       />
                       <ListItemSecondaryAction>
                         <Icon
-                          icon={RightIcon}
+                          icon={Right}
                           size={smallSize}
                           className="u-mr-1"
                           style={{ color: 'var(--secondaryTextColor)' }}

@@ -1,10 +1,9 @@
+import { Icon, Drive } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useInstanceInfo } from 'cozy-client'
 import { makeDiskInfos } from 'cozy-client/dist/models/instance'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import DriveIcon from 'cozy-ui/transpiled/react/Icons/Drive'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
@@ -25,7 +24,7 @@ const SubscriptionStorageItem = () => {
   return (
     <ListItem size="small" ellipsis={false}>
       <ListItemIcon>
-        <Icon icon={DriveIcon} />
+        <Icon icon={Drive} />
       </ListItemIcon>
       <ListItemText
         primary={t('Subscription.included.storage', { humanDiskQuota })}

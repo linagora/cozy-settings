@@ -1,4 +1,21 @@
 /* eslint-disable react-hooks/static-components */
+import {
+  Cloud,
+  CloudSync,
+  Contract,
+  Devices,
+  Email,
+  Globe,
+  GraphCircle,
+  Hand,
+  HelpOutlined,
+  Justice,
+  LockScreen,
+  Logout,
+  Openwith,
+  Palette,
+  People
+} from '@linagora/twake-icons'
 import React from 'react'
 import { NavLink as RouterLink } from 'react-router-dom'
 import { useI18n } from 'twake-i18n'
@@ -7,21 +24,6 @@ import { useInstanceInfo } from 'cozy-client'
 import { makeDiskInfos } from 'cozy-client/dist/models/instance'
 import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
-import CloudIcon from 'cozy-ui/transpiled/react/Icons/Cloud'
-import CloudSyncIcon from 'cozy-ui/transpiled/react/Icons/CloudSync'
-import ContractIcon from 'cozy-ui/transpiled/react/Icons/Contract'
-import DevicesIcon from 'cozy-ui/transpiled/react/Icons/Devices'
-import EmailIcon from 'cozy-ui/transpiled/react/Icons/Email'
-import GlobeIcon from 'cozy-ui/transpiled/react/Icons/Globe'
-import GraphCircle from 'cozy-ui/transpiled/react/Icons/GraphCircle'
-import HandIcon from 'cozy-ui/transpiled/react/Icons/Hand'
-import HelpOutlinedIcon from 'cozy-ui/transpiled/react/Icons/HelpOutlined'
-import JusticeIcon from 'cozy-ui/transpiled/react/Icons/Justice'
-import LockScreen from 'cozy-ui/transpiled/react/Icons/LockScreen'
-import Logout from 'cozy-ui/transpiled/react/Icons/Logout'
-import OpenwithIcon from 'cozy-ui/transpiled/react/Icons/Openwith'
-import PaletteIcon from 'cozy-ui/transpiled/react/Icons/Palette'
-import PeopleIcon from 'cozy-ui/transpiled/react/Icons/People'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import { NavDesktopDropdown } from 'cozy-ui/transpiled/react/Nav'
@@ -71,31 +73,31 @@ export const SidebarDesktop = () => {
 
         <NavItem>
           <NavLink to={routes.profile}>
-            <NavIcon icon={PeopleIcon} />
+            <NavIcon icon={People} />
             <NavText>{t('Nav.profile')}</NavText>
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink to={routes.appearance}>
-            <NavIcon icon={PaletteIcon} />
+            <NavIcon icon={Palette} />
             <NavText>{t('Nav.appearance')}</NavText>
           </NavLink>
         </NavItem>
         {flag('settings.subscription') ? (
           <NavItem>
             <NavLink to={routes.subscription}>
-              <NavIcon icon={CloudIcon} />
+              <NavIcon icon={Cloud} />
               <NavText>{t('Nav.primary_plan')}</NavText>
             </NavLink>
           </NavItem>
         ) : canOpenPremiumLink ? (
           <NavItem>
             <NavLink to={premiumLink} target="_blank">
-              <NavIcon icon={CloudIcon} />
+              <NavIcon icon={Cloud} />
               <NavText className="u-flex-grow-1">
                 {t('Nav.primary_plan')}
               </NavText>
-              <NavIcon icon={OpenwithIcon} />
+              <NavIcon icon={Openwith} />
             </NavLink>
           </NavItem>
         ) : null}
@@ -120,7 +122,7 @@ export const SidebarDesktop = () => {
         {flag('settings.migration.enabled') && (
           <NavItem>
             <NavLink to={routes.migration}>
-              <NavIcon icon={CloudSyncIcon} />
+              <NavIcon icon={CloudSync} />
               <NavText>{t('Nav.migration')}</NavText>
             </NavLink>
           </NavItem>
@@ -130,20 +132,20 @@ export const SidebarDesktop = () => {
           {flag('settings.permissions-dashboard') && (
             <NavItem>
               <NavLink to={routes.appList}>
-                <NavIcon icon={HandIcon} />
+                <NavIcon icon={Hand} />
                 <NavText>{t('Nav.permissions')}</NavText>
               </NavLink>
             </NavItem>
           )}
           <NavItem>
             <NavLink to={routes.connectedDevices}>
-              <NavIcon icon={DevicesIcon} />
+              <NavIcon icon={Devices} />
               <NavText>{t('Nav.connected_devices')}</NavText>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink to={routes.sessions}>
-              <NavIcon icon={GlobeIcon} />
+              <NavIcon icon={Globe} />
               <NavText>{t('Nav.sessions')}</NavText>
             </NavLink>
           </NavItem>
@@ -152,27 +154,27 @@ export const SidebarDesktop = () => {
         <NavDesktopDropdown label={t('Nav.header_other')}>
           <NavItem>
             <NavLink to={context?.data?.help_link} target="_blank">
-              <NavIcon icon={HelpOutlinedIcon} />
+              <NavIcon icon={HelpOutlined} />
               <NavText className="u-flex-grow-1">
                 {t('Nav.primary_faq')}
               </NavText>
-              <NavIcon icon={OpenwithIcon} />
+              <NavIcon icon={Openwith} />
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink to={routes.support}>
-              <NavIcon icon={EmailIcon} />
+              <NavIcon icon={Email} />
               <NavText>{t('Nav.contact_support')}</NavText>
             </NavLink>
           </NavItem>
           {instance.data.legal_notice_url && (
             <NavItem>
               <NavLink to={instance.data.legal_notice_url} target="_blank">
-                <NavIcon icon={JusticeIcon} />
+                <NavIcon icon={Justice} />
                 <NavText className="u-flex-grow-1">
                   {t('Nav.legal_notice')}
                 </NavText>
-                <NavIcon icon={OpenwithIcon} />
+                <NavIcon icon={Openwith} />
               </NavLink>
             </NavItem>
           )}
@@ -183,11 +185,11 @@ export const SidebarDesktop = () => {
               }.pdf`}
               target="_blank"
             >
-              <NavIcon icon={ContractIcon} />
+              <NavIcon icon={Contract} />
               <NavText className="u-flex-grow-1">
                 {t('Nav.terms_of_service')}
               </NavText>
-              <NavIcon icon={OpenwithIcon} />
+              <NavIcon icon={Openwith} />
             </NavLink>
           </NavItem>
           <NavItem onClick={() => logout()}>

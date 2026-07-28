@@ -1,9 +1,7 @@
+import { DeviceBrowser, Laptop, Phone } from '@linagora/twake-icons'
 import semver from 'semver'
 
 import flag from 'cozy-flags'
-import DeviceBrowserIcon from 'cozy-ui/transpiled/react/Icons/DeviceBrowser'
-import LaptopIcon from 'cozy-ui/transpiled/react/Icons/Laptop'
-import PhoneIcon from 'cozy-ui/transpiled/react/Icons/Phone'
 
 import {
   DISPLAYED_CLIENTS,
@@ -11,12 +9,12 @@ import {
 } from '@/lib/deviceConfigurationHelper'
 
 const deviceKindToIcon = {
-  mobile: PhoneIcon,
-  browser: DeviceBrowserIcon
+  mobile: Phone,
+  browser: DeviceBrowser
 }
 
 export const getDeviceIcon = device => {
-  return deviceKindToIcon[device.client_kind] || LaptopIcon
+  return deviceKindToIcon[device.client_kind] || Laptop
 }
 
 const isCozyDesktopApp = device =>

@@ -1,9 +1,7 @@
+import { Icon, Cross } from '@linagora/twake-icons'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { translate } from 'twake-i18n'
-
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import CrossIcon from 'cozy-ui/transpiled/react/Icons/Cross'
 
 import ClaudyAction from '@/services/ClaudyAction'
 
@@ -166,7 +164,7 @@ export class Claudy extends Component {
         <header className="coz-claudy-menu-header">
           <h2 className="coz-claudy-menu-title">{t('claudy.title')}</h2>
           <button className="coz-btn-close" onClick={onClose}>
-            <Icon icon={CrossIcon} color="#95999D" width="24" height="24" />
+            <Icon icon={Cross} color="#95999D" width="24" height="24" />
           </button>
           <button
             className="coz-claudy-menu-header-back-button"

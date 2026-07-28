@@ -1,10 +1,9 @@
+import { Icon, Paperplane } from '@linagora/twake-icons'
 import React, { Component } from 'react'
 import { translate } from 'twake-i18n'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Checkbox from 'cozy-ui/transpiled/react/Checkbox'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import PaperplaneIcon from 'cozy-ui/transpiled/react/Icons/Paperplane'
 
 export class Support extends Component {
   constructor(props) {
@@ -145,7 +144,7 @@ export class Support extends Component {
               onClick={() => this.sendMessage()}
               disabled={!message}
               busy={isSending}
-              startIcon={<Icon icon={PaperplaneIcon} />}
+              startIcon={<Icon icon={Paperplane} />}
               label={t('claudy.actions.support.button')}
             />
           </div>

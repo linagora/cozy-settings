@@ -1,12 +1,10 @@
+import { Icon, CheckCircle, Trash } from '@linagora/twake-icons'
 import React, { useState, useCallback } from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useInstanceInfo, useQuery, isQueryLoading } from 'cozy-client'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Chip from 'cozy-ui/transpiled/react/Chips'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import CheckCircleIcon from 'cozy-ui/transpiled/react/Icons/CheckCircle'
-import DeleteIcon from 'cozy-ui/transpiled/react/Icons/Trash'
 import List from 'cozy-ui/transpiled/react/List'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
@@ -36,7 +34,7 @@ const NextcloudNameWithStatus = ({ t, isNextcloudMigrated }) => (
         label={t('MigrationView.migrated')}
         color="success"
         variant="ghost"
-        icon={<Icon icon={CheckCircleIcon} size="12" />}
+        icon={<Icon icon={CheckCircle} size="12" />}
         className="u-ml-half"
       />
     )}
@@ -58,7 +56,7 @@ const NextcloudMigrationActionButton = ({
         label={t('MigrationView.cleanNextcloud')}
         size="small"
         className={className}
-        startIcon={<Icon icon={DeleteIcon} size={14} />}
+        startIcon={<Icon icon={Trash} size={14} />}
         color="error"
         onClick={onRequestClean}
         disabled={isCleaning}
@@ -165,7 +163,7 @@ const DumbMigration = ({
 
       <div className="u-flex u-flex-items-center u-mb-2">
         <Icon
-          icon={CheckCircleIcon}
+          icon={CheckCircle}
           color="var(--successColor)"
           size={16}
           className="u-mr-half"

@@ -1,16 +1,18 @@
+import {
+  Icon,
+  BrowserBrave,
+  BrowserChrome,
+  BrowserDuckduckgo,
+  BrowserEdge,
+  BrowserFirefox,
+  BrowserIe,
+  BrowserSafari,
+  DeviceBrowser
+} from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 import { UAParser } from 'ua-parser-js'
 
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import BrowserBraveIcon from 'cozy-ui/transpiled/react/Icons/BrowserBrave'
-import BrowserChromeIcon from 'cozy-ui/transpiled/react/Icons/BrowserChrome'
-import BrowserDuckduckgoIcon from 'cozy-ui/transpiled/react/Icons/BrowserDuckduckgo'
-import BrowserEdgeIcon from 'cozy-ui/transpiled/react/Icons/BrowserEdge'
-import BrowserFirefoxIcon from 'cozy-ui/transpiled/react/Icons/BrowserFirefox'
-import BrowserIeIcon from 'cozy-ui/transpiled/react/Icons/BrowserIe'
-import BrowserSafariIcon from 'cozy-ui/transpiled/react/Icons/BrowserSafari'
-import DeviceBrowserIcon from 'cozy-ui/transpiled/react/Icons/DeviceBrowser'
 import { TableRow, TableCell } from 'cozy-ui/transpiled/react/deprecated/Table'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
@@ -20,27 +22,27 @@ const getBrowserIcon = session => {
   const ua = UAParser(session.user_agent)
 
   if (ua.browser.name === 'Brave') {
-    return BrowserBraveIcon
+    return BrowserBrave
   }
   if (ua.browser.name.startsWith('Chrom')) {
-    return BrowserChromeIcon
+    return BrowserChrome
   }
   if (ua.browser.name === 'DuckDuckGo') {
-    return BrowserDuckduckgoIcon
+    return BrowserDuckduckgo
   }
   if (ua.browser.name === 'Edge') {
-    return BrowserEdgeIcon
+    return BrowserEdge
   }
   if (ua.browser.name.startsWith('Firefox')) {
-    return BrowserFirefoxIcon
+    return BrowserFirefox
   }
   if (ua.browser.name === 'IE') {
-    return BrowserIeIcon
+    return BrowserIe
   }
   if (ua.browser.name === 'Safari') {
-    return BrowserSafariIcon
+    return BrowserSafari
   }
-  return DeviceBrowserIcon
+  return DeviceBrowser
 }
 
 const SessionsViewRow = ({ session, displayModal }) => {

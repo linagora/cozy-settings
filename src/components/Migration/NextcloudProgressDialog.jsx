@@ -1,3 +1,4 @@
+import { Icon, FolderOpen } from '@linagora/twake-icons'
 import Lottie from 'lottie-react'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
@@ -6,8 +7,6 @@ import { useClient } from 'cozy-client'
 import Avatar from 'cozy-ui/transpiled/react/Avatar'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import Dialog from 'cozy-ui/transpiled/react/Dialog'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import FolderOpen from 'cozy-ui/transpiled/react/Icons/FolderOpen'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 
 import MigrationProgressInfo from './MigrationProgressInfo'

@@ -1,3 +1,4 @@
+import { Icon, Previous } from '@linagora/twake-icons'
 import classNames from 'classnames'
 import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
@@ -5,9 +6,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery, isQueryLoading, hasQueryBeenLoaded } from 'cozy-client'
 import useFetchJSON from 'cozy-client/dist/hooks/useFetchJSON'
 import { getAppDisplayName } from 'cozy-client/dist/models/applications'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import PreviousIcon from 'cozy-ui/transpiled/react/Icons/Previous'
 import NavigationList from 'cozy-ui/transpiled/react/NavigationList'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import Typography from 'cozy-ui/transpiled/react/Typography'
@@ -108,7 +107,7 @@ const AppPermissions = ({ t }) => {
             >
               {!isMobile && !isTablet && (
                 <IconButton className="u-mr-half" href="#/permissions">
-                  <Icon icon={PreviousIcon} size={16} />
+                  <Icon icon={Previous} size={16} />
                 </IconButton>
               )}
               <div style={{ width: '48px' }}>

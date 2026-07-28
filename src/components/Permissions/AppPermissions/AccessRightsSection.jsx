@@ -1,11 +1,8 @@
+import { Icon, CozyLock, CozyRelease, Right } from '@linagora/twake-icons'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Divider from 'cozy-ui/transpiled/react/Divider'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import CozyLockIcon from 'cozy-ui/transpiled/react/Icons/CozyLock'
-import CozyReleaseIcon from 'cozy-ui/transpiled/react/Icons/CozyRelease'
-import RightIcon from 'cozy-ui/transpiled/react/Icons/Right'
 import ListItem from 'cozy-ui/transpiled/react/ListItem'
 import ListItemIcon, {
   mediumSize,
@@ -51,7 +48,7 @@ const AccessRightsSection = ({
         <ListItem ellipsis={false}>
           <ListItemIcon>
             <Icon
-              icon={isRemoteDoctypes ? CozyReleaseIcon : CozyLockIcon}
+              icon={isRemoteDoctypes ? CozyRelease : CozyLock}
               size={largeSize}
             />
           </ListItemIcon>
@@ -78,10 +75,7 @@ const AccessRightsSection = ({
               <ListItem button onClick={() => openModal(type)} ellipsis={false}>
                 <ListItemIcon>
                   <Icon
-                    icon={
-                      require(`cozy-ui/transpiled/react/Icons/${iconName}`)
-                        .default
-                    }
+                    icon={require('@linagora/twake-icons')[iconName]}
                     size={mediumSize}
                   />
                 </ListItemIcon>
@@ -89,7 +83,7 @@ const AccessRightsSection = ({
                   primary={title}
                   secondary={t(displayPermissions(verbs))}
                 />
-                <Icon icon={RightIcon} />
+                <Icon icon={Right} />
               </ListItem>
               {index !== sortedPermissionsByName.length - 1 && (
                 <Divider variant="inset" />

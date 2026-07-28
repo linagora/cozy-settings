@@ -1,8 +1,8 @@
+import { Cloud } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import flag from 'cozy-flags'
-import CloudIcon from 'cozy-ui/transpiled/react/Icons/Cloud'
 
 import { usePremium } from '@/components/Premium/PremiumProvider'
 import { MenuItemAnchor } from '@/components/menu/MenuItemAnchor'
@@ -21,7 +21,7 @@ const SubscriptionMenuItem = () => {
       <MenuItemNavLink
         to={routes.subscription}
         primary={t('Nav.primary_plan')}
-        icon={CloudIcon}
+        icon={Cloud}
       />
     )
   }
@@ -32,7 +32,7 @@ const SubscriptionMenuItem = () => {
         primary={t('Nav.primary_plan')}
         href={premiumLink}
         target="_blank"
-        icon={CloudIcon}
+        icon={Cloud}
       />
     )
   }

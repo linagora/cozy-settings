@@ -1,10 +1,9 @@
+import { Icon, Trash } from '@linagora/twake-icons'
 import React from 'react'
 import { useI18n } from 'twake-i18n'
 
 import { useClient, generateWebLink } from 'cozy-client'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
-import TrashIcon from 'cozy-ui/transpiled/react/Icons/Trash'
 import AppLinker from 'cozy-ui-plus/dist/AppLinker'
 
 export const UninstallButton = ({ appData }) => {
@@ -28,7 +27,7 @@ export const UninstallButton = ({ appData }) => {
           href={href}
           onClick={onClick}
         >
-          <Icon icon={TrashIcon} />
+          <Icon icon={Trash} />
         </IconButton>
       )}
     </AppLinker>

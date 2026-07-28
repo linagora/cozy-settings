@@ -1,10 +1,7 @@
+import { Icon, Gear, Sync, Trash } from '@linagora/twake-icons'
 import React, { useCallback, useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import GearIcon from 'cozy-ui/transpiled/react/Icons/Gear'
-import SyncIcon from 'cozy-ui/transpiled/react/Icons/Sync'
-import TrashIcon from 'cozy-ui/transpiled/react/Icons/Trash'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import ActionMenu, {
   ActionMenuHeader
@@ -46,7 +43,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
                 <Typography variant="h6">{device.client_name}</Typography>
                 <Typography variant="caption" color="textSecondary">
                   <Icon
-                    icon={SyncIcon}
+                    icon={Sync}
                     size={8}
                     color="var(--secondaryTextColor)"
                   />
@@ -67,7 +64,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
             <DevicesMoreMenuItem
               className={tableStyles['action-menu-item']}
               onClick={onConfigure}
-              icon={GearIcon}
+              icon={Gear}
               text={t('DevicesView.configure')}
             />
           ) : null}
@@ -77,7 +74,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
               if (isNeverDisplayedDevice(device)) return
               onRevoke()
             }}
-            icon={TrashIcon}
+            icon={Trash}
             color="error"
             text={t('DevicesView.revoke')}
             disabled={isNeverDisplayedDevice(device)}
