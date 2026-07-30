@@ -14,6 +14,7 @@ const PasswordSection = () => {
   const { hasPassword } = useHasPassword()
 
   const passwordUrl = flag('settings.password.url')
+  const isPasswordExternal = flag('settings.password.external')
   const isPasswordReadonly = flag('settings.password.readonly')
 
   if (passwordUrl) {
@@ -33,6 +34,19 @@ const PasswordSection = () => {
           target="_blank"
           disabled={isPasswordReadonly}
         />
+      </Stack>
+    )
+  }
+
+  if (isPasswordExternal) {
+    return (
+      <Stack spacing="m">
+        <Typography variant="h5" gutterBottom>
+          {t('ProfileView.password.title')}
+        </Typography>
+        <Typography variant="body1">
+          {t('ProfileView.password.external_label')}
+        </Typography>
       </Stack>
     )
   }
