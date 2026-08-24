@@ -68,7 +68,7 @@ const ProfileView = ({
         {isApplicativeAccountsEnabled && <ApplicativeAccountsSection />}
         {isMatrixEnabled && (
           <MatrixIdSection
-            email={instanceData.email}
+            matrixId={instanceData.matrix_id}
             isChatAppInstalled={isChatAppInstalled}
           />
         )}
