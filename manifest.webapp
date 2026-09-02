@@ -12,6 +12,11 @@
   "version": "1.61.0",
   "licence": "AGPL-3.0",
   "permissions": {
+    "banners": {
+      "description": "Required by the cozy-bar to display platform messages",
+      "type": "io.cozy.banners",
+      "verbs": ["GET", "PUT"]
+    },
     "settings": {
       "description": "Required to manage your settings",
       "type": "io.cozy.settings",
