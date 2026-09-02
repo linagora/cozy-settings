@@ -59,7 +59,7 @@
     "@sentry/integrations": "7.118.0",
     "@sentry/react": "7.118.0",
     "classnames": "2.3.1",
-    "cozy-bar": "^35.2.3",
+    "cozy-bar": "^35.3.0",
     "cozy-client": "^60.29.0",
     "cozy-dataproxy-lib": "^4.15.5",
     "cozy-device-helper": "^4.0.3",
