@@ -3008,14 +3008,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@linagora/twake-icons@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "@linagora/twake-icons@npm:2.7.0"
+"@linagora/twake-icons@npm:^2.10.0":
+  version: 2.10.0
+  resolution: "@linagora/twake-icons@npm:2.10.0"
   dependencies:
     mime: "npm:4.1.0"
   peerDependencies:
     react: ^18
-  checksum: 10c0/03fcea699a7a7f7d821ee05b5b36eac58f3e14c516891404e7f1b5a5828d2fc724253c9e2f60731748de4c7e07244dca0e9b9199031eb56d5994655d362eb295
+  checksum: 10c0/201f1ebad55defa76c18159a6cd6283638ca4105ffec55e6f97a47e275b3e2d7fa179d85a9c6ff5e6a691e3c4aa21a62f25a519de2280d52a2c8d3df6ef730a4
   languageName: node
   linkType: hard
 
@@ -8506,7 +8506,7 @@ __metadata:
     "@babel/plugin-syntax-import-meta": "npm:7.10.4"
     "@babel/plugin-syntax-top-level-await": "npm:7.14.5"
     "@babel/polyfill": "npm:^7.10.4"
-    "@linagora/twake-icons": "npm:^2.7.0"
+    "@linagora/twake-icons": "npm:^2.10.0"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
     "@rsbuild/core": "npm:^1.5.15"
     "@sentry/integrations": "npm:7.118.0"
