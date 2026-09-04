@@ -54,7 +54,7 @@
     "typescript-plugin-css-modules": "3.4.0"
   },
   "dependencies": {
-    "@linagora/twake-icons": "^2.7.0",
+    "@linagora/twake-icons": "^2.10.0",
     "@material-ui/lab": "4.0.0-alpha.61",
     "@sentry/integrations": "7.118.0",
     "@sentry/react": "7.118.0",
