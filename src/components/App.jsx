@@ -26,6 +26,7 @@ export const App = () => {
   const { isMobile, isTablet } = useBreakpoints()
   const isSmallView = isMobile || isTablet
   const isBigView = !isSmallView
+  const isMigrationEnabled = flag('settings.migration.enabled')
 
   return (
     <Layout
@@ -36,10 +37,12 @@ export const App = () => {
       <Alerter />
       {isBigView && <SidebarDesktop />}
       <RealTimeQueries doctype="io.cozy.oauth.clients" />
-      <RealTimeQueries doctype="io.cozy.nextcloud.migrations" />
+      {isMigrationEnabled && (
+        <RealTimeQueries doctype="io.cozy.nextcloud.migrations" />
+      )}
       <SettingsRealTimeQueries />
       <Main>
-        <MigrationProgressBanner />
+        {isMigrationEnabled && <MigrationProgressBanner />}
         <Content>
           <AppRouter />
         </Content>
