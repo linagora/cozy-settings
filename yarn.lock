@@ -8192,17 +8192,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cozy-bar@npm:^35.2.3":
-  version: 35.2.3
-  resolution: "cozy-bar@npm:35.2.3"
+"cozy-bar@npm:^35.3.0":
+  version: 35.3.1
+  resolution: "cozy-bar@npm:35.3.1"
   dependencies:
     classnames: "npm:^2.5.1"
     lodash.set: "npm:^4.3.2"
     prop-types: "npm:15.7.2"
   peerDependencies:
     "@cozy/minilog": ">=1.0.0"
-    "@linagora/twake-icons": ">=2.6.6"
-    cozy-client: ">=60.21.0"
+    "@linagora/twake-icons": ">=2.10.0"
+    cozy-client: ">=60.32.0"
     cozy-dataproxy-lib: ">=4.1.0"
     cozy-device-helper: ">=2.6.0"
     cozy-flags: ">=4.6.1"
@@ -8215,7 +8215,7 @@ __metadata:
     react-dom: ^16 || ^17 || ^18
     react-router-dom: ">=6.14.2"
     twake-i18n: ">=0.3.0"
-  checksum: 10c0/445eafa34d3f9e69e013a104be595aa2f624e846aca632269d32417432dd296fc982d048c136de019ce56eb58945929befe03f2f00d13d4a8992a6c385ec4bd7
+  checksum: 10c0/034ecbc43c601b5d2275f358bd7b453501e4c1db8b5f3313a5148cfcb11f70a6794c0dad9413923da0a64c319528fb2fb086f6061aed7b1d79374e0793923f01
   languageName: node
   linkType: hard
 
@@ -8485,7 +8485,7 @@ __metadata:
     bundlemon: "npm:3.1.0"
     classnames: "npm:2.3.1"
     cozy-app-publish: "npm:^0.44.1"
-    cozy-bar: "npm:^35.2.3"
+    cozy-bar: "npm:^35.3.0"
     cozy-client: "npm:^60.29.0"
     cozy-dataproxy-lib: "npm:^4.15.5"
     cozy-device-helper: "npm:^4.0.3"
