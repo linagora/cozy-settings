@@ -22,11 +22,13 @@ describe('PasswordSection', () => {
   const setup = ({
     hasPassword,
     passwordUrl = null,
+    isPasswordExternal = false,
     isPasswordReadonly = false
   }) => {
     useHasPassword.mockReturnValue({ hasPassword })
     flag.mockImplementation(flagName => {
       if (flagName === 'settings.password.url') return passwordUrl
+      if (flagName === 'settings.password.external') return isPasswordExternal
       if (flagName === 'settings.password.readonly') return isPasswordReadonly
       return null
     })
@@ -77,6 +79,27 @@ describe('PasswordSection', () => {
         'aria-disabled',
         'true'
       )
+    })
+
+    it('should render explanation text and no button when password is external', () => {
+      setup({ hasPassword: true, isPasswordExternal: true })
+      expect(
+        screen.getByText(
+          'Your password can be changed in your identity provider'
+        )
+      ).toBeTruthy()
+      expect(screen.queryByText('Update my password')).toBeFalsy()
+      expect(screen.queryByRole('button')).toBeFalsy()
+    })
+
+    it('should show explanation regardless of hasPassword when external', () => {
+      setup({ hasPassword: false, isPasswordExternal: true })
+      expect(
+        screen.getByText(
+          'Your password can be changed in your identity provider'
+        )
+      ).toBeTruthy()
+      expect(screen.queryByRole('button')).toBeFalsy()
     })
 
     it('should not render anything when user has no password', () => {
