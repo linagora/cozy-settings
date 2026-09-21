@@ -26,7 +26,6 @@ const EmailReadOnlySection = ({ isMailAppInstalled }) => {
       name="email"
       type="email"
       title={t('EmailReadOnlySection.title')}
-      label={t('EmailReadOnlySection.subtitle')}
       tag={showTag ? t('EmailReadOnlySection.tag') : null}
       value={instance.email}
       copyable={true}

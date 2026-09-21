@@ -513,7 +513,6 @@
   },
   "EmailReadOnlySection": {
     "title": "Email",
-    "subtitle": "Cố định và được sử dụng để xác thực trong mạng Matrix.",
     "tag": "Không hoạt động"
   },
   "EmailModal": {

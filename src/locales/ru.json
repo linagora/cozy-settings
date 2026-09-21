@@ -511,8 +511,7 @@
     }
   },
   "EmailReadOnlySection": {
-    "title": "Email",
-    "subtitle": "Используется для входа в аккаунт и подтверждения личности. Может использоваться как способ авторизации в Twake"
+    "title": "Email"
   },
   "EmailModal": {
     "title": "Новый email",

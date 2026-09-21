@@ -545,7 +545,6 @@
   },
   "EmailReadOnlySection": {
     "title": "E-mail",
-    "subtitle": "Fixe et utilisée pour l'authentification au sein du réseau Matrix.",
     "tag": "Inactif"
   },
   "EmailModal": {
