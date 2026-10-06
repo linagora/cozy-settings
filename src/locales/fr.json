@@ -68,6 +68,9 @@
       }
     },
     "byEmailOnly": {
+      "mail": {
+        "subject": "Demande de suppression du Twake %{domain} avec l'adresse email %{email}"
+      },
       "success": "La demande a été envoyée et sera traitée rapidement par nos équipes."
     },
     "forceDelete": {
@@ -261,7 +264,10 @@
       "fr": "Français",
       "en": "English",
       "ru": "Русский",
-      "vi": "Tiếng Việt"
+      "vi": "Tiếng Việt",
+      "es": "Español",
+      "de": "Deutsch",
+      "it": "Italiano"
     }
   },
   "AppearanceView": {

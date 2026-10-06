@@ -10,7 +10,7 @@ import Select from '@/components/Select'
 import { useSetLang } from '@/hooks/useSetLang'
 import { buildSettingsInstanceQuery } from '@/lib/queries'
 
-const LANG_OPTIONS = ['en', 'fr', 'ru', 'vi']
+const LANG_OPTIONS = ['en', 'fr', 'ru', 'vi', 'es', 'de', 'it']
 
 const LanguageSection = () => {
   const { t } = useI18n()

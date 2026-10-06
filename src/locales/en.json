@@ -264,7 +264,10 @@
       "fr": "Français",
       "en": "English",
       "ru": "Русский",
-      "vi": "Tiếng Việt"
+      "vi": "Tiếng Việt",
+      "es": "Español",
+      "de": "Deutsch",
+      "it": "Italiano"
     }
   },
   "AppearanceView": {
