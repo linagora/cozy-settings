@@ -90,7 +90,13 @@
       }
     },
     "byEmailOnly": {
+      "mail": {
+        "subject": "Yêu cầu xóa Twake %{domain} với email %{email}"
+      },
       "success": "Yêu cầu đã được gửi và sẽ được đội ngũ của chúng tôi xử lý nhanh chóng."
+    },
+    "forceDelete": {
+      "success": "Tài khoản của bạn đã được xóa thành công."
     },
     "success": {
       "message": "Yêu cầu xóa của bạn đã được gửi."
@@ -128,7 +134,7 @@
     "contact_support": "Liên hệ chúng tôi",
     "terms_of_service": "Điều khoản dịch vụ",
     "legal_notice": "Thông báo pháp lý",
-    "migration": "Migration"
+    "migration": "Di chuyển dữ liệu"
   },
   "loading": {
     "loading": "Đang tải"
@@ -197,7 +203,9 @@
       "title": "Số điện thoại",
       "label": "Được dùng để gửi thông báo và cho phép khôi phục mật khẩu.",
       "change_button": "Thay đổi số điện thoại",
-      "invalid": "Số điện thoại không hợp lệ"
+      "invalid": "Số điện thoại không hợp lệ",
+      "add_alert_title": "Luôn giữ kết nối!",
+      "add_alert_description": "Thêm số điện thoại giúp bảo mật tài khoản của bạn. Việc thiết lập chỉ mất một chút thời gian."
     },
     "default_redirection": {
       "title": "Màn hình chính",
@@ -286,7 +294,34 @@
     "head_actions": "Hành động",
     "revoke": "thu hồi",
     "configure": "cấu hình",
-    "sync_date_format": "d LLL, yyyy"
+    "sync_date_format": "d MMM, yyyy",
+    "create_oauth_client": "Tạo ứng dụng khách OAuth",
+    "pending": "(Đang chờ)"
+  },
+  "createOAuthClient": {
+    "title": "Tạo ứng dụng khách OAuth",
+    "description": "Tạo ứng dụng khách OAuth để ứng dụng bên thứ ba có thể kết nối với Twake của bạn.",
+    "validation_error": "Vui lòng điền ít nhất tên ứng dụng khách và một URL chuyển hướng.",
+    "error": "Đã xảy ra lỗi khi tạo ứng dụng khách OAuth, vui lòng thử lại sau.",
+    "success_description": "Ứng dụng khách OAuth đã được tạo. Hãy sao chép các giá trị này và lưu trữ an toàn. Bạn sẽ không thể xem lại mã bí mật.",
+    "client_id": "ID ứng dụng khách",
+    "client_secret": "Mã bí mật ứng dụng khách",
+    "client_name": "Tên ứng dụng khách",
+    "redirect_uri": "URL chuyển hướng",
+    "client_kind": "Loại ứng dụng khách",
+    "software_id": "ID phần mềm",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "validate": "Tạo ứng dụng khách",
+    "copied": "Đã sao chép vào clipboard",
+    "copy_failed": "Không thể sao chép vào clipboard",
+    "copyClientId": "Sao chép ID ứng dụng khách",
+    "copyClientSecret": "Sao chép mã bí mật ứng dụng khách",
+    "add_redirect_uri": "Thêm URL chuyển hướng",
+    "remove_redirect_uri": "Xóa URL này",
+    "client_name_placeholder": "Ứng dụng của tôi",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
   },
   "StorageView": {
     "title": "Lưu trữ",
@@ -300,7 +335,7 @@
   },
   "SessionsView": {
     "title": "Lịch sử kết nối web",
-    "sync_date_format": "d LLL, yyyy",
+    "sync_date_format": "d MMM, yyyy",
     "delete": "Xóa tất cả phiên khác",
     "infos": {
       "server_error": "Đã xảy ra lỗi với máy chủ. Vui lòng tải lại trang.",
@@ -531,16 +566,27 @@
   "Subscription": {
     "title": "Gói và tùy chọn",
     "included": {
-      "title": "Bao gồm trong gói của bạn:",
+      "title": "Gói hiện tại",
       "flags": {
         "harvest.accounts.max": "Tự động thu thập tài liệu và dữ liệu",
-        "mespapiers.papers.max": "Số giấy tờ thêm thủ công",
-        "drive.office.write": "Trình chỉnh sửa tài liệu Office trực tuyến (xử lý văn bản, bảng tính và trình chiếu)",
-        "passwords.can-share-organizations": "Chia sẻ mật khẩu",
-        "cozy.oauthclients.max": "Số thiết bị được phép tối đa",
-        "coachco2.max-days-to-capture": "Ghi lại chuyến đi"
+        "mespapiers.papers.max": "Số giấy tờ thêm thủ công"
       },
-      "storage": "Lưu trữ: %{humanDiskQuota} GB",
+      "onlyOffice": {
+        "default": "Trình đọc tài liệu Office trực tuyến",
+        "write": "Trình soạn thảo tài liệu Office trực tuyến"
+      },
+      "passwords": {
+        "default": "Tự động điền mật khẩu đã lưu",
+        "share": "Chia sẻ mật khẩu"
+      },
+      "devices": {
+        "unlimited": "Không giới hạn thiết bị được ủy quyền",
+        "up_to": "Số thiết bị được ủy quyền: tối đa %{smart_count}"
+      },
+      "storage": "%{humanDiskQuota} GB lưu trữ đám mây",
+      "support": "Hỗ trợ nâng cao",
+      "notes": "Tạo ghi chú đơn giản và cộng tác",
+      "store": "Cài đặt thêm ứng dụng để mở rộng Twake của bạn",
       "max_days": ": tối đa %{smart_count} ngày |||| : tối đa %{smart_count} ngày",
       "accounts": ": %{smart_count} dịch vụ đã kết nối |||| : %{smart_count} dịch vụ đã kết nối",
       "accounts_unlimited": ": số lượng dịch vụ kết nối không giới hạn",
@@ -548,6 +594,7 @@
       "numeric_flag": ": lên đến %{smart_count}",
       "numeric_flag_unlimited": ": không giới hạn"
     },
+    "can_be_canceled": "Có thể hủy gói đăng ký bất cứ lúc nào",
     "action": "Quản lý gói của tôi"
   },
   "AvatarSection": {
