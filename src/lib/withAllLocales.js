@@ -1,9 +1,17 @@
 import withLocales from 'twake-i18n/dist/withLocales'
 
-const dictRequire = lang => {
-  const cozyClientLocales = require(
-    `cozy-client/dist/models/doctypes/locales/${lang}.json`
-  )
+const requireCozyClientLocales = lang => {
+  try {
+    return require(`cozy-client/dist/models/doctypes/locales/${lang}.json`)
+  } catch {
+    // The installed cozy-client may not ship doctypes translations for every
+    // language the app supports: fall back to English for this part only.
+    return require('cozy-client/dist/models/doctypes/locales/en.json')
+  }
+}
+
+export const dictRequire = lang => {
+  const cozyClientLocales = requireCozyClientLocales(lang)
   const cozySettingsLocales = require(`../locales/${lang}.json`)
   return { CozyPermissions: cozyClientLocales, ...cozySettingsLocales }
 }
