@@ -1,0 +1,721 @@
+{
+  "manifest": {
+    "name": "Einstellungen"
+  },
+  "DeleteAccount": {
+    "title": "Ihr Konto löschen",
+    "label": "Sie können Ihr Twake jederzeit löschen. Achtung: Sobald Ihr Konto gelöscht ist, werden Ihre Daten vollständig gelöscht. Dies kann nicht rückgängig gemacht werden.",
+    "button": {
+      "label": "Mein Konto löschen"
+    },
+    "error": {
+      "message": "Beim Senden der Anfrage zur Kontolöschung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder wenden Sie sich an unseren Support."
+    },
+    "popup": {
+      "deleteLater": "Später löschen",
+      "continue": "Weiter",
+      "chat": {
+        "conversations": {
+          "title": "Verlust der Unterhaltungen",
+          "description": "Wenn Sie Ihr Konto löschen, gehen alle Ihre Unterhaltungen in Twake Chat endgültig verloren. Sie können dann weder auf Ihren Chatverlauf zugreifen noch ihn wiederherstellen."
+        },
+        "groupChat": {
+          "title": "Ihre Gruppenchats",
+          "description": "Sobald Ihr Konto gelöscht ist, werden alle privaten Nachrichten und Gruppennachrichten ohne Möglichkeit der Wiederherstellung gelöscht. Bitte sichern Sie wichtige Unterhaltungen, bevor Sie fortfahren."
+        }
+      },
+      "drive": {
+        "title": "Verlust Ihrer Dateien",
+        "description": "Alle in Ihrem Twake Drive gespeicherten Dateien werden gelöscht. Sichern Sie Ihre Daten, bevor Sie Ihr Konto löschen."
+      },
+      "mail": {
+        "title": "Verlust Ihrer E-Mails",
+        "description": "Wenn Sie Ihr Konto löschen, werden alle Ihre E-Mails in Twake Mail endgültig gelöscht. Wenn Sie wichtige Informationen haben, archivieren Sie diese bitte, bevor Sie fortfahren."
+      }
+    },
+    "modal": {
+      "confirm": {
+        "title": "Ihr Twake löschen?",
+        "description": {
+          "line": {
+            "1": "Ihr Twake wird gelöscht",
+            "2": "Sie können nicht mehr auf Ihr Twake zugreifen",
+            "3": "Alle Ihre Daten werden entfernt",
+            "4": "Bitte geben Sie Ihr Passwort ein, um diese Aktion zu bestätigen:"
+          }
+        },
+        "password": {
+          "required": "Dieses Feld ist erforderlich",
+          "errors": {
+            "invalid_password": "Ihr Passwort scheint nicht korrekt zu sein",
+            "server_error": "Ein Fehler ist aufgetreten, bitte versuchen Sie es erneut"
+          }
+        },
+        "button": {
+          "cancel": {
+            "label": "Abbrechen"
+          },
+          "submit": {
+            "label": "Löschen"
+          }
+        }
+      },
+      "form": {
+        "title": "Anfrage zur Löschung Ihres Twake",
+        "reason": {
+          "label": "Warum möchten Sie Ihr Twake löschen? (optional)"
+        },
+        "button": {
+          "cancel": {
+            "label": "Abbrechen"
+          },
+          "submit": {
+            "label": "Senden"
+          }
+        }
+      },
+      "email_confirmation": {
+        "title": "Öffnen Sie Ihre E-Mails",
+        "description": "Eine E-Mail wurde an **%{email}** gesendet. Um die Löschung Ihres Kontos zu bestätigen, klicken Sie bitte auf den Bestätigungslink in dieser E-Mail.",
+        "button": {
+          "submit": {
+            "label": "Verstanden"
+          }
+        }
+      }
+    },
+    "request": {
+      "mail": {
+        "subject": "Gründe für die Löschung des Twake %{domain}"
+      }
+    },
+    "byEmailOnly": {
+      "mail": {
+        "subject": "Anfrage zur Löschung des Twake %{domain} mit der E-Mail-Adresse %{email}"
+      },
+      "success": "Die Anfrage wurde gesendet und wird von unseren Teams zeitnah bearbeitet."
+    },
+    "forceDelete": {
+      "success": "Ihr Konto wurde erfolgreich gelöscht."
+    },
+    "success": {
+      "message": "Ihre Löschanfrage wurde gesendet."
+    }
+  },
+  "Nav": {
+    "activated_services": "Aktivierte Dienste",
+    "connected_devices": "Verbundene Geräte",
+    "email_notifications": "E-Mail-Benachrichtigungen",
+    "header_data": "Sicherheit und Daten",
+    "header_flagship": "Twake-App",
+    "header_general": "Allgemein",
+    "header_other": "Mehr",
+    "permissions": "Berechtigungen",
+    "primary_biometry": "Mit meinem Fingerabdruck entsperren",
+    "primary_biometry_android": "Mit meinem Fingerabdruck entsperren",
+    "primary_biometry_faceid": "Mit Face ID entsperren",
+    "primary_biometry_touchid": "Mit Touch ID entsperren",
+    "primary_faq": "FAQ",
+    "primary_lock_screen": "Entsperrbildschirm",
+    "primary_lock_switch": "Sperren, wenn die App in den Hintergrund wechselt",
+    "primary_logout": "Abmelden",
+    "primary_photo_sync": "Automatische Fotosynchronisierung",
+    "primary_pin_switch": "Mit PIN-Code entsperren",
+    "primary_plan": "Tarife und Optionen",
+    "primary_save_journeys": "Fahrtenaufzeichnung",
+    "primary_support": "Support",
+    "primary_wifi_sync": "Nur über WLAN synchronisieren",
+    "profile": "Profil",
+    "appearance": "Erscheinungsbild",
+    "secondary_free": "Frei",
+    "secondary_used": "%{percent}% belegt",
+    "sessions": "Webverbindungen",
+    "storage": "Speicherplatz",
+    "contact_support": "Kontakt",
+    "terms_of_service": "Nutzungsbedingungen",
+    "legal_notice": "Impressum",
+    "migration": "Migration"
+  },
+  "loading": {
+    "loading": "Wird geladen"
+  },
+  "Input": {
+    "copied": "In die Zwischenablage kopiert"
+  },
+  "Empty": {
+    "devices": {
+      "title": "Sie haben keine verbundenen Geräte",
+      "text": "Mit den verschiedenen Clients können Sie gleichzeitig auf all Ihren Bildschirmen auf Ihre Dateien zugreifen. Twake ist immer griffbereit, auch wenn Sie ständig unterwegs sind!",
+      "link": {
+        "href": "https://cozy.io/en/download/",
+        "text": "Laden Sie eine unserer Anwendungen herunter"
+      }
+    }
+  },
+  "ProfileView": {
+    "instance": {
+      "server_error": "Auf dem Server ist ein Fehler aufgetreten. Bitte laden Sie die Seite neu."
+    },
+    "title": "Profil",
+    "password": {
+      "title": "Passwort",
+      "label": "Ihr Twake ist derzeit durch ein Passwort geschützt",
+      "cta": "Mein Passwort ändern",
+      "external_label": "Ihr Passwort können Sie bei Ihrem Identitätsanbieter ändern"
+    },
+    "applicative_accounts": {
+      "title": "Externer E-Mail-Client",
+      "label": "Verbinden Sie Ihr Twake-Postfach über ein eigenes Anwendungskonto mit einem beliebigen E-Mail-Client.",
+      "cta": "Anwendungskonten verwalten"
+    },
+    "infos": {
+      "success": "Ihre Angaben wurden geändert",
+      "server_error": "Ein Fehler ist aufgetreten. Ihre Angaben wurden nicht gespeichert.",
+      "empty": "Dieses Feld darf nicht leer sein"
+    },
+    "twofa": {
+      "external-email": {
+        "title": "Externe E-Mail-Adresse",
+        "label": "An diese E-Mail-Adresse werden die Codes für die Zwei-Faktor-Authentifizierung gesendet.",
+        "cta": {
+          "change": "Wiederherstellungs-E-Mail ändern",
+          "add": "Wiederherstellungs-E-Mail hinzufügen"
+        }
+      },
+      "auth": {
+        "title": "Zwei-Faktor-Authentifizierung",
+        "label": "Fügen Sie eine zusätzliche Sicherheitsebene hinzu, indem bei der Anmeldung ein Bestätigungscode verlangt wird. Fügen Sie eine Wiederherstellungs-E-Mail hinzu, um die Codes für die Zwei-Faktor-Authentifizierung zu erhalten."
+      },
+      "sso": {
+        "cta": "2FA verwalten"
+      }
+    },
+    "public_name": {
+      "title": "Benutzername",
+      "label": "Wird angezeigt, wenn Sie Dateien mit Twake-Nutzern teilen."
+    },
+    "matrix_id": {
+      "title": "Matrix-ID",
+      "label": "Eindeutige Kennung in der Twake-Plattform für Echtzeitnachrichten über das Open-Source-Protokoll Matrix.",
+      "tag": "Nicht aktiv"
+    },
+    "phone_number": {
+      "title": "Telefonnummer",
+      "label": "Wird verwendet, um Ihnen Benachrichtigungen zu senden und die Wiederherstellung Ihres Passworts zu ermöglichen.",
+      "change_button": "Telefonnummer ändern",
+      "invalid": "Die Telefonnummer ist ungültig",
+      "add_alert_title": "Bleiben Sie in Verbindung!",
+      "add_alert_description": "Das Hinzufügen Ihrer Telefonnummer trägt zur Sicherheit Ihres Kontos bei. Die Einrichtung dauert nur einen Moment."
+    },
+    "default_redirection": {
+      "title": "Startbildschirm",
+      "label": "Dies ist der erste Bildschirm, den Sie beim Öffnen Ihres Twake sehen.",
+      "app_list": "Dashboard"
+    },
+    "move": {
+      "button": "Mein Twake umziehen",
+      "label": "Wechseln Sie Ihr Twake, ohne Ihre Daten zu verlieren"
+    },
+    "export": {
+      "title": "Meine Daten",
+      "label": "Twake Drive verpflichtet sich, Ihnen alle gespeicherten Dateien bereitzustellen:",
+      "link": "Twake Drive-Daten exportieren",
+      "server_error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+      "fetch_error": "Beim Abrufen Ihrer Exportdaten ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+      "missing_error": "Das Archiv scheint zu fehlen oder abgelaufen zu sein. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+      "success": "Ihre Anfrage wurde erfolgreich gesendet!",
+      "modal": {
+        "title": "Meine Daten abrufen",
+        "description": "Twake sammelt alle Daten, die es über Sie hat, und sendet Ihnen ein Archiv zum Herunterladen.<br/><br/>Der Download-Link wird Ihnen an die E-Mail-Adresse __%{email}__ gesendet, sobald das Archiv verfügbar ist.",
+        "cancel": "Abbrechen",
+        "CTA": "Meine Daten senden"
+      },
+      "download": {
+        "title": "Meine Daten herunterladen",
+        "description": "Hier sind alle verfügbaren Datenarchive Ihres Twake:",
+        "CTA": "Archiv herunterladen",
+        "CTA_part": "Herunterladen (Teil %{number})"
+      }
+    },
+    "import": {
+      "link": "Twake Drive-Daten importieren",
+      "server_error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+      "invalid_url": "Der Link scheint nicht dem Download-Link eines Twake zu entsprechen.",
+      "quota_too_small": "Der Speicherplatz Ihres Twake reicht nicht aus, um alle Ihre Daten zu importieren. Es gibt 2 Lösungen: den Speicherplatz Ihres Twake erhöhen oder die für den Import nicht benötigten Daten löschen.",
+      "modal": {
+        "title": "Ein Twake importieren",
+        "description": "Geben Sie unten den per E-Mail erhaltenen Download-Link ein. Um den Download-Link eines Twake zu erhalten, starten Sie einfach dessen Export.",
+        "cancel": "Abbrechen",
+        "CTA": "Importieren"
+      },
+      "confirmation": {
+        "title": "Warnung",
+        "description": "Beim Import werden die bereits in Ihrem Twake **%{url}** vorhandenen Daten überschrieben. Der Zugriff auf Ihr Twake ist bis zum Ende dieses Vorgangs gesperrt.\n\nMöchten Sie wirklich fortfahren?",
+        "cancel": "Abbrechen",
+        "CTA": "Daten überschreiben"
+      },
+      "url": {
+        "label": "Download-Link"
+      }
+    },
+    "locale": {
+      "title": "Sprache",
+      "label": "Dies ist die Sprache, die in Ihrem Twake verwendet wird.",
+      "fr": "Français",
+      "en": "English",
+      "ru": "Русский",
+      "vi": "Tiếng Việt",
+      "es": "Español",
+      "de": "Deutsch",
+      "it": "Italiano"
+    }
+  },
+  "AppearanceView": {
+    "title": "Erscheinungsbild",
+    "subtitle": "Anzeigemodus (hell/dunkel)",
+    "light": "Heller Modus",
+    "dark": "Dunkler Modus",
+    "auto": "Dynamisch (Geräteeinstellungen)"
+  },
+  "DevicesView": {
+    "header": {
+      "title": "Verbundene Geräte",
+      "subtitle": "%{smart_count}/%{limit} verbundenes Gerät |||| %{smart_count}/%{limit} verbundene Geräte",
+      "subtitle_without_flag": "%{smart_count} verbundenes Gerät |||| %{smart_count} verbundene Geräte",
+      "subscribe": "Limit erhöhen"
+    },
+    "load_error": "Beim Laden Ihrer Geräte ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "device_load_error": "Das angeforderte Gerät wurde nicht gefunden.",
+    "load_more": "Mehr laden",
+    "head_name": "Name",
+    "head_sync": "Letzte Synchronisierung",
+    "head_activity": "Letzte Aktivität",
+    "head_permissions": "Berechtigungen",
+    "head_actions": "Aktionen",
+    "revoke": "widerrufen",
+    "configure": "konfigurieren",
+    "sync_date_format": "d. LLL yyyy",
+    "create_oauth_client": "OAuth-Client erstellen",
+    "pending": "(Ausstehend)"
+  },
+  "createOAuthClient": {
+    "title": "OAuth-Client erstellen",
+    "description": "Erstellen Sie einen OAuth-Client, damit sich eine Drittanbieter-App mit Ihrem Twake verbinden kann.",
+    "validation_error": "Bitte geben Sie mindestens einen Clientnamen und eine Weiterleitungs-URL an.",
+    "error": "Beim Erstellen des OAuth-Clients ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "success_description": "Der OAuth-Client wurde erstellt. Kopieren Sie diese Werte und bewahren Sie sie sicher auf. Das Secret können Sie danach nicht mehr einsehen.",
+    "client_id": "Client-ID",
+    "client_secret": "Client-Secret",
+    "client_name": "Clientname",
+    "redirect_uri": "Weiterleitungs-URL",
+    "client_kind": "Clienttyp",
+    "software_id": "Software-ID",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "validate": "Client erstellen",
+    "copied": "In die Zwischenablage kopiert",
+    "copy_failed": "Kopieren in die Zwischenablage fehlgeschlagen",
+    "copyClientId": "Client-ID kopieren",
+    "copyClientSecret": "Client-Secret kopieren",
+    "add_redirect_uri": "Weiterleitungs-URL hinzufügen",
+    "remove_redirect_uri": "Diese URL entfernen",
+    "client_name_placeholder": "Meine App",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
+  },
+  "StorageView": {
+    "title": "Speicherplatz",
+    "load_error": "Beim Laden Ihrer Speicherinformationen ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "storage_title": "Verfügbarer Speicherplatz in Twake Workplace",
+    "storage_used": "%{humanDiskUsage} GB",
+    "storage_total": " von %{humanDiskQuota} GB belegt",
+    "storage_available": "Verfügbar: %{spaceAvailable} GB",
+    "storage_warning": "Der Speicherplatz ist fast voll. Sie können Platz schaffen, indem Sie nicht benötigte Dateien löschen oder mehr Speicherplatz abonnieren.",
+    "see_offer": "Speicherplatz erweitern"
+  },
+  "SessionsView": {
+    "title": "Verlauf der Webverbindungen",
+    "sync_date_format": "d. LLL yyyy",
+    "delete": "Alle anderen Sitzungen beenden",
+    "infos": {
+      "server_error": "Auf dem Server ist ein Fehler aufgetreten. Bitte laden Sie die Seite neu.",
+      "sessions_deleted": "Alle anderen Sitzungen wurden beendet."
+    },
+    "modal_title": "Details",
+    "modal_date": "Datum:",
+    "modal_os": "Betriebssystem:",
+    "modal_browser": "Browser:",
+    "modal_ip": "IP:"
+  },
+  "revokeDevice": {
+    "title": "Dieses Gerät widerrufen",
+    "description": "Sie sind dabei, die Verknüpfung mit %{name} aufzuheben.",
+    "subText": "Die Synchronisierung mit diesem Gerät wird sofort beendet.",
+    "validate": "Gerät widerrufen",
+    "cancel": "Abbrechen",
+    "error": "Das Gerät konnte nicht widerrufen werden. Versuchen Sie, die Seite neu zu laden."
+  },
+  "configureDevice": {
+    "load_error": "Beim Laden Ihrer Ordner ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "configure_success": "Die zu synchronisierenden Elemente wurden erfolgreich gespeichert.",
+    "configure_error": "Die mit dem Gerät zu synchronisierenden Elemente konnten nicht konfiguriert werden. Versuchen Sie, die Seite neu zu laden.",
+    "description": "Wählen Sie die Ordner aus, die mit Ihrem Computer synchronisiert werden sollen:",
+    "no_folders": "Sie haben keine Ordner in Ihrem Twake.",
+    "my_cozy": "Mein Twake",
+    "partialSync": {
+      "disable": "Mein gesamtes Twake synchronisieren",
+      "enable": "Heben Sie die Auswahl der Ordner auf, die nicht synchronisiert werden sollen:"
+    },
+    "validate": "Bestätigen",
+    "cancel": "Abbrechen"
+  },
+  "ServicesView": {
+    "title": "Aktivierte Dienste",
+    "load_error": "Beim Laden Ihrer Dienste ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "head_services": "Dienste",
+    "head_account": "Konto",
+    "head_sync": "Letzte Synchronisierung",
+    "head_status": "Status",
+    "unsync": "Nicht synchronisiert",
+    "konnector_link": "Hier finden Sie die vollständige Liste der Dienste"
+  },
+  "PassphraseView": {
+    "title": "Mein Passwort ändern",
+    "title_oidc": "Mein Twake Pass-Passwort ändern",
+    "current_passphrase": {
+      "label": "Geben Sie Ihr aktuelles Passwort ein",
+      "placeholder": "Aktuelles Passwort",
+      "wrong_passphrase": "Das aktuelle Passwort scheint falsch zu sein."
+    },
+    "new_passphrase": {
+      "label": "Wählen Sie ein neues Passwort",
+      "placeholder": "Neues Twake-Passwort",
+      "confirmation_placeholder": "Passwort bestätigen",
+      "dont_match": "Die Passwörter stimmen nicht überein"
+    },
+    "advices": {
+      "strong_passphrase": "**Wählen Sie ein starkes Passwort:** Ein langes Passwort mit Ziffern und Sonderzeichen ist praktisch nicht zu knacken.",
+      "memorize": "**Merken Sie es sich gut:** Wenn Sie es verlieren, können Sie die verschlüsselten Passwörter in Ihrem Twake nicht wiederherstellen.",
+      "our_tip": "**Unser Tipp:** Wählen Sie einen kurzen Satz, der zu Ihnen passt, zum Beispiel: "
+    },
+    "hint": {
+      "title": "Hinterlassen Sie einen Hinweis",
+      "placeholder": "Hinweis (optional)",
+      "description": "Der Hinweis wird Ihnen per E-Mail gesendet, falls Sie Ihr Passwort vergessen. Wählen Sie einen Hinweis, den nur Sie verstehen",
+      "same_as_passphrase": "Ihr Hinweis darf nicht Ihr Passwort sein"
+    },
+    "submit": "Mein Passwort ändern",
+    "cancel": "Mein aktuelles Passwort behalten",
+    "server_error": "Ein Fehler ist aufgetreten. Ihr Passwort wurde nicht gespeichert.",
+    "wrong_two_fa_code": "Der angegebene Code für die Zwei-Faktor-Authentifizierung scheint falsch zu sein.",
+    "success": "Ihr Passwort wurde geändert."
+  },
+  "BiometryDeniedDialog": {
+    "title": "Aktivierung nicht möglich",
+    "content": "Um diese Funktion zu aktivieren, benötigt die App die Berechtigung, auf Face ID zuzugreifen",
+    "open_settings": "Einstellungen öffnen",
+    "cancel": "Abbrechen"
+  },
+  "LockScreenView": {
+    "choose_pin_body": "Legen Sie Ihre PIN fest, um die App nach einer Zeit der Inaktivität zu entsperren",
+    "choose_pin_cancel": "Abbrechen",
+    "choose_pin_label": "PIN-Code",
+    "choose_pin_next": "Weiter",
+    "choose_pin_title": "Wählen Sie einen PIN-Code",
+    "confirm_pin_body": "Bitte geben Sie Ihren PIN-Code aus Sicherheitsgründen erneut ein.",
+    "confirm_pin_cancel": "Abbrechen",
+    "confirm_pin_error": "Die PIN-Codes stimmen nicht überein",
+    "confirm_pin_next": "Fertig",
+    "confirm_pin_title": "PIN-Code bestätigen",
+    "title": "Entsperrbildschirm"
+  },
+  "soon": {
+    "title": "Demnächst verfügbar",
+    "description": "Diese Funktion ist noch nicht verfügbar. Für weitere Informationen kontaktieren Sie uns bitte unter contact@cozycloud.cc"
+  },
+  "support": {
+    "title": "Kontakt",
+    "emailDetail": "Ihre Nachricht wird von der E-Mail-Adresse gesendet, die in den Einstellungen Ihres Twake hinterlegt ist.",
+    "fields": {
+      "message": {
+        "title": "Ihre Anfrage",
+        "placeholder": "Schreiben Sie uns, was Sie möchten (bitten Sie um Hilfe, geben Sie Feedback oder sagen Sie einfach Hallo). Wir freuen uns, von Ihnen zu hören. "
+      },
+      "consent": {
+        "label": "Ich erlaube dem Support von Twake Workplace vorübergehend, die erforderlichen Daten in meinem Twake einzusehen, ausschließlich um diese Frage zu beantworten"
+      }
+    },
+    "response_email": {
+      "subject": "Ihre Anfrage ist bei uns eingegangen",
+      "allowConsent": "Vielen Dank, dass Sie dem Support von Twake Workplace vorübergehend erlauben, die erforderlichen Daten in Ihrem Twake einzusehen, ausschließlich um Ihre Frage zu beantworten.",
+      "body": "Guten Tag,\n\nwir haben Ihre Supportanfrage erhalten:\n%{message}\n\nWir tun unser Bestes, um Ihnen so schnell wie möglich zu antworten.\n\nClaude von Twake"
+    },
+    "button": "Los geht's!",
+    "sending": "Wird gesendet...",
+    "success": "👏 Ihre Nachricht wurde gesendet. Vielen Dank!",
+    "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten"
+  },
+  "claudy": {
+    "title": "Wie nutzen Sie Ihr Twake?",
+    "actions": {
+      "desktop": {
+        "title": "Greifen Sie auf Ihrem Computer auf Ihre Dateien zu",
+        "description": "Synchronisieren Sie alle Ihre Twake Drive-Dateien auf Ihrem Computer",
+        "button": "Twake Drive auf Ihrem Computer installieren",
+        "link": "https://cozy.io/en/download/"
+      },
+      "mobile": {
+        "title": "Sichern und synchronisieren Sie die Fotos Ihres Mobilgeräts",
+        "description": "Alle Ihre Erinnerungen sind in Ihrem Twake Drive sicher",
+        "button": "Die Twake Drive-App auf Ihrem Mobilgerät installieren",
+        "link": "https://cozy.io/en/download/"
+      },
+      "cozy-collect": {
+        "title": "Rufen Sie Ihre Rechnungen sofort ab",
+        "description": "Twake Collect organisiert alle Ihre Dateien im Handumdrehen",
+        "button": "Twake Collect entdecken"
+      },
+      "support": {
+        "title": "Kontakt",
+        "description": "Hallo! Können wir Ihnen helfen?",
+        "emailDetail": "Ihre Nachricht wird von der E-Mail-Adresse gesendet, die in den Einstellungen Ihres Twake hinterlegt ist.",
+        "fields": {
+          "message": {
+            "title": "Ihre Anfrage",
+            "placeholder": "Schreiben Sie uns, was Sie möchten (bitten Sie um Hilfe, geben Sie Feedback oder sagen Sie einfach Hallo). Wir freuen uns, von Ihnen zu hören. "
+          }
+        },
+        "button": "Los geht's!",
+        "sending": "Wird gesendet...",
+        "success": "👏 Ihre Nachricht wurde gesendet. Vielen Dank!",
+        "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten"
+      }
+    }
+  },
+  "errors": {
+    "noEmailFound": "Keine E-Mail-Adresse gefunden. Bitte fügen Sie in den Einstellungen Ihres Twake eine hinzu und versuchen Sie es erneut."
+  },
+  "Toolbar": {
+    "more": "Mehr"
+  },
+  "Permissions": {
+    "title": "Anwendungskontrolle",
+    "failedRequest": "Die Anfrage ist fehlgeschlagen",
+    "read": "Lesen",
+    "readAndWrite": "Lesen und Schreiben",
+    "write": "Schreiben",
+    "numberOfPermissions": "%{smart_count} Berechtigung |||| %{smart_count} Berechtigungen",
+    "numberOfApplications": "%{smart_count} Anwendung |||| %{smart_count} Anwendungen",
+    "applications": "Anwendungen",
+    "data": "Daten",
+    "open": "Öffnen",
+    "access": "Anwendungen mit dieser Berechtigung haben Zugriff auf: ",
+    "about": "Über",
+    "limited_right_access": "Berechtigungen für lokale Daten",
+    "latest_data_releases": "Verlauf der letzten ausgehenden Daten",
+    "monthly_statistics": "Monatliche Statistiken",
+    "monthly_stats_phrase": "Bericht über die Datenausgabe aus Ihrem Twake an %{app} am %{date}:",
+    "exit_rights": "Berechtigungen für ausgehende Daten",
+    "uninstall": "Deinstallieren",
+    "exit_rights_secondary": "Die Daten können das Twake verlassen und werden dann nicht mehr geheim gehalten",
+    "limited_right_access_secondary": "Die Daten sind nur lokal zugänglich und verlassen Ihr Twake nie.",
+    "permissions": "Berechtigungen",
+    "exit_right": "%{app} hat Ausgaberechte für %{doctype}",
+    "exit_right_description": "Die Daten sind außerhalb des Twake zugänglich. Sie können nach außen übertragen werden",
+    "access_right": "%{app} hat lokale Zugriffsrechte für %{doctype}",
+    "access_right_description": "Die Daten sind nur lokal in Ihrem Twake zugänglich. %{app} kann keine Daten außerhalb von Twake Workplace oder an Dritte übertragen.",
+    "details": "Details",
+    "read_right_title": "Leserecht",
+    "read_right_text": "Die App kann die Daten im Twake lesen, ohne sie ihrem Herausgeber zugänglich zu machen",
+    "write_right_title": "Schreibrecht",
+    "write_right_text": "Die App kann Daten hinzufügen, ändern oder löschen",
+    "right_reason": "Warum fordert %{app} diese Berechtigung an?"
+  },
+  "Accessibility": {
+    "previous": "Zurück"
+  },
+  "EmailSection": {
+    "title": "E-Mail",
+    "subtitle": "Twake benötigt Ihre E-Mail-Adresse, um Ihnen Benachrichtigungen zu senden und die Wiederherstellung Ihres Passworts zu ermöglichen.",
+    "action": "E-Mail-Adresse ändern",
+    "alert": {
+      "title": "Änderung ausstehend",
+      "content": "Eine E-Mail wurde an %{pendingEmail} gesendet, um Ihre Identität zu überprüfen und die Änderung Ihrer E-Mail-Adresse abzuschließen.",
+      "resend": "E-Mail erneut senden",
+      "cancel": "Abbrechen"
+    },
+    "snackbar": {
+      "server_error": "Auf dem Server ist ein Fehler aufgetreten. Bitte laden Sie die Seite neu.",
+      "resend_success": "Eine E-Mail wurde an %{pendingEmail} gesendet"
+    }
+  },
+  "EmailReadOnlySection": {
+    "title": "E-Mail",
+    "tag": "Nicht aktiv"
+  },
+  "EmailModal": {
+    "title": "Neue E-Mail-Adresse",
+    "cancel": "Abbrechen",
+    "submit": "OK",
+    "errors": {
+      "server": "Auf dem Server ist ein Fehler aufgetreten. Bitte laden Sie die Seite neu.",
+      "same_email": "Ihre neue E-Mail-Adresse darf nicht mit der alten übereinstimmen.",
+      "email_format": "Die E-Mail-Adresse scheint nicht korrekt zu sein. Haben Sie sie richtig eingegeben (z. B. john@wayne.com)?"
+    }
+  },
+  "Subscription": {
+    "title": "Tarife und Optionen",
+    "included": {
+      "title": "Aktueller Tarif",
+      "flags": {
+        "harvest.accounts.max": "Automatischer Abruf von Dokumenten und Daten",
+        "mespapiers.papers.max": "Anzahl manuell hinzugefügter Dokumente"
+      },
+      "onlyOffice": {
+        "default": "Online-Viewer für Office-Dokumente",
+        "write": "Online-Editor für Office-Dokumente"
+      },
+      "passwords": {
+        "default": "Gespeicherte Passwörter automatisch ausfüllen",
+        "share": "Passwörter teilen"
+      },
+      "devices": {
+        "unlimited": "Unbegrenzte Anzahl autorisierter Geräte",
+        "up_to": "Maximal autorisierte Geräte: bis zu %{smart_count}"
+      },
+      "storage": "%{humanDiskQuota} GB Cloud-Speicher",
+      "support": "Erweiterter Support",
+      "notes": "Einfache und gemeinsame Notizen erstellen",
+      "store": "Installieren Sie weitere Apps, um Ihr Twake zu erweitern",
+      "max_days": ": max. %{smart_count} Tag |||| : max. %{smart_count} Tage",
+      "accounts": ": %{smart_count} verbundener Dienst |||| : %{smart_count} verbundene Dienste",
+      "accounts_unlimited": ": unbegrenzte Anzahl verbundener Dienste",
+      "accounts_offer": "(%{max} im Angebot enthalten + 1 geschenkt) |||| (%{max} im Angebot enthalten + %{smart_count} geschenkt)",
+      "numeric_flag": ": bis zu %{smart_count}",
+      "numeric_flag_unlimited": ": unbegrenzt"
+    },
+    "can_be_canceled": "Das Abonnement kann jederzeit gekündigt werden",
+    "action": "Meinen Tarif verwalten"
+  },
+  "AvatarSection": {
+    "success": {
+      "updated": "Avatar erfolgreich aktualisiert",
+      "deleted": "Avatar erfolgreich gelöscht"
+    },
+    "error": {
+      "timeout": "Beim Hochladen des Avatars ist eine Zeitüberschreitung aufgetreten. Bitte versuchen Sie es erneut.",
+      "fileSizeLimit": "Die maximale Dateigröße beträgt 5 MB.",
+      "fileType": "Der Dateityp wird nicht unterstützt. Bitte versuchen Sie es erneut.",
+      "deleteFailed": "Das Löschen des Avatars ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "uploadFailed": "Das Hochladen des Avatars ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "serverError": "Der Avatar konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
+      "verificationFailed": "Aktion ausgeführt, aber die Änderung konnte nicht überprüft werden. Bitte aktualisieren Sie die Seite."
+    },
+    "menu": {
+      "update": "Avatar aktualisieren",
+      "delete": "Avatar löschen"
+    }
+  },
+  "BlockingSubscriptionModal": {
+    "title": {
+      "delete": "Ihr Twake löschen?",
+      "move": "Ihr Twake umziehen?"
+    },
+    "content": {
+      "delete": "Sie haben ein Twake-Angebot über %{vendor} abonniert. **Bitte kündigen Sie Ihr Abonnement, bevor Sie Ihr Twake-Konto löschen.**\n\nWenn Sie dies bereits getan haben oder es später direkt über Ihren App-Store tun möchten, können Sie diese Nachricht ignorieren und mit dem Löschen Ihres Twake fortfahren.",
+      "move": "Sie haben ein Twake-Angebot über %{vendor} abonniert. **Bitte kündigen Sie Ihr Abonnement, bevor Sie mit Ihrem Twake-Konto umziehen.**\n\nWenn Sie dies bereits getan haben oder es später direkt über Ihren App-Store tun möchten, können Sie diese Nachricht ignorieren und mit dem Umzug Ihres Twake fortfahren.",
+      "vendor": {
+        "android": "den Play Store",
+        "ios": "den App Store",
+        "both": "den Play Store oder den App Store"
+      }
+    },
+    "manage": "Meinen Tarif verwalten",
+    "resume": "Fortfahren"
+  },
+  "MigrationView": {
+    "title": "Migrieren Sie Ihre Daten zu Twake Workplace",
+    "mobileTitle": "Migrieren",
+    "subtitle": "Alle Ihre Dateien, E-Mails, Kalender und Kontakte in einem einzigen Twake-Arbeitsbereich, sofort einsatzbereit",
+    "secureTransfer": "Sichere Übertragung",
+    "startMigration": "Migration starten",
+    "migrated": "Migriert",
+    "cleanNextcloud": "Nextcloud bereinigen",
+    "cleanNextcloudDialog": {
+      "title": "Nextcloud Drive bereinigen",
+      "description": "Sie sind dabei, alle in Ihrem Nextcloud Drive gespeicherten Daten endgültig zu löschen.",
+      "disclaimer1": "Diese Aktion betrifft nur die Daten auf der Nextcloud-Seite.",
+      "disclaimer2": "Es werden keine Daten aus Twake oder einem unserer anderen verbundenen Dienste gelöscht.",
+      "confirm": "Nextcloud bereinigen",
+      "cancel": "Abbrechen"
+    },
+    "cleaningNextcloudDialog": {
+      "title": "Nextcloud Drive wird bereinigt",
+      "description": "Alle Daten aus Ihrem Nextcloud Drive werden endgültig gelöscht…"
+    },
+    "cleanedSnackbar": {
+      "title": "Nextcloud Drive bereinigt",
+      "description": "Alle Daten wurden endgültig aus Ihrem Nextcloud Drive entfernt."
+    },
+    "cleanErrorSnackbar": {
+      "title": "Nextcloud Drive konnte nicht bereinigt werden",
+      "description": "Bitte versuchen Sie es erneut oder wenden Sie sich an den Support."
+    },
+    "nextcloud": {
+      "name": "Nextcloud",
+      "description": "Ihre Dateien, Ordner und Dokumente werden in Ihr Twake kopiert.",
+      "connect": {
+        "title": "Übertragen Sie Ihre Daten aus Nextcloud",
+        "subtitle": "Geben Sie Ihre Nextcloud-Zugangsdaten ein, um die Übertragung sicher zu starten",
+        "url": {
+          "label": "Nextcloud-URL",
+          "placeholder": "https://benutzername.nextcloud.com"
+        },
+        "username": {
+          "label": "Benutzername oder E-Mail",
+          "placeholder": "Geben Sie Ihren Benutzernamen ein"
+        },
+        "password": {
+          "label": "Passwort"
+        },
+        "error": "Die Übertragung konnte nicht gestartet werden. Bitte überprüfen Sie Ihre Zugangsdaten oder deaktivieren Sie die 2FA auf Ihrer Nextcloud-Instanz und versuchen Sie es erneut.",
+        "cancel": "Abbrechen",
+        "submit": "Weiter"
+      },
+      "progress": {
+        "title": "Ihre Daten werden übertragen",
+        "subtitle": "Bitte warten Sie, während wir Ihre Dateien aus Nextcloud migrieren. Sie können dieses Fenster schließen, die Migration läuft weiter",
+        "percent": "%{percent}% abgeschlossen",
+        "remaining": "noch ~%{time}",
+        "timeSeconds": "%{count} Sekunde",
+        "timeSeconds_plural": "%{count} Sekunden",
+        "timeMinutes": "~%{count} Min.",
+        "timeMinutes_plural": "~%{count} Min.",
+        "hide": "Schließen",
+        "cancel": "Übertragung abbrechen",
+        "cancelSuccess": "Abbruch angefordert. Die Übertragung wird in Kürze beendet.",
+        "cancelError": "Der Abbruch konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+      },
+      "done": {
+        "title": "Fertig",
+        "subtitle": "Dateien erfolgreich übertragen. Wir haben einen Ordner mit den übertragenen Dateien erstellt.",
+        "openFolder": "Ordner öffnen"
+      }
+    },
+    "help": {
+      "title": "Brauchen Sie Hilfe?",
+      "description": "Unser Team kann Ihnen helfen, Ihre Daten zu migrieren und schneller loszulegen.",
+      "contactSupport": "Support kontaktieren"
+    }
+  },
+  "MigrationProgressBanner": {
+    "title": "Migration aus Nextcloud läuft",
+    "percent": "%{percent}% abgeschlossen",
+    "importing": "%{count} Dateien werden aus Nextcloud importiert...",
+    "cancel": "Abbrechen",
+    "done": {
+      "title": "Migration abgeschlossen!",
+      "body": "%{count} Dateien erfolgreich aus Nextcloud importiert"
+    }
+  }
+}
