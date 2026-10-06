@@ -294,7 +294,7 @@
     "head_actions": "Aktionen",
     "revoke": "widerrufen",
     "configure": "konfigurieren",
-    "sync_date_format": "d. LLL yyyy",
+    "sync_date_format": "d. MMM yyyy",
     "create_oauth_client": "OAuth-Client erstellen",
     "pending": "(Ausstehend)"
   },
@@ -335,7 +335,7 @@
   },
   "SessionsView": {
     "title": "Verlauf der Webverbindungen",
-    "sync_date_format": "d. LLL yyyy",
+    "sync_date_format": "d. MMM yyyy",
     "delete": "Alle anderen Sitzungen beenden",
     "infos": {
       "server_error": "Auf dem Server ist ein Fehler aufgetreten. Bitte laden Sie die Seite neu.",

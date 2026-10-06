@@ -294,7 +294,7 @@
     "head_actions": "Azioni",
     "revoke": "revoca",
     "configure": "configura",
-    "sync_date_format": "d LLL yyyy",
+    "sync_date_format": "d MMM yyyy",
     "create_oauth_client": "Crea un client OAuth",
     "pending": "(In attesa)"
   },
@@ -335,7 +335,7 @@
   },
   "SessionsView": {
     "title": "Cronologia delle connessioni web",
-    "sync_date_format": "d LLL yyyy",
+    "sync_date_format": "d MMM yyyy",
     "delete": "Chiudi tutte le altre sessioni",
     "infos": {
       "server_error": "Si è verificato un errore del server. Ricarica la pagina.",
