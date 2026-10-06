@@ -90,7 +90,13 @@
       }
     },
     "byEmailOnly": {
+      "mail": {
+        "subject": "Запрос на удаление Twake %{domain} с email %{email}"
+      },
       "success": "Запрос отправлен и будет быстро обработан нашими специалистами."
+    },
+    "forceDelete": {
+      "success": "Ваш аккаунт успешно удалён."
     },
     "success": {
       "message": "Ваш запрос на удаление отправлен."
@@ -128,7 +134,7 @@
     "contact_support": "Связаться с нами",
     "terms_of_service": "Условия использования",
     "legal_notice": "Юридическая информация",
-    "migration": "Migration"
+    "migration": "Миграция"
   },
   "loading": {
     "loading": "Загрузка"
@@ -190,13 +196,16 @@
     },
     "matrix_id": {
       "title": "Matrix ID",
-      "label": "Ваш уникальный идентификатор. Используется для обмена сообщениями и поиска вас среди пользователей совместимых мессенджеров"
+      "label": "Ваш уникальный идентификатор. Используется для обмена сообщениями и поиска вас среди пользователей совместимых мессенджеров",
+      "tag": "Неактивен"
     },
     "phone_number": {
       "title": "Номер телефона",
       "label": "Используется для уведомлений и восстановления доступа к аккаунту",
       "change_button": "Изменить номер телефона",
-      "invalid": "Некорректный номер телефона"
+      "invalid": "Некорректный номер телефона",
+      "add_alert_title": "Оставайтесь на связи!",
+      "add_alert_description": "Номер телефона помогает защитить ваш аккаунт. Настройка займёт всего минуту."
     },
     "default_redirection": {
       "title": "Домашний экран",
@@ -271,8 +280,8 @@
   "DevicesView": {
     "header": {
       "title": "Подключённые устройства",
-      "subtitle": "%{smart_count}/%{limit} подключённое устройство |||| %{smart_count}/%{limit} подключённых устройств",
-      "subtitle_without_flag": "%{smart_count} подключённое устройство |||| %{smart_count} подключённых устройств",
+      "subtitle": "%{smart_count}/%{limit} подключённое устройство |||| %{smart_count}/%{limit} подключённых устройства |||| %{smart_count}/%{limit} подключённых устройств",
+      "subtitle_without_flag": "%{smart_count} подключённое устройство |||| %{smart_count} подключённых устройства |||| %{smart_count} подключённых устройств",
       "subscribe": "Увеличить лимит"
     },
     "load_error": "Произошла ошибка при загрузке списка устройств. Пожалуйста, попробуйте позже.",
@@ -285,7 +294,34 @@
     "head_actions": "Действия",
     "revoke": "отозвать",
     "configure": "настроить",
-    "sync_date_format": "LLL d, yyyy"
+    "sync_date_format": "d MMM yyyy",
+    "create_oauth_client": "Создать OAuth-клиент",
+    "pending": "(Ожидание)"
+  },
+  "createOAuthClient": {
+    "title": "Создать OAuth-клиент",
+    "description": "Создайте OAuth-клиент, чтобы стороннее приложение могло подключиться к вашему Twake.",
+    "validation_error": "Укажите как минимум имя клиента и URL перенаправления.",
+    "error": "Произошла ошибка при создании OAuth-клиента. Пожалуйста, попробуйте позже.",
+    "success_description": "OAuth-клиент создан. Скопируйте эти значения и сохраните их в надёжном месте. Секрет больше не будет показан.",
+    "client_id": "ID клиента",
+    "client_secret": "Секрет клиента",
+    "client_name": "Имя клиента",
+    "redirect_uri": "URL перенаправления",
+    "client_kind": "Тип клиента",
+    "software_id": "ID программы",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "validate": "Создать клиент",
+    "copied": "Скопировано в буфер обмена",
+    "copy_failed": "Не удалось скопировать в буфер обмена",
+    "copyClientId": "Скопировать ID клиента",
+    "copyClientSecret": "Скопировать секрет клиента",
+    "add_redirect_uri": "Добавить URL перенаправления",
+    "remove_redirect_uri": "Удалить этот URL",
+    "client_name_placeholder": "Моё приложение",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
   },
   "StorageView": {
     "title": "Хранилище",
@@ -299,7 +335,7 @@
   },
   "SessionsView": {
     "title": "История веб-подключений",
-    "sync_date_format": "LLL d, yyyy",
+    "sync_date_format": "d MMM yyyy",
     "delete": "Удалить все другие сессии",
     "infos": {
       "server_error": "Произошла ошибка на сервере. Пожалуйста, перезагрузите страницу.",
@@ -468,8 +504,8 @@
     "read": "Чтение",
     "readAndWrite": "Чтение и запись",
     "write": "Запись",
-    "numberOfPermissions": "%{smart_count} разрешение |||| %{smart_count} разрешения(-ий)",
-    "numberOfApplications": "%{smart_count} приложение |||| %{smart_count} приложения(-ий)",
+    "numberOfPermissions": "%{smart_count} разрешение |||| %{smart_count} разрешения |||| %{smart_count} разрешений",
+    "numberOfApplications": "%{smart_count} приложение |||| %{smart_count} приложения |||| %{smart_count} приложений",
     "applications": "Приложения",
     "data": "Данные",
     "open": "Открыть",
@@ -514,7 +550,8 @@
     }
   },
   "EmailReadOnlySection": {
-    "title": "Email"
+    "title": "Email",
+    "tag": "Неактивен"
   },
   "EmailModal": {
     "title": "Новый email",
@@ -529,23 +566,35 @@
   "Subscription": {
     "title": "Оплата и тарифы",
     "included": {
-      "title": "Включено в ваш тариф:",
+      "title": "Текущий тариф",
       "flags": {
         "harvest.accounts.max": "Автоматическое получение документов и данных",
-        "mespapiers.papers.max": "Количество документов, добавленных вручную",
-        "drive.office.write": "Онлайн-редактор документов (текст, таблицы, презентации)",
-        "passwords.can-share-organizations": "Общий доступ к паролям",
-        "cozy.oauthclients.max": "Максимальное количество устройств",
-        "coachco2.max-days-to-capture": "Запись поездок"
+        "mespapiers.papers.max": "Количество документов, добавленных вручную"
       },
-      "storage": "Хранилище: %{humanDiskQuota} ГБ",
-      "max_days": ": максимум %{smart_count} день |||| : максимум %{smart_count} дня(-ей)",
-      "accounts": ": %{smart_count} подключённый сервис |||| : %{smart_count} подключённых сервиса(-ов)",
+      "onlyOffice": {
+        "default": "Просмотр документов Office онлайн",
+        "write": "Редактирование документов Office онлайн"
+      },
+      "passwords": {
+        "default": "Автозаполнение сохранённых паролей",
+        "share": "Общий доступ к паролям"
+      },
+      "devices": {
+        "unlimited": "Неограниченное количество авторизованных устройств",
+        "up_to": "Авторизованные устройства: до %{smart_count}"
+      },
+      "storage": "%{humanDiskQuota} ГБ в облачном хранилище",
+      "support": "Расширенная поддержка",
+      "notes": "Простые заметки с совместным редактированием",
+      "store": "Установка других приложений для расширения Twake",
+      "max_days": ": максимум %{smart_count} день |||| : максимум %{smart_count} дня |||| : максимум %{smart_count} дней",
+      "accounts": ": %{smart_count} подключённый сервис |||| : %{smart_count} подключённых сервиса |||| : %{smart_count} подключённых сервисов",
       "accounts_unlimited": ": неограниченное количество подключённых сервисов",
       "accounts_offer": "(%{max} включено в тариф + 1 в подарок) |||| (%{max} включено в тариф + %{smart_count} в подарок)",
       "numeric_flag": ": до %{smart_count}",
-      "numeric_flag_unlimited": ": неограничено"
+      "numeric_flag_unlimited": ": без ограничений"
     },
+    "can_be_canceled": "Подписку можно отменить в любой момент",
     "action": "Управлять тарифом"
   },
   "AvatarSection": {
@@ -574,14 +623,14 @@
     },
     "content": {
       "delete": "Вы оформили подписку на Twake через %{vendor}. **Пожалуйста, отмените подписку перед удалением аккаунта Twake.**\n\nЕсли вы уже сделали это или планируете отменить подписку позже через магазин приложений, вы можете проигнорировать это сообщение и продолжить удаление.",
-      "move": "Вы подписались на предложение Twake через %{vendor}. **Пожалуйста, отмените подписку перед перемещением учетной записи Twake..**\n\nЕсли вы уже сделали это или хотите сделать это позже непосредственно через магазин, вы можете проигнорировать это сообщение и продолжить перемещение вашего Twake.",
+      "move": "Вы оформили подписку на Twake через %{vendor}. **Пожалуйста, отмените подписку перед переносом аккаунта Twake.**\n\nЕсли вы уже сделали это или планируете отменить подписку позже через магазин приложений, вы можете проигнорировать это сообщение и продолжить перенос.",
       "vendor": {
         "android": "Play store",
         "ios": "App Store",
         "both": "Play store или App Store"
       }
     },
-    "manage": "Управлять планом",
+    "manage": "Управлять тарифом",
     "resume": "Продолжить"
   },
   "MigrationView": {
