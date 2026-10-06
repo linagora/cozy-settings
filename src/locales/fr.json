@@ -11,6 +11,28 @@
     "error": {
       "message": "Une erreur est survenue pendant l'envoi de la demande de suppression. Merci d'essayer à nouveau ou de contacter notre support."
     },
+    "popup": {
+      "deleteLater": "Supprimer plus tard",
+      "continue": "Continuer",
+      "chat": {
+        "conversations": {
+          "title": "Perte de conversations",
+          "description": "En supprimant votre compte, toutes vos conversations sur Twake Chat seront définitivement perdues. Vous ne pourrez plus accéder ni récupérer votre historique de discussions."
+        },
+        "groupChat": {
+          "title": "Vos discussions de groupe",
+          "description": "Une fois votre compte supprimé, tous les messages privés et de groupe seront effacés sans possibilité de récupération. Veuillez sauvegarder toutes les conversations importantes avant de continuer."
+        }
+      },
+      "drive": {
+        "title": "Perte de vos fichiers",
+        "description": "Tous les fichiers stockés dans votre Twake Drive seront supprimés. Assurez-vous de sauvegarder vos données avant de supprimer votre compte."
+      },
+      "mail": {
+        "title": "Perte de vos emails",
+        "description": "En supprimant votre compte, tous vos emails Twake Mail seront définitivement effacés. Si vous avez des informations importantes, veuillez les archiver avant de continuer."
+      }
+    },
     "modal": {
       "confirm": {
         "title": "Supprimer votre Twake ?",
@@ -78,28 +100,6 @@
     },
     "success": {
       "message": "Votre demande a bien été envoyée."
-    },
-    "popup": {
-      "deleteLater": "Supprimer plus tard",
-      "continue": "Continuer",
-      "chat": {
-        "conversations": {
-          "title": "Perte de conversations",
-          "description": "En supprimant votre compte, toutes vos conversations sur Twake Chat seront définitivement perdues. Vous ne pourrez plus accéder ni récupérer votre historique de discussions."
-        },
-        "groupChat": {
-          "title": "Vos discussions de groupe",
-          "description": "Une fois votre compte supprimé, tous les messages privés et de groupe seront effacés sans possibilité de récupération. Veuillez sauvegarder toutes les conversations importantes avant de continuer."
-        }
-      },
-      "drive": {
-        "title": "Perte de vos fichiers",
-        "description": "Tous les fichiers stockés dans votre Twake Drive seront supprimés. Assurez-vous de sauvegarder vos données avant de supprimer votre compte."
-      },
-      "mail": {
-        "title": "Perte de vos emails",
-        "description": "En supprimant votre compte, tous vos emails Twake Mail seront définitivement effacés. Si vous avez des informations importantes, veuillez les archiver avant de continuer."
-      }
     }
   },
   "Nav": {
@@ -298,6 +298,31 @@
     "create_oauth_client": "Créer un client OAuth",
     "pending": "(En attente)"
   },
+  "createOAuthClient": {
+    "title": "Créer un client OAuth",
+    "description": "Créez un client OAuth pour autoriser une application tierce à accéder à votre Twake.",
+    "validation_error": "Merci de renseigner au minimum un nom de client et une URL de redirection.",
+    "error": "Une erreur s’est produite lors de la création du client OAuth, merci de réessayer plus tard.",
+    "success_description": "Le client OAuth a été créé. Copiez ces informations et conservez-les en lieu sûr. Vous ne pourrez plus voir le secret ensuite.",
+    "client_id": "Client ID",
+    "client_secret": "Client secret",
+    "client_name": "Nom du client",
+    "redirect_uri": "URL de redirection",
+    "client_kind": "Type de client",
+    "software_id": "Software ID",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "validate": "Créer le client",
+    "copied": "Copié dans le presse-papiers",
+    "copy_failed": "Échec de la copie dans le presse-papiers",
+    "copyClientId": "Copier le client ID",
+    "copyClientSecret": "Copier le client secret",
+    "add_redirect_uri": "Ajouter une URL de redirection",
+    "remove_redirect_uri": "Supprimer cette URL",
+    "client_name_placeholder": "Mon App",
+    "client_kind_placeholder": "web",
+    "software_id_placeholder": "webapp"
+  },
   "StorageView": {
     "title": "Stockage",
     "load_error": "Une erreur s'est produite lors du chargement de vos informations de stockage, merci de re-essayer plus tard.",
@@ -329,31 +354,6 @@
     "validate": "Révoquer l'appareil",
     "cancel": "Annuler",
     "error": "Une erreur s'est produite lors de la révocation de l'appareil, essayez de recharger la page."
-  },
-  "createOAuthClient": {
-    "title": "Créer un client OAuth",
-    "description": "Créez un client OAuth pour autoriser une application tierce à accéder à votre Twake.",
-    "validation_error": "Merci de renseigner au minimum un nom de client et une URL de redirection.",
-    "error": "Une erreur s’est produite lors de la création du client OAuth, merci de réessayer plus tard.",
-    "success_description": "Le client OAuth a été créé. Copiez ces informations et conservez-les en lieu sûr. Vous ne pourrez plus voir le secret ensuite.",
-    "client_id": "Client ID",
-    "client_secret": "Client secret",
-    "client_name": "Nom du client",
-    "redirect_uri": "URL de redirection",
-    "client_kind": "Type de client",
-    "software_id": "Software ID",
-    "cancel": "Annuler",
-    "close": "Fermer",
-    "validate": "Créer le client",
-    "copied": "Copié dans le presse-papiers",
-    "copy_failed": "Échec de la copie dans le presse-papiers",
-    "copyClientId": "Copier le client ID",
-    "copyClientSecret": "Copier le client secret",
-    "add_redirect_uri": "Ajouter une URL de redirection",
-    "remove_redirect_uri": "Supprimer cette URL",
-    "client_name_placeholder": "Mon App",
-    "client_kind_placeholder": "web",
-    "software_id_placeholder": "webapp"
   },
   "configureDevice": {
     "load_error": "Une erreur s'est produite pendant le chargement de vos dossiers, merci de réessayer prochainement.",
@@ -569,8 +569,7 @@
       "title": "Offre actuelle",
       "flags": {
         "harvest.accounts.max": "Récupération automatiques de documents et données",
-        "mespapiers.papers.max": "Nombre de Papiers ajoutés manuellement",
-        "cozy.oauthclients.max": "Nombre maximal d'appareils"
+        "mespapiers.papers.max": "Nombre de Papiers ajoutés manuellement"
       },
       "onlyOffice": {
         "default": "Lecteur de documents Office en ligne",
