@@ -33,7 +33,6 @@ export function sendMessageToSupport(client, message, t) {
     )
       .then(() => {
         dispatch({ type: SEND_EMAIL_SUCCESS })
-        // eslint-disable-next-line promise/always-return
         try {
           return sendEmail(
             client,
@@ -53,6 +52,7 @@ export function sendMessageToSupport(client, message, t) {
           console.warn(
             'Something went wrong when copying the support request to the user.'
           )
+          return undefined
         }
       })
       .catch(error => {
@@ -122,24 +122,21 @@ function waitForJobFinished(client, job) {
   return new Promise((resolve, reject) => {
     let idInterval
 
-    idInterval = setInterval(() => {
-      cozyFetch(client, 'GET', `/jobs/${job._id}`)
-        .then(response => {
-          const job = response.data
-          if (job.attributes.state === JOB_STATE.ERRORED) {
-            clearInterval(idInterval)
-            reject(new Error(job.attributes.error))
-          }
-          // eslint-disable-next-line promise/always-return
-          if (job.attributes.state === JOB_STATE.DONE) {
-            clearInterval(idInterval)
-            resolve(job)
-          }
-        })
-        .catch(error => {
+    idInterval = setInterval(async () => {
+      try {
+        const { data } = await cozyFetch(client, 'GET', `/jobs/${job._id}`)
+        if (data.attributes.state === JOB_STATE.ERRORED) {
           clearInterval(idInterval)
-          reject(error)
-        })
+          reject(new Error(data.attributes.error))
+        }
+        if (data.attributes.state === JOB_STATE.DONE) {
+          clearInterval(idInterval)
+          resolve(data)
+        }
+      } catch (error) {
+        clearInterval(idInterval)
+        reject(error)
+      }
     }, 1000)
   })
 }
