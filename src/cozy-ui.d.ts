@@ -56,16 +56,9 @@ declare module 'cozy-ui/transpiled/react/Icons/*' {
 }
 
 declare module 'twake-i18n' {
-  const useI18n = (): {
+  export function useI18n(): {
     t: (key: string, vars?: Record<string, unknown>) => string
-  } => {
-    return {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      t: (key: string) => string as string
-    }
   }
-
-  export { useI18n }
 }
 
 declare module 'cozy-ui/transpiled/react/Switch' {
