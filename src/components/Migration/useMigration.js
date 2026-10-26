@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { useClient, generateWebLink } from 'cozy-client'
 
-import useMigrationMock from './useMigrationMock'
 import { NEXTCLOUD_MIGRATIONS_DOCTYPE } from '../../doctypes'
+import useMigrationMock from './useMigrationMock'
 
 import logger from '@/lib/logger'
 

@@ -1,9 +1,9 @@
-import emailStatusReducer from './emailStatus'
 import {
   SEND_EMAIL,
   SEND_EMAIL_SUCCESS,
   SEND_EMAIL_FAILURE
 } from '../actions/email'
+import emailStatusReducer from './emailStatus'
 
 describe('emailStatus reducer', () => {
   it('should return the initial state', () => {

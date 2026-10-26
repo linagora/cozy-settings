@@ -1,12 +1,12 @@
 import { createMockClient } from 'cozy-client/dist/mock'
 
+import createStore from '../store'
 import {
   sendMessageToSupport,
   sendDeleteAccountReasonEmail,
   sendDeleteAccountByEmailOnlyEmail
 } from './email'
 import { cozyFetch } from './index'
-import createStore from '../store'
 
 jest.mock('./index', () => {
   const actions = jest.requireActual('./index')

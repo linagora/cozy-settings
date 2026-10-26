@@ -5,9 +5,9 @@ import Tab from 'cozy-ui/transpiled/react/Tab'
 import Tabs from 'cozy-ui/transpiled/react/Tabs'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
+import withAllLocales from '../../lib/withAllLocales'
 import AppList from './AppList/AppList'
 import DataList from './DataList/DataList'
-import withAllLocales from '../../lib/withAllLocales'
 
 import Page from '@/components/Page'
 import PageTitle from '@/components/PageTitle'
