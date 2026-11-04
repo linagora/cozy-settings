@@ -48,6 +48,7 @@ const DeleteAccount = () => {
       message: t('DeleteAccount.error.message'),
       type: 'error'
     })
+    handleClose()
   }
 
   const onRequested = ({ byEmailOnly, forceDeleted }) => {
