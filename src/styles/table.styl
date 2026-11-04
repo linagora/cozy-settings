@@ -3,43 +3,23 @@
 .coz-table
     margin 0 -2rem
 
-    .set-table-row
-        +small-screen()
-            height: inherit
-
-    .set-table-name
-        flex 0 0 40%
-
     .set-table-os
     .set-table-browser
         flex 0 0 30%
 
     .set-table-activity
     .set-table-permission
-    .set-table-actions
     .set-table-ip
         flex 0 0 15%
 
     .set-table-date
         flex 0 0 15%
 
-    .set-table-devices
-        // quick fix for cozy-ui table layout issue
-        height auto!important //@stylint ignore
-
     .set-table-sessions
         // quick fix for cozy-ui table layout issue
         height auto!important //@stylint ignore
 
-    .coz-table-primary
-        font-size  1rem
-
     +small-screen()
-        .set-table-name
-            flex  0 0 100%
-            padding-top .75rem
-            padding-bottom .75rem
-
         .set-table-info-name
             color var(--primaryTextColor)
 
@@ -52,14 +32,23 @@
         .set-table-permission
             display none
 
-.set-table-devices
-    .set-table-actions
-        flex 0 0 45%
+table.coz-table
+    width calc(100% + 4rem)
 
-    +small-screen()
-        .set-table-date
-        .set-table-actions
-            display none
+    th
+        font-size 0.75rem
+        text-transform uppercase
+
+    td
+        font-size 1rem
+        font-weight 400
+
+    .set-table-info-name
+        overflow-wrap anywhere
+
+    th:first-child
+    td:first-child
+        padding-left 1rem
 
 .row
     height 4rem
