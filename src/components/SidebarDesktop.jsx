@@ -152,15 +152,17 @@ export const SidebarDesktop = () => {
         </NavDesktopDropdown>
 
         <NavDesktopDropdown label={t('Nav.header_other')}>
-          <NavItem>
-            <NavLink to={context?.data?.help_link} target="_blank">
-              <NavIcon icon={HelpOutlined} />
-              <NavText className="u-flex-grow-1">
-                {t('Nav.primary_faq')}
-              </NavText>
-              <NavIcon icon={Openwith} />
-            </NavLink>
-          </NavItem>
+          {context?.data?.help_link && (
+            <NavItem>
+              <NavLink to={context.data.help_link} target="_blank">
+                <NavIcon icon={HelpOutlined} />
+                <NavText className="u-flex-grow-1">
+                  {t('Nav.primary_faq')}
+                </NavText>
+                <NavIcon icon={Openwith} />
+              </NavLink>
+            </NavItem>
+          )}
           <NavItem>
             <NavLink to={routes.support}>
               <NavIcon icon={Email} />
