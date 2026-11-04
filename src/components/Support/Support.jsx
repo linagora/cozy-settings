@@ -101,7 +101,7 @@ export const Support = ({
       <Buttons
         className="u-m-0"
         onClick={() => sendMessage()}
-        disabled={!message}
+        disabled={!message.trim()}
         busy={isSending}
         startIcon={<Icon icon={Paperplane} />}
         label={t('support.button')}
