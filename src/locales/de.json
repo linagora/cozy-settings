@@ -537,7 +537,15 @@
   },
   "Accessibility": {
     "previous": "Zurück",
-    "copy_field": "%{field} kopieren"
+    "copy_field": "%{field} kopieren",
+    "select_guidance_input": "Auswahlliste ist fokussiert, tippen Sie, um die Liste zu filtern, drücken Sie die Abwärtstaste, um das Menü zu öffnen",
+    "select_guidance_input_not_searchable": "Auswahlliste ist fokussiert, drücken Sie die Abwärtstaste, um das Menü zu öffnen",
+    "select_guidance_menu": "Wählen Sie Optionen mit den Auf- und Abwärtstasten, drücken Sie die Eingabetaste, um die aktive Option auszuwählen, drücken Sie Esc, um das Menü zu verlassen",
+    "select_option_selected": "Option %{label} ausgewählt.",
+    "select_option_focused": "Option %{label} fokussiert, %{index} von %{total}.",
+    "select_option_current": "Option %{label} ausgewählt, %{index} von %{total}.",
+    "select_results": "%{smart_count} Ergebnis verfügbar |||| %{smart_count} Ergebnisse verfügbar",
+    "select_results_filtered": "%{results} für den Suchbegriff %{term}."
   },
   "EmailSection": {
     "title": "E-Mail",

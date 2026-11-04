@@ -537,7 +537,15 @@
   },
   "Accessibility": {
     "previous": "Previous",
-    "copy_field": "Copy %{field}"
+    "copy_field": "Copy %{field}",
+    "select_guidance_input": "Select is focused, type to refine list, press Down to open the menu",
+    "select_guidance_input_not_searchable": "Select is focused, press Down to open the menu",
+    "select_guidance_menu": "Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu",
+    "select_option_selected": "option %{label}, selected.",
+    "select_option_focused": "option %{label} focused, %{index} of %{total}.",
+    "select_option_current": "option %{label} selected, %{index} of %{total}.",
+    "select_results": "%{smart_count} result available |||| %{smart_count} results available",
+    "select_results_filtered": "%{results} for search term %{term}."
   },
   "EmailSection": {
     "title": "E-mail",

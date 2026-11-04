@@ -537,7 +537,15 @@
   },
   "Accessibility": {
     "previous": "Назад",
-    "copy_field": "Копировать: %{field}"
+    "copy_field": "Копировать: %{field}",
+    "select_guidance_input": "Список в фокусе, введите текст для фильтрации, нажмите стрелку вниз, чтобы открыть меню",
+    "select_guidance_input_not_searchable": "Список в фокусе, нажмите стрелку вниз, чтобы открыть меню",
+    "select_guidance_menu": "Используйте стрелки вверх и вниз для выбора, нажмите Enter, чтобы выбрать текущий вариант, нажмите Escape, чтобы закрыть меню",
+    "select_option_selected": "вариант %{label} выбран.",
+    "select_option_focused": "вариант %{label} в фокусе, %{index} из %{total}.",
+    "select_option_current": "вариант %{label} выбран, %{index} из %{total}.",
+    "select_results": "Доступен %{smart_count} результат |||| Доступно %{smart_count} результата |||| Доступно %{smart_count} результатов",
+    "select_results_filtered": "%{results} по запросу %{term}."
   },
   "EmailSection": {
     "title": "Email",
