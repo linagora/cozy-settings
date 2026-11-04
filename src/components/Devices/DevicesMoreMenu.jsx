@@ -2,11 +2,10 @@ import { Icon, Gear, Sync, Trash } from '@linagora/twake-icons'
 import React, { useCallback, useState } from 'react'
 import { useI18n } from 'twake-i18n'
 
-import Typography from 'cozy-ui/transpiled/react/Typography'
-import ActionMenu, {
-  ActionMenuHeader
-} from 'cozy-ui/transpiled/react/deprecated/ActionMenu'
-import { Media, Img, Bd } from 'cozy-ui/transpiled/react/deprecated/Media'
+import ActionsMenuMobileHeader from 'cozy-ui/transpiled/react/ActionsMenu/ActionsMenuMobileHeader'
+import ActionsMenuWrapper from 'cozy-ui/transpiled/react/ActionsMenu/ActionsMenuWrapper'
+import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
+import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 
 import tableStyles from '@/styles/table.styl'
 
@@ -33,21 +32,20 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
     <>
       <DevicesMoreButton deviceName={device.client_name} onClick={toggleMenu} />
       {isMobile && menuIsVisible ? (
-        <ActionMenu onClose={closeMenu} autoclose>
-          <ActionMenuHeader className={tableStyles['action-menu-header']}>
-            <Media>
-              <Img>
-                <Icon icon={getDeviceIcon(device)} size={32} />
-              </Img>
-              <Bd className="u-ml-1">
-                <Typography variant="h6">{device.client_name}</Typography>
-                <Typography variant="caption" color="textSecondary">
+        <ActionsMenuWrapper open onClose={closeMenu} autoClose>
+          <ActionsMenuMobileHeader>
+            <ListItemIcon>
+              <Icon icon={getDeviceIcon(device)} size={32} />
+            </ListItemIcon>
+            <ListItemText
+              primary={device.client_name}
+              secondary={
+                <>
                   <Icon
                     icon={Sync}
                     size={8}
                     color="var(--secondaryTextColor)"
                   />
-                  {}
                   <span className={tableStyles['more-menu-infos']}>
                     {device.synchronized_at
                       ? f(
@@ -56,20 +54,18 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
                         )
                       : '-'}
                   </span>
-                </Typography>
-              </Bd>
-            </Media>
-          </ActionMenuHeader>
+                </>
+              }
+            />
+          </ActionsMenuMobileHeader>
           {canConfigureDevice(device) ? (
             <DevicesMoreMenuItem
-              className={tableStyles['action-menu-item']}
               onClick={onConfigure}
               icon={Gear}
               text={t('DevicesView.configure')}
             />
           ) : null}
           <DevicesMoreMenuItem
-            className={tableStyles['action-menu-item']}
             onClick={() => {
               if (isNeverDisplayedDevice(device)) return
               onRevoke()
@@ -79,7 +75,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
             text={t('DevicesView.revoke')}
             disabled={isNeverDisplayedDevice(device)}
           />
-        </ActionMenu>
+        </ActionsMenuWrapper>
       ) : null}
     </>
   )
