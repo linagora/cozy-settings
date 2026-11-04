@@ -342,6 +342,10 @@
       "sessions_deleted": "Tất cả phiên khác đã bị xóa."
     },
     "modal_title": "Chi tiết",
+    "head_date": "Ngày",
+    "head_os": "Hệ điều hành",
+    "head_browser": "Trình duyệt",
+    "head_ip": "IP",
     "modal_date": "Ngày:",
     "modal_os": "Hệ điều hành:",
     "modal_browser": "Trình duyệt:",

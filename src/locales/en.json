@@ -342,6 +342,10 @@
       "sessions_deleted": "All others sessions are deleted."
     },
     "modal_title": "Details",
+    "head_date": "Date",
+    "head_os": "OS",
+    "head_browser": "Browser",
+    "head_ip": "IP",
     "modal_date": "Date:",
     "modal_os": "OS:",
     "modal_browser": "Browser:",

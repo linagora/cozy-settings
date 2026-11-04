@@ -62,16 +62,16 @@ const SessionsView = ({
             <TableHead>
               <TableRow>
                 <TableHeader className={tableStyles['set-table-date']}>
-                  Date
+                  {t('SessionsView.head_date')}
                 </TableHeader>
                 <TableHeader className={tableStyles['set-table-os']}>
-                  OS
+                  {t('SessionsView.head_os')}
                 </TableHeader>
                 <TableHeader className={tableStyles['set-table-browser']}>
-                  Browser
+                  {t('SessionsView.head_browser')}
                 </TableHeader>
                 <TableHeader className={tableStyles['set-table-ip']}>
-                  IP
+                  {t('SessionsView.head_ip')}
                 </TableHeader>
               </TableRow>
             </TableHead>

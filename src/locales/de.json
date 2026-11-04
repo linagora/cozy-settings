@@ -342,6 +342,10 @@
       "sessions_deleted": "Alle anderen Sitzungen wurden beendet."
     },
     "modal_title": "Details",
+    "head_date": "Datum",
+    "head_os": "Betriebssystem",
+    "head_browser": "Browser",
+    "head_ip": "IP",
     "modal_date": "Datum:",
     "modal_os": "Betriebssystem:",
     "modal_browser": "Browser:",
