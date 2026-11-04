@@ -31,7 +31,7 @@ const DevicesMoreMenu = ({ device, onRevoke, onConfigure, isMobile }) => {
   }, [closeMenu, openMenu, menuIsVisible])
   return (
     <>
-      <DevicesMoreButton onClick={toggleMenu} />
+      <DevicesMoreButton deviceName={device.client_name} onClick={toggleMenu} />
       {isMobile && menuIsVisible ? (
         <ActionMenu onClose={closeMenu} autoclose>
           <ActionMenuHeader className={tableStyles['action-menu-header']}>

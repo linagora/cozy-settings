@@ -4,14 +4,14 @@ import { useI18n } from 'twake-i18n'
 
 import IconButton from 'cozy-ui/transpiled/react/IconButton'
 
-const DevicesMoreButton = ({ onClick }) => {
+const DevicesMoreButton = ({ deviceName, onClick }) => {
   const { t } = useI18n()
   return (
     <IconButton
       theme="secondary"
       extension="narrow"
       size="small"
-      label={t('Toolbar.more')}
+      aria-label={`${t('Toolbar.more')} ${deviceName}`}
       onClick={onClick}
     >
       <Icon icon={Dots} />
