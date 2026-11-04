@@ -62,7 +62,7 @@ const EmailModal = ({ onClose, onSuccess, passwordHash, skipConfirmation }) => {
   const handleChange = e => {
     const value = e.currentTarget.value
     setEmail(value)
-    if (value === instance.email) {
+    if (value.toLowerCase() === instance.email?.toLowerCase()) {
       setError('same_email')
     } else {
       setError(null)
