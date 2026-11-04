@@ -20,6 +20,8 @@ import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import tableStyles from '@/styles/table.styl'
 
+import { getSessionOs } from '@/components/SessionsView/helpers'
+
 const getBrowserIcon = session => {
   const ua = UAParser(session.user_agent)
 
@@ -69,7 +71,7 @@ const SessionsViewRow = ({ session, displayModal }) => {
             </span>
             <span className={tableStyles['main']}>
               <span className={tableStyles['title']}>
-                {`${ua.browser.name} · ${session.os}`}
+                {ua.browser.name} {ua.browser.major} · {getSessionOs(session)}
               </span>
               <span className={tableStyles['subtitle']}>
                 {f(
@@ -88,7 +90,7 @@ const SessionsViewRow = ({ session, displayModal }) => {
       <TableCell>
         {f(new Date(session.created_at), t('SessionsView.sync_date_format'))}
       </TableCell>
-      <TableCell>{session.os}</TableCell>
+      <TableCell>{getSessionOs(session)}</TableCell>
       <TableCell>
         {ua.browser.name} {ua.browser.major}
       </TableCell>

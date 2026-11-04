@@ -4,6 +4,8 @@ import { UAParser } from 'ua-parser-js'
 
 import tableStyles from '@/styles/table.styl'
 
+import { getSessionOs } from '@/components/SessionsView/helpers'
+
 interface Session {
   user_agent: string
   created_at: string
@@ -27,7 +29,7 @@ const SessionDialog = ({ session }: Prop): JSX.Element => {
         {f(new Date(session.created_at), t('SessionsView.sync_date_format'))}
       </p>
       <p className={tableStyles['dialog-paragraph']}>
-        {t('SessionsView.modal_os')} {session.os}
+        {t('SessionsView.modal_os')} {getSessionOs(session)}
       </p>
       <p className={tableStyles['dialog-paragraph']}>
         {t('SessionsView.modal_browser')} {ua.browser.name} {ua.browser.major}
