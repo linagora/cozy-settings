@@ -52,8 +52,7 @@
     "rsbuild-config-cozy-app": "^0.8.0",
     "rslint-config-cozy-app": "^0.2.0",
     "rstack": "0.8.5",
-    "typescript": "5.5.2",
-    "typescript-plugin-css-modules": "3.4.0"
+    "typescript": "5.5.2"
   },
   "dependencies": {
     "@linagora/twake-icons": "^2.10.0",
