@@ -46,14 +46,14 @@ const DataPermissions = ({ t }) => {
 
   if (appsAndKonnectorsSlugs?.length > 0) {
     for (let i = 0; i < appsAndKonnectorsSlugs.length; i++) {
-      const appToAdd = appsResult.data.find(
+      const appToAdd = appsResult.data?.find(
         app => app.slug === appsAndKonnectorsSlugs[i]
       )
       if (appToAdd) {
         appsAndKonnectors.push(appToAdd)
       }
 
-      const konnectorToAdd = konnectorsResult.data.find(
+      const konnectorToAdd = konnectorsResult.data?.find(
         konnector => konnector.slug === appsAndKonnectorsSlugs[i]
       )
       if (konnectorToAdd) {
