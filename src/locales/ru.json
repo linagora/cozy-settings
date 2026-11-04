@@ -342,6 +342,10 @@
       "sessions_deleted": "Все другие сессии удалены."
     },
     "modal_title": "Подробности",
+    "head_date": "Дата",
+    "head_os": "ОС",
+    "head_browser": "Браузер",
+    "head_ip": "IP",
     "modal_date": "Дата:",
     "modal_os": "ОС:",
     "modal_browser": "Браузер:",

@@ -342,6 +342,10 @@
       "sessions_deleted": "Toutes les sessions ont été déconnectées"
     },
     "modal_title": "Détails",
+    "head_date": "Date",
+    "head_os": "Système",
+    "head_browser": "Navigateur",
+    "head_ip": "IP",
     "modal_date": "Date :",
     "modal_os": "OS :",
     "modal_browser": "Navigateur :",

@@ -342,6 +342,10 @@
       "sessions_deleted": "Se han cerrado todas las demás sesiones."
     },
     "modal_title": "Detalles",
+    "head_date": "Fecha",
+    "head_os": "SO",
+    "head_browser": "Navegador",
+    "head_ip": "IP",
     "modal_date": "Fecha:",
     "modal_os": "SO:",
     "modal_browser": "Navegador:",
