@@ -457,7 +457,7 @@ const ConfigureDeviceSyncDialog = ({
           <FoldersLoading />
         ) : (
           <>
-            <ReactMarkdown source={t('configureDevice.description')} />
+            <ReactMarkdown>{t('configureDevice.description')}</ReactMarkdown>
             <FormControl className="u-pl-half">
               <RadioGroup
                 name="partialSync"

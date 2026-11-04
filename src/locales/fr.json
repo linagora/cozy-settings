@@ -226,7 +226,7 @@
       "success": "Votre demande a bien été prise en compte",
       "modal": {
         "title": "Récupérer mes données",
-        "description": "Twake se charge de récupérer toutes les données qu'il détient sur vous et de vous en envoyer une archive à télécharger.<br/><br/>Le lien de téléchargement vous sera envoyé par mail à l'adresse __%{email}__ dès que l'archive aura été générée.",
+        "description": "Twake se charge de récupérer toutes les données qu'il détient sur vous et de vous en envoyer une archive à télécharger.\n\nLe lien de téléchargement vous sera envoyé par mail à l'adresse __%{email}__ dès que l'archive aura été générée.",
         "cancel": "Annuler",
         "CTA": "M'envoyer mes données"
       },

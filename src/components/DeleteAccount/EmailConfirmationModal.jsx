@@ -38,13 +38,14 @@ const EmailConfirmationModal = ({ onClose }) => {
       content={
         <ReactMarkdown
           className="u-ta-center"
-          source={t('DeleteAccount.modal.email_confirmation.description', {
+          components={{
+            p: props => <span className="u-mv-0">{props.children}</span>
+          }}
+        >
+          {t('DeleteAccount.modal.email_confirmation.description', {
             email: instance.email
           })}
-          renderers={{
-            paragraph: props => <span className="u-mv-0">{props.children}</span>
-          }}
-        />
+        </ReactMarkdown>
       }
       actions={
         <Button

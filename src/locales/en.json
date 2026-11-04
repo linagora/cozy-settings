@@ -226,7 +226,7 @@
       "success": "Your request has been sent!",
       "modal": {
         "title": "Get back my data",
-        "description": "Twake is in charge of getting all the data it has about you and sending you an archive to download.<br/><br/>The download link will be sent to the __%{email}__ email address when the archive is available.",
+        "description": "Twake is in charge of getting all the data it has about you and sending you an archive to download.\n\nThe download link will be sent to the __%{email}__ email address when the archive is available.",
         "cancel": "Cancel",
         "CTA": "Send me my data"
       },

@@ -226,7 +226,7 @@
       "success": "La tua richiesta è stata inviata correttamente!",
       "modal": {
         "title": "Recupera i miei dati",
-        "description": "Twake si occupa di raccogliere tutti i dati che possiede su di te e di inviarti un archivio da scaricare.<br/><br/>Il link di download ti verrà inviato all'indirizzo email __%{email}__ quando l'archivio sarà disponibile.",
+        "description": "Twake si occupa di raccogliere tutti i dati che possiede su di te e di inviarti un archivio da scaricare.\n\nIl link di download ti verrà inviato all'indirizzo email __%{email}__ quando l'archivio sarà disponibile.",
         "cancel": "Annulla",
         "CTA": "Inviami i miei dati"
       },
