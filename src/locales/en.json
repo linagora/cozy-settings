@@ -164,9 +164,9 @@
       "external_label": "Your password can be changed in your identity provider"
     },
     "applicative_accounts": {
-      "title": "External mail client",
-      "label": "Connect your Twake mailbox to any email client using a dedicated application account.",
-      "cta": "Manage application accounts"
+      "title": "Sync with other apps",
+      "label": "Use your Twake mail, calendars and contacts in other apps (IMAP, SMTP, CalDAV, CardDAV).",
+      "cta": "Manage app accounts"
     },
     "infos": {
       "success": "Your informations has been changed",

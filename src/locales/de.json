@@ -164,9 +164,9 @@
       "external_label": "Ihr Passwort können Sie bei Ihrem Identitätsanbieter ändern"
     },
     "applicative_accounts": {
-      "title": "Externer E-Mail-Client",
-      "label": "Verbinden Sie Ihr Twake-Postfach über ein eigenes Anwendungskonto mit einem beliebigen E-Mail-Client.",
-      "cta": "Anwendungskonten verwalten"
+      "title": "Mit anderen Apps synchronisieren",
+      "label": "Nutzen Sie Ihre Twake-E-Mails, -Kalender und -Kontakte in anderen Apps (IMAP, SMTP, CalDAV, CardDAV).",
+      "cta": "App-Konten verwalten"
     },
     "infos": {
       "success": "Ihre Angaben wurden geändert",

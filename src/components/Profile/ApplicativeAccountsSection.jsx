@@ -22,6 +22,7 @@ const ApplicativeAccountsSection = () => {
       <Buttons
         variant="secondary"
         size="medium"
+        className="u-mt-half"
         label={t('ProfileView.applicative_accounts.cta')}
         href={accountsUrl}
         target="_blank"

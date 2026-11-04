@@ -164,9 +164,9 @@
       "external_label": "Votre mot de passe peut être modifié depuis votre fournisseur d'identité"
     },
     "applicative_accounts": {
-      "title": "Client de messagerie externe",
-      "label": "Connectez votre boîte mail Twake à n'importe quel client de messagerie à l'aide d'un compte applicatif dédié.",
-      "cta": "Gérer les comptes applicatifs"
+      "title": "Synchroniser avec d'autres applications",
+      "label": "Utilisez vos mails, agendas et contacts Twake dans d'autres applications (IMAP, SMTP, CalDAV, CardDAV).",
+      "cta": "Gérer les comptes d'application"
     },
     "infos": {
       "success": "Vos informations ont été modifiées.",
