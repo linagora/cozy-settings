@@ -164,8 +164,8 @@
       "external_label": "Mật khẩu của bạn có thể được thay đổi tại nhà cung cấp danh tính của bạn"
     },
     "applicative_accounts": {
-      "title": "Ứng dụng thư điện tử bên ngoài",
-      "label": "Kết nối hộp thư Twake của bạn với bất kỳ ứng dụng email nào bằng tài khoản ứng dụng riêng.",
+      "title": "Đồng bộ với các ứng dụng khác",
+      "label": "Sử dụng thư, lịch và danh bạ Twake của bạn trong các ứng dụng khác (IMAP, SMTP, CalDAV, CardDAV).",
       "cta": "Quản lý tài khoản ứng dụng"
     },
     "infos": {

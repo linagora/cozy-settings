@@ -164,8 +164,8 @@
       "external_label": "Puede cambiar su contraseña en su proveedor de identidad"
     },
     "applicative_accounts": {
-      "title": "Cliente de correo externo",
-      "label": "Conecte su buzón de Twake a cualquier cliente de correo mediante una cuenta de aplicación dedicada.",
+      "title": "Sincronizar con otras aplicaciones",
+      "label": "Use su correo, sus calendarios y sus contactos de Twake en otras aplicaciones (IMAP, SMTP, CalDAV, CardDAV).",
       "cta": "Gestionar las cuentas de aplicación"
     },
     "infos": {

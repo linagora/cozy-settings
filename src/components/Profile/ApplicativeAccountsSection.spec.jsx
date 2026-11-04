@@ -28,17 +28,17 @@ describe('ApplicativeAccountsSection', () => {
 
   it('should render the title and description', () => {
     setup({ url: 'https://example.com/accounts' })
-    expect(screen.getByText('External mail client')).toBeTruthy()
+    expect(screen.getByText('Sync with other apps')).toBeTruthy()
     expect(
       screen.getByText(
-        'Connect your Twake mailbox to any email client using a dedicated application account.'
+        'Use your Twake mail, calendars and contacts in other apps (IMAP, SMTP, CalDAV, CardDAV).'
       )
     ).toBeTruthy()
   })
 
   it('should render the CTA as an enabled external link to the url flag', () => {
     setup({ url: 'https://example.com/accounts' })
-    const link = screen.getByText('Manage application accounts').closest('a')
+    const link = screen.getByText('Manage app accounts').closest('a')
     expect(link).toHaveAttribute('href', 'https://example.com/accounts')
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')

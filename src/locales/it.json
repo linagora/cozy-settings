@@ -164,9 +164,9 @@
       "external_label": "Puoi modificare la password presso il tuo provider di identità"
     },
     "applicative_accounts": {
-      "title": "Client di posta esterno",
-      "label": "Collega la tua casella di posta Twake a qualsiasi client email tramite un account applicativo dedicato.",
-      "cta": "Gestisci gli account applicativi"
+      "title": "Sincronizza con altre app",
+      "label": "Usa la posta, i calendari e i contatti Twake in altre app (IMAP, SMTP, CalDAV, CardDAV).",
+      "cta": "Gestisci gli account delle app"
     },
     "infos": {
       "success": "Le tue informazioni sono state modificate",
