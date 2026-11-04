@@ -21,7 +21,8 @@ const ConfirmModal = ({ onClose, onSuccess }) => {
     setPassword(ev.target.value)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = ev => {
+    ev.preventDefault()
     const passwordRequired = password.length > 0
     setRequired(!passwordRequired)
     if (passwordRequired) {
@@ -53,17 +54,19 @@ const ConfirmModal = ({ onClose, onSuccess }) => {
           <Typography variant="body1">
             {t('DeleteAccount.modal.confirm.description.line.4')}
           </Typography>
-          <PasswordField
-            required
-            autoFocus
-            fullWidth
-            className="u-mt-1 u-mb-0"
-            value={password}
-            error={Boolean(error) || isRequired}
-            onChange={handleChange}
-            disabled={isLoading}
-            helperText={helperText}
-          />
+          <form onSubmit={handleSubmit} noValidate>
+            <PasswordField
+              required
+              autoFocus
+              fullWidth
+              className="u-mt-1 u-mb-0"
+              value={password}
+              error={Boolean(error) || isRequired}
+              onChange={handleChange}
+              disabled={isLoading}
+              helperText={helperText}
+            />
+          </form>
         </>
       }
       actions={
