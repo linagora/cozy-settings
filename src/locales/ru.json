@@ -536,7 +536,8 @@
     "right_reason": "Зачем %{app} запрашивает это разрешение?"
   },
   "Accessibility": {
-    "previous": "Назад"
+    "previous": "Назад",
+    "copy_field": "Копировать: %{field}"
   },
   "EmailSection": {
     "title": "Email",

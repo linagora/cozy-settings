@@ -536,7 +536,8 @@
     "right_reason": "¿Por qué solicita %{app} este permiso?"
   },
   "Accessibility": {
-    "previous": "Anterior"
+    "previous": "Anterior",
+    "copy_field": "Copiar %{field}"
   },
   "EmailSection": {
     "title": "Correo",
