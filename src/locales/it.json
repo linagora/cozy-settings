@@ -538,6 +538,7 @@
   "Accessibility": {
     "previous": "Precedente",
     "copy_field": "Copia %{field}",
+    "edit_avatar": "Modifica avatar",
     "select_guidance_input": "L'elenco è attivo, digita per filtrarlo, premi Giù per aprire il menu",
     "select_guidance_input_not_searchable": "L'elenco è attivo, premi Giù per aprire il menu",
     "select_guidance_menu": "Usa Su e Giù per scegliere le opzioni, premi Invio per selezionare l'opzione attiva, premi Esc per uscire dal menu",

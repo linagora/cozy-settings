@@ -538,6 +538,7 @@
   "Accessibility": {
     "previous": "Précédent",
     "copy_field": "Copier %{field}",
+    "edit_avatar": "Modifier l'avatar",
     "select_guidance_input": "La liste est sélectionnée, saisissez du texte pour la filtrer, appuyez sur Bas pour ouvrir le menu",
     "select_guidance_input_not_searchable": "La liste est sélectionnée, appuyez sur Bas pour ouvrir le menu",
     "select_guidance_menu": "Utilisez Haut et Bas pour parcourir les options, appuyez sur Entrée pour sélectionner l'option active, appuyez sur Échap pour fermer le menu",

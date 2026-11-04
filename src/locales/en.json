@@ -538,6 +538,7 @@
   "Accessibility": {
     "previous": "Previous",
     "copy_field": "Copy %{field}",
+    "edit_avatar": "Edit avatar",
     "select_guidance_input": "Select is focused, type to refine list, press Down to open the menu",
     "select_guidance_input_not_searchable": "Select is focused, press Down to open the menu",
     "select_guidance_menu": "Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu",
