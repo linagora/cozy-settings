@@ -13,7 +13,9 @@ import React from 'react'
 import { useI18n } from 'twake-i18n'
 import { UAParser } from 'ua-parser-js'
 
-import { TableRow, TableCell } from 'cozy-ui/transpiled/react/deprecated/Table'
+import ButtonBase from 'cozy-ui/transpiled/react/ButtonBase'
+import TableCell from 'cozy-ui/transpiled/react/TableCell'
+import TableRow from 'cozy-ui/transpiled/react/TableRow'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import tableStyles from '@/styles/table.styl'
@@ -53,52 +55,44 @@ const SessionsViewRow = ({ session, displayModal }) => {
   const callRow = () => {
     displayModal(session)
   }
-  const handleKeyDown = event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      callRow()
-    }
-  }
   if (isMobile) {
     return (
-      <TableRow
-        className={tableStyles['row']}
-        role="button"
-        tabIndex={0}
-        onClick={callRow}
-        onKeyDown={handleKeyDown}
-      >
-        <TableCell className={tableStyles['browser']}>
-          <Icon icon={getBrowserIcon(session)} size={16} />
-        </TableCell>
-        <TableCell className={tableStyles['main']}>
-          <span className={tableStyles['title']}>
-            {`${ua.browser.name} · ${session.os}`}
-          </span>
-          <span className={tableStyles['subtitle']}>
-            {f(
-              new Date(session.created_at),
-              t('SessionsView.sync_date_format')
-            )}
-          </span>
+      <TableRow>
+        <TableCell className={tableStyles['row-cell']}>
+          <ButtonBase
+            component="div"
+            className={tableStyles['row']}
+            onClick={callRow}
+          >
+            <span className={tableStyles['browser']}>
+              <Icon icon={getBrowserIcon(session)} size={16} />
+            </span>
+            <span className={tableStyles['main']}>
+              <span className={tableStyles['title']}>
+                {`${ua.browser.name} · ${session.os}`}
+              </span>
+              <span className={tableStyles['subtitle']}>
+                {f(
+                  new Date(session.created_at),
+                  t('SessionsView.sync_date_format')
+                )}
+              </span>
+            </span>
+          </ButtonBase>
         </TableCell>
       </TableRow>
     )
   }
   return (
     <TableRow>
-      <TableCell className={tableStyles['set-table-date']}>
+      <TableCell>
         {f(new Date(session.created_at), t('SessionsView.sync_date_format'))}
       </TableCell>
-      <TableCell className={tableStyles['set-table-os']}>
-        {session.os}
-      </TableCell>
-      <TableCell className={tableStyles['set-table-browser']}>
+      <TableCell>{session.os}</TableCell>
+      <TableCell>
         {ua.browser.name} {ua.browser.major}
       </TableCell>
-      <TableCell className={tableStyles['set-table-ip']}>
-        {session.ip}
-      </TableCell>
+      <TableCell>{session.ip}</TableCell>
     </TableRow>
   )
 }

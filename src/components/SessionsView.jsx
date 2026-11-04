@@ -4,14 +4,13 @@ import { useI18n } from 'twake-i18n'
 import Buttons from 'cozy-ui/transpiled/react/Buttons'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
+import Table from 'cozy-ui/transpiled/react/Table'
+import TableBody from 'cozy-ui/transpiled/react/TableBody'
+import TableCell from 'cozy-ui/transpiled/react/TableCell'
+import TableHead from 'cozy-ui/transpiled/react/TableHead'
+import TableRow from 'cozy-ui/transpiled/react/TableRow'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableHeader
-} from 'cozy-ui/transpiled/react/deprecated/Table'
+import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import tableStyles from '@/styles/table.styl'
 
@@ -27,6 +26,7 @@ const SessionsView = ({
   deleteOtherSessions
 }) => {
   const { t } = useI18n()
+  const { isMobile } = useBreakpoints()
   const [sessionDetails, setSessionDetails] = useState(undefined)
 
   useEffect(() => {
@@ -59,23 +59,17 @@ const SessionsView = ({
       {!isFetching && sessions && (
         <>
           <Table className={tableStyles['coz-table']}>
-            <TableHead>
-              <TableRow>
-                <TableHeader className={tableStyles['set-table-date']}>
-                  {t('SessionsView.head_date')}
-                </TableHeader>
-                <TableHeader className={tableStyles['set-table-os']}>
-                  {t('SessionsView.head_os')}
-                </TableHeader>
-                <TableHeader className={tableStyles['set-table-browser']}>
-                  {t('SessionsView.head_browser')}
-                </TableHeader>
-                <TableHeader className={tableStyles['set-table-ip']}>
-                  {t('SessionsView.head_ip')}
-                </TableHeader>
-              </TableRow>
-            </TableHead>
-            <TableBody className={tableStyles['set-table-sessions']}>
+            {!isMobile && (
+              <TableHead>
+                <TableRow>
+                  <TableCell>{t('SessionsView.head_date')}</TableCell>
+                  <TableCell>{t('SessionsView.head_os')}</TableCell>
+                  <TableCell>{t('SessionsView.head_browser')}</TableCell>
+                  <TableCell>{t('SessionsView.head_ip')}</TableCell>
+                </TableRow>
+              </TableHead>
+            )}
+            <TableBody>
               {sessions
                 .sort(function (a, b) {
                   // Turn your strings into dates, and then subtract them
