@@ -81,7 +81,7 @@ const AppPermissions = ({ t }) => {
       className={isMobile || isTablet ? '' : 'u-maw-7 u-mh-2'}
       withoutMargin={isMobile || isTablet}
     >
-      {hasQueryFailed || queryResultRemoteDoctypes.fetchStatus === 'error' ? (
+      {hasQueryFailed ? (
         <Typography variant="body1" className="u-mb-1-half">
           {t('Permissions.failedRequest')}
         </Typography>
@@ -140,6 +140,11 @@ const AppPermissions = ({ t }) => {
               <UninstallButton appData={result.data} />
             </div>
           </div>
+          {queryResultRemoteDoctypes.fetchStatus === 'error' && (
+            <Typography variant="body1" className="u-mt-1">
+              {t('Permissions.failedRequest')}
+            </Typography>
+          )}
           <NavigationList
             className={isMobile || isTablet ? 'u-mt-1' : 'u-mv-1'}
           >
