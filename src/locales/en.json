@@ -536,7 +536,8 @@
     "right_reason": "Why does %{app} request this permission?"
   },
   "Accessibility": {
-    "previous": "Previous"
+    "previous": "Previous",
+    "copy_field": "Copy %{field}"
   },
   "EmailSection": {
     "title": "E-mail",

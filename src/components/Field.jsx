@@ -28,7 +28,8 @@ const StatusIcon = ({
   absolute,
   copyable,
   value,
-  onCopy
+  onCopy,
+  title
 }) => {
   const { t } = useI18n()
   const { isLight } = useCozyTheme()
@@ -107,6 +108,7 @@ const StatusIcon = ({
       )}
       {!submitting && (!saved || showCopyIcon) && copyable && value && (
         <IconButton
+          aria-label={t('Accessibility.copy_field', { field: title })}
           onClick={handleCopy}
           size="small"
           color="primary"
@@ -157,6 +159,7 @@ const Field = ({
                   copyable={copyable}
                   value={value}
                   onCopy={onCopy}
+                  title={title}
                 />
               </Img>
               <Img>{children}</Img>
@@ -172,6 +175,7 @@ const Field = ({
                   copyable={copyable}
                   value={value}
                   onCopy={onCopy}
+                  title={title}
                 />
                 {children}
               </div>

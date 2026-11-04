@@ -536,7 +536,8 @@
     "right_reason": "Warum fordert %{app} diese Berechtigung an?"
   },
   "Accessibility": {
-    "previous": "Zurück"
+    "previous": "Zurück",
+    "copy_field": "%{field} kopieren"
   },
   "EmailSection": {
     "title": "E-Mail",

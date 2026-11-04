@@ -536,7 +536,8 @@
     "right_reason": "Tại sao %{app} yêu cầu quyền này?"
   },
   "Accessibility": {
-    "previous": "Trước"
+    "previous": "Trước",
+    "copy_field": "Sao chép %{field}"
   },
   "EmailSection": {
     "title": "Email",
