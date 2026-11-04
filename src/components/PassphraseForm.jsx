@@ -61,6 +61,7 @@ const PassphraseForm = ({ errors, submitting, saved, onSubmit }) => {
     newPassphraseTouched && formData.newPassphrase === formData.hint
 
   const canSubmit =
+    formData.currentPassphrase !== '' &&
     newPassphraseTouched &&
     newPassphraseMatch &&
     strength.label !== 'weak' &&
