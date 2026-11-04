@@ -9,7 +9,12 @@ import IconButton from 'cozy-ui/transpiled/react/IconButton'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
-const barTitleStyle = { height: '3rem', display: 'flex', alignItems: 'center' }
+const barTitleStyle = {
+  height: '3rem',
+  minWidth: 0,
+  display: 'flex',
+  alignItems: 'center'
+}
 
 const BarContainer = ({ children }) => {
   return <div style={barTitleStyle}>{children}</div>
@@ -38,7 +43,9 @@ const PageTitle = ({ children, backButtonPath, ...rest }) => {
 
       <BarCenter>
         <BarContainer>
-          <Typography variant="h4">{children}</Typography>
+          <Typography variant="h4" noWrap>
+            {children}
+          </Typography>
         </BarContainer>
       </BarCenter>
     </>
