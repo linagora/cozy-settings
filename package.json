@@ -55,8 +55,8 @@
   "dependencies": {
     "@linagora/twake-icons": "^2.10.0",
     "@material-ui/lab": "4.0.0-alpha.61",
-    "@sentry/integrations": "7.118.0",
-    "@sentry/react": "7.118.0",
+    "@sentry/integrations": "7.120.4",
+    "@sentry/react": "7.120.4",
     "classnames": "2.3.1",
     "cozy-bar": "^36.2.19",
     "cozy-client": "^61.0.2",
