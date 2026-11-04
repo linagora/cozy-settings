@@ -115,12 +115,14 @@ export const Sidebar = (): JSX.Element => {
       </MenuList>
 
       <MenuList title={t('Nav.header_other')}>
-        <MenuItemAnchor
-          primary={t('Nav.primary_faq')}
-          href={context?.data?.help_link}
-          target="_blank"
-          icon={HelpOutlined}
-        />
+        {context?.data?.help_link && (
+          <MenuItemAnchor
+            primary={t('Nav.primary_faq')}
+            href={context.data.help_link}
+            target="_blank"
+            icon={HelpOutlined}
+          />
+        )}
         <MenuItemNavLink
           to={routes.support}
           primary={t('Nav.contact_support')}
