@@ -106,7 +106,11 @@ const AppPermissions = ({ t }) => {
               }
             >
               {!isMobile && !isTablet && (
-                <IconButton className="u-mr-half" href="#/permissions">
+                <IconButton
+                  aria-label={t('Accessibility.previous')}
+                  className="u-mr-half"
+                  href="#/permissions"
+                >
                   <Icon icon={Previous} size={16} />
                 </IconButton>
               )}

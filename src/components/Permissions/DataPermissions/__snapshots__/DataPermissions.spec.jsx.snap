@@ -8,6 +8,7 @@ exports[`DataPermissions should display DataPermissions 1`] = `
   >
     <a
       aria-disabled="false"
+      aria-label="Accessibility.previous"
       class="MuiButtonBase-root MuiIconButton-root u-mr-half large"
       href="#/permissions/data"
       tabindex="0"

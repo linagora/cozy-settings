@@ -78,7 +78,11 @@ const DataPermissions = ({ t }) => {
         </Typography>
       ) : (
         <>
-          <IconButton className="u-mr-half" href="#/permissions/data">
+          <IconButton
+            aria-label={t('Accessibility.previous')}
+            className="u-mr-half"
+            href="#/permissions/data"
+          >
             <Icon icon={Previous} size={16} />
           </IconButton>
           <div style={{ textAlign: 'center' }}>
