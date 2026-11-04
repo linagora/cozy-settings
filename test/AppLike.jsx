@@ -8,6 +8,7 @@ import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 
+import { ROUTER_FUTURE_FLAGS } from '@/constants/router'
 import en from '@/locales/en.json'
 
 export const TestI18n = ({ children }) => {
@@ -24,7 +25,7 @@ const AppLike = ({ children, client }) => {
   return (
     <WebviewIntentProvider>
       <CozyProvider client={client || defaultClient}>
-        <HashRouter>
+        <HashRouter future={ROUTER_FUTURE_FLAGS}>
           <BreakpointsProvider>
             <TestI18n>
               <CozyTheme>
