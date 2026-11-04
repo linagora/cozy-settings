@@ -16,6 +16,7 @@ import {
 import CozyTheme from 'cozy-ui-plus/dist/providers/CozyTheme'
 
 import { PremiumProvider } from '@/components/Premium/PremiumProvider'
+import { ROUTER_FUTURE_FLAGS } from '@/constants/router'
 import { FILES_DOCTYPE, CONTACTS_DOCTYPE, APPS_DOCTYPE } from '@/doctypes'
 
 /*
@@ -57,7 +58,9 @@ const AppProviders = ({ client, store, children }) => {
                     >
                       <BarProvider>
                         <PremiumProvider>
-                          <HashRouter>{children}</HashRouter>
+                          <HashRouter future={ROUTER_FUTURE_FLAGS}>
+                            {children}
+                          </HashRouter>
                         </PremiumProvider>
                       </BarProvider>
                     </DataProxyProvider>
