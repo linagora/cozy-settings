@@ -336,10 +336,10 @@
   "SessionsView": {
     "title": "Historique de connexions web",
     "sync_date_format": "d LLL yyyy",
-    "delete": "Déconnecter toutes mes sessions",
+    "delete": "Déconnecter toutes mes autres sessions",
     "infos": {
       "server_error": "Une erreur s'est produite. Merci de recharger la page.",
-      "sessions_deleted": "Toutes les sessions ont été déconnectées"
+      "sessions_deleted": "Toutes les autres sessions ont été déconnectées"
     },
     "modal_title": "Détails",
     "head_date": "Date",
