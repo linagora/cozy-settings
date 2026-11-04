@@ -85,12 +85,14 @@ const SessionsView = ({
                 ))}
             </TableBody>
           </Table>
-          <ConfirmDialog
-            open={!!sessionDetails}
-            onClose={hideModal}
-            title={t('SessionsView.modal_title')}
-            content={<SessionDialog session={sessionDetails} />}
-          />
+          {sessionDetails && (
+            <ConfirmDialog
+              open
+              onClose={hideModal}
+              title={t('SessionsView.modal_title')}
+              content={<SessionDialog session={sessionDetails} />}
+            />
+          )}
         </>
       )}
     </Page>
