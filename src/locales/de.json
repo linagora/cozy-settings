@@ -226,7 +226,7 @@
       "success": "Ihre Anfrage wurde erfolgreich gesendet!",
       "modal": {
         "title": "Meine Daten abrufen",
-        "description": "Twake sammelt alle Daten, die es über Sie hat, und sendet Ihnen ein Archiv zum Herunterladen.<br/><br/>Der Download-Link wird Ihnen an die E-Mail-Adresse __%{email}__ gesendet, sobald das Archiv verfügbar ist.",
+        "description": "Twake sammelt alle Daten, die es über Sie hat, und sendet Ihnen ein Archiv zum Herunterladen.\n\nDer Download-Link wird Ihnen an die E-Mail-Adresse __%{email}__ gesendet, sobald das Archiv verfügbar ist.",
         "cancel": "Abbrechen",
         "CTA": "Meine Daten senden"
       },

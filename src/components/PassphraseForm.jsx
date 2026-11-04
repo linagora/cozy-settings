@@ -150,7 +150,7 @@ const PassphraseForm = ({ errors, submitting, saved, onSubmit }) => {
           <ListItem>
             <ReactMarkdownWrapper
               source={t('PassphraseView.advices.our_tip')}
-            />
+            />{' '}
             <Typography>Cl4ude€st1Nu@ge</Typography>
           </ListItem>
         </UnorderedList>

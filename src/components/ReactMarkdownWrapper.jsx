@@ -24,18 +24,13 @@ const ParagraphRenderer = ({ children }) => {
   )
 }
 
-const reactMarkdownRendererOptions = {
-  link: LinkRenderer,
-  linkReference: LinkRenderer,
-  paragraph: ParagraphRenderer
+const reactMarkdownComponents = {
+  a: LinkRenderer,
+  p: ParagraphRenderer
 }
 
 const ReactMarkdownWrapper = ({ source }) => (
-  <ReactMarkdown
-    source={source}
-    renderers={reactMarkdownRendererOptions}
-    escapeHtml={false}
-  />
+  <ReactMarkdown components={reactMarkdownComponents}>{source}</ReactMarkdown>
 )
 
 export default ReactMarkdownWrapper

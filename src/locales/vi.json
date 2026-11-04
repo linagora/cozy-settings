@@ -226,7 +226,7 @@
       "success": "Yêu cầu của bạn đã được gửi thành công!",
       "modal": {
         "title": "Lấy lại dữ liệu của tôi",
-        "description": "Twake sẽ thu thập tất cả dữ liệu về bạn và gửi tệp lưu trữ để tải xuống.<br/><br/>Liên kết tải xuống sẽ được gửi đến địa chỉ email __%{email}__ khi tệp lưu trữ sẵn sàng.",
+        "description": "Twake sẽ thu thập tất cả dữ liệu về bạn và gửi tệp lưu trữ để tải xuống.\n\nLiên kết tải xuống sẽ được gửi đến địa chỉ email __%{email}__ khi tệp lưu trữ sẵn sàng.",
         "cancel": "Hủy",
         "CTA": "Gửi dữ liệu cho tôi"
       },

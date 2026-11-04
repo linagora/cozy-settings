@@ -226,7 +226,7 @@
       "success": "¡Su solicitud se ha enviado correctamente!",
       "modal": {
         "title": "Recuperar mis datos",
-        "description": "Twake se encarga de recopilar todos los datos que tiene sobre usted y de enviarle un archivo para descargar.<br/><br/>El enlace de descarga se le enviará a la dirección __%{email}__ cuando el archivo esté disponible.",
+        "description": "Twake se encarga de recopilar todos los datos que tiene sobre usted y de enviarle un archivo para descargar.\n\nEl enlace de descarga se le enviará a la dirección __%{email}__ cuando el archivo esté disponible.",
         "cancel": "Cancelar",
         "CTA": "Enviarme mis datos"
       },

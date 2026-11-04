@@ -57,7 +57,7 @@ const DevicesModaleRevokeView = ({ device, cancelAction, onDeviceRevoked }) => {
               <IconCircle2Arrows />
             </Img>
             <Bd>
-              <ReactMarkdown source={t('revokeDevice.subText')} />
+              <ReactMarkdown>{t('revokeDevice.subText')}</ReactMarkdown>
             </Bd>
           </Media>
         </>
