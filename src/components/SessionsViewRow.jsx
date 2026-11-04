@@ -53,9 +53,21 @@ const SessionsViewRow = ({ session, displayModal }) => {
   const callRow = () => {
     displayModal(session)
   }
+  const handleKeyDown = event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      callRow()
+    }
+  }
   if (isMobile) {
     return (
-      <TableRow className={tableStyles['row']} onClick={callRow}>
+      <TableRow
+        className={tableStyles['row']}
+        role="button"
+        tabIndex={0}
+        onClick={callRow}
+        onKeyDown={handleKeyDown}
+      >
         <TableCell className={tableStyles['browser']}>
           <Icon icon={getBrowserIcon(session)} size={16} />
         </TableCell>
