@@ -537,7 +537,15 @@
   },
   "Accessibility": {
     "previous": "Trước",
-    "copy_field": "Sao chép %{field}"
+    "copy_field": "Sao chép %{field}",
+    "select_guidance_input": "Danh sách đang được chọn, nhập để lọc, nhấn phím Xuống để mở menu",
+    "select_guidance_input_not_searchable": "Danh sách đang được chọn, nhấn phím Xuống để mở menu",
+    "select_guidance_menu": "Dùng phím Lên và Xuống để chọn, nhấn Enter để chọn mục hiện tại, nhấn Escape để thoát menu",
+    "select_option_selected": "đã chọn %{label}.",
+    "select_option_focused": "đang ở %{label}, %{index} trên %{total}.",
+    "select_option_current": "đã chọn %{label}, %{index} trên %{total}.",
+    "select_results": "Có %{smart_count} kết quả",
+    "select_results_filtered": "%{results} cho từ khóa %{term}."
   },
   "EmailSection": {
     "title": "Email",

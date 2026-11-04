@@ -537,7 +537,15 @@
   },
   "Accessibility": {
     "previous": "Anterior",
-    "copy_field": "Copiar %{field}"
+    "copy_field": "Copiar %{field}",
+    "select_guidance_input": "La lista está enfocada, escriba para filtrarla, pulse Abajo para abrir el menú",
+    "select_guidance_input_not_searchable": "La lista está enfocada, pulse Abajo para abrir el menú",
+    "select_guidance_menu": "Use Arriba y Abajo para elegir opciones, pulse Intro para seleccionar la opción enfocada, pulse Escape para salir del menú",
+    "select_option_selected": "opción %{label} seleccionada.",
+    "select_option_focused": "opción %{label} enfocada, %{index} de %{total}.",
+    "select_option_current": "opción %{label} seleccionada, %{index} de %{total}.",
+    "select_results": "%{smart_count} resultado disponible |||| %{smart_count} resultados disponibles",
+    "select_results_filtered": "%{results} para el término de búsqueda %{term}."
   },
   "EmailSection": {
     "title": "Correo",
