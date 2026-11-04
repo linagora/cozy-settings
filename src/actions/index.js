@@ -142,16 +142,17 @@ export const fetchSessions = client => {
 export const deleteOtherSessions = client => {
   return async dispatch => {
     dispatch({ type: SESSIONS_DELETE_OTHERS })
-    cozyFetch(client, 'DELETE', '/auth/login/others')
+    return cozyFetch(client, 'DELETE', '/auth/login/others')
       .then(() => {
         dispatch({ type: SESSIONS_DELETE_OTHERS_SUCCESS })
-      })
-      .then(() => {
-        dispatch(fetchSessions())
       })
       .catch(error => {
         dispatch({ type: SESSIONS_DELETE_OTHERS_FAILURE })
         throw error
+      })
+      .then(() => {
+        // The deletion is done: a failed reload must not report it as failed
+        return dispatch(fetchSessions(client)).catch(() => {})
       })
   }
 }
