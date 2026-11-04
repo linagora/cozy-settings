@@ -1,7 +1,6 @@
 import { Sprite } from '@linagora/twake-icons'
 import classNames from 'classnames'
 import React from 'react'
-import { hot } from 'react-hot-loader'
 
 import { BarComponent } from 'cozy-bar'
 import { RealTimeQueries } from 'cozy-client'
@@ -56,4 +55,4 @@ export const App = () => {
 // This is to facilitate the extension of App in apps overrides
 App.renderExtra = () => null
 
-export default hot(module)(App)
+export default App
