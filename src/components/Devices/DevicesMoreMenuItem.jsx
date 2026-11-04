@@ -1,26 +1,25 @@
 import { Icon } from '@linagora/twake-icons'
 import React from 'react'
 
+import ActionsMenuItem from 'cozy-ui/transpiled/react/ActionsMenu/ActionsMenuItem'
+import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import Typography from 'cozy-ui/transpiled/react/Typography'
-import { ActionMenuItem } from 'cozy-ui/transpiled/react/deprecated/ActionMenu'
 
-const DevicesMoreMenuItem = ({ onClick, icon, color, text, className }) => (
-  <ActionMenuItem
-    className={className}
-    onClick={onClick}
-    left={<Icon icon={icon} color={`var(--${color}Color)`} />}
-  >
+const DevicesMoreMenuItem = ({ icon, color, text, ...props }) => (
+  <ActionsMenuItem {...props}>
+    <ListItemIcon>
+      <Icon icon={icon} color={`var(--${color}Color)`} />
+    </ListItemIcon>
     <Typography
       variant="body1"
       color={color}
       style={{
         textTransform: 'capitalize'
       }}
-      className="u-ml-half"
     >
       {text}
     </Typography>
-  </ActionMenuItem>
+  </ActionsMenuItem>
 )
 
 export { DevicesMoreMenuItem }
