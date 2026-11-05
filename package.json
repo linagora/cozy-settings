@@ -66,7 +66,7 @@
     "cozy-flags": "^4.9.2",
     "cozy-intent": "^2.31.1",
     "cozy-interapp": "^0.22.2",
-    "cozy-keys-lib": "^7.1.0",
+    "cozy-keys-lib": "^7.1.1",
     "cozy-realtime": "^5.9.4",
     "cozy-search": "^2.12.16",
     "cozy-stack-client": "^61.0.0",
