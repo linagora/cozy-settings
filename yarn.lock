@@ -6224,9 +6224,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cozy-search@npm:^2.12.16":
-  version: 2.12.16
-  resolution: "cozy-search@npm:2.12.16"
+"cozy-search@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "cozy-search@npm:3.0.0"
   dependencies:
     "@assistant-ui/react": "npm:^0.12.5"
     classnames: "npm:^2.5.1"
@@ -6251,7 +6251,7 @@ __metadata:
     react-dom: ">=18.0.0"
     react-router-dom: ^6.28.0
     twake-i18n: ">=0.3.0"
-  checksum: 10c0/fbc08dc361932362f014e3cb04ab09b5b6f2386f6cac428315d2e3c759d76f2b287ced8de7b871272ed0939d0663595d6e4ecac073c6fb49367f68ebe85a9903
+  checksum: 10c0/d576b4597cdceab8a99a1ffe2978e3ab9e066acb41d8fd4ac714d9d5eef67c3750fbf3d091be4590b364eb0e055734dfe6e3b24d680c8291c09c5000bbebcd89
   languageName: node
   linkType: hard
 
@@ -6289,7 +6289,7 @@ __metadata:
     cozy-interapp: "npm:^0.22.2"
     cozy-keys-lib: "npm:^7.1.1"
     cozy-realtime: "npm:^5.9.4"
-    cozy-search: "npm:^2.12.16"
+    cozy-search: "npm:^3.0.0"
     cozy-stack-client: "npm:^61.0.0"
     cozy-ui: "npm:^146.5.0"
     cozy-ui-plus: "npm:^15.0.0"
