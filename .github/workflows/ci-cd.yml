@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   build:
-    uses: linagora/twake-workflows/.github/workflows/build-and-publish-cozy-app.yml@a8c34c5fbc87363445cd1f2128b8be9000bbf49f # v1.0.0
+    uses: linagora/twake-workflows/.github/workflows/build-and-publish-cozy-app.yml@c6f6a4de61671a4e5d440d138c5544e4233b58c7 # v1.7.0
     with:
       mattermost-channel: '{"dev":"app---settings","beta":"app---settings,publication","stable":"app---settings,publication"}'
     secrets:
