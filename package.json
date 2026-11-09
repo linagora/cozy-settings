@@ -71,7 +71,7 @@
     "cozy-search": "^2.12.16",
     "cozy-stack-client": "^61.0.0",
     "cozy-ui": "^146.5.0",
-    "cozy-ui-plus": "^14.1.10",
+    "cozy-ui-plus": "^15.0.0",
     "identity-obj-proxy": "^3.0.0",
     "lottie-react": "^2.4.1",
     "prop-types": "15.8.1",
