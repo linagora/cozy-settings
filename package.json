@@ -68,7 +68,7 @@
     "cozy-interapp": "^0.22.2",
     "cozy-keys-lib": "^7.1.1",
     "cozy-realtime": "^5.9.4",
-    "cozy-search": "^2.12.16",
+    "cozy-search": "^3.0.0",
     "cozy-stack-client": "^61.0.0",
     "cozy-ui": "^146.5.0",
     "cozy-ui-plus": "^15.0.0",
