@@ -1,9 +1,10 @@
 // `/` may be percent-encoded when the URL is nested in a query param.
 // The stack MAC is base64url of at least 40 bytes (8 of time, 32 of HMAC), so
 // 40 chars is a safe lower bound that leaves other `exports/...` paths alone.
+// A MAC char may itself be percent-encoded.
 const SEP = '(?:\\/|%(?:25)*2F)'
 const EXPORT_MAC_REGEX = new RegExp(
-  `(exports${SEP}(?:data${SEP})?)[\\w=-]{40,}`,
+  `(exports${SEP}(?:data${SEP})?)(?:[\\w=-]|%[0-9a-f]{2}){40,}`,
   'gi'
 )
 
