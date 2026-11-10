@@ -63,6 +63,13 @@ describe('scrubExportMac', () => {
     expect(scrubExportMac(event)).toBe(event)
   })
 
+  it('should drop an event that cannot be scrubbed', () => {
+    const event = { request: { url: `http://localhost/#/exports/${MAC}` } }
+    event.extra = { self: event }
+
+    expect(scrubExportMac(event)).toBeNull()
+  })
+
   it('should keep the MAC out of what Sentry really sends', async () => {
     const sent = []
     window.history.pushState({}, '', `/#/exports/${MAC}`)

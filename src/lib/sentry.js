@@ -25,15 +25,21 @@ export const scrubExportMac = event => {
   // Only its dynamicSamplingContext is sent, as the envelope `trace` header.
   const { sdkProcessingMetadata, ...payload } = event
   const dsc = sdkProcessingMetadata?.dynamicSamplingContext
-  const redactedPayload = redact(payload)
-  const redactedDsc = dsc && redact(dsc)
-  if (redactedPayload === payload && redactedDsc === dsc) return event
+  try {
+    const redactedPayload = redact(payload)
+    const redactedDsc = dsc && redact(dsc)
+    if (redactedPayload === payload && redactedDsc === dsc) return event
 
-  return {
-    ...redactedPayload,
-    sdkProcessingMetadata: sdkProcessingMetadata && {
-      ...sdkProcessingMetadata,
-      dynamicSamplingContext: redactedDsc
+    return {
+      ...redactedPayload,
+      sdkProcessingMetadata: sdkProcessingMetadata && {
+        ...sdkProcessingMetadata,
+        dynamicSamplingContext: redactedDsc
+      }
     }
+  } catch {
+    // Drop the event: if this threw, Sentry would report the failure as a new
+    // event that skips beforeSend and still carries the page URL.
+    return null
   }
 }
