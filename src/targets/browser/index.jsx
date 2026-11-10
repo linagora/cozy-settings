@@ -28,6 +28,7 @@ import createStore from '../../store'
 import '@/styles/index.styl'
 
 import { AppProviders } from '@/components/AppProviders'
+import { scrubExportMac } from '@/lib/sentry'
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('[role=application]')
@@ -61,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     ],
     tracesSampleRate: 0.1,
+    beforeSend: scrubExportMac,
+    beforeSendTransaction: scrubExportMac,
     // React log these warnings(bad Proptypes), in a console.error, it is not relevant to report this type of information to Sentry
     ignoreErrors: [/^Warning: /]
   })
