@@ -18,7 +18,8 @@ describe('scrubExportMac', () => {
       breadcrumbs: [
         { data: { url: `/move/exports/data/${MAC}?cursor=1` } },
         { data: { url: `/auth?redirect=%23%2Fexports%2F${MAC}` } },
-        { data: { url: `/auth?redirect=%2523%252Fexports%252F${MAC}` } }
+        { data: { url: `/auth?redirect=%2523%252Fexports%252F${MAC}` } },
+        { data: { url: `/move/exports/%41${MAC.replace(/-/g, '%2D')}` } }
       ],
       sdkProcessingMetadata: {
         capturedSpanScope,
@@ -33,7 +34,8 @@ describe('scrubExportMac', () => {
       breadcrumbs: [
         { data: { url: '/move/exports/data/[redacted]?cursor=1' } },
         { data: { url: '/auth?redirect=%23%2Fexports%2F[redacted]' } },
-        { data: { url: '/auth?redirect=%2523%252Fexports%252F[redacted]' } }
+        { data: { url: '/auth?redirect=%2523%252Fexports%252F[redacted]' } },
+        { data: { url: '/move/exports/[redacted]' } }
       ],
       sdkProcessingMetadata: {
         capturedSpanScope,
