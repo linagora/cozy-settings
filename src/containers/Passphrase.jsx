@@ -1,10 +1,11 @@
 import compose from 'lodash/flowRight'
 import React from 'react'
 import { connect } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import { translate } from 'twake-i18n'
 
 import { withClient } from 'cozy-client'
+import flag from 'cozy-flags'
 import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
 
 import { updatePassphrase, updateHint } from '@/actions/passphrase'
@@ -46,6 +47,15 @@ const ComposedPassphrase = compose(
 
 const PassphraseWithLocation = props => {
   const location = useLocation()
+
+  if (
+    flag('settings.password.url') ||
+    flag('settings.password.external') ||
+    flag('settings.password.readonly')
+  ) {
+    return <Navigate to="/profile" replace />
+  }
+
   return <ComposedPassphrase {...props} location={location} />
 }
 
